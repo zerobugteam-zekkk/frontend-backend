@@ -91,38 +91,43 @@
     }
 
     // 2. FUNGSI CUACA
-    async function fetchWeather() {
-        const apiKey = '8a8db4b35f665e7cb03b00081f767e4b';
-        const city = 'Malang,ID';
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=id`;
+   async function fetchWeather() {
+    const apiKey = '8a8db4b35f665e7cb03b00081f767e4b';
+    // Koordinat Latitude & Longitude persis Bandara Abdurachman Saleh
+    const lat = -7.9266; 
+    const lon = 112.7136;
+    
+    // Tambahkan t=${Date.now()} agar browser tidak mengambil data lama (cache)
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=id&t=${Date.now()}`;
 
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
 
-            if (data.main && data.weather) {
-                let temp = data.main.temp;
-                if (temp > 100) temp = temp - 273.15;
-                
-                const finalTemp = Math.round(temp);
-                
-                const tempEl = document.getElementById('weather-temp');
-                const iconEl = document.getElementById('weather-icon');
+        if (data.main && data.weather) {
+            const temp = Math.round(data.main.temp);
+            const tempEl = document.getElementById('weather-temp');
+            const iconEl = document.getElementById('weather-icon');
 
-                if (tempEl) tempEl.textContent = finalTemp;
+            if (tempEl) tempEl.textContent = temp;
 
-                if (iconEl) {
-                    const id = data.weather[0].id;
-                    if (id >= 200 && id < 600) iconEl.className = 'fas fa-cloud-showers-heavy mr-2 text-blue-400';
-                    else if (id === 800) iconEl.className = 'fas fa-sun mr-2 text-orange-400';
-                    else iconEl.className = 'fas fa-cloud mr-2 text-slate-400';
+            if (iconEl) {
+                const id = data.weather[0].id;
+                // Jika ID 5xx (Hujan) atau 2xx (Badai) atau 3xx (Gerimis)
+                if (id >= 200 && id < 600) {
+                    iconEl.className = 'fas fa-cloud-showers-heavy mr-2 text-blue-400';
+                } else if (id === 800) {
+                    iconEl.className = 'fas fa-sun mr-2 text-orange-400';
+                } else {
+                    iconEl.className = 'fas fa-cloud mr-2 text-slate-400';
                 }
-                console.log("Cuaca Malang Berhasil Diperbarui: " + finalTemp + "°C");
             }
-        } catch (error) {
-            console.error("Gagal mengambil data cuaca:", error);
+            console.log("Data Berhasil Sinkron: " + temp + "°C");
         }
+    } catch (error) {
+        console.error("Gagal ambil data:", error);
     }
+}
 
     document.addEventListener('DOMContentLoaded', () => {
         updateClock();

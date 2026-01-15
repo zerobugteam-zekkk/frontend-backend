@@ -35,4 +35,14 @@ return [
         ],
     ],
 
+    'aviationstack' => [
+    'key' => env('AVIATIONSTACK_API_KEY'),
+    'url' => env('AVIATIONSTACK_BASE_URL'),
+    ],
+
+        'aerodatabox' => [
+        'key' => env('AERODATABOX_API_KEY'),
+        'base_url' => env('AERODATABOX_BASE_URL'),
+    ],
+
 ];

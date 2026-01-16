@@ -37,3 +37,7 @@ Route::get('/keamanan', function () {
 Route::get('/layanan-cargo', function () {
     return view('layanan-cargo');
 });
+// Route dengan URL: namadomain.com/jam-operasional
+Route::get('/jam-operasional', function () {
+    return view('jamoperasional');
+})->name('jam.operasional');

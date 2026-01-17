@@ -40,9 +40,9 @@ return [
     'url' => env('AVIATIONSTACK_BASE_URL'),
     ],
 
-        'aerodatabox' => [
-        'key' => env('AERODATABOX_API_KEY'),
-        'base_url' => env('AERODATABOX_BASE_URL'),
-    ],
+    //     'aerodatabox' => [
+    //     'key' => env('AERODATABOX_API_KEY'),
+    //     'base_url' => env('AERODATABOX_BASE_URL'),
+    // ],
 
 ];

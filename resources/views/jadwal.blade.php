@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Penerbangan - Abdurachman Saleh Hub</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap');
-        
-        body { 
+
+        body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
             background-image: radial-gradient(#2563eb05 1px, transparent 1px);
@@ -25,7 +25,7 @@
         .status-boarding { color: #2563eb; background: #eff6ff; padding: 6px 12px; border-radius: 8px; border: 1px solid #dbeafe; animation: blink 2s infinite; }
         .status-arrived { color: #1e40af; background: #e0e7ff; padding: 6px 12px; border-radius: 8px; border: 1px solid #c7d2fe; }
         .status-departed { color: #64748b; background: #f1f5f9; padding: 6px 12px; border-radius: 8px; border: 1px solid #e2e8f0; }
-        
+
         @keyframes blink {
             0% { opacity: 1; }
             50% { opacity: 0.6; }
@@ -33,13 +33,13 @@
         }
 
         .glass-header {
-            background: rgba(30, 58, 138, 0.98); 
+            background: rgba(30, 58, 138, 0.98);
             backdrop-filter: blur(10px);
         }
 
-        .tab-active { 
-            background-color: #2563eb; 
-            color: white; 
+        .tab-active {
+            background-color: #2563eb;
+            color: white;
             box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
         }
 
@@ -87,7 +87,7 @@
     </nav>
 
     <main class="container mx-auto px-6 py-12 md:py-20">
-        
+
         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8" data-aos="fade-down">
             <div class="space-y-4">
                 <h6 class="text-blue-600 font-black uppercase tracking-[0.4em] text-[11px] border-b-2 border-blue-600 w-fit pb-1">Flight Information Display</h6>
@@ -96,12 +96,12 @@
                 </h1>
                 <p class="text-slate-500 font-medium text-lg italic no-italic">Bandara Abdurachman Saleh (MLG)</p>
             </div>
-            
+
             <div class="relative w-full lg:w-96 group">
                 <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 group-focus-within:text-blue-600 transition-colors">
                     <i class="fas fa-search text-sm"></i>
                 </span>
-                <input type="text" id="flightSearch" placeholder="Cari maskapai atau nomor..." 
+                <input type="text" id="flightSearch" placeholder="Cari maskapai atau nomor..."
                     class="w-full pl-12 pr-6 py-4 rounded-2xl border-2 border-slate-200 focus:border-blue-600 outline-none transition-all shadow-sm font-semibold text-slate-700">
             </div>
         </div>
@@ -190,111 +190,155 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
-        AOS.init({ duration: 800, once: true });
 
-        // Database Jadwal Penerbangan
-        const flightsData = {
-            departure: [
-                { time: "08:40", city: "Jakarta (CGK)", airline: "Batik Air", flight: "ID-7582", gate: "01" },
-                { time: "10:35", city: "Jakarta (CGK)", airline: "Citilink", flight: "QG-751", gate: "02" },
-                { time: "12:50", city: "Jakarta (HLP)", airline: "Batik Air", flight: "ID-7580", gate: "01" },
-                { time: "13:20", city: "Jakarta (CGK)", airline: "Garuda Indonesia", flight: "GA-291", gate: "03" },
-                { time: "14:45", city: "Jakarta (CGK)", airline: "Batik Air", flight: "ID-7581", gate: "02" }
-            ],
-            arrival: [
-                { time: "08:10", city: "Jakarta (CGK)", airline: "Batik Air", flight: "ID-7583", gate: "A1" },
-                { time: "09:55", city: "Jakarta (CGK)", airline: "Citilink", flight: "QG-750", gate: "A2" },
-                { time: "12:10", city: "Jakarta (HLP)", airline: "Batik Air", flight: "ID-7581", gate: "A1" },
-                { time: "12:45", city: "Jakarta (CGK)", airline: "Garuda Indonesia", flight: "GA-290", gate: "A3" },
-                { time: "14:05", city: "Jakarta (CGK)", airline: "Batik Air", flight: "ID-7582", gate: "A2" }
-            ]
-        };
+    let flightsData = [];
+    let activeTab = 'departure';
 
-        let activeTab = 'departure';
+    // Loading flight data from API
+        function renderSkeleton(rows = 5) {
+        const container = document.getElementById('table-body');
+        container.innerHTML = Array.from({ length: rows }).map(() => `
+            <tr class="animate-pulse">
+                <td class="p-8"><div class="h-8 w-20 bg-slate-200 rounded"></div></td>
+                <td class="p-8">
+                    <div class="h-5 w-48 bg-slate-200 rounded mb-2"></div>
+                    <div class="h-3 w-24 bg-slate-100 rounded"></div>
+                </td>
+                <td class="p-8"><div class="h-5 w-32 bg-slate-200 rounded"></div></td>
+                <td class="p-8 text-center"><div class="h-6 w-20 bg-slate-200 rounded mx-auto"></div></td>
+                <td class="p-8 text-center"><div class="h-6 w-10 bg-slate-200 rounded mx-auto"></div></td>
+                <td class="p-8"><div class="h-6 w-24 bg-slate-200 rounded"></div></td>
+            </tr>
+        `).join('');
+    }
 
-        // Update Jam Header (Setiap 1 Detik)
-        function updateHeaderClock() {
-            const now = new Date();
-            const timeStr = now.getHours().toString().padStart(2, '0') + ":" + 
-                            now.getMinutes().toString().padStart(2, '0') + ":" + 
-                            now.getSeconds().toString().padStart(2, '0');
-            
-            const options = { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' };
-            document.getElementById('header-time').innerText = timeStr;
-            document.getElementById('header-date').innerText = now.toLocaleDateString('id-ID', options).toUpperCase();
-        }
 
-        // Kalkulasi Status Berdasarkan Waktu Rill
-        function getFlightStatus(timeStr, type) {
-            const now = new Date();
-            const [fHour, fMin] = timeStr.split(':').map(Number);
-            const flightTime = new Date();
-            flightTime.setHours(fHour, fMin, 0);
-            const diff = (flightTime - now) / (1000 * 60);
+    async function loadFlights() {
+    renderSkeleton(); // 🔥 tampilkan skeleton dulu
 
-            if (type === 'departure') {
-                if (diff < -10) return { label: "DEPARTED", class: "status-departed" };
-                if (diff <= 0) return { label: "FINAL CALL", class: "status-delay" };
-                if (diff <= 35) return { label: "BOARDING", class: "status-boarding" };
-                return { label: "ON TIME", class: "status-on-time" };
-            } else {
-                if (diff < -5) return { label: "ARRIVED", class: "status-arrived" };
-                if (diff <= 15) return { label: "LANDING", class: "status-boarding" };
-                return { label: "EN ROUTE", class: "status-on-time" };
-            }
-        }
+    try {
+        const res = await fetch(`/api/flights?airport=MLG&type=${activeTab}`);
+        const json = await res.json();
 
-        function switchTab(type) {
-            activeTab = type;
-            document.getElementById('btn-dep').className = type === 'departure' ? 'flex items-center space-x-3 py-4 px-10 rounded-2xl transition-all duration-300 tab-active font-black uppercase text-xs tracking-widest whitespace-nowrap' : 'flex items-center space-x-3 py-4 px-10 rounded-2xl transition-all duration-300 bg-white border border-slate-200 text-slate-500 hover:border-blue-600 font-black uppercase text-xs tracking-widest whitespace-nowrap';
-            document.getElementById('btn-arr').className = type === 'arrival' ? 'flex items-center space-x-3 py-4 px-10 rounded-2xl transition-all duration-300 tab-active font-black uppercase text-xs tracking-widest whitespace-nowrap' : 'flex items-center space-x-3 py-4 px-10 rounded-2xl transition-all duration-300 bg-white border border-slate-200 text-slate-500 hover:border-blue-600 font-black uppercase text-xs tracking-widest whitespace-nowrap';
-            document.getElementById('column-city').innerText = type === 'departure' ? 'Tujuan' : 'Asal';
-            renderData();
-        }
-
-        // Render Tabel (Bisa dipanggil ulang tanpa refresh)
-        function renderData() {
-            const container = document.getElementById('table-body');
-            const search = document.getElementById('flightSearch').value.toLowerCase();
-            
-            const data = flightsData[activeTab].filter(f => 
-                f.airline.toLowerCase().includes(search) || f.flight.toLowerCase().includes(search)
-            );
-
-            container.innerHTML = data.map(f => {
-                const status = getFlightStatus(f.time, activeTab);
-                return `
-                    <tr class="hover:bg-blue-50/50 transition-all duration-500 border-b border-slate-50">
-                        <td class="p-8 font-black text-2xl tracking-tighter text-slate-900 mono-font">${f.time}</td>
-                        <td class="p-8">
-                            <div class="flex flex-col">
-                                <span class="font-black text-slate-900 text-lg uppercase tracking-tight">${f.city}</span>
-                                <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Main Hub MLG</span>
-                            </div>
-                        </td>
-                        <td class="p-8"><span class="font-bold text-slate-700 uppercase text-sm">${f.airline}</span></td>
-                        <td class="p-8 text-center"><span class="font-black px-4 py-2 bg-slate-900 text-white rounded-lg text-xs tracking-widest">${f.flight}</span></td>
-                        <td class="p-8 text-center"><span class="text-slate-900 font-black text-xl">${f.gate}</span></td>
-                        <td class="p-8"><span class="${status.class} text-[10px] font-black uppercase tracking-widest transition-all duration-700">${status.label}</span></td>
-                    </tr>
-                `;
-            }).join('');
-            
-            const now = new Date();
-            document.getElementById('last-update').innerText = now.getHours().toString().padStart(2, '0') + ":" + now.getMinutes().toString().padStart(2, '0');
-        }
-
-        // Search listener
-        document.getElementById('flightSearch').addEventListener('input', renderData);
-        
-        // Timer Loop
-        setInterval(updateHeaderClock, 1000); // Detik di header
-        setInterval(renderData, 60000); // Auto-update status setiap 1 menit tanpa refresh
-        
-        // Initial load
-        updateHeaderClock();
+        flightsData = json.data || [];
         renderData();
-    </script>
+
+    } catch (e) {
+        console.error("Gagal ambil data flight", e);
+        document.getElementById('table-body').innerHTML = `
+            <tr>
+                <td colspan="6" class="p-10 text-center text-red-600 font-bold">
+                    Gagal memuat data penerbangan
+                </td>
+            </tr>
+        `;
+    }
+}
+
+
+    AOS.init({ duration: 800, once: true });
+
+    function updateHeaderClock() {
+        const now = new Date();
+        const timeStr =
+            now.getHours().toString().padStart(2, '0') + ":" +
+            now.getMinutes().toString().padStart(2, '0') + ":" +
+            now.getSeconds().toString().padStart(2, '0');
+
+        const options = { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' };
+        document.getElementById('header-time').innerText = timeStr;
+        document.getElementById('header-date').innerText =
+            now.toLocaleDateString('id-ID', options).toUpperCase();
+    }
+
+    function getFlightStatus(timeStr, type) {
+        const now = new Date();
+        const [fHour, fMin] = timeStr.split(':').map(Number);
+        const flightTime = new Date();
+        flightTime.setHours(fHour, fMin, 0);
+        const diff = (flightTime - now) / (1000 * 60);
+
+        if (type === 'departure') {
+            if (diff < -10) return { label: "DEPARTED", class: "status-departed" };
+            if (diff <= 0) return { label: "FINAL CALL", class: "status-delay" };
+            if (diff <= 35) return { label: "BOARDING", class: "status-boarding" };
+            return { label: "ON TIME", class: "status-on-time" };
+        } else {
+            if (diff < -5) return { label: "ARRIVED", class: "status-arrived" };
+            if (diff <= 15) return { label: "LANDING", class: "status-boarding" };
+            return { label: "EN ROUTE", class: "status-on-time" };
+        }
+    }
+
+    function switchTab(type) {
+        activeTab = type;
+
+        document.getElementById('btn-dep').className =
+            type === 'departure'
+                ? 'flex items-center space-x-3 py-4 px-10 rounded-2xl tab-active font-black uppercase text-xs tracking-widest'
+                : 'flex items-center space-x-3 py-4 px-10 rounded-2xl bg-white border text-slate-500 font-black uppercase text-xs tracking-widest';
+
+        document.getElementById('btn-arr').className =
+            type === 'arrival'
+                ? 'flex items-center space-x-3 py-4 px-10 rounded-2xl tab-active font-black uppercase text-xs tracking-widest'
+                : 'flex items-center space-x-3 py-4 px-10 rounded-2xl bg-white border text-slate-500 font-black uppercase text-xs tracking-widest';
+
+        document.getElementById('column-city').innerText =
+            type === 'departure' ? 'Tujuan' : 'Asal';
+
+        loadFlights();
+    }
+
+    function renderData() {
+        const container = document.getElementById('table-body');
+        const search = document.getElementById('flightSearch').value.toLowerCase();
+
+        const data = flightsData.filter(f =>
+            f.airline.toLowerCase().includes(search) ||
+            f.flight.toLowerCase().includes(search)
+        );
+
+        container.innerHTML = data.map(f => {
+            const status = getFlightStatus(f.time, activeTab);
+            return `
+                <tr class="hover:bg-blue-50/50 transition-all">
+                    <td class="p-8 font-black text-2xl mono-font">${f.time}</td>
+                    <td class="p-8">
+                        <div>
+                            <span class="font-black uppercase">${f.city}</span>
+                            <span class="block text-[10px] text-blue-600">Main Hub MLG</span>
+                        </div>
+                    </td>
+                    <td class="p-8 font-bold uppercase">${f.airline}</td>
+                    <td class="p-8 text-center">
+                        <span class="bg-slate-900 text-white px-4 py-2 rounded-lg text-xs">
+                            ${f.flight}
+                        </span>
+                    </td>
+                    <td class="p-8 text-center font-black">${f.gate}</td>
+                    <td class="p-8">
+                        <span class="${status.class} text-[10px] font-black uppercase">
+                            ${status.label}
+                        </span>
+                    </td>
+                </tr>
+            `;
+        }).join('');
+
+        document.getElementById('last-update').innerText =
+            new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+    }
+
+    document.getElementById('flightSearch').addEventListener('input', renderData);
+
+    setInterval(updateHeaderClock, 1000);
+    setInterval(loadFlights, 60000);
+
+    updateHeaderClock();
+    loadFlights();
+</script>
+
 </body>
 </html>

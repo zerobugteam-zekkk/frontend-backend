@@ -341,10 +341,39 @@ function renderData() {
 function switchTab(type) {
     activeTab = type;
 
-    document.getElementById('column-city').innerText =
-        type === 'departure' ? 'Tujuan' : 'Asal';
+    const btnDep = document.getElementById('btn-dep');
+    const btnArr = document.getElementById('btn-arr');
 
-    loadFlights(true); // paksa API saat ganti tab
+    if (type === 'departure') {
+        // aktifkan keberangkatan
+        btnDep.classList.add('tab-active');
+        btnArr.classList.remove('tab-active');
+
+        btnArr.classList.add(
+            'bg-white', 'border', 'border-slate-200', 'text-slate-500'
+        );
+        btnDep.classList.remove(
+            'bg-white', 'border', 'border-slate-200', 'text-slate-500'
+        );
+
+        document.getElementById('column-city').innerText = 'Tujuan';
+    } else {
+        // aktifkan kedatangan
+        btnArr.classList.add('tab-active');
+        btnDep.classList.remove('tab-active');
+
+        btnDep.classList.add(
+            'bg-white', 'border', 'border-slate-200', 'text-slate-500'
+        );
+        btnArr.classList.remove(
+            'bg-white', 'border', 'border-slate-200', 'text-slate-500'
+        );
+
+        document.getElementById('column-city').innerText = 'Asal';
+    }
+
+    // paksa load API saat ganti tab
+    loadFlights(true);
 }
 
 /* =============================

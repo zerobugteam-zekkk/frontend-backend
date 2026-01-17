@@ -81,3 +81,4 @@ class FlightController extends Controller
         return response()->json($data);
     }
 }
+

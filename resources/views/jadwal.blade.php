@@ -189,42 +189,60 @@
         </p>
     </footer>
 
+    {{-- JavaScript Functions --}}
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+/* =============================
+   CONFIG
+============================= */
+let flightsData = [];
+let activeTab = 'departure';
 
-    <script>
+let lastApiFetch = 0;
+const API_INTERVAL = 10 * 60 * 1000; // 10 menit
 
-    let flightsData = [];
-    let activeTab = 'departure';
+/* =============================
+   SKELETON LOADING
+============================= */
+function renderSkeleton(rows = 5) {
+    const container = document.getElementById('table-body');
+    container.innerHTML = Array.from({ length: rows }).map(() => `
+        <tr class="animate-pulse">
+            <td class="p-8"><div class="h-8 w-20 bg-slate-200 rounded"></div></td>
+            <td class="p-8">
+                <div class="h-5 w-48 bg-slate-200 rounded mb-2"></div>
+                <div class="h-3 w-24 bg-slate-100 rounded"></div>
+            </td>
+            <td class="p-8"><div class="h-5 w-32 bg-slate-200 rounded"></div></td>
+            <td class="p-8 text-center"><div class="h-6 w-20 bg-slate-200 rounded mx-auto"></div></td>
+            <td class="p-8 text-center"><div class="h-6 w-10 bg-slate-200 rounded mx-auto"></div></td>
+            <td class="p-8"><div class="h-6 w-24 bg-slate-200 rounded"></div></td>
+        </tr>
+    `).join('');
+}
 
-    // Loading flight data from API
-        function renderSkeleton(rows = 5) {
-        const container = document.getElementById('table-body');
-        container.innerHTML = Array.from({ length: rows }).map(() => `
-            <tr class="animate-pulse">
-                <td class="p-8"><div class="h-8 w-20 bg-slate-200 rounded"></div></td>
-                <td class="p-8">
-                    <div class="h-5 w-48 bg-slate-200 rounded mb-2"></div>
-                    <div class="h-3 w-24 bg-slate-100 rounded"></div>
-                </td>
-                <td class="p-8"><div class="h-5 w-32 bg-slate-200 rounded"></div></td>
-                <td class="p-8 text-center"><div class="h-6 w-20 bg-slate-200 rounded mx-auto"></div></td>
-                <td class="p-8 text-center"><div class="h-6 w-10 bg-slate-200 rounded mx-auto"></div></td>
-                <td class="p-8"><div class="h-6 w-24 bg-slate-200 rounded"></div></td>
-            </tr>
-        `).join('');
+/* =============================
+   LOAD DATA (API CERDAS)
+============================= */
+async function loadFlights(force = false) {
+    const now = Date.now();
+
+    // ❌ Jangan hit API kalau belum waktunya
+    if (!force && flightsData.length && (now - lastApiFetch < API_INTERVAL)) {
+        renderData();
+        return;
     }
 
-
-    async function loadFlights() {
-    renderSkeleton(); // 🔥 tampilkan skeleton dulu
+    renderSkeleton();
 
     try {
         const res = await fetch(`/api/flights?airport=MLG&type=${activeTab}`);
         const json = await res.json();
 
         flightsData = json.data || [];
-        renderData();
+        lastApiFetch = now;
 
+        renderData();
     } catch (e) {
         console.error("Gagal ambil data flight", e);
         document.getElementById('table-body').innerHTML = `
@@ -237,107 +255,118 @@
     }
 }
 
+/* =============================
+   CLOCK HEADER
+============================= */
+function updateHeaderClock() {
+    const now = new Date();
+    document.getElementById('header-time').innerText =
+        now.toLocaleTimeString('id-ID');
+    document.getElementById('header-date').innerText =
+        now.toLocaleDateString('id-ID', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+        }).toUpperCase();
+}
 
-    AOS.init({ duration: 800, once: true });
+/* =============================
+   STATUS SIMULATION (REAL-TIME PALSU)
+============================= */
+function getFlightStatus(timeStr, type) {
+    const now = new Date();
+    const [h, m] = timeStr.split(':').map(Number);
+    const flightTime = new Date();
+    flightTime.setHours(h, m, 0);
 
-    function updateHeaderClock() {
-        const now = new Date();
-        const timeStr =
-            now.getHours().toString().padStart(2, '0') + ":" +
-            now.getMinutes().toString().padStart(2, '0') + ":" +
-            now.getSeconds().toString().padStart(2, '0');
+    const diff = (flightTime - now) / 60000;
 
-        const options = { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' };
-        document.getElementById('header-time').innerText = timeStr;
-        document.getElementById('header-date').innerText =
-            now.toLocaleDateString('id-ID', options).toUpperCase();
+    if (type === 'departure') {
+        if (diff < -10) return { label: "DEPARTED", class: "status-departed" };
+        if (diff <= 0) return { label: "FINAL CALL", class: "status-delay" };
+        if (diff <= 35) return { label: "BOARDING", class: "status-boarding" };
+        return { label: "ON TIME", class: "status-on-time" };
+    } else {
+        if (diff < -5) return { label: "ARRIVED", class: "status-arrived" };
+        if (diff <= 15) return { label: "LANDING", class: "status-boarding" };
+        return { label: "EN ROUTE", class: "status-on-time" };
     }
+}
 
-    function getFlightStatus(timeStr, type) {
-        const now = new Date();
-        const [fHour, fMin] = timeStr.split(':').map(Number);
-        const flightTime = new Date();
-        flightTime.setHours(fHour, fMin, 0);
-        const diff = (flightTime - now) / (1000 * 60);
+/* =============================
+   RENDER TABLE
+============================= */
+function renderData() {
+    const container = document.getElementById('table-body');
+    const search = document.getElementById('flightSearch').value.toLowerCase();
 
-        if (type === 'departure') {
-            if (diff < -10) return { label: "DEPARTED", class: "status-departed" };
-            if (diff <= 0) return { label: "FINAL CALL", class: "status-delay" };
-            if (diff <= 35) return { label: "BOARDING", class: "status-boarding" };
-            return { label: "ON TIME", class: "status-on-time" };
-        } else {
-            if (diff < -5) return { label: "ARRIVED", class: "status-arrived" };
-            if (diff <= 15) return { label: "LANDING", class: "status-boarding" };
-            return { label: "EN ROUTE", class: "status-on-time" };
-        }
-    }
+    const data = flightsData.filter(f =>
+        f.airline.toLowerCase().includes(search) ||
+        f.flight.toLowerCase().includes(search)
+    );
 
-    function switchTab(type) {
-        activeTab = type;
+    container.innerHTML = data.map(f => {
+        const status = getFlightStatus(f.time, activeTab);
+        return `
+            <tr class="hover:bg-blue-50/50 transition-all">
+                <td class="p-8 font-black text-2xl mono-font">${f.time}</td>
+                <td class="p-8">
+                    <span class="font-black uppercase">${f.city}</span>
+                    <span class="block text-[10px] text-blue-600">Main Hub MLG</span>
+                </td>
+                <td class="p-8 font-bold uppercase">${f.airline}</td>
+                <td class="p-8 text-center">
+                    <span class="bg-slate-900 text-white px-4 py-2 rounded-lg text-xs">
+                        ${f.flight}
+                    </span>
+                </td>
+                <td class="p-8 text-center font-black">${f.gate}</td>
+                <td class="p-8">
+                    <span class="${status.class} text-[10px] font-black uppercase">
+                        ${status.label}
+                    </span>
+                </td>
+            </tr>
+        `;
+    }).join('');
 
-        document.getElementById('btn-dep').className =
-            type === 'departure'
-                ? 'flex items-center space-x-3 py-4 px-10 rounded-2xl tab-active font-black uppercase text-xs tracking-widest'
-                : 'flex items-center space-x-3 py-4 px-10 rounded-2xl bg-white border text-slate-500 font-black uppercase text-xs tracking-widest';
+    document.getElementById('last-update').innerText =
+        new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+}
 
-        document.getElementById('btn-arr').className =
-            type === 'arrival'
-                ? 'flex items-center space-x-3 py-4 px-10 rounded-2xl tab-active font-black uppercase text-xs tracking-widest'
-                : 'flex items-center space-x-3 py-4 px-10 rounded-2xl bg-white border text-slate-500 font-black uppercase text-xs tracking-widest';
+/* =============================
+   TAB SWITCH
+============================= */
+function switchTab(type) {
+    activeTab = type;
 
-        document.getElementById('column-city').innerText =
-            type === 'departure' ? 'Tujuan' : 'Asal';
+    document.getElementById('column-city').innerText =
+        type === 'departure' ? 'Tujuan' : 'Asal';
 
-        loadFlights();
-    }
+    loadFlights(true); // paksa API saat ganti tab
+}
 
-    function renderData() {
-        const container = document.getElementById('table-body');
-        const search = document.getElementById('flightSearch').value.toLowerCase();
+/* =============================
+   INIT
+============================= */
+document.getElementById('flightSearch').addEventListener('input', renderData);
 
-        const data = flightsData.filter(f =>
-            f.airline.toLowerCase().includes(search) ||
-            f.flight.toLowerCase().includes(search)
-        );
+AOS.init({ duration: 800, once: true });
 
-        container.innerHTML = data.map(f => {
-            const status = getFlightStatus(f.time, activeTab);
-            return `
-                <tr class="hover:bg-blue-50/50 transition-all">
-                    <td class="p-8 font-black text-2xl mono-font">${f.time}</td>
-                    <td class="p-8">
-                        <div>
-                            <span class="font-black uppercase">${f.city}</span>
-                            <span class="block text-[10px] text-blue-600">Main Hub MLG</span>
-                        </div>
-                    </td>
-                    <td class="p-8 font-bold uppercase">${f.airline}</td>
-                    <td class="p-8 text-center">
-                        <span class="bg-slate-900 text-white px-4 py-2 rounded-lg text-xs">
-                            ${f.flight}
-                        </span>
-                    </td>
-                    <td class="p-8 text-center font-black">${f.gate}</td>
-                    <td class="p-8">
-                        <span class="${status.class} text-[10px] font-black uppercase">
-                            ${status.label}
-                        </span>
-                    </td>
-                </tr>
-            `;
-        }).join('');
+updateHeaderClock();
+loadFlights(true);
 
-        document.getElementById('last-update').innerText =
-            new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-    }
+/* =============================
+   INTERVALS
+============================= */
+setInterval(updateHeaderClock, 1000);
 
-    document.getElementById('flightSearch').addEventListener('input', renderData);
+// update status tiap menit (TANPA API)
+setInterval(() => renderData(), 60000);
 
-    setInterval(updateHeaderClock, 1000);
-    setInterval(loadFlights, 60000);
-
-    updateHeaderClock();
-    loadFlights();
+// cek API tiap menit, tapi hit hanya kalau cache expired
+setInterval(() => loadFlights(false), 60000);
 </script>
 
 </body>

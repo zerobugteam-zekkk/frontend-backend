@@ -28,19 +28,19 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        #mobile-menu { 
-            transition: all 0.3s ease-in-out; 
-            max-height: 0; 
-            overflow: hidden; 
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
         }
-        #mobile-menu.show { 
-            max-height: 500px; 
+        #mobile-menu.show {
+            max-height: 500px;
             padding-bottom: 2rem;
         }
 
         .main-bg-pattern {
             background-color: #f8fafc;
-            background-image: 
+            background-image:
                 radial-gradient(#1c54ed08 1px, transparent 1px),
                 radial-gradient(#1c54ed08 1px, #f8fafc 1px);
             background-size: 40px 40px;
@@ -58,22 +58,6 @@
             z-index: -1;
         }
 
-        /* Chatbot Style dengan aksen Biru */
-        #chat-window {
-            display: none;
-            flex-direction: column;
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 320px;
-            height: 400px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            z-index: 100;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-        }
         #chat-messages {
             flex: 1;
             overflow-y: auto;
@@ -85,9 +69,9 @@
 <style>
         .blue-custom { color: #1c54ed; }
         .bg-blue-custom { background-color: #1c54ed; }
-        
+
         /* Mencegah scroll horizontal secara total */
-        html, body { 
+        html, body {
             max-width: 100%;
             overflow-x: hidden;
             scroll-behavior: smooth;
@@ -149,7 +133,7 @@
             background-size: 20px 20px;
         }
     </style>
-    
+
 </head>
 <script>
    // FUNGSI JAM & CUACA (Tetap berfungsi seperti sebelumnya)
@@ -165,7 +149,7 @@
 
     async function fetchWeather() {
         const apiKey = '8a8db4b35f665e7cb03b00081f767e4b';
-        const lat = -7.9266; 
+        const lat = -7.9266;
         const lon = 112.7136;
         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=id&t=${Date.now()}`;
 
@@ -178,7 +162,7 @@
                 const iconEl = document.getElementById('weather-icon');
                 const id = data.weather[0].id;
                 // Warna icon cuaca disesuaikan ke Biru
-                iconEl.className = (id >= 200 && id < 600) ? 'fas fa-cloud-showers-heavy mr-2 text-blue-500' : 
+                iconEl.className = (id >= 200 && id < 600) ? 'fas fa-cloud-showers-heavy mr-2 text-blue-500' :
                                    (id === 800) ? 'fas fa-sun mr-2 text-orange-400' : 'fas fa-cloud mr-2 text-slate-400';
             }
         } catch (error) { console.error("Gagal ambil data:", error); }
@@ -201,11 +185,11 @@
         <div class="container mx-auto px-6 flex justify-between items-center font-bold">
            <div class="flex space-x-6">
                 <span class="flex items-center">
-                    <i class="fas fa-clock mr-2 text-blue-500"></i> 
+                    <i class="fas fa-clock mr-2 text-blue-500"></i>
                     <span id="realtime-clock">--:--</span>&nbsp;WIB
                 </span>
                 <span class="hidden md:flex items-center">
-                    <i id="weather-icon" class="fas fa-cloud-sun mr-2 text-orange-400"></i> 
+                    <i id="weather-icon" class="fas fa-cloud-sun mr-2 text-orange-400"></i>
                     <span id="weather-temp">--</span>°C MALANG
                 </span>
             </div>
@@ -254,22 +238,22 @@
         <div class="container mx-auto px-6 flex justify-between items-center font-bold">
            <div class="flex space-x-6">
     <span class="flex items-center">
-        <i class="fas fa-clock mr-2 text-red-500"></i> 
+        <i class="fas fa-clock mr-2 text-red-500"></i>
         <span id="realtime-clock">--:--</span>&nbsp;WIB
     </span>
-    
+
     <span class="hidden md:flex items-center">
-        <i id="weather-icon" class="fas fa-cloud-sun mr-2 text-orange-400"></i> 
+        <i id="weather-icon" class="fas fa-cloud-sun mr-2 text-orange-400"></i>
         <span id="weather-temp">--</span>°C MALANG
     </span>
 </div>
             <div class="flex space-x-6">
-    <a href="{{ url('/fasilitas') }}" 
+    <a href="{{ url('/fasilitas') }}"
        class="font-bold text-sm uppercase tracking-tight pb-1 transition border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 {{ Request::is('fasilitas') ? 'text-blue-600 border-blue-600' : 'text-slate-600' }}">
         Fasilitas
     </a>
 
-    <a href="{{ url('/bantuan') }}" 
+    <a href="{{ url('/bantuan') }}"
        class="font-bold text-sm uppercase tracking-tight pb-1 transition border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 {{ Request::is('bantuan') ? 'text-blue-600 border-blue-600' : 'text-slate-600' }}">
         Bantuan
     </a>
@@ -278,7 +262,7 @@
 
    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
     <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-        
+
 <a href="{{ url('/') }}" class="flex items-center space-x-3">
     <div class="bg-red-600 p-2 rounded-lg">
         <i class="fas fa-plane-departure text-white text-sm"></i>
@@ -309,10 +293,10 @@
 
     <div class="relative hidden sm:block group">
     <form action="{{ url('/jadwal') }}" method="GET" class="relative">
-        <input 
-            type="text" 
-            name="search" 
-            placeholder="Cari rute penerbangan..." 
+        <input
+            type="text"
+            name="search"
+            placeholder="Cari rute penerbangan..."
             class="bg-slate-100 text-slate-900 text-[11px] font-bold uppercase tracking-wider py-2.5 pl-5 pr-12 rounded-full border border-transparent focus:border-red-600 focus:bg-white focus:ring-4 focus:ring-red-600/5 transition-all outline-none w-48 md:w-64"
         >
         <button type="submit" class="absolute right-1 top-1 bg-slate-900 text-white p-2 rounded-full hover:bg-red-600 transition-all group-hover:scale-95">
@@ -349,7 +333,7 @@
 </script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700;900&display=swap');
-    
+
     .font-formal {
         font-family: 'Libre Franklin', sans-serif;
     }
@@ -366,14 +350,14 @@
 
 <header class="relative h-[90vh] flex flex-col justify-center overflow-hidden bg-slate-900 font-formal">
     <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
-         class="absolute inset-0 w-full h-full object-cover opacity-40" 
+         class="absolute inset-0 w-full h-full object-cover opacity-40"
          alt="Gerbang Udara Malang">
-    
+
     <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/70 to-transparent"></div>
 
     <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-4xl pt-20"> 
-            
+        <div class="max-w-4xl pt-20">
+
             <div class="mb-8 animate-fade-up" data-aos="fade-up" data-aos-duration="800">
                 <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.85] uppercase tracking-tighter">
                     Gerbang Udara <br>
@@ -382,19 +366,19 @@
                     </span>
                 </h1>
             </div>
-            
-            <div class="max-w-xl mb-12 animate-fade-up" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"> 
+
+            <div class="max-w-xl mb-12 animate-fade-up" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                 <p class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed opacity-90 border-l-4 border-blue-600 pl-6 text-justify">
                     Bandara Abdurachman Saleh Malang merupakan salah satu pilar transportasi utama yang menghubungkan keindahan Malang Raya dengan berbagai kota besar di Nusantara, menyatukan kenyamanan modern dengan nilai sejarah yang mendalam.
                 </p>
             </div>
-            
+
             <div class="flex flex-wrap gap-5 animate-fade-up" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                <a href="{{ url('/jadwal') }}" 
+                <a href="{{ url('/jadwal') }}"
                    class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest transition-all transform hover:scale-105 shadow-2xl shadow-blue-600/30">
                     Cek Keberangkatan
                 </a>
-                <a href="{{ url('/sejarah') }}" 
+                <a href="{{ url('/sejarah') }}"
                    class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest transition-all hover:border-blue-400">
                     Eksplor Sejarah
                 </a>
@@ -447,9 +431,9 @@
             <div class="flex flex-col lg:flex-row gap-8 lg:gap-24 items-center">
                 <div class="w-full lg:w-1/2 relative" data-aos="fade-right" data-aos-duration="800">
                     <div class="absolute -bottom-12 -left-12 w-40 md:w-64 h-40 md:h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60"></div>
-                    
+
                     <div class="relative z-10 rounded-2xl md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
-                        <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1000" 
+                        <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1000"
                              alt="Historical Archive"
                              class="w-full h-[300px] md:h-[400px] lg:h-[500px] grayscale hover:grayscale-0 transition-all duration-1000 object-cover scale-105 hover:scale-100">
                     </div>
@@ -470,7 +454,7 @@
                             <span class="text-blue-600">Abdurachman</span> Saleh
                         </h2>
                     </div>
-                    
+
                     <div class="space-y-4 md:space-y-6 text-slate-600 leading-relaxed font-normal text-sm md:text-lg">
                         <p class="text-justify">
                             Dinamakan berdasarkan pahlawan nasional <strong class="text-slate-900 font-bold">Prof. Dr. Abdurachman Saleh</strong>, bandara ini memiliki akar militer yang kuat sebagai pangkalan udara (Lanud) utama di Jawa Timur. Lokasinya yang dikelilingi oleh <span class="text-slate-800 font-semibold">Gunung Arjuno, Gunung Semeru, dan Gunung Bromo</span> menjadikannya salah satu bandara dengan pemandangan terindah namun menantang di Indonesia.
@@ -562,12 +546,12 @@
 
             <div class="max-w-6xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start">
-                    
+
                     <div class="lg:col-span-5" data-aos="fade-right" data-aos-duration="800">
                         <div class="sticky top-24">
                             <div class="bg-slate-900 p-8 md:p-12 rounded-2xl md:rounded-[3rem] shadow-2xl text-white relative overflow-hidden">
                                 <i class="fas fa-quote-right absolute -right-4 -bottom-4 text-white/5 text-6xl md:text-9xl"></i>
-                                
+
                                 <h4 class="text-blue-400 font-black uppercase tracking-widest text-xs mb-4 md:mb-6 flex items-center gap-3">
                                     <span class="w-8 h-[1px] bg-blue-400"></span> Filosofi Utama
                                 </h4>
@@ -627,7 +611,7 @@
 </div>
 <section id="facilities" class="bg-slate-900 rounded-2xl md:rounded-[3rem] lg:rounded-[5rem] p-8 md:p-16 lg:p-24 text-white overflow-hidden relative shadow-3xl font-formal mx-6 lg:mx-auto" data-aos="zoom-in" data-aos-duration="800">
     <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 skew-x-12 translate-x-32"></div>
-    
+
     <div class="relative z-10">
         <div class="text-center mb-12 md:mb-20">
             <h2 class="text-2xl md:text-5xl font-black uppercase tracking-tighter italic">Layanan Terminal</h2>
@@ -636,7 +620,7 @@
         </div>
 
         <div class="flex overflow-x-auto gap-6 md:gap-8 pb-8 md:pb-12 snap-x no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
-            
+
             <div class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px] bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem] border border-white/10 hover:bg-white/10 transition-all group snap-center" data-aos="flip-left" data-aos-duration="800">
                 <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform">
                     <i class="fas fa-couch text-blue-500 text-xl md:text-2xl"></i>
@@ -646,7 +630,7 @@
                     Fasilitas ruang tunggu eksklusif yang terletak strategis di lantai 2 terminal keberangkatan. Lounge ini dirancang khusus untuk memberikan kenyamanan paripurna bagi penumpang kelas bisnis dan mitra perbankan. Tersedia hidangan prasmanan khas nusantara, area kerja dengan koneksi internet berkecepatan tinggi, serta ruang ibadah pribadi.
                 </p>
             </div>
-            
+
             <div class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px] bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem] border border-white/10 hover:bg-white/10 transition-all group snap-center" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
                 <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform">
                     <i class="fas fa-store text-blue-500 text-xl md:text-2xl"></i>
@@ -656,7 +640,7 @@
                     Pusat perbelanjaan terminal yang menghadirkan sinergi antara gerai modern dan UMKM lokal unggulan Malang Raya. Para penumpang dapat menemukan berbagai pilihan buah tangan otentik seperti Keripik Tempe Sanan, Apel Manalagi segar, hingga olahan bakso kemasan vakum.
                 </p>
             </div>
-            
+
             <div class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px] bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem] border border-white/10 hover:bg-white/10 transition-all group snap-center" data-aos="flip-left" data-aos-duration="800" data-aos-delay="200">
                 <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform">
                     <i class="fas fa-wheelchair text-blue-500 text-xl md:text-2xl"></i>
@@ -676,7 +660,7 @@
                     Bandara Abdurachman Saleh mendukung kebutuhan digital para pelancong dengan menyediakan akses Wi-Fi gratis di seluruh area terminal penumpang. Selain itu, tersedia stasiun pengisian daya (charging station) yang tersebar di area ruang tunggu untuk memastikan perangkat Anda tetap aktif.
                 </p>
             </div>
-            
+
         </div>
 
         <div class="flex justify-center gap-2 mt-4 animate-pulse">
@@ -703,7 +687,7 @@
 <footer class="bg-white/70 backdrop-blur-md border-t border-blue-100 pt-20 md:pt-32 pb-12 md:pb-16 relative z-10 font-sans">
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-16 md:mb-24">
-            
+
             <div class="col-span-1 md:col-span-1 lg:col-span-2" data-aos="fade-up" data-aos-duration="800">
                 <div class="flex items-center space-x-3 md:space-x-4 mb-8 md:mb-10 group">
                     <div class="p-2 md:p-2.5 bg-blue-600 rounded-lg md:rounded-xl shadow-lg shadow-blue-200 group-hover:rotate-6 transition-transform">
@@ -717,16 +701,16 @@
                     Otoritas Bandara Kelas II - Melayani konektivitas udara yang aman, nyaman, dan terpercaya bagi masyarakat Indonesia.
                 </p>
                 <div class="flex space-x-4 md:space-x-5">
-                    <a href="https://www.instagram.com/abdulrachmansaleh_airport" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
+                    <a href="https://www.instagram.com/abdulrachmansaleh_airport"
+                       target="_blank"
+                       rel="noopener noreferrer"
                        class="w-12 md:w-14 h-12 md:h-14 rounded-xl md:rounded-2xl bg-white flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all shadow-sm border border-slate-100 hover:-translate-y-1">
                         <i class="fab fa-instagram text-lg md:text-xl"></i>
                     </a>
 
-                    <a href="https://www.facebook.com/bandaraabd.saleh/" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
+                    <a href="https://www.facebook.com/bandaraabd.saleh/"
+                       target="_blank"
+                       rel="noopener noreferrer"
                        class="w-12 md:w-14 h-12 md:h-14 rounded-xl md:rounded-2xl bg-white flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all shadow-sm border border-slate-100 hover:-translate-y-1">
                         <i class="fab fa-facebook-f text-lg md:text-xl"></i>
                     </a>
@@ -742,42 +726,42 @@
     <ul class="text-[10px] md:text-[12px] text-slate-500 space-y-3 md:space-y-5 font-bold uppercase tracking-[0.15em]">
         <li>
             <a href="{{ url('/panduan-checkin') }}" class="group flex items-center hover:text-red-600 transition-all duration-300">
-                <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i> 
+                <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
                 <span>Panduan Check-in</span>
             </a>
         </li>
 
         <li>
             <a href="{{ url('/keamanan') }}" class="group flex items-center hover:text-red-600 transition-all duration-300">
-                <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i> 
+                <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
                 <span>Prosedur Keamanan</span>
             </a>
         </li>
 
         <li>
             <a href="{{ url('/layanan-cargo') }}" class="group flex items-center hover:text-red-600 transition-all duration-300">
-                <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i> 
+                <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
                 <span>Layanan Kargo</span>
             </a>
         </li>
 
         <li>
             <a href="{{ url('/jam-operasional') }}" class="group flex items-center hover:text-red-600 transition-all duration-300">
-                <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i> 
+                <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
                 <span>Jam Operasional</span>
             </a>
         </li>
     </ul>
-</div>       
+</div>
             <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                 <h5 class="font-black uppercase text-[10px] md:text-[11px] tracking-[0.4em] text-blue-600 mb-6 md:mb-12">Hubungi Kami</h5>
                 <div class="text-[10px] md:text-[12px] text-slate-500 space-y-4 md:space-y-7 font-bold uppercase tracking-[0.15em]">
                     <p class="flex items-start leading-relaxed">
-                        <i class="fas fa-phone mr-2 md:mr-4 text-blue-600 mt-0.5"></i> 
+                        <i class="fas fa-phone mr-2 md:mr-4 text-blue-600 mt-0.5"></i>
                         <span class="text-slate-700">(0341) 791554</span>
                     </p>
                     <p class="flex items-start leading-relaxed lowercase">
-                        <i class="fas fa-envelope mr-2 md:mr-4 text-blue-600 mt-0.5"></i> 
+                        <i class="fas fa-envelope mr-2 md:mr-4 text-blue-600 mt-0.5"></i>
                         <span class="text-slate-700 font-bold uppercase tracking-wider">info@mlg-airport.id</span>
                     </p>
                 </div>
@@ -791,43 +775,6 @@
         </div>
     </div>
 </footer>
-
-<button id="chat-toggle" class="fixed bottom-6 right-6 w-16 h-16 bg-blue-600 text-white rounded-full shadow-[0_10px_25px_rgba(37,99,235,0.4)] z-[100] hover:scale-110 active:scale-95 transition-all flex items-center justify-center">
-    <i class="fas fa-comment-dots text-2xl"></i>
-</button>
-
-<div id="chat-window" class="fixed bottom-24 right-6 w-[350px] max-h-[500px] bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-[100] flex-col hidden overflow-hidden border border-blue-50">
-    <div class="bg-blue-600 p-5 text-white font-bold flex justify-between items-center shadow-lg">
-        <span class="flex items-center gap-3 text-xs uppercase tracking-widest">
-            <div class="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse border-2 border-blue-500"></div>
-            MLG Assistant
-        </span>
-        <button id="close-chat" class="hover:rotate-90 transition-transform p-1">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-    
-    <div id="chat-messages" class="bg-slate-50 flex-1 overflow-y-auto p-5 flex flex-col gap-4 custom-scrollbar" style="height: 350px;">
-        <div class="flex justify-start">
-            <span class="bg-white border border-blue-50 p-4 rounded-2xl rounded-tl-none shadow-sm text-slate-700 text-sm leading-relaxed">
-                Halo! Saya asisten virtual Bandara. Klik bantuan cepat di bawah atau ketik pertanyaan Anda.
-            </span>
-        </div>
-        
-        <div class="flex flex-wrap gap-2 mt-2">
-            <button onclick="quickAction('Jadwal')" class="text-[9px] bg-white border border-blue-200 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition shadow-sm font-black uppercase tracking-wider">Cek Jadwal</button>
-            <button onclick="quickAction('Parkir')" class="text-[9px] bg-white border border-blue-200 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition shadow-sm font-black uppercase tracking-wider">Info Parkir</button>
-            <button onclick="quickAction('Lokasi')" class="text-[9px] bg-white border border-blue-200 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition shadow-sm font-black uppercase tracking-wider">Lokasi</button>
-        </div>
-    </div>
-
-    <div class="p-4 border-t bg-white flex gap-3">
-        <input type="text" id="chat-input" placeholder="Tanya sesuatu..." class="flex-1 text-sm outline-none border border-slate-100 bg-slate-50 rounded-full px-5 py-3 focus:ring-2 focus:ring-blue-600/20 transition-all">
-        <button id="send-btn" class="bg-blue-600 text-white w-11 h-11 rounded-full flex items-center justify-center hover:bg-slate-900 transition-all shadow-lg shadow-blue-200">
-            <i class="fas fa-paper-plane text-xs"></i>
-        </button>
-    </div>
-</div>
 
 <style>
     /* Custom Scrollbar Animation */
@@ -846,11 +793,6 @@
         background: #2563eb;
     }
 
-    #chat-window.show {
-        display: flex !important;
-        animation: slideUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    }
-
     @keyframes slideUp {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -861,88 +803,21 @@
     }
 
     @keyframes welcomeFade {
-        from { 
-            opacity: 0; 
+        from {
+            opacity: 0;
             transform: translateY(10px);
             filter: blur(8px);
         }
-        to { 
-            opacity: 1; 
+        to {
+            opacity: 1;
             transform: translateY(0);
             filter: blur(0);
         }
     }
 </style>
 
-<script>
-    // Elements
-    const chatToggle = document.getElementById('chat-toggle');
-    const chatWindow = document.getElementById('chat-window');
-    const closeChat = document.getElementById('close-chat');
-    const chatMessages = document.getElementById('chat-messages');
-    const chatInput = document.getElementById('chat-input');
-    const sendBtn = document.getElementById('send-btn');
-
-    // Toggle Chat
-    chatToggle.onclick = () => {
-        chatWindow.classList.toggle('show');
-    };
-
-    closeChat.onclick = () => {
-        chatWindow.classList.remove('show');
-    };
-
-    // Add Message Function
-    function addMessage(text, isUser = false) {
-        const div = document.createElement('div');
-        div.className = `flex ${isUser ? 'justify-end' : 'justify-start'} animate-fade-in`;
-        
-        const contentClass = isUser 
-            ? 'bg-blue-600 text-white rounded-2xl rounded-tr-none shadow-md' 
-            : 'bg-white border border-blue-50 text-slate-800 rounded-2xl rounded-tl-none shadow-sm';
-        
-        div.innerHTML = `<span class="${contentClass} p-3.5 max-w-[85%] text-sm font-medium leading-relaxed">${text}</span>`;
-        chatMessages.appendChild(div);
-        
-        // Auto Scroll
-        chatMessages.scrollTo({
-            top: chatMessages.scrollHeight,
-            behavior: 'smooth'
-        });
-    }
-
-    // Handle Quick Action
-    function quickAction(action) {
-        addMessage(`Tanya tentang ${action}`, true);
-        handleResponse(action.toLowerCase());
-    }
-
-    // Process Response
-    function handleResponse(query) {
-        setTimeout(() => {
-            let reply = "Maaf, saat ini agen kami sedang sibuk. Silakan hubungi pusat informasi kami di (0341) 791554.";
-            
-            if(query.includes('jadwal')) reply = "Jadwal keberangkatan tersedia secara real-time di bagian atas website ini pada tombol 'Cek Keberangkatan'.";
-            if(query.includes('parkir')) reply = "Area parkir kami mendukung pembayaran non-tunai dengan tarif flat untuk 2 jam pertama sesuai aturan Dishub.";
-            if(query.includes('lokasi')) reply = "Bandara Abdurachman Saleh terletak di Kec. Pakis, Kabupaten Malang, sekitar 11km dari pusat kota.";
-            
-            addMessage(reply);
-        }, 600);
-    }
-
-    // Send Message Logic
-    function handleChat() {
-        const msg = chatInput.value.trim();
-        if(!msg) return;
-
-        addMessage(msg, true);
-        chatInput.value = '';
-        handleResponse(msg.toLowerCase());
-    }
-
-    sendBtn.onclick = handleChat;
-    chatInput.onkeypress = (e) => { if(e.key === 'Enter') handleChat(); };
-</script>
+/* Chatbot Integration */
+@include('chatbot')
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
@@ -957,7 +832,7 @@
     // Burger Menu Logic
     const burgerBtn = document.getElementById('burger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     burgerBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('active');
         const icon = burgerBtn.querySelector('i');

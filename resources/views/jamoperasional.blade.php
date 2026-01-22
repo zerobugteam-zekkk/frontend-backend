@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jam Operasional - Abdurachman Saleh Hub</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap');
-        
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
@@ -19,7 +19,7 @@
 
         .main-bg-pattern {
             background-color: #f8fafc;
-            background-image: 
+            background-image:
                 radial-gradient(#2563eb08 1px, transparent 1px),
                 radial-gradient(#2563eb08 1px, #f8fafc 1px);
             background-size: 40px 40px;
@@ -35,8 +35,8 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .blue-gradient-card { 
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); 
+        .blue-gradient-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         }
 
         .custom-scrollbar::-webkit-scrollbar { width: 8px; }
@@ -48,7 +48,7 @@
 </head>
 
 <body class="main-bg-pattern text-slate-900 antialiased overflow-x-hidden custom-scrollbar">
-    
+
     <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
         <div class="container mx-auto px-6 py-4 flex items-center justify-start space-x-6">
             <a href="/" class="flex items-center space-x-3 group">
@@ -62,14 +62,14 @@
     </nav>
 
     <main class="container mx-auto px-6 py-12 md:py-20 relative">
-        
+
         <div class="max-w-4xl mb-24 font-formal no-italic" data-aos="fade-right">
             <h6 class="text-blue-700 font-extrabold uppercase tracking-[0.4em] text-[11px] mb-6 border-b-2 border-blue-600 w-fit pb-2 no-italic">
-                Official Hub Schedule
+                Jadwal Resmi Pusat Informasi
             </h6>
-            
+
             <h1 class="text-6xl md:text-8xl font-black text-slate-900 leading-[0.85] uppercase tracking-tighter mb-10 no-italic">
-                Jam <br> 
+                Jam <br>
                 <span class="text-gradient-blue no-italic">Operasional</span>
             </h1>
 
@@ -82,8 +82,8 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32">
-            
-            <div class="blue-gradient-card p-8 md:p-12 rounded-[3rem] text-white relative overflow-hidden shadow-2xl shadow-blue-900/20" 
+
+            <div class="blue-gradient-card p-8 md:p-12 rounded-[3rem] text-white relative overflow-hidden shadow-2xl shadow-blue-900/20"
                  data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-door-open absolute -bottom-10 -right-10 text-[15rem] opacity-10"></i>
                 <div class="relative z-10">
@@ -101,7 +101,7 @@
                 </div>
             </div>
 
-            <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100 relative overflow-hidden" 
+            <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100 relative overflow-hidden"
                  data-aos="fade-up" data-aos-delay="300">
                 <div class="relative z-10">
                     <h3 class="text-2xl md:text-3xl font-black uppercase mb-6 no-italic text-slate-900">Waktu Penutupan</h3>
@@ -171,7 +171,7 @@
         <div class="container mx-auto px-6">
             <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.6em]">
                 © 2026 Bandara Abdurachman Saleh - Malang station hub <br>
-                <span class="text-blue-500/50 mt-2 block">Official Operational Information Service</span>
+                <span class="text-blue-500/50 mt-2 block">Layanan Informasi Operasional Resmi</span>
             </p>
         </div>
     </footer>

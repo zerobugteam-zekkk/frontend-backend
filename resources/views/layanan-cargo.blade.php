@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layanan Kargo - Abdurachman Saleh Hub</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap');
-        
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
@@ -19,7 +19,7 @@
 
         .main-bg-pattern {
             background-color: #f8fafc;
-            background-image: 
+            background-image:
                 radial-gradient(#2563eb08 1px, transparent 1px),
                 radial-gradient(#2563eb08 1px, #f8fafc 1px);
             background-size: 40px 40px;
@@ -35,8 +35,8 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .cargo-dark-gradient { 
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+        .cargo-dark-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
 
         .custom-scrollbar::-webkit-scrollbar { width: 8px; }
@@ -48,7 +48,7 @@
 </head>
 
 <body class="main-bg-pattern text-slate-900 antialiased overflow-x-hidden custom-scrollbar">
-    
+
     <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
         <div class="container mx-auto px-6 py-4 flex items-center justify-start space-x-6">
             <a href="/" class="flex items-center space-x-3 group">
@@ -62,14 +62,14 @@
     </nav>
 
     <main class="container mx-auto px-6 py-12 md:py-20 relative">
-        
+
         <div class="max-w-4xl mb-24 font-formal no-italic" data-aos="fade-right">
             <h6 class="text-blue-700 font-extrabold uppercase tracking-[0.4em] text-[11px] mb-6 border-b-2 border-blue-600 w-fit pb-2 no-italic">
-                Logistics & Supply Chain
+                Logistik & Rantai Pasokan
             </h6>
-            
+
             <h1 class="text-6xl md:text-8xl font-black text-slate-900 leading-[0.85] uppercase tracking-tighter mb-10 no-italic">
-                Layanan <br> 
+                Layanan <br>
                 <span class="text-gradient-slate no-italic">Logistik Kargo</span>
             </h1>
 
@@ -82,7 +82,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
-            
+
             <div class="bg-white p-10 rounded-[3rem] shadow-xl shadow-slate-200/50 border border-slate-100 group transition-all hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
                 <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-slate-900 transition-colors">
                     <i class="fas fa-box text-slate-900 group-hover:text-white text-2xl"></i>
@@ -116,7 +116,7 @@
 
         <div class="cargo-dark-gradient rounded-[3.5rem] p-10 md:p-20 text-white relative overflow-hidden shadow-2xl shadow-slate-900/20 mb-32" data-aos="zoom-in">
             <i class="fas fa-warehouse absolute -bottom-10 -right-10 text-[18rem] opacity-5"></i>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
                 <div>
                     <h3 class="text-3xl font-black uppercase italic mb-8 border-l-4 border-blue-500 pl-6">Informasi <span class="text-blue-400">Operasional</span></h3>
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-white/5 backdrop-blur-2xl p-10 rounded-[2.5rem] border border-white/10 shadow-inner">
                     <h4 class="text-center font-black uppercase tracking-[0.2em] text-[10px] mb-8 text-blue-400">Hubungi Hotline Kargo</h4>
                     <div class="space-y-4">
@@ -187,7 +187,7 @@
         <div class="container mx-auto px-6">
             <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.6em]">
                 © 2026 Terminal Kargo - Bandara Abdurachman Saleh Malang <br>
-                <span class="text-slate-900/50 mt-2 block italic underline decoration-blue-500">Fast - Reliable - Secure Air Freight Solutions</span>
+                <span class="text-slate-900/50 mt-2 block italic underline decoration-blue-500">Cepat - Andal - Aman Solusi Pengiriman Udara</span>
             </p>
         </div>
     </footer>

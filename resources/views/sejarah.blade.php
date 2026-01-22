@@ -9,8 +9,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
-        body { 
-            font-family: 'Inter', sans-serif; 
+        body {
+            font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
             background-image: radial-gradient(#2563eb0a 1px, transparent 1px);
             background-size: 30px 30px;
@@ -26,7 +26,7 @@
         .sepia-filter:hover {
             filter: grayscale(0%) contrast(1) brightness(1);
         }
-        
+
         /* Custom Scrollbar minimalis */
         .bio-scroll::-webkit-scrollbar {
             width: 4px;
@@ -59,7 +59,7 @@
             <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png" class="w-full h-full object-cover">
         </div>
         <div class="relative z-10 container mx-auto px-6" data-aos="fade-up" data-aos-duration="1000">
-            <h6 class="text-blue-500 font-black uppercase tracking-[0.5em] text-[10px] mb-4">The Legacy of Karbol</h6>
+            <h6 class="text-blue-500 font-black uppercase tracking-[0.5em] text-[10px] mb-4">Warisan Karbol</h6>
             <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
                 Jejak <span class="text-blue-600">Dirgantara</span>
             </h1>
@@ -71,12 +71,12 @@
 
     <main class="container mx-auto px-6 -mt-12 relative z-20 pb-24">
         <div class="max-w-5xl mx-auto">
-            
+
             <section class="bg-white rounded-[3rem] premium-shadow overflow-hidden mb-20 border border-slate-100" data-aos="zoom-in-up" data-aos-duration="1200">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-2/5 bg-slate-200 relative overflow-hidden group">
                         <img src="{{ asset('images/Abdulrachman-Saleh.jpg') }}"
-                             alt="Abdurachman Saleh" 
+                             alt="Abdurachman Saleh"
                              class="w-full h-full object-cover sepia-filter group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-6 text-white">
                             <p class="text-[10px] font-black uppercase tracking-[0.3em] opacity-80">Portrait Resmi</p>
@@ -87,7 +87,7 @@
                         <div class="inline-block px-4 py-1 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest rounded-full mb-6 w-fit">Pahlawan Nasional</div>
                         <h2 class="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-2">Prof. Dr. Abdurachman Saleh</h2>
                         <p class="text-blue-600 font-bold mb-4 italic text-sm">"The Karbol" — Intelektual Multitalenta di Balik Sayap Indonesia.</p>
-                        
+
                         <div class="bio-scroll overflow-y-auto pr-6 max-h-[220px] text-slate-500 text-sm leading-loose text-justify">
                             <p class="mb-4">
                                 <strong>Prof. Dr. Abdurachman Saleh</strong> adalah sosok langka dalam sejarah perjuangan Indonesia. Beliau bukan sekadar penerbang militer, melainkan seorang intelektual yang menjembatani dunia sains dan kedaulatan dirgantara. Sebagai seorang dokter lulusan STOVIA/GHS, beliau diakui sebagai <strong>pionir kedokteran kedirgantaraan</strong> di Indonesia, yang meletakkan dasar-dasar fisiologi penerbangan bagi para kadet awal RI.
@@ -99,7 +99,7 @@
                                 Pengabdiannya berakhir secara heroik pada 29 Juli 1947, ketika pesawat Dakota VT-CLA yang ia tumpangi dalam misi kemanusiaan ditembak jatuh oleh pesawat Belanda di Yogyakarta. Untuk menghormati dedikasi luar biasa dan jasa-jasanya, nama beliau resmi diabadikan sebagai pengganti nama <strong>Lanud Bugis pada tahun 1952</strong> melalui ketetapan Kepala Staf Angkatan Udara.
                             </p>
                         </div>
-                        
+
                         <div class="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-slate-100">
                             <div class="border-l-2 border-blue-600 pl-4">
                                 <p class="text-[10px] uppercase font-black text-slate-400 leading-none mb-1">Status</p>

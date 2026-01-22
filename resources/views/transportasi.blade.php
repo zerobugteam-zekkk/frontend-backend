@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transportasi & Aksesibilitas Terpadu - Abdurachman Saleh Hub</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        
+
         html { scroll-behavior: smooth; }
 
-        body { 
+        body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
             background-image: radial-gradient(#2563eb08 1px, transparent 1px);
@@ -83,11 +83,11 @@
             <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png" class="w-full h-full object-cover">
         </div>
         <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]"></div>
-        
+
         <div class="relative z-10 container mx-auto px-6 text-center" data-aos="zoom-out">
             <h6 class="text-blue-500 font-black uppercase tracking-[0.5em] text-[11px] mb-6 flex items-center justify-center">
                 <span class="w-12 h-[1px] bg-blue-500 mr-4"></span>
-                Official Transport Guide 2026
+                Panduan Transportasi Resmi 2026
                 <span class="w-12 h-[1px] bg-blue-500 ml-4"></span>
             </h6>
             <h1 class="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-8">
@@ -109,9 +109,9 @@
     </header>
 
     <main id="layanan" class="container mx-auto px-6 -mt-20 relative z-20 pb-32">
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-            
+
             <div class="bg-white rounded-[2.5rem] premium-card overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
                 <div class="p-8 bg-slate-50 border-b border-slate-100 flex justify-between items-center">
                     <div class="w-14 h-14 bg-blue-700 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-700/30 animate-float">
@@ -205,7 +205,7 @@
                 <div class="p-12 lg:p-24 lg:w-2/3">
                     <div class="inline-flex items-center space-x-4 text-blue-500 font-black uppercase tracking-[0.5em] text-[10px] mb-8">
                         <div class="w-12 h-[2px] bg-blue-600"></div>
-                        <span>Secure Parking Facility</span>
+                        <span>Fasilitas Parkir Aman</span>
                     </div>
                     <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-10 leading-[0.9]">
                         Fasilitas Parkir <br> <span class="text-blue-600">Inap Premium</span>
@@ -282,7 +282,7 @@
         });
 
         const backToTopBtn = document.getElementById('backToTop');
-        
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
                 backToTopBtn.classList.add('visible');

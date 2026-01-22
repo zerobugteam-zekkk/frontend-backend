@@ -7,12 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
+
+        body {
+            font-family: 'Inter', sans-serif;
             background-color: #f4f7fa;
             overflow-x: hidden;
         }
@@ -78,9 +78,9 @@
     <header class="relative bg-slate-900 py-32 overflow-hidden">
         <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 -skew-x-12 translate-x-20"></div>
         <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-aviation-blue/20 rounded-full blur-[100px]"></div>
-        
+
         <div class="relative z-10 container mx-auto px-6 text-center" data-aos="fade-down">
-            <h6 class="text-blue-400 font-black uppercase tracking-[0.6em] text-[10px] mb-6">Network & Connectivity Area</h6>
+            <h6 class="text-blue-400 font-black uppercase tracking-[0.6em] text-[10px] mb-6">Area Jaringan & Konektivitas</h6>
             <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase mb-8 leading-[0.8]">
                 Rute <span class="text-blue-400 italic">Strategis</span><br>Penerbangan
             </h1>
@@ -92,7 +92,7 @@
 
     <main class="container mx-auto px-6 -mt-16 relative z-20 pb-24">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-            
+
             <div class="lg:col-span-2 space-y-8">
                 <div class="bg-white p-8 md:p-16 rounded-[4rem] premium-shadow border border-slate-50" data-aos="fade-up">
                     <div class="flex items-center justify-between mb-12">
@@ -101,7 +101,7 @@
                         </h3>
                         <div class="flex items-center space-x-2 px-4 py-1.5 bg-green-50 rounded-full pulse-live">
                             <span class="w-2 h-2 bg-green-500 rounded-full"></span>
-                            <span class="text-green-600 text-[10px] font-black uppercase tracking-widest">Live: <span id="sync-status">Connected</span></span>
+                            <span class="text-green-600 text-[10px] font-black uppercase tracking-widest">Terhubung : <span id="sync-status">Langsung</span></span>
                         </div>
                     </div>
 
@@ -111,7 +111,7 @@
                                 <span class="text-5xl font-black text-slate-900 tracking-tighter">MLG</span>
                                 <p class="text-[10px] font-extrabold text-slate-400 uppercase mt-2">Malang (ABD. Saleh)</p>
                             </div>
-                            
+
                             <div class="flex-grow flex flex-col items-center w-full md:w-auto">
                                 <div class="w-full h-[2px] route-dashed relative overflow-hidden">
                                     <i class="fas fa-plane text-aviation-blue absolute -top-2 animate-plane"></i>
@@ -133,7 +133,7 @@
                             <div class="bg-white p-4 rounded-2xl border border-slate-100">
                                 <span class="text-[9px] font-black text-slate-400 uppercase block mb-2">Status Operasional Terkini</span>
                                 <div class="flex justify-between items-center">
-                                    <span id="last-flight-badge" class="text-[11px] font-bold text-slate-700 italic">Syncing...</span>
+                                    <span id="last-flight-badge" class="text-[11px] font-bold text-slate-700 italic">Sinkronisasi...</span>
                                     <span class="text-[10px] font-black text-green-600 uppercase">Active Hub</span>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                                 <span class="text-5xl font-black text-slate-900 tracking-tighter">MLG</span>
                                 <p class="text-[10px] font-extrabold text-slate-400 uppercase mt-2">Malang</p>
                             </div>
-                            
+
                             <div class="flex-grow flex flex-col items-center">
                                 <div class="w-full h-[2px] route-dashed relative overflow-hidden">
                                     <i class="fas fa-plane text-aviation-blue absolute -top-2 animate-plane" style="animation-delay: -2s;"></i>
@@ -174,9 +174,9 @@
                                 Update otomatis: Saat ini kondisi cuaca di sekitar area pendaratan <span id="weather-desc" class="font-bold underline">Memperbarui...</span>. Jarak pandang (Visibility) <span id="weather-vis" class="font-bold">--</span> km.
                             </p>
                             <div class="flex flex-wrap gap-4 text-[9px] font-black uppercase">
-                                <span class="bg-white/10 px-4 py-2 rounded-xl">Wind: <span id="weather-wind">--</span> m/s</span>
-                                <span class="bg-white/10 px-4 py-2 rounded-xl">Temp: <span id="weather-temp">--</span>°C</span>
-                                <span class="bg-white/10 px-4 py-2 rounded-xl">Humidity: <span id="weather-hum">--</span>%</span>
+                                <span class="bg-white/10 px-4 py-2 rounded-xl">Angin : <span id="weather-wind">--</span> m/s</span>
+                                <span class="bg-white/10 px-4 py-2 rounded-xl">Suhu : <span id="weather-temp">--</span>°C</span>
+                                <span class="bg-white/10 px-4 py-2 rounded-xl">Kelembapan: <span id="weather-hum">--</span>%</span>
                             </div>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
             <div class="space-y-8">
                 <div class="bg-white p-10 rounded-[3.5rem] premium-shadow border border-slate-50" data-aos="fade-left">
                     <h4 class="text-xs font-black uppercase tracking-[0.3em] text-aviation-blue mb-8 flex items-center">
-                        <span class="w-8 h-[2px] bg-aviation-blue mr-3"></span> Fleet & Airlines
+                        <span class="w-8 h-[2px] bg-aviation-blue mr-3"></span> Armada & Maskapai Penerbangan
                     </h4>
                     <ul class="space-y-8">
                         <li class="flex items-center justify-between group">
@@ -196,7 +196,7 @@
                                 </div>
                                 <span class="font-extrabold text-slate-800">Citilink</span>
                             </div>
-                            <span class="px-3 py-1 bg-green-50 text-green-600 text-[9px] font-black rounded-lg">ACTIVE</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-600 text-[9px] font-black rounded-lg">AKTIF</span>
                         </li>
                         <li class="flex items-center justify-between group">
                             <div class="flex items-center">
@@ -220,7 +220,7 @@
                 </div>
 
                 <div class="bg-slate-900 p-10 rounded-[3.5rem] text-white" data-aos="fade-left" data-aos-delay="200">
-                    <h4 class="text-lg font-black uppercase tracking-tighter mb-6">Traffic Real-Time</h4>
+                    <h4 class="text-lg font-black uppercase tracking-tighter mb-6">Lalu Lintas Waktu Nyata</h4>
                     <div id="live-traffic-container" class="space-y-6">
                         <div class="animate-pulse flex flex-col space-y-4">
                             <div class="h-2 bg-slate-700 rounded w-3/4"></div>
@@ -252,7 +252,7 @@
         // Konfigurasi
         const apiKey = '8a8db4b35f665e7cb03b00081f767e4b';
         const city = 'Malang';
-        
+
         // Data Jadwal Slot
         const schedule = [
             { id: 'ID 7580', airline: 'Batik Air', type: 'Departure', time: '07:30' },
@@ -267,7 +267,7 @@
         // 1. Clock Real-time
         function updateClock() {
             const now = new Date();
-            const options = { 
+            const options = {
                 weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
                 hour: '2-digit', minute: '2-digit', second: '2-digit'
             };
@@ -279,18 +279,18 @@
             try {
                 const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=id`);
                 const data = await response.json();
-                
+
                 if(data.cod === 200) {
                     document.getElementById('weather-desc').innerText = data.weather[0].description;
                     document.getElementById('weather-temp').innerText = Math.round(data.main.temp);
                     document.getElementById('weather-wind').innerText = data.wind.speed;
                     document.getElementById('weather-hum').innerText = data.main.humidity;
                     document.getElementById('weather-vis').innerText = (data.visibility / 1000).toFixed(1);
-                    
+
                     const iconCode = data.weather[0].icon;
                     const iconMap = {
-                        '01': 'fa-sun', '02': 'fa-cloud-sun', '03': 'fa-cloud', 
-                        '04': 'fa-cloud-meatball', '09': 'fa-cloud-showers-heavy', 
+                        '01': 'fa-sun', '02': 'fa-cloud-sun', '03': 'fa-cloud',
+                        '04': 'fa-cloud-meatball', '09': 'fa-cloud-showers-heavy',
                         '10': 'fa-cloud-sun-rain', '11': 'fa-bolt', '13': 'fa-snowflake', '50': 'fa-smog'
                     };
                     const iconClass = iconMap[iconCode.substring(0,2)] || 'fa-cloud';
@@ -312,7 +312,7 @@
                 const [h, m] = f.time.split(':');
                 return (parseInt(h) * 60 + parseInt(m)) <= currentMins;
             });
-            
+
             const futureFlights = schedule.filter(f => {
                 const [h, m] = f.time.split(':');
                 return (parseInt(h) * 60 + parseInt(m)) > currentMins;
@@ -333,15 +333,15 @@
                     <p class="text-[10px] text-slate-400">${nextOne.time} WIB • EN ROUTE</p>
                 </div>
             `;
-            
+
             document.getElementById('last-flight-badge').innerText = `${lastOne.id} (${lastOne.airline})`;
         }
 
         function simulateSync() {
             const status = document.getElementById('sync-status');
             setInterval(() => {
-                status.innerText = "Syncing...";
-                setTimeout(() => { status.innerText = "Connected"; }, 1000);
+                status.innerText = "Sinkronisasi...";
+                setTimeout(() => { status.innerText = "Langsung"; }, 1000);
             }, 10000);
         }
 

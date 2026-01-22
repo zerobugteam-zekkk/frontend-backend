@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panduan Check-in Detail - Abdurachman Saleh Hub</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
-        
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
@@ -19,7 +19,7 @@
 
         .main-bg-pattern {
             background-color: #f8fafc;
-            background-image: 
+            background-image:
                 radial-gradient(#2563eb08 1px, transparent 1px),
                 radial-gradient(#2563eb08 1px, #f8fafc 1px);
             background-size: 40px 40px;
@@ -53,13 +53,13 @@
 </head>
 
 <body class="main-bg-pattern text-slate-900 antialiased overflow-x-hidden">
-    
+
     <div class="blob-bg -top-20 -left-20"></div>
     <div class="blob-bg top-1/2 -right-20"></div>
 
 <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
     <div class="container mx-auto px-4 md:px-6 py-4 flex items-center justify-start space-x-8">
-        
+
         <a href="{{ url('/') }}" class="flex items-center space-x-3 group">
             <div class="bg-blue-600 p-2 rounded-lg group-hover:bg-slate-900 transition-all duration-300 shadow-lg shadow-blue-600/20">
                 <i class="fas fa-boxes-packing text-white text-sm"></i>
@@ -73,9 +73,9 @@
 </nav>
 
     <main class="container mx-auto px-4 md:px-6 py-12 md:py-20 relative">
-        
+
         <div class="max-w-4xl mb-16 md:mb-24" data-aos="fade-right">
-            <h6 class="text-blue-600 font-black uppercase tracking-[0.4em] text-[10px] md:text-[11px] mb-4 md:mb-6 underline underline-offset-8 decoration-2">Travel Protocols</h6>
+            <h6 class="text-blue-600 font-black uppercase tracking-[0.4em] text-[10px] md:text-[11px] mb-4 md:mb-6 underline underline-offset-8 decoration-2">Protokol Perjalanan</h6>
             <h1 class="text-5xl md:text-8xl font-black text-slate-900 leading-[0.9] md:leading-[0.85] uppercase tracking-tighter mb-8">
                 Layanan <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-400 py-2 inline-block">Keberangkatan</span>
@@ -85,11 +85,11 @@
             </p>
         </div>
 
-        
+
 
         <div class="space-y-8 md:space-y-12 mb-20 md:mb-32">
-            
-            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white p-6 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-xl shadow-blue-900/5 border border-slate-100 transition-all hover:shadow-blue-900/10 group" 
+
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white p-6 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-xl shadow-blue-900/5 border border-slate-100 transition-all hover:shadow-blue-900/10 group"
                  data-aos="fade-up">
                 <div class="md:w-1/3">
                     <div class="text-5xl md:text-7xl font-black text-blue-600/10 mb-2 md:mb-4 group-hover:text-blue-600/20 transition-colors">01</div>
@@ -104,7 +104,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white p-6 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-xl shadow-blue-900/5 border border-slate-100 transition-all hover:shadow-blue-900/10 group" 
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white p-6 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-xl shadow-blue-900/5 border border-slate-100 transition-all hover:shadow-blue-900/10 group"
                  data-aos="fade-up">
                 <div class="md:w-1/3">
                     <div class="text-5xl md:text-7xl font-black text-blue-600/10 mb-2 md:mb-4 group-hover:text-blue-600/20 transition-colors">02</div>
@@ -125,7 +125,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white p-6 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-xl shadow-blue-900/5 border border-slate-100 transition-all hover:shadow-blue-900/10 group" 
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white p-6 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-xl shadow-blue-900/5 border border-slate-100 transition-all hover:shadow-blue-900/10 group"
                  data-aos="fade-up">
                 <div class="md:w-1/3">
                     <div class="text-5xl md:text-7xl font-black text-blue-600/10 mb-2 md:mb-4 group-hover:text-blue-600/20 transition-colors">03</div>
@@ -148,7 +148,7 @@
 
         <section class="bg-slate-900 rounded-[2.5rem] md:rounded-[5rem] p-8 md:p-20 text-white overflow-hidden relative" data-aos="zoom-in">
             <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 skew-x-12 translate-x-32"></div>
-            
+
             <div class="relative z-10 text-center md:text-left">
                 <div class="max-w-xl mb-10 md:mb-12">
                     <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tighter italic mb-4">Web Check-in</h2>

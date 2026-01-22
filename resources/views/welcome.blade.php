@@ -410,15 +410,15 @@
                 <i class="fas fa-road text-blue-600 text-lg md:text-xl"></i>
             </div>
             <h3 class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">17/35</h3>
-            <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Runway Direction</p>
+            <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Arah Landasan Pacu</p>
         </div>
 
         <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="800">
             <div class="w-10 md:w-14 h-10 md:h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
                 <i class="fas fa-shield-alt text-blue-600 text-lg md:text-xl"></i>
             </div>
-            <h3 class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">Active</h3>
-            <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Security Status</p>
+            <h3 class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">Aktif</h3>
+            <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Status Keamanan</p>
         </div>
     </div>
 </section>
@@ -447,7 +447,7 @@
                 <div class="w-full lg:w-1/2 flex flex-col space-y-6 md:space-y-8" data-aos="fade-left" data-aos-duration="800">
                     <div>
                         <span class="inline-block text-blue-600 font-black uppercase tracking-[0.4em] text-xs mb-4 px-4 py-1 bg-blue-50 rounded-full">
-                            Historical Archive
+                            Arsip Sejarah
                         </span>
                         <h2 class="text-3xl md:text-6xl font-black text-slate-900 tracking-tighter leading-tight uppercase">
                             Warisan Sang <br>
@@ -476,7 +476,7 @@
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16 md:mb-20 scroll-animate-down" data-aos="zoom-in" data-aos-duration="800">
-                <h2 class="text-blue-600 font-black uppercase tracking-[0.3em] text-xs md:text-sm mb-4">Management</h2>
+                <h2 class="text-blue-600 font-black uppercase tracking-[0.3em] text-xs md:text-sm mb-4">Manajemen</h2>
                 <h3 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight uppercase tracking-tighter">
                     Struktur <span class="text-blue-600">Organisasi</span>
                 </h3>
@@ -537,7 +537,7 @@
     <section class="py-24 bg-white relative">
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16 md:mb-20 scroll-animate-down" data-aos="zoom-in" data-aos-duration="800">
-                <h2 class="text-blue-600 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4">Strategic Goals</h2>
+                <h2 class="text-blue-600 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4">Tujuan Strategis</h2>
                 <h3 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight uppercase tracking-tighter">
                     Visi & <span class="text-blue-600">Misi</span>
                 </h3>
@@ -816,7 +816,6 @@
     }
 </style>
 
-/* Chatbot Integration */
 @include('chatbot')
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

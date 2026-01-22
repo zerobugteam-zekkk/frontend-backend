@@ -90,7 +90,7 @@
 
         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8" data-aos="fade-down">
             <div class="space-y-4">
-                <h6 class="text-blue-600 font-black uppercase tracking-[0.4em] text-[11px] border-b-2 border-blue-600 w-fit pb-1">Flight Information Display</h6>
+                <h6 class="text-blue-600 font-black uppercase tracking-[0.4em] text-[11px] border-b-2 border-blue-600 w-fit pb-1">Papan Informasi Penerbangan</h6>
                 <h1 class="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter uppercase leading-none">
                     Jadwal <br><span class="text-blue-600">Penerbangan</span>
                 </h1>
@@ -143,13 +143,13 @@
                     <i class="fas fa-sync-alt animate-spin-slow text-blue-400 text-xl"></i>
                 </div>
                 <div class="text-left">
-                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 mb-1">Live Update Active</p>
+                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 mb-1">Pembaruan Langsung Aktif</p>
                     <p class="text-sm font-medium leading-relaxed opacity-90">Status diperbarui otomatis setiap menit berdasarkan sistem navigasi.</p>
                 </div>
             </div>
             <div class="flex items-center bg-white/5 px-6 py-3 rounded-full border border-white/5">
                 <span class="text-slate-400 text-[10px] font-black uppercase tracking-widest flex items-center">
-                    Last Update: <span id="last-update" class="text-white ml-2">--:--</span>
+                    Terakhir Diperbarui : <span id="last-update" class="text-white ml-2">--:--</span>
                 </span>
             </div>
         </div>
@@ -283,14 +283,14 @@ function getFlightStatus(timeStr, type) {
     const diff = (flightTime - now) / 60000;
 
     if (type === 'departure') {
-        if (diff < -10) return { label: "DEPARTED", class: "status-departed" };
-        if (diff <= 0) return { label: "FINAL CALL", class: "status-delay" };
-        if (diff <= 35) return { label: "BOARDING", class: "status-boarding" };
-        return { label: "ON TIME", class: "status-on-time" };
+        if (diff < -10) return { label: "BERANGKAT", class: "status-departed" };
+        if (diff <= 0) return { label: "PANGGILAN TERAKHIR", class: "status-delay" };
+        if (diff <= 35) return { label: "PENERBANGAN", class: "status-boarding" };
+        return { label: "TEPAT WAKTU", class: "status-on-time" };
     } else {
-        if (diff < -5) return { label: "ARRIVED", class: "status-arrived" };
-        if (diff <= 15) return { label: "LANDING", class: "status-boarding" };
-        return { label: "EN ROUTE", class: "status-on-time" };
+        if (diff < -5) return { label: "TIBA", class: "status-arrived" };
+        if (diff <= 15) return { label: "PENDARATAN", class: "status-boarding" };
+        return { label: "DALAM PERJALANAN", class: "status-on-time" };
     }
 }
 

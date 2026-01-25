@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+{{--  --}}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdurachman Saleh Hub - Gerbang Udara Jawa Timur</title>
+    <title>{{ __('messages.meta.title') }}</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    {{-- SEMUA STYLE SATU TEMPAT --}}
     <style>
         /* Aksentuasi Biru Kustom */
         .blue-custom { color: #1c54ed; }
@@ -66,6 +68,7 @@
         }
     </style>
 </head>
+
 <style>
         .blue-custom { color: #1c54ed; }
         .bg-blue-custom { background-color: #1c54ed; }
@@ -133,50 +136,56 @@
             background-size: 20px 20px;
         }
     </style>
-
 </head>
-<script>
-   // FUNGSI JAM & CUACA (Tetap berfungsi seperti sebelumnya)
-    function updateClock() {
-        const clockEl = document.getElementById('realtime-clock');
-        if (clockEl) {
-            const now = new Date();
-            const options = { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            const timeString = new Intl.DateTimeFormat('id-ID', options).format(now);
-            clockEl.textContent = timeString.replace(/\./g, ':');
-        }
-    }
 
-    async function fetchWeather() {
-        const apiKey = '8a8db4b35f665e7cb03b00081f767e4b';
-        const lat = -7.9266;
-        const lon = 112.7136;
-        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=id&t=${Date.now()}`;
-
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            if (data.main && data.weather) {
-                const temp = Math.round(data.main.temp);
-                document.getElementById('weather-temp').textContent = temp;
-                const iconEl = document.getElementById('weather-icon');
-                const id = data.weather[0].id;
-                // Warna icon cuaca disesuaikan ke Biru
-                iconEl.className = (id >= 200 && id < 600) ? 'fas fa-cloud-showers-heavy mr-2 text-blue-500' :
-                                   (id === 800) ? 'fas fa-sun mr-2 text-orange-400' : 'fas fa-cloud mr-2 text-slate-400';
+    <script>
+    // FUNGSI JAM & CUACA (Tetap berfungsi seperti sebelumnya)
+        function updateClock() {
+            const clockEl = document.getElementById('realtime-clock');
+            if (clockEl) {
+                const now = new Date();
+                const options = { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                const timeString = new Intl.DateTimeFormat('id-ID', options).format(now);
+                clockEl.textContent = timeString.replace(/\./g, ':');
             }
-        } catch (error) { console.error("Gagal ambil data:", error); }
-    }
+        }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        updateClock();
-        setInterval(updateClock, 1000);
-        fetchWeather();
-        setInterval(fetchWeather, 900000);
-    });
-</script>
+        async function fetchWeather() {
+            const apiKey = '8a8db4b35f665e7cb03b00081f767e4b';
+            const lat = -7.9266;
+            const lon = 112.7136;
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=id&t=${Date.now()}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.main && data.weather) {
+                    const temp = Math.round(data.main.temp);
+                    document.getElementById('weather-temp').textContent = temp;
+                    const iconEl = document.getElementById('weather-icon');
+                    const id = data.weather[0].id;
+                    // Warna icon cuaca disesuaikan ke Biru
+                    iconEl.className = (id >= 200 && id < 600) ? 'fas fa-cloud-showers-heavy mr-2 text-blue-500' :
+                                    (id === 800) ? 'fas fa-sun mr-2 text-orange-400' : 'fas fa-cloud mr-2 text-slate-400';
+                }
+            } catch (error) { console.error("Gagal ambil data:", error); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateClock();
+            setInterval(updateClock, 1000);
+            fetchWeather();
+            setInterval(fetchWeather, 900000);
+        });
+    </script>
 
 <body class="main-bg-pattern font-sans text-slate-900 antialiased relative overflow-x-hidden">
+
+    <!-- DEBUG LOCALE (HAPUS NANTI) -->
+    <div style="position:fixed;top:10px;right:10px;z-index:9999;
+                background:black;color:white;padding:6px 10px;font-size:12px">
+        {{ app()->getLocale() }}
+    </div>
 
     <div class="blob-bg top-[10%] -left-[10%]"></div>
     <div class="blob-bg top-[40%] -right-[10%]" style="background: radial-gradient(circle, rgba(15, 23, 42, 0.03) 0%, transparent 70%);"></div>
@@ -186,242 +195,194 @@
            <div class="flex space-x-6">
                 <span class="flex items-center">
                     <i class="fas fa-clock mr-2 text-blue-500"></i>
-                    <span id="realtime-clock">--:--</span>&nbsp;WIB
+                    <span id="realtime-clock">--:--</span>&nbsp;{{ __('messages.top.timezone') }}
                 </span>
                 <span class="hidden md:flex items-center">
                     <i id="weather-icon" class="fas fa-cloud-sun mr-2 text-orange-400"></i>
-                    <span id="weather-temp">--</span>°C MALANG
+                    <span id="weather-temp">--</span>°C {{ __('messages.top.city') }}
                 </span>
             </div>
             <div class="flex space-x-6">
-                <a href="{{ url('/info-parkir') }}" class="hover:text-blue-500 transition border-b-2 border-transparent hover:border-blue-500 pb-1">Fasilitas</a>
-                <a href="{{ url('/bantuan') }}" class="hover:text-blue-500 transition border-b-2 border-transparent hover:border-blue-500 pb-1">Bantuan</a>
+                <a href="{{ url('/info-parkir') }}" class="hover:text-blue-500 transition border-b-2 border-transparent hover:border-blue-500 pb-1">
+                    {{ __('messages.top.facilities') }}</a>
+                <a href="{{ url('/bantuan') }}" class="hover:text-blue-500 transition border-b-2 border-transparent hover:border-blue-500 pb-1">
+                    {{ __('messages.top.help') }}</a>
             </div>
         </div>
     </div>
 
    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="{{ url('/') }}" class="flex items-center space-x-3">
-            <div class="bg-blue-600 p-2 rounded-lg">
-                <i class="fas fa-plane-departure text-white text-sm"></i>
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="{{ url('/') }}" class="flex items-center space-x-3">
+                <div class="bg-blue-600 p-2 rounded-lg">
+                    <i class="fas fa-plane-departure text-white text-sm"></i>
+                </div>
+                <span class="text-sm font-black uppercase tracking-tighter text-slate-900">
+                    Abdurachman <span class="text-blue-600">Saleh</span>
+                </span>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-10 text-[11px] font-black uppercase tracking-widest text-slate-600">
+                <a href="{{ url('/jadwal') }}" class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">
+                    {{ __('messages.nav.schedule') }}</a>
+                <a href="{{ url('/sejarah') }}" class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">
+                    {{ __('messages.nav.history') }}</a>
+                <a href="{{ url('/transportasi') }}" class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">
+                    {{ __('messages.nav.transport') }}</a>
+                <a href="{{ url('/routes') }}" class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">
+                    {{ __('messages.nav.routes') }}</a>
             </div>
-            <span class="text-sm font-black uppercase tracking-tighter text-slate-900">
-                Abdurachman <span class="text-blue-600">Saleh</span>
-            </span>
-        </a>
-
-        <div class="hidden lg:flex items-center space-x-10 text-[11px] font-black uppercase tracking-widest text-slate-600">
-            <a href="{{ url('/jadwal') }}" class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">Jadwal Penerbangan</a>
-            <a href="{{ url('/sejarah') }}" class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">Sejarah</a>
-            <a href="{{ url('/transportasi') }}" class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">Transportasi</a>
-            <a href="{{ url('/routes') }}" class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">Rute</a>
-        </div>
-
-        <div class="relative hidden sm:block group">
-            <form action="{{ url('/jadwal') }}" method="GET" class="relative">
-                <input type="text" name="search" placeholder="Cari rute..." class="bg-slate-100 text-[11px] font-bold uppercase py-2.5 pl-5 pr-12 rounded-full border border-transparent focus:border-blue-600 outline-none w-48 transition-all">
-                <button type="submit" class="absolute right-1 top-1 bg-slate-900 text-white p-2 rounded-full hover:bg-blue-600 transition-all">
-                    <i class="fas fa-search text-[10px]"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-</nav>
-
-<script>
-
-    <div class="blob-bg top-[10%] -left-[10%]"></div>
-    <div class="blob-bg top-[40%] -right-[10%]" style="background: radial-gradient(circle, rgba(15, 23, 42, 0.03) 0%, transparent 70%);"></div>
-
-    <div class="bg-slate-900 text-white py-3 text-[10px] md:text-xs uppercase tracking-[0.2em] z-[60] relative">
-        <div class="container mx-auto px-6 flex justify-between items-center font-bold">
-           <div class="flex space-x-6">
-    <span class="flex items-center">
-        <i class="fas fa-clock mr-2 text-red-500"></i>
-        <span id="realtime-clock">--:--</span>&nbsp;WIB
-    </span>
-
-    <span class="hidden md:flex items-center">
-        <i id="weather-icon" class="fas fa-cloud-sun mr-2 text-orange-400"></i>
-        <span id="weather-temp">--</span>°C MALANG
-    </span>
-</div>
-            <div class="flex space-x-6">
-    <a href="{{ url('/fasilitas') }}"
-       class="font-bold text-sm uppercase tracking-tight pb-1 transition border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 {{ Request::is('fasilitas') ? 'text-blue-600 border-blue-600' : 'text-slate-600' }}">
-        Fasilitas
-    </a>
-
-    <a href="{{ url('/bantuan') }}"
-       class="font-bold text-sm uppercase tracking-tight pb-1 transition border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 {{ Request::is('bantuan') ? 'text-blue-600 border-blue-600' : 'text-slate-600' }}">
-        Bantuan
-    </a>
-</div>
-    </div>
-
-   <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-
-<a href="{{ url('/') }}" class="flex items-center space-x-3">
-    <div class="bg-red-600 p-2 rounded-lg">
-        <i class="fas fa-plane-departure text-white text-sm"></i>
-    </div>
-    <span class="text-sm font-black uppercase tracking-tighter text-slate-900">
-        Abdurachman <span class="text-red-600">Saleh</span>
-    </span>
-</a>
-
-<button id="hamburger" class="lg:hidden text-slate-900 p-2 focus:outline-none">
-    <i class="fas fa-bars text-xl"></i>
-</button>
-
-        <div class="hidden lg:flex items-center space-x-10 text-[11px] font-black uppercase tracking-widest text-slate-600">
-            <a href="{{ url('/jadwal') }}" class="hover:text-red-600 transition border-b-2 border-transparent hover:border-red-600 pb-1 {{ Request::is('jadwal') ? 'text-red-600 border-red-600' : '' }}">
-                Jadwal Penerbangan
-            </a>
-            <a href="{{ url('/sejarah') }}" class="hover:text-red-600 transition border-b-2 border-transparent hover:border-red-600 pb-1 {{ Request::is('sejarah') ? 'text-red-600 border-red-600' : '' }}">
-                Sejarah
-            </a>
-            <a href="{{ url('/transportasi') }}" class="hover:text-red-600 transition border-b-2 border-transparent hover:border-red-600 pb-1 {{ Request::is('transportasi') ? 'text-red-600 border-red-600' : '' }}">
-                Transportasi
-            </a>
-            <a href="{{ url('/routes') }}" class="hover:text-red-600 transition border-b-2 border-transparent hover:border-red-600 pb-1 {{ Request::is('routes') ? 'text-red-600 border-red-600' : '' }}">
-                Rute
-            </a>
-        </div>
-
-    <div class="relative hidden sm:block group">
-    <form action="{{ url('/jadwal') }}" method="GET" class="relative">
-        <input
-            type="text"
-            name="search"
-            placeholder="Cari rute penerbangan..."
-            class="bg-slate-100 text-slate-900 text-[11px] font-bold uppercase tracking-wider py-2.5 pl-5 pr-12 rounded-full border border-transparent focus:border-red-600 focus:bg-white focus:ring-4 focus:ring-red-600/5 transition-all outline-none w-48 md:w-64"
-        >
-        <button type="submit" class="absolute right-1 top-1 bg-slate-900 text-white p-2 rounded-full hover:bg-red-600 transition-all group-hover:scale-95">
-            <i class="fas fa-search text-[10px]"></i>
-        </button>
-    </form>
-</div>
-
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 overflow-hidden transition-all duration-300">
-        <div class="flex flex-col space-y-5 py-6 font-bold uppercase text-xs tracking-widest text-slate-600">
-            <a href="{{ url('/jadwal') }}" class="hover:text-red-600 flex items-center justify-between">
-                Jadwal Penerbangan <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
-            </a>
-            <a href="{{ url('/sejarah') }}" class="hover:text-red-600 flex items-center justify-between">
-                Sejarah <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
-            </a>
-            <a href="{{ url('/transportasi') }}" class="hover:text-red-600 flex items-center justify-between">
-                Transportasi <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
-            </a>
-            <a href="{{ url('/routes') }}" class="hover:text-red-600 flex items-center justify-between">
-                Rute Penerbangan <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
-            </a>
-        </div>
-    </div>
-</nav>
-
-<script>
-    const btn = document.getElementById('hamburger');
-    const menu = document.getElementById('mobile-menu');
-
-    btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-    });
-</script>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700;900&display=swap');
-
-    .font-formal {
-        font-family: 'Libre Franklin', sans-serif;
-    }
-
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .animate-fade-up {
-        animation: fadeInUp 0.8s ease-out forwards;
-    }
-</style>
-
-<header class="relative h-[90vh] flex flex-col justify-center overflow-hidden bg-slate-900 font-formal">
-    <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
-         class="absolute inset-0 w-full h-full object-cover opacity-40"
-         alt="Gerbang Udara Malang">
-
-    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/70 to-transparent"></div>
-
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-4xl pt-20">
-
-            <div class="mb-8 animate-fade-up" data-aos="fade-up" data-aos-duration="800">
-                <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.85] uppercase tracking-tighter">
-                    Gerbang Udara <br>
-                    <span class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white to-blue-400 py-3 inline-block">
-                        Malang Raya
-                    </span>
-                </h1>
+            <!-- SEARCH -->
+            <div class="relative hidden sm:block group">
+                <form action="{{ url('/jadwal') }}" method="GET" class="relative">
+                    <input type="text" name="search" placeholder="{{ __('messages.nav.search') }}" class="bg-slate-100 text-[11px] font-bold uppercase py-2.5 pl-5 pr-12 rounded-full border border-transparent focus:border-blue-600 outline-none w-48 transition-all">
+                    <button type="submit" class="absolute right-1 top-1 bg-slate-900 text-white p-2 rounded-full hover:bg-blue-600 transition-all">
+                        <i class="fas fa-search text-[10px]"></i>
+                    </button>
+                </form>
             </div>
-
-            <div class="max-w-xl mb-12 animate-fade-up" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                <p class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed opacity-90 border-l-4 border-blue-600 pl-6 text-justify">
-                    Bandara Abdurachman Saleh Malang merupakan salah satu pilar transportasi utama yang menghubungkan keindahan Malang Raya dengan berbagai kota besar di Nusantara, menyatukan kenyamanan modern dengan nilai sejarah yang mendalam.
-                </p>
-            </div>
-
-            <div class="flex flex-wrap gap-5 animate-fade-up" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                <a href="{{ url('/jadwal') }}"
-                   class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest transition-all transform hover:scale-105 shadow-2xl shadow-blue-600/30">
-                    Cek Keberangkatan
+            {{-- TOMBOL SWITCH ID / EN (TAILWIND, CLEAN) --}}
+            <div class="flex items-center space-x-2 ml-4">
+                <a href="{{ route('lang.switch', 'id') }}"
+                class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border transition
+                {{ app()->getLocale() === 'id'
+                        ? 'bg-blue-600 text-white border-blue-600'
+                        : 'bg-white text-slate-600 border-slate-300 hover:bg-blue-50' }}">
+                    ID
                 </a>
-                <a href="{{ url('/sejarah') }}"
-                   class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest transition-all hover:border-blue-400">
-                    Eksplor Sejarah
+
+                <a href="{{ route('lang.switch', 'en') }}"
+                class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border transition
+                {{ app()->getLocale() === 'en'
+                        ? 'bg-blue-600 text-white border-blue-600'
+                        : 'bg-white text-slate-600 border-slate-300 hover:bg-blue-50' }}">
+                    EN
                 </a>
             </div>
-
         </div>
-    </div>
-</header>
-   <section class="container mx-auto px-6 mt-16 relative z-20">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
-        <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="800">
-            <div class="w-10 md:w-14 h-10 md:h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
-                <i class="fas fa-plane text-blue-600 text-lg md:text-xl"></i>
-            </div>
-            <h3 id="stat-flights" class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">0</h3>
-            <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Penerbangan Hari Ini</p>
-        </div>
+    </nav>
 
-        <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="800">
-            <div class="w-10 md:w-14 h-10 md:h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
-                <i class="fas fa-users text-blue-600 text-lg md:text-xl"></i>
+        {{-- TOP BAR --}}
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 overflow-hidden transition-all duration-300">
+            <div class="flex flex-col space-y-5 py-6 font-bold uppercase text-xs tracking-widest text-slate-600">
+                <a href="{{ url('/jadwal') }}" class="hover:text-red-600 flex items-center justify-between">
+                    Jadwal Penerbangan <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                </a>
+                <a href="{{ url('/sejarah') }}" class="hover:text-red-600 flex items-center justify-between">
+                    Sejarah <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                </a>
+                <a href="{{ url('/transportasi') }}" class="hover:text-red-600 flex items-center justify-between">
+                    Transportasi <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                </a>
+                <a href="{{ url('/routes') }}" class="hover:text-red-600 flex items-center justify-between">
+                    Rute Penerbangan <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                </a>
             </div>
-            <h3 id="stat-passengers" class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">0</h3>
-            <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Estimasi Penumpang</p>
-        </div>
-
-        <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="800">
-            <div class="w-10 md:w-14 h-10 md:h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
-                <i class="fas fa-road text-blue-600 text-lg md:text-xl"></i>
-            </div>
-            <h3 class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">17/35</h3>
-            <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Arah Landasan Pacu</p>
         </div>
 
-        <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="800">
-            <div class="w-10 md:w-14 h-10 md:h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
-                <i class="fas fa-shield-alt text-blue-600 text-lg md:text-xl"></i>
+    </nav>
+
+    <script>
+        const btn = document.getElementById('hamburger');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700;900&display=swap');
+
+        .font-formal {
+            font-family: 'Libre Franklin', sans-serif;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+
+    <header class="relative h-[90vh] flex flex-col justify-center overflow-hidden bg-slate-900 font-formal">
+        <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
+            class="absolute inset-0 w-full h-full object-cover opacity-40"
+            alt="Gerbang Udara Malang">
+
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/70 to-transparent"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl pt-20">
+                <!-- Gerbang Udara Malang Raya -->
+                <div class="mb-8 animate-fade-up" data-aos="fade-up" data-aos-duration="800">
+                    <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.85] uppercase tracking-tighter">
+                        {{ __('messages.hero.title_1') }} <br>
+                        <span class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white to-blue-400 py-3 inline-block">
+                            {{ __('messages.hero.title_2') }}
+                        </span>
+                    </h1>
+                </div>
+
+                <div class="max-w-xl mb-12 animate-fade-up" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    <p class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed opacity-90 border-l-4 border-blue-600 pl-6 text-justify">
+                        {{ __('messages.hero.description') }}
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-5 animate-fade-up" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <a href="{{ url('/jadwal') }}"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest transition-all transform hover:scale-105 shadow-2xl shadow-blue-600/30">
+                        {{ __('messages.hero.cta_departure') }}
+                    </a>
+                    <a href="{{ url('/sejarah') }}"
+                    class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest transition-all hover:border-blue-400">
+                        {{ __('messages.hero.cta_history') }}
+                    </a>
+                </div>
+
             </div>
-            <h3 class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">Aktif</h3>
-            <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Status Keamanan</p>
         </div>
-    </div>
-</section>
+    </header>
+
+    <section class="container mx-auto px-6 mt-16 relative z-20">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="800">
+                <div class="w-10 md:w-14 h-10 md:h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                    <i class="fas fa-plane text-blue-600 text-lg md:text-xl"></i>
+                </div>
+                <h3 id="stat-flights" class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">0</h3>
+                <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">{{ __('messages.stats.flights_today') }}</p>
+            </div>
+
+            <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="800">
+                <div class="w-10 md:w-14 h-10 md:h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                    <i class="fas fa-users text-blue-600 text-lg md:text-xl"></i>
+                </div>
+                <h3 id="stat-passengers" class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">0</h3>
+                <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">{{ __('messages.stats.passengers') }}</p>
+            </div>
+
+            <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="800">
+                <div class="w-10 md:w-14 h-10 md:h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                    <i class="fas fa-road text-blue-600 text-lg md:text-xl"></i>
+                </div>
+                <h3 class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">17/35</h3>
+                <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">{{ __('messages.stats.runway') }}</p>
+            </div>
+
+            <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="800">
+                <div class="w-10 md:w-14 h-10 md:h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                    <i class="fas fa-shield-alt text-blue-600 text-lg md:text-xl"></i>
+                </div>
+                <h3 class="text-2xl md:text-4xl font-black text-slate-900 leading-none mb-2 md:mb-3 tracking-tighter">{{ __('messages.stats.active') }}</h3>
+                <p class="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">{{ __('messages.stats.security') }}</p>
+            </div>
+        </div>
+    </section>
 
     <main class="container mx-auto px-6 py-32 relative">
         <div class="bg-white overflow-x-hidden">
@@ -447,20 +408,20 @@
                 <div class="w-full lg:w-1/2 flex flex-col space-y-6 md:space-y-8" data-aos="fade-left" data-aos-duration="800">
                     <div>
                         <span class="inline-block text-blue-600 font-black uppercase tracking-[0.4em] text-xs mb-4 px-4 py-1 bg-blue-50 rounded-full">
-                            Arsip Sejarah
+                            {{ __('messages.history.badge') }}
                         </span>
                         <h2 class="text-3xl md:text-6xl font-black text-slate-900 tracking-tighter leading-tight uppercase">
-                            Warisan Sang <br>
-                            <span class="text-blue-600">Abdurachman</span> Saleh
+                            {{ __('messages.history.title_1') }} <br>
+                            <span class="text-blue-600">{{ __('messages.history.title_2') }}</span> Saleh
                         </h2>
                     </div>
 
                     <div class="space-y-4 md:space-y-6 text-slate-600 leading-relaxed font-normal text-sm md:text-lg">
                         <p class="text-justify">
-                            Dinamakan berdasarkan pahlawan nasional <strong class="text-slate-900 font-bold">Prof. Dr. Abdurachman Saleh</strong>, bandara ini memiliki akar militer yang kuat sebagai pangkalan udara (Lanud) utama di Jawa Timur. Lokasinya yang dikelilingi oleh <span class="text-slate-800 font-semibold">Gunung Arjuno, Gunung Semeru, dan Gunung Bromo</span> menjadikannya salah satu bandara dengan pemandangan terindah namun menantang di Indonesia.
+                            {!! __('messages.history.paragraph_1') !!}
                         </p>
                         <p class="text-justify border-l-4 border-blue-600 pl-4 md:pl-6 py-2 bg-slate-50 rounded-r-xl">
-                            Transformasi besar terjadi pada <strong class="text-blue-600">2005</strong>, ketika gerbang militer ini dibuka untuk melayani masyarakat sipil. Sejak saat itu, Abdurachman Saleh telah menjadi nadi utama bagi wisatawan mancanegara yang ingin mengeksplorasi keajaiban alam Bromo.
+                           {!! __('messages.history.paragraph_2') !!}
                         </p>
                     </div>
                 </div>
@@ -556,7 +517,7 @@
                                     <span class="w-8 h-[1px] bg-blue-400"></span> Filosofi Utama
                                 </h4>
                                 <p class="text-xl md:text-3xl font-bold leading-snug italic relative z-10">
-                                    "Menjadi fondasi strategis dalam pelayanan transportasi udara yang berkualitas, aman, dan selaras dengan pembangunan daerah."
+                                    "{{ __('messages.vision.quote') }}"
                                 </p>
                             </div>
                             <p class="mt-6 md:mt-8 text-slate-500 text-xs md:text-sm leading-relaxed font-medium px-4 border-l-2 border-slate-100">
@@ -720,41 +681,41 @@
             <div class="max-w-xs" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800">
     <h5 class="font-black uppercase text-[10px] md:text-[11px] tracking-[0.4em] text-blue-600 mb-6 md:mb-8 flex items-center">
         <span class="w-8 h-[1px] bg-blue-600 mr-3"></span>
-        Layanan Informasi
+        {{ __('messages.footer.info') }}
     </h5>
 
     <ul class="text-[10px] md:text-[12px] text-slate-500 space-y-3 md:space-y-5 font-bold uppercase tracking-[0.15em]">
         <li>
             <a href="{{ url('/panduan-checkin') }}" class="group flex items-center hover:text-red-600 transition-all duration-300">
                 <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                <span>Panduan Check-in</span>
+                <span>{{ __('messages.footer.checkin') }}</span>
             </a>
         </li>
 
         <li>
             <a href="{{ url('/keamanan') }}" class="group flex items-center hover:text-red-600 transition-all duration-300">
                 <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                <span>Prosedur Keamanan</span>
+                <span>{{ __('messages.footer.security') }}</span>
             </a>
         </li>
 
-        <li>
-            <a href="{{ url('/layanan-cargo') }}" class="group flex items-center hover:text-red-600 transition-all duration-300">
-                <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                <span>Layanan Kargo</span>
-            </a>
-        </li>
+            <li>
+                <a href="{{ url('/layanan-cargo') }}" class="group flex items-center hover:text-red-600 transition-all duration-300">
+                    <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+                    <span>{{ __('messages.footer.cargo') }}</span>
+                </a>
+            </li>
 
-        <li>
-            <a href="{{ url('/jam-operasional') }}" class="group flex items-center hover:text-red-600 transition-all duration-300">
-                <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                <span>Jam Operasional</span>
-            </a>
-        </li>
+            <li>
+                <a href="{{ url('/jam-operasional') }}" class="group flex items-center hover:text-red-600 transition-all duration-300">
+                    <i class="fas fa-chevron-right text-[7px] md:text-[8px] mr-3 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+                    <span>{{ __('messages.footer.operational') }}</span>
+                </a>
+            </li>
     </ul>
 </div>
             <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                <h5 class="font-black uppercase text-[10px] md:text-[11px] tracking-[0.4em] text-blue-600 mb-6 md:mb-12">Hubungi Kami</h5>
+                <h5 class="font-black uppercase text-[10px] md:text-[11px] tracking-[0.4em] text-blue-600 mb-6 md:mb-12">{{ __('messages.footer.contact') }}</h5>
                 <div class="text-[10px] md:text-[12px] text-slate-500 space-y-4 md:space-y-7 font-bold uppercase tracking-[0.15em]">
                     <p class="flex items-start leading-relaxed">
                         <i class="fas fa-phone mr-2 md:mr-4 text-blue-600 mt-0.5"></i>
@@ -770,7 +731,7 @@
 
         <div class="pt-8 md:pt-12 border-t border-slate-100 text-center">
             <p class="text-[8px] md:text-[9px] font-black text-slate-400 uppercase tracking-[0.6em]">
-                © 2024 Bandara Abdurachman Saleh - Malang Station Hub
+                {{ __('messages.footer.copyright') }}
             </p>
         </div>
     </div>
@@ -819,6 +780,7 @@
 @include('chatbot')
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
     AOS.init({
         duration: 1000,
@@ -827,6 +789,7 @@
         easing: 'ease-in-out-cubic'
     });
 </script>
+
 <script>
     // Burger Menu Logic
     const burgerBtn = document.getElementById('burger-btn');
@@ -853,5 +816,6 @@
         AOS.init({ duration: 800, once: true });
     });
 </script>
+
 </body>
 </html>

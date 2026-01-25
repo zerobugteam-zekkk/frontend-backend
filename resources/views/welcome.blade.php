@@ -187,6 +187,13 @@
         {{ app()->getLocale() }}
     </div>
 
+    <div style="position:fixed;bottom:10px;right:10px;z-index:9999;background:black;color:white;padding:6px 10px;font-size:12px">
+  locale: {{ app()->getLocale() }} | cookie: {{ request()->cookie('locale') }}<br>
+  test: {{ __('messages.nav.schedule') }}
+</div>
+
+
+
     <div class="blob-bg top-[10%] -left-[10%]"></div>
     <div class="blob-bg top-[40%] -right-[10%]" style="background: radial-gradient(circle, rgba(15, 23, 42, 0.03) 0%, transparent 70%);"></div>
 

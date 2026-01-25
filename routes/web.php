@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,7 +13,7 @@ Route::get('/jadwal', function () {
 })->name('jadwal');
 
 Route::get('/info-umum', function () {
-    return view('info'); 
+    return view('info');
 })->name('info');
 Route::get('/transportasi', function () {
     return view('transportasi');
@@ -41,3 +41,15 @@ Route::get('/layanan-cargo', function () {
 Route::get('/jam-operasional', function () {
     return view('jamoperasional');
 })->name('jam.operasional');
+
+// Route untuk mengubah bahasa
+Route::get('/lang/{locale}', function (string $locale) {
+    if (!in_array($locale, ['id', 'en'])) {
+        abort(400);
+    }
+
+    session(['locale' => $locale]);
+
+    return redirect()->to(url()->previous() ?: route('home'));
+})->name('lang.switch');
+

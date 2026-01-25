@@ -17,4 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
             SetLocale::class,
         ]);
     })
+     ->withExceptions(function (Exceptions $exceptions) {
+        // biarkan kosong dulu
+    })
     ->create();

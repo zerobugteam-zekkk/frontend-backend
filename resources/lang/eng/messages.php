@@ -2,6 +2,9 @@
 
 return [
 
+    'meta' => [
+    'title' => 'Abdurachman Saleh Hub - East Java Air Gateway',
+  ],
     /*
     |--------------------------------------------------------------------------
     | TOP BAR
@@ -34,7 +37,7 @@ return [
     */
     'hero' => [
         'title_1' => 'Air Gateway',
-        'title_2' => 'Malang Region',
+        'title_2' => 'Malang Region ',
         'description' => 'Abdurachman Saleh Airport Malang is one of the main transportation pillars connecting the beauty of the Malang Region with major cities across Indonesia, combining modern comfort with deep historical value.',
         'cta_departure' => 'Check Departures',
         'cta_history'   => 'Explore History',
@@ -63,9 +66,9 @@ return [
         'title_1' => 'The Legacy of',
         'title_2' => 'Abdurachman Saleh',
         'founded' => 'Year Established',
-        'paragraph_1' => 'Named after national hero Prof. Dr. Abdurachman Saleh, this airport has strong military roots as a major air base in East Java.',
-        'paragraph_2' => 'A major transformation occurred in 2005, when the airport began serving civil aviation and became the main gateway to Malang Region tourism.',
-    ],
+         'paragraph_1' => 'Named after national hero <strong class="text-slate-900 font-bold">Prof. Dr. Abdurachman Saleh</strong>, this airport has strong military roots as a major air base in East Java. Surrounded by <span class="text-slate-800 font-semibold">Mount Arjuno, Mount Semeru, and Mount Bromo</span>, it is known for one of the most scenic yet challenging approaches in Indonesia.',
+  'paragraph_2' => 'A major transformation occurred in <strong class="text-blue-600">2005</strong>, when this military gateway opened to serve civil aviation. Since then, Abdurachman Saleh has become a key hub for travelers exploring the natural wonders of Bromo.',
+],
 
     /*
     |--------------------------------------------------------------------------

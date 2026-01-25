@@ -44,12 +44,9 @@ Route::get('/jam-operasional', function () {
 
 // Route untuk mengubah bahasa
 Route::get('/lang/{locale}', function (string $locale) {
-    if (!in_array($locale, ['id', 'en'])) {
-        abort(400);
-    }
+    abort_unless(in_array($locale, ['id', 'en']), 400);
 
     session(['locale' => $locale]);
 
     return redirect()->to(url()->previous() ?: route('home'));
 })->name('lang.switch');
-

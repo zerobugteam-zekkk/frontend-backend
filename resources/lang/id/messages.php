@@ -2,6 +2,9 @@
 
 return [
 
+    'meta' => [
+    'title' => 'Abdurachman Saleh Hub - Gerbang Udara Jawa Timur',
+    ],
     /*
     |--------------------------------------------------------------------------
     | TOP BAR
@@ -33,8 +36,8 @@ return [
     |--------------------------------------------------------------------------
     */
     'hero' => [
-        'title_1' => 'Gerbang Udara',
-        'title_2' => 'Malang Raya',
+        'title_1' => 'Gerbang Udara ',
+        'title_2' => 'Malang Raya  ',
         'description' => 'Bandara Abdurachman Saleh Malang merupakan salah satu pilar transportasi utama yang menghubungkan keindahan Malang Raya dengan berbagai kota besar di Nusantara, menyatukan kenyamanan modern dengan nilai sejarah yang mendalam.',
         'cta_departure' => 'Cek Keberangkatan',
         'cta_history'   => 'Eksplor Sejarah',
@@ -63,9 +66,9 @@ return [
         'title_1' => 'Warisan Sang',
         'title_2' => 'Abdurachman Saleh',
         'founded' => 'Tahun Berdiri',
-        'paragraph_1' => 'Dinamakan berdasarkan pahlawan nasional Prof. Dr. Abdurachman Saleh, bandara ini memiliki akar militer yang kuat sebagai pangkalan udara utama di Jawa Timur.',
-        'paragraph_2' => 'Transformasi besar terjadi pada tahun 2005, ketika bandara ini mulai melayani penerbangan sipil dan menjadi pintu gerbang wisata Malang Raya.',
-    ],
+       'paragraph_1' => 'Dinamakan berdasarkan pahlawan nasional <strong class="text-slate-900 font-bold">Prof. Dr. Abdurachman Saleh</strong>, bandara ini memiliki akar militer yang kuat sebagai pangkalan udara (Lanud) utama di Jawa Timur. Lokasinya yang dikelilingi oleh <span class="text-slate-800 font-semibold">Gunung Arjuno, Gunung Semeru, dan Gunung Bromo</span> menjadikannya salah satu bandara dengan pemandangan terindah namun menantang di Indonesia.',
+  'paragraph_2' => 'Transformasi besar terjadi pada <strong class="text-blue-600">2005</strong>, ketika gerbang militer ini dibuka untuk melayani masyarakat sipil. Sejak saat itu, Abdurachman Saleh telah menjadi nadi utama bagi wisatawan mancanegara yang ingin mengeksplorasi keajaiban alam Bromo.',
+],
 
     /*
     |--------------------------------------------------------------------------

@@ -444,12 +444,15 @@
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16 md:mb-20 scroll-animate-down" data-aos="zoom-in" data-aos-duration="800">
-                <h2 class="text-blue-600 font-black uppercase tracking-[0.3em] text-xs md:text-sm mb-4">Manajemen</h2>
+                <h2 class="text-blue-600 font-black uppercase tracking-[0.3em] text-xs md:text-sm mb-4">
+                    {{ __('messages.organization.badge') }}
+                </h2>
                 <h3 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight uppercase tracking-tighter">
-                    Struktur <span class="text-blue-600">Organisasi</span>
+                    {{ __('messages.organization.title_1') }}
+                    <span class="text-blue-600">{{ __('messages.organization.title_2') }}</span>
                 </h3>
                 <p class="mt-4 text-slate-500 font-bold uppercase tracking-[0.2em] text-[9px] md:text-[10px] max-w-2xl mx-auto">
-                    UPT Pelayanan Jasa Kebandarudaraan Abdulrachman Saleh Malang
+                    {{ __('messages.organization.subtitle') }}
                 </p>
                 <div class="w-24 h-1.5 bg-blue-600 mx-auto mt-6 md:mt-8 rounded-full"></div>
             </div>
@@ -461,7 +464,7 @@
                             <i class="fas fa-user-tie text-white text-lg md:text-xl"></i>
                         </div>
                         <h4 class="text-white font-black uppercase tracking-tight text-sm md:text-lg leading-snug">
-                            Kepala UPT Pelayanan Jasa Kebandarudaraan Abdulrachman Saleh
+                            {{ __('messages.organization.head') }}
                         </h4>
                     </div>
                     <div class="absolute -bottom-12 md:-bottom-16 left-1/2 -translate-x-1/2 w-0.5 h-12 md:h-16 bg-blue-200 hidden md:block"></div>
@@ -474,17 +477,23 @@
                         <div class="relative flex flex-col items-center group" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800">
                             <div class="w-0.5 h-6 md:h-8 bg-blue-200 hidden md:block"></div>
                             <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-blue-50 shadow-xl shadow-slate-200/50 text-center w-full group-hover:-translate-y-2 transition-all duration-500 border-t-4 border-t-blue-400">
-                                <h5 class="text-slate-400 font-bold uppercase tracking-widest text-[9px] md:text-[10px] mb-2">Kepala Sub Bagian</h5>
-                                <p class="text-slate-800 font-black uppercase text-sm md:text-lg tracking-tight">Tata Usaha</p>
+                                <h5 class="text-slate-400 font-bold uppercase tracking-widest text-[9px] md:text-[10px] mb-2">
+                                    {{ __('messages.organization.sub_head_label') }}
+                                </h5>
+                                <p class="text-slate-800 font-black uppercase text-sm md:text-lg tracking-tight">
+                                    {{ __('messages.organization.sub_head_value') }}
+                                </p>
                             </div>
                         </div>
 
                         <div class="relative flex flex-col items-center group" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                             <div class="w-0.5 h-6 md:h-8 bg-blue-200 hidden md:block"></div>
                             <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-blue-50 shadow-xl shadow-slate-200/50 text-center w-full group-hover:-translate-y-2 transition-all duration-500 border-t-4 border-t-blue-600">
-                                <h5 class="text-slate-400 font-bold uppercase tracking-widest text-[9px] md:text-[10px] mb-2">Kepala Seksi</h5>
+                                <h5 class="text-slate-400 font-bold uppercase tracking-widest text-[9px] md:text-[10px] mb-2">
+                                    {{ __('messages.organization.security_label') }}
+                                </h5>
                                 <p class="text-slate-800 font-black uppercase text-sm md:text-lg tracking-tight leading-tight">
-                                    Keamanan Penerbangan & Pelayanan Darurat
+                                    {{ __('messages.organization.security_value') }}
                                 </p>
                             </div>
                         </div>
@@ -492,8 +501,12 @@
                         <div class="relative flex flex-col items-center group" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                             <div class="w-0.5 h-6 md:h-8 bg-blue-200 hidden md:block"></div>
                             <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-blue-50 shadow-xl shadow-slate-200/50 text-center w-full group-hover:-translate-y-2 transition-all duration-500 border-t-4 border-t-blue-400">
-                                <h5 class="text-slate-400 font-bold uppercase tracking-widest text-[9px] md:text-[10px] mb-2">Kepala Seksi</h5>
-                                <p class="text-slate-800 font-black uppercase text-sm md:text-lg tracking-tight">Teknik & Pelayanan Jasa</p>
+                                <h5 class="text-slate-400 font-bold uppercase tracking-widest text-[9px] md:text-[10px] mb-2">
+                                    {{ __('messages.organization.technical_label') }}
+                                </h5>
+                                <p class="text-slate-800 font-black uppercase text-sm md:text-lg tracking-tight">
+                                    {{ __('messages.organization.technical_value') }}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -505,9 +518,14 @@
     <section class="py-24 bg-white relative">
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16 md:mb-20 scroll-animate-down" data-aos="zoom-in" data-aos-duration="800">
-                <h2 class="text-blue-600 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4">Tujuan Strategis</h2>
+                <h2 class="text-blue-600 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4">
+                    {{ __('messages.vision.badge') }}
+                </h2>
                 <h3 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight uppercase tracking-tighter">
-                    Visi & <span class="text-blue-600">Misi</span>
+                    {{ __('messages.vision.title_1') }}
+                    <span class="text-blue-600">
+                        {{ __('messages.vision.title_2') }}
+                    </span>
                 </h3>
                 <div class="w-16 h-1.5 bg-blue-600 mx-auto mt-4 md:mt-6 rounded-full"></div>
             </div>
@@ -521,14 +539,14 @@
                                 <i class="fas fa-quote-right absolute -right-4 -bottom-4 text-white/5 text-6xl md:text-9xl"></i>
 
                                 <h4 class="text-blue-400 font-black uppercase tracking-widest text-xs mb-4 md:mb-6 flex items-center gap-3">
-                                    <span class="w-8 h-[1px] bg-blue-400"></span> Filosofi Utama
+                                    <span class="w-8 h-[1px] bg-blue-400"></span> {{ __('messages.vision.philosophy') }}
                                 </h4>
                                 <p class="text-xl md:text-3xl font-bold leading-snug italic relative z-10">
                                     "{{ __('messages.vision.quote') }}"
                                 </p>
                             </div>
                             <p class="mt-6 md:mt-8 text-slate-500 text-xs md:text-sm leading-relaxed font-medium px-4 border-l-2 border-slate-100">
-                                Perumusan visi dan misi ini berfungsi sebagai arah kebijakan bagi seluruh pengelola bandara dalam menjalankan tanggung jawab secara terintegrasi.
+                                {{ __('messages.vision.note') }}
                             </p>
                         </div>
                     </div>
@@ -539,7 +557,7 @@
                                 01
                             </div>
                             <p class="ml-4 md:ml-8 text-slate-700 font-bold uppercase tracking-tight text-xs md:text-sm lg:text-base leading-snug">
-                                Meningkatkan pemerataan pelayanan dengan prioritas wilayah kepulauan & masyarakat berpenghasilan rendah.
+                                {{ __('messages.mission.1') }}
                             </p>
                         </div>
 
@@ -548,7 +566,7 @@
                                 02
                             </div>
                             <p class="ml-4 md:ml-8 text-slate-700 font-bold uppercase tracking-tight text-xs md:text-sm lg:text-base leading-snug">
-                                Meningkatkan layanan transportasi yang murah, mudah, aman, nyaman, dan cepat.
+                                {{ __('messages.mission.2') }}
                             </p>
                         </div>
 
@@ -557,7 +575,7 @@
                                 03
                             </div>
                             <p class="ml-4 md:ml-8 text-slate-700 font-bold uppercase tracking-tight text-xs md:text-sm lg:text-base leading-snug">
-                                Meningkatkan peran sektor transportasi dalam mempercepat pembangunan daerah.
+                                {{ __('messages.mission.3') }}
                             </p>
                         </div>
 
@@ -566,7 +584,7 @@
                                 04
                             </div>
                             <p class="ml-4 md:ml-8 text-slate-700 font-bold uppercase tracking-tight text-xs md:text-sm lg:text-base leading-snug">
-                                Mendorong partisipasi masyarakat & pelaku usaha dalam meningkatkan kualitas layanan.
+                                {{ __('messages.mission.4') }}
                             </p>
                         </div>
 
@@ -582,9 +600,13 @@
 
     <div class="relative z-10">
         <div class="text-center mb-12 md:mb-20">
-            <h2 class="text-2xl md:text-5xl font-black uppercase tracking-tighter italic">Layanan Terminal</h2>
+            <h2 class="text-2xl md:text-5xl font-black uppercase tracking-tighter italic">
+                {{ __('messages.services.title') }}
+            </h2>
             <div class="w-16 md:w-20 h-1.5 bg-blue-600 mx-auto mt-4 md:mt-6 rounded-full"></div>
-            <p class="text-slate-400 mt-6 md:mt-8 uppercase text-[9px] md:text-xs tracking-[0.3em] font-bold">Standardisasi Pelayanan Bandar Udara Internasional</p>
+            <p class="text-slate-400 mt-6 md:mt-8 uppercase text-[9px] md:text-xs tracking-[0.3em] font-bold">
+                {{ __('messages.services.subtitle') }}
+            </p>
         </div>
 
         <div class="flex overflow-x-auto gap-6 md:gap-8 pb-8 md:pb-12 snap-x no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
@@ -593,9 +615,11 @@
                 <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform">
                     <i class="fas fa-couch text-blue-500 text-xl md:text-2xl"></i>
                 </div>
-                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">Singhasari Premium Lounge</h4>
+                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
+                    {{ __('messages.services.lounge') }}
+                </h4>
                 <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
-                    Fasilitas ruang tunggu eksklusif yang terletak strategis di lantai 2 terminal keberangkatan. Lounge ini dirancang khusus untuk memberikan kenyamanan paripurna bagi penumpang kelas bisnis dan mitra perbankan. Tersedia hidangan prasmanan khas nusantara, area kerja dengan koneksi internet berkecepatan tinggi, serta ruang ibadah pribadi.
+                    {{ __('messages.services.lounge_desc') }}
                 </p>
             </div>
 
@@ -603,9 +627,11 @@
                 <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform">
                     <i class="fas fa-store text-blue-500 text-xl md:text-2xl"></i>
                 </div>
-                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">Area Komersial & UMKM</h4>
+                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
+                    {{ __('messages.services.commercial') }}
+                </h4>
                 <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
-                    Pusat perbelanjaan terminal yang menghadirkan sinergi antara gerai modern dan UMKM lokal unggulan Malang Raya. Para penumpang dapat menemukan berbagai pilihan buah tangan otentik seperti Keripik Tempe Sanan, Apel Manalagi segar, hingga olahan bakso kemasan vakum.
+                    {{ __('messages.services.commercial_desc') }}
                 </p>
             </div>
 
@@ -613,9 +639,11 @@
                 <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform">
                     <i class="fas fa-wheelchair text-blue-500 text-xl md:text-2xl"></i>
                 </div>
-                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">Manajemen Layanan Prioritas</h4>
+                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
+                    {{ __('messages.services.priority') }}
+                </h4>
                 <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
-                    Komitmen kami terhadap inklusivitas diwujudkan melalui penyediaan fasilitas bantuan mobilitas penuh. Tersedia armada kursi roda modern dan petugas pendamping terlatih (Special Assistant) yang siap membantu penumpang lansia, ibu hamil, serta penyandang disabilitas.
+                    {{ __('messages.services.priority_desc') }}
                 </p>
             </div>
 
@@ -623,9 +651,11 @@
                 <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform">
                     <i class="fas fa-wifi text-blue-500 text-xl md:text-2xl"></i>
                 </div>
-                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">Konektivitas Digital</h4>
+                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
+                    {{ __('messages.services.digital') }}
+                </h4>
                 <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
-                    Bandara Abdurachman Saleh mendukung kebutuhan digital para pelancong dengan menyediakan akses Wi-Fi gratis di seluruh area terminal penumpang. Selain itu, tersedia stasiun pengisian daya (charging station) yang tersebar di area ruang tunggu untuk memastikan perangkat Anda tetap aktif.
+                    {{ __('messages.services.digital_desc') }}
                 </p>
             </div>
 
@@ -639,7 +669,8 @@
 
         <div class="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-white/5 text-center">
             <p class="text-slate-500 text-[8px] md:text-xs font-medium uppercase tracking-widest">
-                <i class="fas fa-info-circle mr-2 text-blue-600"></i> Jam Operasional: 07:30 - 17:00 WIB
+                <i class="fas fa-info-circle mr-2 text-blue-600"></i>
+                {{ __('messages.services.operational') }}: 07:30 - 17:00 WIB
             </p>
         </div>
     </div>
@@ -666,7 +697,7 @@
                     </span>
                 </div>
                 <p class="text-slate-500 text-xs md:text-base leading-relaxed max-w-sm mb-8 md:mb-12 font-medium italic">
-                    Otoritas Bandara Kelas II - Melayani konektivitas udara yang aman, nyaman, dan terpercaya bagi masyarakat Indonesia.
+                    {{ __('messages.footer.about') }}
                 </p>
                 <div class="flex space-x-4 md:space-x-5">
                     <a href="https://www.instagram.com/abdulrachmansaleh_airport"

@@ -76,12 +76,20 @@ return [
     |--------------------------------------------------------------------------
     */
     'organization' => [
-        'title' => 'Struktur Organisasi',
+        'badge' => 'Manajemen',
+        'title_1' => 'Struktur',
+        'title_2' => 'Organisasi',
         'subtitle' => 'UPT Pelayanan Jasa Kebandarudaraan Abdurachman Saleh Malang',
         'head' => 'Kepala UPT Pelayanan Jasa Kebandarudaraan Abdurachman Saleh',
-        'sub_head' => 'Kepala Sub Bagian Tata Usaha',
-        'security' => 'Kepala Seksi Keamanan Penerbangan & Pelayanan Darurat',
-        'technical'=> 'Kepala Seksi Teknik & Pelayanan Jasa',
+                // 3 kartu bawah (label + value)
+        'sub_head_label' => 'Kepala Sub Bagian',
+        'sub_head_value' => 'Tata Usaha',
+
+        'security_label' => 'Kepala Seksi',
+        'security_value' => 'Keamanan Penerbangan & Pelayanan Darurat',
+
+        'technical_label' => 'Kepala Seksi',
+        'technical_value'=> 'Teknik & Pelayanan Jasa',
     ],
 
     /*
@@ -90,9 +98,15 @@ return [
     |--------------------------------------------------------------------------
     */
     'vision' => [
-        'title' => 'Visi & Misi',
+        'badge' => 'Tujuan Strategis',
+        'title_1' => 'Visi &',
+        'title_2' => 'Misi',
+
         'philosophy' => 'Filosofi Utama',
         'quote' => 'Menjadi fondasi strategis dalam pelayanan transportasi udara yang berkualitas, aman, dan selaras dengan pembangunan daerah.',
+
+        // teks kecil bawah quote (yang kamu hardcode tadi)
+        'note' => 'Perumusan visi dan misi ini berfungsi sebagai arah kebijakan bagi seluruh pengelola bandara dalam menjalankan tanggung jawab secara terintegrasi.',
     ],
 
     'mission' => [
@@ -108,13 +122,23 @@ return [
     |--------------------------------------------------------------------------
     */
     'services' => [
-        'title' => 'Layanan Terminal',
-        'subtitle' => 'Standardisasi Pelayanan Bandar Udara',
+       'title' => 'Layanan Terminal',
+        'subtitle' => 'Standardisasi Pelayanan Bandar Udara Internasional',
+
         'lounge' => 'Singhasari Premium Lounge',
+        'lounge_desc' => 'Fasilitas ruang tunggu eksklusif yang terletak strategis di lantai 2 terminal keberangkatan. Lounge ini dirancang khusus untuk memberikan kenyamanan paripurna bagi penumpang kelas bisnis dan mitra perbankan. Tersedia hidangan prasmanan khas nusantara, area kerja dengan koneksi internet berkecepatan tinggi, serta ruang ibadah pribadi.',
+
         'commercial' => 'Area Komersial & UMKM',
-        'priority' => 'Layanan Prioritas',
+        'commercial_desc' => 'Pusat perbelanjaan terminal yang menghadirkan sinergi antara gerai modern dan UMKM lokal unggulan Malang Raya. Para penumpang dapat menemukan berbagai pilihan buah tangan otentik seperti Keripik Tempe Sanan, Apel Manalagi segar, hingga olahan bakso kemasan vakum.',
+
+        'priority' => 'Manajemen Layanan Prioritas',
+        'priority_desc' => 'Komitmen kami terhadap inklusivitas diwujudkan melalui penyediaan fasilitas bantuan mobilitas penuh. Tersedia armada kursi roda modern dan petugas pendamping terlatih (Special Assistant) yang siap membantu penumpang lansia, ibu hamil, serta penyandang disabilitas.',
+
         'digital' => 'Konektivitas Digital',
+        'digital_desc' => 'Bandara Abdurachman Saleh mendukung kebutuhan digital para pelancong dengan menyediakan akses Wi-Fi gratis di seluruh area terminal penumpang. Selain itu, tersedia stasiun pengisian daya (charging station) yang tersebar di area ruang tunggu untuk memastikan perangkat Anda tetap aktif.',
+
         'operational' => 'Jam Operasional',
+        'operational_hours' => '07:30 - 17:00 WIB',
     ],
 
     /*

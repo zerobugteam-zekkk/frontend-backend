@@ -2,6 +2,8 @@
 
 return [
 
+// WELCOME PAGE TRANSLATION FILE - INDONESIAN
+
     'meta' => [
     'title' => 'Abdurachman Saleh Hub - Gerbang Udara Jawa Timur',
     ],
@@ -67,8 +69,8 @@ return [
         'title_2' => 'Abdurachman Saleh',
         'founded' => 'Tahun Berdiri',
        'paragraph_1' => 'Dinamakan berdasarkan pahlawan nasional <strong class="text-slate-900 font-bold">Prof. Dr. Abdurachman Saleh</strong>, bandara ini memiliki akar militer yang kuat sebagai pangkalan udara (Lanud) utama di Jawa Timur. Lokasinya yang dikelilingi oleh <span class="text-slate-800 font-semibold">Gunung Arjuno, Gunung Semeru, dan Gunung Bromo</span> menjadikannya salah satu bandara dengan pemandangan terindah namun menantang di Indonesia.',
-  'paragraph_2' => 'Transformasi besar terjadi pada <strong class="text-blue-600">2005</strong>, ketika gerbang militer ini dibuka untuk melayani masyarakat sipil. Sejak saat itu, Abdurachman Saleh telah menjadi nadi utama bagi wisatawan mancanegara yang ingin mengeksplorasi keajaiban alam Bromo.',
-],
+        'paragraph_2' => 'Transformasi besar terjadi pada <strong class="text-blue-600">2005</strong>, ketika gerbang militer ini dibuka untuk melayani masyarakat sipil. Sejak saat itu, Abdurachman Saleh telah menjadi nadi utama bagi wisatawan mancanegara yang ingin mengeksplorasi keajaiban alam Bromo.',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -156,5 +158,96 @@ return [
         'contact' => 'Hubungi Kami',
         'copyright' => '© 2024 Bandara Abdurachman Saleh – Malang Station Hub',
     ],
+
+    // TRANSPORTASI PAGE TRANSLATION FILE - INDONESIAN
+        'brand' => [
+        'abdurachman' => 'Abdurachman',
+        'saleh' => 'Saleh',
+        'hub' => 'Hub',
+    ],
+
+    'transport' => [
+        'meta' => [
+            'title' => 'Transportasi & Aksesibilitas Terpadu - Abdurachman Saleh Hub',
+        ],
+
+        'nav' => [
+            'portal' => 'Portal Transportasi',
+            'status_label' => 'Status',
+            'status_value' => 'Operasional Normal',
+        ],
+
+        'hero' => [
+            'guide_badge' => 'Panduan Transportasi Resmi 2026',
+            'title_1' => 'Konektivitas',
+            'title_2' => 'Tanpa Batas',
+            'desc' => 'Selamat datang di pusat panduan transportasi resmi Bandar Udara Abdurachman Saleh Malang. Kami berkomitmen menyediakan sistem mobilitas yang cerdas, terintegrasi, dan aman untuk mendukung setiap perjalanan Anda di wilayah Malang Raya, Kota Batu, dan sekitarnya. Navigasi perjalanan Anda dimulai dari sini.',
+            'cta_explore' => 'Eksplorasi Moda',
+            'cta_security' => 'Prosedur Keamanan',
+            'scroll' => 'Gulir ke bawah',
+        ],
+
+        'cards' => [
+            'public_tag' => 'Angkutan Publik',
+            'damri_title' => 'Shuttle Bus Damri',
+            'damri_desc' => 'Layanan angkutan pemadu moda resmi pemerintah yang menghubungkan bandara dengan pusat mobilitas Kota Malang. Armada ini dirancang khusus dengan kompartemen bagasi yang luas dan pendingin udara yang optimal untuk kenyamanan kelompok maupun individu.',
+            'damri_li_1' => 'Interval: Setiap 60 Menit',
+            'damri_li_2' => 'Dukungan Pembayaran Non-Tunai',
+            'damri_li_3' => 'Rute: Stasiun Malang & Klojen',
+            'damri_btn' => 'Cek Jadwal Keberangkatan',
+
+            'taxi_title' => 'Taksi Bandara Resmi',
+            'taxi_desc' => 'Tersedia armada taksi konvensional yang dikelola oleh koperasi bandara. Layanan ini menawarkan kepastian biaya dengan sistem zona tarif tetap (Fixed Rate), sehingga Anda tidak perlu khawatir tentang fluktuasi harga akibat kemacetan atau rute alternatif.',
+            'taxi_li_1' => 'Transparansi Tarif per Zona',
+            'taxi_li_2' => 'Pengemudi Berizin Resmi',
+            'taxi_li_3' => 'Siaga 24 Jam Sesuai Flight',
+            'taxi_btn' => 'Lihat Daftar Tarif Zona',
+
+            'online_title' => 'Transportasi Online',
+            'online_desc' => 'Untuk menjaga ketertiban area terminal utama, layanan ride-hailing seperti Grab dan Gojek memiliki titik penjemputan khusus (Shelter). Lokasi ini terletak di area gerbang luar yang dapat ditempuh dengan berjalan kaki singkat melalui jalur pedestrian yang nyaman.',
+            'online_li_1' => 'Jarak Tempuh: 300 Meter',
+            'online_li_2' => 'Titik Jemput: Shelter Gate Luar',
+            'online_li_3' => 'Lokasi Sesuai Aplikasi',
+            'online_btn' => 'Panduan Navigasi Shelter',
+        ],
+
+        'procedure' => [
+            'title_1' => 'Prosedur Keamanan &',
+            'title_2' => 'Etika Bertransportasi',
+            'sec1_title' => 'Langkah Keamanan Penumpang',
+            'sec1_desc' => 'Setiap operasional transportasi di area Lanud Abdurachman Saleh wajib mengikuti regulasi ketat Aviation Security (Avsec). Kami sangat menyarankan pengguna jasa untuk selalu memesan layanan melalui loket resmi atau aplikasi terdaftar. Selalu pastikan Anda mencatat identitas pengemudi dan pelat nomor kendaraan sebelum meninggalkan area terminal.',
+            'sec2_title' => 'Regulasi Bagasi & Barang Bawaan',
+            'sec2_desc' => 'Demi kenyamanan bersama, pengguna bus Damri diwajibkan memberikan label identitas pada setiap barang yang diletakkan di bagasi bawah. Bagi pengguna taksi, pastikan volume barang tidak menghalangi pandangan pengemudi. Barang-barang kategori mudah terbakar atau berbahaya (Dangerous Goods) dilarang keras diangkut menggunakan moda transportasi publik bandara.',
+            'alert_title' => 'Pemberitahuan Penting',
+            'alert_desc' => 'Hindari transaksi dengan oknum yang menawarkan jasa transportasi tanpa seragam resmi atau tanda pengenal bandara. Pihak otoritas tidak bertanggung jawab atas kerugian atau masalah keamanan yang muncul dari penggunaan layanan transportasi tidak resmi (taksi gelap).',
+        ],
+
+        'parking' => [
+            'badge' => 'Fasilitas Parkir Aman',
+            'title_1' => 'Fasilitas Parkir',
+            'title_2' => 'Inap Premium',
+            'desc' => 'Bepergian jauh tanpa rasa khawatir. Layanan parkir inap kami dilengkapi dengan sistem pengawasan CCTV 24 jam, patroli rutin oleh petugas keamanan, serta area yang diterangi maksimal. Kami menyediakan perlindungan total bagi kendaraan Anda selama Anda berada di luar kota.',
+            'motor' => 'Tarif Motor',
+            'car' => 'Tarif Mobil',
+            'per_day' => '/ Hari',
+            'side_title' => 'Proteksi Penuh',
+            'side_desc' => 'Sistem manajemen parkir berbasis digital untuk menjamin akurasi waktu dan keamanan kendaraan Anda.',
+        ],
+
+        'faq' => [
+            'title' => 'Pertanyaan yang Sering Diajukan',
+            'q1' => 'Apakah armada transportasi tersedia untuk penerbangan malam?',
+            'a1' => 'Tentu. Layanan taksi bandara resmi diatur untuk selalu siaga hingga jadwal penerbangan terakhir mendarat. Sedangkan untuk bus Damri, jadwal disesuaikan dengan rata-rata jam sibuk kedatangan pesawat di sore hari.',
+            'q2' => 'Bagaimana cara menuju kawasan wisata Kota Batu?',
+            'a2' => 'Dari bandara, Anda dapat menggunakan taksi bandara langsung ke Kota Batu dengan tarif zona yang sudah ditentukan. Alternatif lainnya adalah menggunakan bus Damri menuju pusat kota Malang dan melanjutkan perjalanan dengan layanan transportasi online.',
+        ],
+
+        'footer' => [
+            'title' => 'Abdurachman Saleh Hub',
+            'subtitle' => 'Pusat Informasi Transportasi Terpadu Malang Raya',
+            'copyright' => '© 2026 Otoritas Bandar Udara Abdurachman Saleh. Seluruh informasi yang tersaji dalam portal ini bersifat dinamis dan dapat berubah sesuai kebijakan operasional dan regulasi pemerintah yang berlaku.',
+        ],
+    ],
+
 
 ];

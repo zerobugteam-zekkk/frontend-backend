@@ -247,8 +247,6 @@
                 </form>
             </div>
             {{-- TOMBOL SWITCH ID / EN (TAILWIND, CLEAN) --}}
-            @include('partials.lang-switch')
-            
             <div class="flex items-center space-x-2 ml-4">
                 <a href="{{ route('lang.switch', 'id') }}"
                 class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border transition

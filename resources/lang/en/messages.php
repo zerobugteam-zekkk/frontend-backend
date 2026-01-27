@@ -2,6 +2,8 @@
 
 return [
 
+// WELCOME PAGE
+
     'meta' => [
     'title' => 'Abdurachman Saleh Hub - East Java Air Gateway',
   ],
@@ -155,5 +157,97 @@ return [
         'contact' => 'Contact Us',
         'copyright' => '© 2024 Abdurachman Saleh Airport – Malang Station Hub',
     ],
+
+
+// TRANSPORTATION PAGE
+    'brand' => [
+    'abdurachman' => 'Abdurachman',
+    'saleh' => 'Saleh',
+    'hub' => 'Hub',
+    ],
+
+    'transport' => [
+        'meta' => [
+            'title' => 'Integrated Transportation & Accessibility - Abdurachman Saleh Hub',
+        ],
+
+        'nav' => [
+            'portal' => 'Transport Portal',
+            'status_label' => 'Status',
+            'status_value' => 'Normal Operations',
+        ],
+
+        'hero' => [
+            'guide_badge' => 'Official Transportation Guide 2026',
+            'title_1' => 'Seamless',
+            'title_2' => 'Connectivity',
+            'desc' => 'Welcome to the official transportation guide center of Abdurachman Saleh Airport, Malang. We are committed to providing a smart, integrated, and safe mobility system to support your trips across Greater Malang, Batu City, and surrounding areas. Your journey planning starts here.',
+            'cta_explore' => 'Explore Modes',
+            'cta_security' => 'Security Procedures',
+            'scroll' => 'Scroll Down',
+        ],
+
+        'cards' => [
+            'public_tag' => 'Public Transport',
+            'damri_title' => 'DAMRI Shuttle Bus',
+            'damri_desc' => 'An official government-operated intermodal service connecting the airport with key mobility hubs in Malang. Designed with spacious luggage compartments and optimal air conditioning for both groups and individual travelers.',
+            'damri_li_1' => 'Interval: Every 60 Minutes',
+            'damri_li_2' => 'Cashless Payment Support',
+            'damri_li_3' => 'Route: Malang Station & Klojen',
+            'damri_btn' => 'Check Departure Schedule',
+
+            'taxi_title' => 'Official Airport Taxi',
+            'taxi_desc' => 'Conventional taxi fleet managed by the airport cooperative. This service provides cost certainty through a fixed-rate zoning system, so you don’t have to worry about price fluctuations due to traffic or alternate routes.',
+            'taxi_li_1' => 'Transparent Zone-Based Pricing',
+            'taxi_li_2' => 'Licensed Drivers',
+            'taxi_li_3' => '24/7 Standby Based on Flights',
+            'taxi_btn' => 'View Zone Fare List',
+
+            'online_title' => 'Ride-Hailing Services',
+            'online_desc' => 'To keep the main terminal area orderly, ride-hailing services such as Grab and Gojek use a dedicated pickup point (Shelter). It is located near the outer gate and can be reached via a short walk along a comfortable pedestrian path.',
+            'online_li_1' => 'Walking Distance: 300 Meters',
+            'online_li_2' => 'Pickup Point: Outer Gate Shelter',
+            'online_li_3' => 'Location Follows the App',
+            'online_btn' => 'Shelter Navigation Guide',
+        ],
+
+        'procedure' => [
+            'title_1' => 'Security Procedures &',
+            'title_2' => 'Transportation Etiquette',
+            'sec1_title' => 'Passenger Safety Steps',
+            'sec1_desc' => 'All transport operations within the Abdurachman Saleh Air Base area must follow strict Aviation Security (Avsec) regulations. We strongly recommend booking only via official counters or registered apps. Always record the driver’s identity and the vehicle plate number before leaving the terminal area.',
+            'sec2_title' => 'Luggage & Carry-on Regulations',
+            'sec2_desc' => 'For shared comfort, DAMRI passengers should label any luggage placed in the lower compartment. For taxi users, ensure luggage does not obstruct the driver’s view. Flammable or hazardous items (Dangerous Goods) are strictly prohibited on airport public transport modes.',
+            'alert_title' => 'Important Notice',
+            'alert_desc' => 'Avoid transactions with unauthorized individuals offering transportation without official uniforms or airport ID. The airport authority is not responsible for losses or security issues arising from the use of unofficial transportation services (illegal taxis).',
+        ],
+
+        'parking' => [
+            'badge' => 'Secure Parking Facility',
+            'title_1' => 'Premium Overnight',
+            'title_2' => 'Parking',
+            'desc' => 'Travel far without worry. Our overnight parking service is equipped with 24-hour CCTV monitoring, routine security patrols, and well-lit areas. We provide full protection for your vehicle while you are away.',
+            'motor' => 'Motorcycle Rate',
+            'car' => 'Car Rate',
+            'per_day' => '/ Day',
+            'side_title' => 'Full Protection',
+            'side_desc' => 'A digital-based parking management system to ensure accurate timing and enhanced vehicle security.',
+        ],
+
+        'faq' => [
+            'title' => 'Frequently Asked Questions',
+            'q1' => 'Is transportation available for late-night flights?',
+            'a1' => 'Yes. Official airport taxis are scheduled to remain on standby until the last flight lands. For DAMRI buses, schedules are adjusted to match peak arrival hours in the afternoon and evening.',
+            'q2' => 'How do I get to Batu City tourist areas?',
+            'a2' => 'From the airport, you can use the official airport taxi directly to Batu City with pre-defined zone fares. Alternatively, take DAMRI to downtown Malang and continue using ride-hailing services.',
+        ],
+
+        'footer' => [
+            'title' => 'Abdurachman Saleh Hub',
+            'subtitle' => 'Integrated Transportation Information Center for Greater Malang',
+            'copyright' => '© 2026 Abdurachman Saleh Airport Authority. All information on this portal is dynamic and may change based on operational policies and applicable government regulations.',
+        ],
+    ],
+
 
 ];

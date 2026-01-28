@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadwal Penerbangan - Abdurachman Saleh Hub</title>
+    <title>{{ __('messages.schedule.meta.title') }}</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,9 +45,7 @@
 
         .mono-font { font-family: 'JetBrains Mono', monospace; }
 
-        .animate-spin-slow {
-            animation: spin 3s linear infinite;
-        }
+        .animate-spin-slow { animation: spin 3s linear infinite; }
         @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
@@ -62,25 +60,35 @@
     <nav class="glass-header text-white sticky top-0 z-50 border-b border-white/10">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center">
-                <a href="/" class="group flex items-center space-x-4 transition-all">
+                <a href="{{ url('/') }}" class="group flex items-center space-x-4 transition-all">
                     <div class="bg-white/10 p-2 rounded-lg group-hover:bg-blue-600 transition-colors">
                         <i class="fas fa-arrow-left text-sm"></i>
                     </div>
                     <div class="flex flex-col border-l border-white/20 pl-4">
-                        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400 leading-none">Kembali</span>
-                        <span class="text-sm font-bold tracking-tighter uppercase mt-1">Beranda</span>
+                        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400 leading-none">
+                            {{ __('messages.schedule.nav.back_kicker') }}
+                        </span>
+                        <span class="text-sm font-bold tracking-tighter uppercase mt-1">
+                            {{ __('messages.schedule.nav.back_label') }}
+                        </span>
                     </div>
                 </a>
             </div>
 
             <div class="flex items-center space-x-6 text-right">
                 <div class="hidden md:flex flex-col justify-center border-r border-white/20 pr-6">
-                    <span class="text-[10px] font-black uppercase tracking-[0.4em] text-blue-400 leading-none mb-1">Status Sistem</span>
-                    <span class="text-[10px] font-bold text-white/60">Live Operational</span>
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] text-blue-400 leading-none mb-1">
+                        {{ __('messages.schedule.nav.system_status') }}
+                    </span>
+                    <span class="text-[10px] font-bold text-white/60">
+                        {{ __('messages.schedule.nav.system_status_value') }}
+                    </span>
                 </div>
                 <div class="flex flex-col justify-center">
                     <span id="header-time" class="text-2xl font-black mono-font text-blue-400 leading-none tracking-tighter">00:00:00</span>
-                    <span id="header-date" class="text-[9px] font-bold uppercase tracking-widest mt-1 opacity-60 text-white">MEMUAT TANGGAL...</span>
+                    <span id="header-date" class="text-[9px] font-bold uppercase tracking-widest mt-1 opacity-60 text-white">
+                        {{ __('messages.schedule.nav.date_loading') }}
+                    </span>
                 </div>
             </div>
         </div>
@@ -90,30 +98,44 @@
 
         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8" data-aos="fade-down">
             <div class="space-y-4">
-                <h6 class="text-blue-600 font-black uppercase tracking-[0.4em] text-[11px] border-b-2 border-blue-600 w-fit pb-1">Papan Informasi Penerbangan</h6>
+                <h6 class="text-blue-600 font-black uppercase tracking-[0.4em] text-[11px] border-b-2 border-blue-600 w-fit pb-1">
+                    {{ __('messages.schedule.hero.kicker') }}
+                </h6>
                 <h1 class="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter uppercase leading-none">
-                    Jadwal <br><span class="text-blue-600">Penerbangan</span>
+                    {{ __('messages.schedule.hero.title_1') }} <br>
+                    <span class="text-blue-600">{{ __('messages.schedule.hero.title_2') }}</span>
                 </h1>
-                <p class="text-slate-500 font-medium text-lg italic no-italic">Bandara Abdurachman Saleh (MLG)</p>
+                <p class="text-slate-500 font-medium text-lg italic no-italic">
+                    {{ __('messages.schedule.hero.subtitle') }}
+                </p>
             </div>
 
             <div class="relative w-full lg:w-96 group">
                 <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 group-focus-within:text-blue-600 transition-colors">
                     <i class="fas fa-search text-sm"></i>
                 </span>
-                <input type="text" id="flightSearch" placeholder="Cari maskapai atau nomor..."
-                    class="w-full pl-12 pr-6 py-4 rounded-2xl border-2 border-slate-200 focus:border-blue-600 outline-none transition-all shadow-sm font-semibold text-slate-700">
+                <input
+                    type="text"
+                    id="flightSearch"
+                    placeholder="{{ __('messages.schedule.search.placeholder') }}"
+                    class="w-full pl-12 pr-6 py-4 rounded-2xl border-2 border-slate-200 focus:border-blue-600 outline-none transition-all shadow-sm font-semibold text-slate-700"
+                >
             </div>
         </div>
 
         <div class="flex space-x-4 mb-10 overflow-x-auto pb-4" data-aos="fade-right">
-            <button id="btn-dep" class="flex items-center space-x-3 py-4 px-10 rounded-2xl transition-all duration-300 tab-active font-black uppercase text-xs tracking-widest whitespace-nowrap" onclick="switchTab('departure')">
+            <button id="btn-dep"
+                class="flex items-center space-x-3 py-4 px-10 rounded-2xl transition-all duration-300 tab-active font-black uppercase text-xs tracking-widest whitespace-nowrap"
+                onclick="switchTab('departure')">
                 <i class="fas fa-plane-departure"></i>
-                <span>Keberangkatan</span>
+                <span>{{ __('messages.schedule.tabs.departure') }}</span>
             </button>
-            <button id="btn-arr" class="flex items-center space-x-3 py-4 px-10 rounded-2xl transition-all duration-300 bg-white border border-slate-200 text-slate-500 hover:border-blue-600 font-black uppercase text-xs tracking-widest whitespace-nowrap" onclick="switchTab('arrival')">
+
+            <button id="btn-arr"
+                class="flex items-center space-x-3 py-4 px-10 rounded-2xl transition-all duration-300 bg-white border border-slate-200 text-slate-500 hover:border-blue-600 font-black uppercase text-xs tracking-widest whitespace-nowrap"
+                onclick="switchTab('arrival')">
                 <i class="fas fa-plane-arrival"></i>
-                <span>Kedatangan</span>
+                <span>{{ __('messages.schedule.tabs.arrival') }}</span>
             </button>
         </div>
 
@@ -123,16 +145,15 @@
                 <table class="w-full text-left">
                     <thead>
                         <tr class="bg-slate-50 text-slate-400 border-b border-slate-100">
-                            <th class="p-8 uppercase text-[10px] tracking-[0.3em] font-black">Waktu</th>
-                            <th id="column-city" class="p-8 uppercase text-[10px] tracking-[0.3em] font-black">Tujuan</th>
-                            <th class="p-8 uppercase text-[10px] tracking-[0.3em] font-black">Maskapai</th>
-                            <th class="p-8 uppercase text-[10px] tracking-[0.3em] font-black text-center">No. Penerbangan</th>
-                            <th class="p-8 uppercase text-[10px] tracking-[0.3em] font-black text-center">Gate</th>
-                            <th class="p-8 uppercase text-[10px] tracking-[0.3em] font-black">Status</th>
+                            <th class="p-8 uppercase text-[10px] tracking-[0.3em] font-black">{{ __('messages.schedule.table.time') }}</th>
+                            <th id="column-city" class="p-8 uppercase text-[10px] tracking-[0.3em] font-black">{{ __('messages.schedule.table.destination') }}</th>
+                            <th class="p-8 uppercase text-[10px] tracking-[0.3em] font-black">{{ __('messages.schedule.table.airline') }}</th>
+                            <th class="p-8 uppercase text-[10px] tracking-[0.3em] font-black text-center">{{ __('messages.schedule.table.flight_no') }}</th>
+                            <th class="p-8 uppercase text-[10px] tracking-[0.3em] font-black text-center">{{ __('messages.schedule.table.gate') }}</th>
+                            <th class="p-8 uppercase text-[10px] tracking-[0.3em] font-black">{{ __('messages.schedule.table.status') }}</th>
                         </tr>
                     </thead>
-                    <tbody id="table-body" class="divide-y divide-slate-50 text-slate-700 font-medium">
-                        </tbody>
+                    <tbody id="table-body" class="divide-y divide-slate-50 text-slate-700 font-medium"></tbody>
                 </table>
             </div>
         </div>
@@ -143,55 +164,96 @@
                     <i class="fas fa-sync-alt animate-spin-slow text-blue-400 text-xl"></i>
                 </div>
                 <div class="text-left">
-                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 mb-1">Pembaruan Langsung Aktif</p>
-                    <p class="text-sm font-medium leading-relaxed opacity-90">Status diperbarui otomatis setiap menit berdasarkan sistem navigasi.</p>
+                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 mb-1">
+                        {{ __('messages.schedule.live.kicker') }}
+                    </p>
+                    <p class="text-sm font-medium leading-relaxed opacity-90">
+                        {{ __('messages.schedule.live.desc') }}
+                    </p>
                 </div>
             </div>
+
             <div class="flex items-center bg-white/5 px-6 py-3 rounded-full border border-white/5">
                 <span class="text-slate-400 text-[10px] font-black uppercase tracking-widest flex items-center">
-                    Terakhir Diperbarui : <span id="last-update" class="text-white ml-2">--:--</span>
+                    {{ __('messages.schedule.live.last_updated') }} :
+                    <span id="last-update" class="text-white ml-2">--:--</span>
                 </span>
             </div>
         </div>
 
         <section class="mt-28 border-t border-slate-200 pt-16 pb-12" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-10">Pusat Informasi Operasional <span class="text-blue-600 italic">Abdurachman Saleh</span></h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 text-slate-500 text-sm leading-relaxed">
-            <div class="space-y-6">
-                <p>
-                    Layanan <strong>Flight Information Display System (FIDS)</strong> ini menyajikan data pergerakan pesawat udara secara *real-time* di Terminal Kedatangan dan Keberangkatan Bandara Abdurachman Saleh Malang. Seluruh informasi jadwal diperbarui secara otomatis melalui integrasi sistem navigasi udara.
-                </p>
-                <p>
-                    Sesuai prosedur operasional, status <strong>BOARDING</strong> diaktifkan 30 menit sebelum waktu keberangkatan (STD). Bagi seluruh calon penumpang diwajibkan telah menyelesaikan proses pelaporan diri (*check-in*) selambat-lambatnya 45 menit sebelum jadwal keberangkatan yang tertera pada tiket.
-                </p>
-            </div>
-            <div class="space-y-6">
-                <p>
-                    Mengingat karakteristik bandara sebagai kawasan *joint-user*, perubahan jadwal dapat terjadi sewaktu-waktu karena alasan operasional, teknis, maupun aktivitas kedaulatan negara. Penumpang diimbau untuk selalu menyimak pengumuman melalui *Public Address System* di ruang tunggu terminal.
-                </p>
-                <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
-                    <ul class="space-y-3 font-bold text-slate-800 uppercase text-[10px] tracking-widest">
-                        <li class="flex items-center"><i class="fas fa-info-circle text-blue-600 mr-3"></i> Pembaruan Data Terpusat (60 Detik)</li>
-                        <li class="flex items-center"><i class="fas fa-plane text-blue-600 mr-3"></i> Sinkronisasi Seluruh Maskapai Nasional</li>
-                        <li class="flex items-center"><i class="fas fa-shield-alt text-blue-600 mr-3"></i> Berdasarkan Standar Keselamatan Penerbangan</li>
-                    </ul>
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-10">
+                    {{ __('messages.schedule.info.title') }}
+                    <span class="text-blue-600 italic">{{ __('messages.schedule.info.title_accent') }}</span>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 text-slate-500 text-sm leading-relaxed">
+                    <div class="space-y-6">
+                        <p>{!! __('messages.schedule.info.p1') !!}</p>
+                        <p>{!! __('messages.schedule.info.p2') !!}</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <p>{!! __('messages.schedule.info.p3') !!}</p>
+
+                        <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                            <ul class="space-y-3 font-bold text-slate-800 uppercase text-[10px] tracking-widest">
+                                <li class="flex items-center">
+                                    <i class="fas fa-info-circle text-blue-600 mr-3"></i>
+                                    {{ __('messages.schedule.info.bullets.1') }}
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-plane text-blue-600 mr-3"></i>
+                                    {{ __('messages.schedule.info.bullets.2') }}
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-shield-alt text-blue-600 mr-3"></i>
+                                    {{ __('messages.schedule.info.bullets.3') }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+
     </main>
 
     <footer class="py-12 text-center border-t border-slate-100 bg-white">
         <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.6em]">
-            © 2026 Abdurachman Saleh Air Terminal - MLG Information System
+            {{ __('messages.schedule.footer.copyright') }}
         </p>
     </footer>
 
-    {{-- JavaScript Functions --}}
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    {{-- JavaScript --}}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
+/* =============================
+   I18N FOR JS
+============================= */
+const APP_LOCALE = "{{ app()->getLocale() }}";
+const JS_LOCALE  = (APP_LOCALE === 'id') ? 'id-ID' : 'en-US';
+
+const T = @js([
+  'destination'  => __('messages.schedule.table.destination'),
+  'origin'       => __('messages.schedule.table.origin'),
+  'main_hub'     => __('messages.schedule.table.main_hub'),
+  'error_load'   => __('messages.schedule.js.error_load'),
+
+  'status' => [
+    'departed'   => __('messages.schedule.status.departed'),
+    'last_call'  => __('messages.schedule.status.last_call'),
+    'boarding'   => __('messages.schedule.status.boarding'),
+    'on_time'    => __('messages.schedule.status.on_time'),
+    'arrived'    => __('messages.schedule.status.arrived'),
+    'landing'    => __('messages.schedule.status.landing'),
+    'en_route'   => __('messages.schedule.status.en_route'),
+  ],
+]);
+
 /* =============================
    CONFIG
 ============================= */
@@ -205,199 +267,192 @@ const API_INTERVAL = 10 * 60 * 1000; // 10 menit
    SKELETON LOADING
 ============================= */
 function renderSkeleton(rows = 5) {
-    const container = document.getElementById('table-body');
-    container.innerHTML = Array.from({ length: rows }).map(() => `
-        <tr class="animate-pulse">
-            <td class="p-8"><div class="h-8 w-20 bg-slate-200 rounded"></div></td>
-            <td class="p-8">
-                <div class="h-5 w-48 bg-slate-200 rounded mb-2"></div>
-                <div class="h-3 w-24 bg-slate-100 rounded"></div>
-            </td>
-            <td class="p-8"><div class="h-5 w-32 bg-slate-200 rounded"></div></td>
-            <td class="p-8 text-center"><div class="h-6 w-20 bg-slate-200 rounded mx-auto"></div></td>
-            <td class="p-8 text-center"><div class="h-6 w-10 bg-slate-200 rounded mx-auto"></div></td>
-            <td class="p-8"><div class="h-6 w-24 bg-slate-200 rounded"></div></td>
-        </tr>
-    `).join('');
+  const container = document.getElementById('table-body');
+  if (!container) return;
+
+  container.innerHTML = Array.from({ length: rows }).map(() => `
+    <tr class="animate-pulse">
+      <td class="p-8"><div class="h-8 w-20 bg-slate-200 rounded"></div></td>
+      <td class="p-8">
+        <div class="h-5 w-48 bg-slate-200 rounded mb-2"></div>
+        <div class="h-3 w-24 bg-slate-100 rounded"></div>
+      </td>
+      <td class="p-8"><div class="h-5 w-32 bg-slate-200 rounded"></div></td>
+      <td class="p-8 text-center"><div class="h-6 w-20 bg-slate-200 rounded mx-auto"></div></td>
+      <td class="p-8 text-center"><div class="h-6 w-10 bg-slate-200 rounded mx-auto"></div></td>
+      <td class="p-8"><div class="h-6 w-24 bg-slate-200 rounded"></div></td>
+    </tr>
+  `).join('');
 }
 
 /* =============================
    LOAD DATA (API CERDAS)
 ============================= */
 async function loadFlights(force = false) {
-    const now = Date.now();
+  const now = Date.now();
 
-    // ❌ Jangan hit API kalau belum waktunya
-    if (!force && flightsData.length && (now - lastApiFetch < API_INTERVAL)) {
-        renderData();
-        return;
+  if (!force && flightsData.length && (now - lastApiFetch < API_INTERVAL)) {
+    renderData();
+    return;
+  }
+
+  renderSkeleton();
+
+  try {
+    const res = await fetch(`/api/flights?airport=MLG&type=${activeTab}`);
+    const json = await res.json();
+
+    flightsData = json.data || [];
+    lastApiFetch = now;
+
+    renderData();
+  } catch (e) {
+    console.error("Gagal ambil data flight", e);
+    const tbody = document.getElementById('table-body');
+    if (tbody) {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="6" class="p-10 text-center text-red-600 font-bold">
+            ${T.error_load}
+          </td>
+        </tr>
+      `;
     }
-
-    renderSkeleton();
-
-    try {
-        const res = await fetch(`/api/flights?airport=MLG&type=${activeTab}`);
-        const json = await res.json();
-
-        flightsData = json.data || [];
-        lastApiFetch = now;
-
-        renderData();
-    } catch (e) {
-        console.error("Gagal ambil data flight", e);
-        document.getElementById('table-body').innerHTML = `
-            <tr>
-                <td colspan="6" class="p-10 text-center text-red-600 font-bold">
-                    Gagal memuat data penerbangan
-                </td>
-            </tr>
-        `;
-    }
+  }
 }
 
 /* =============================
    CLOCK HEADER
 ============================= */
 function updateHeaderClock() {
-    const now = new Date();
-    document.getElementById('header-time').innerText =
-        now.toLocaleTimeString('id-ID');
-    document.getElementById('header-date').innerText =
-        now.toLocaleDateString('id-ID', {
-            weekday: 'long',
-            day: 'numeric',
-            month: 'short',
-            year: 'numeric'
-        }).toUpperCase();
+  const now = new Date();
+
+  const timeEl = document.getElementById('header-time');
+  const dateEl = document.getElementById('header-date');
+  if (!timeEl || !dateEl) return;
+
+  timeEl.innerText = now.toLocaleTimeString(JS_LOCALE);
+
+  const dateText = now.toLocaleDateString(JS_LOCALE, {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  });
+
+  dateEl.innerText = (APP_LOCALE === 'id') ? dateText.toUpperCase() : dateText;
 }
 
 /* =============================
-   STATUS SIMULATION (REAL-TIME PALSU)
+   STATUS SIMULATION
 ============================= */
 function getFlightStatus(timeStr, type) {
-    const now = new Date();
-    const [h, m] = timeStr.split(':').map(Number);
-    const flightTime = new Date();
-    flightTime.setHours(h, m, 0);
+  const now = new Date();
+  const [h, m] = (timeStr || '00:00').split(':').map(Number);
 
-    const diff = (flightTime - now) / 60000;
+  const flightTime = new Date();
+  flightTime.setHours(h, m, 0, 0);
 
-    if (type === 'departure') {
-        if (diff < -10) return { label: "BERANGKAT", class: "status-departed" };
-        if (diff <= 0) return { label: "PANGGILAN TERAKHIR", class: "status-delay" };
-        if (diff <= 35) return { label: "PENERBANGAN", class: "status-boarding" };
-        return { label: "TEPAT WAKTU", class: "status-on-time" };
-    } else {
-        if (diff < -5) return { label: "TIBA", class: "status-arrived" };
-        if (diff <= 15) return { label: "PENDARATAN", class: "status-boarding" };
-        return { label: "DALAM PERJALANAN", class: "status-on-time" };
-    }
+  const diff = (flightTime - now) / 60000;
+
+  if (type === 'departure') {
+    if (diff < -10) return { label: T.status.departed,  class: "status-departed" };
+    if (diff <= 0)  return { label: T.status.last_call, class: "status-delay" };
+    if (diff <= 35) return { label: T.status.boarding,  class: "status-boarding" };
+    return { label: T.status.on_time, class: "status-on-time" };
+  } else {
+    if (diff < -5)  return { label: T.status.arrived, class: "status-arrived" };
+    if (diff <= 15) return { label: T.status.landing, class: "status-boarding" };
+    return { label: T.status.en_route, class: "status-on-time" };
+  }
 }
 
 /* =============================
    RENDER TABLE
 ============================= */
 function renderData() {
-    const container = document.getElementById('table-body');
-    const search = document.getElementById('flightSearch').value.toLowerCase();
+  const container = document.getElementById('table-body');
+  const input = document.getElementById('flightSearch');
+  if (!container || !input) return;
 
-    const data = flightsData.filter(f =>
-        f.airline.toLowerCase().includes(search) ||
-        f.flight.toLowerCase().includes(search)
-    );
+  const search = input.value.toLowerCase();
 
-    container.innerHTML = data.map(f => {
-        const status = getFlightStatus(f.time, activeTab);
-        return `
-            <tr class="hover:bg-blue-50/50 transition-all">
-                <td class="p-8 font-black text-2xl mono-font">${f.time}</td>
-                <td class="p-8">
-                    <span class="font-black uppercase">${f.city}</span>
-                    <span class="block text-[10px] text-blue-600">Main Hub MLG</span>
-                </td>
-                <td class="p-8 font-bold uppercase">${f.airline}</td>
-                <td class="p-8 text-center">
-                    <span class="bg-slate-900 text-white px-4 py-2 rounded-lg text-xs">
-                        ${f.flight}
-                    </span>
-                </td>
-                <td class="p-8 text-center font-black">${f.gate}</td>
-                <td class="p-8">
-                    <span class="${status.class} text-[10px] font-black uppercase">
-                        ${status.label}
-                    </span>
-                </td>
-            </tr>
-        `;
-    }).join('');
+  const data = (flightsData || []).filter(f =>
+    (f.airline || '').toLowerCase().includes(search) ||
+    (f.flight  || '').toLowerCase().includes(search)
+  );
 
-    document.getElementById('last-update').innerText =
-        new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+  container.innerHTML = data.map(f => {
+    const status = getFlightStatus(f.time, activeTab);
+    return `
+      <tr class="hover:bg-blue-50/50 transition-all">
+        <td class="p-8 font-black text-2xl mono-font">${f.time ?? ''}</td>
+        <td class="p-8">
+          <span class="font-black uppercase">${f.city ?? ''}</span>
+          <span class="block text-[10px] text-blue-600">${T.main_hub}</span>
+        </td>
+        <td class="p-8 font-bold uppercase">${f.airline ?? ''}</td>
+        <td class="p-8 text-center">
+          <span class="bg-slate-900 text-white px-4 py-2 rounded-lg text-xs">
+            ${f.flight ?? ''}
+          </span>
+        </td>
+        <td class="p-8 text-center font-black">${f.gate ?? ''}</td>
+        <td class="p-8">
+          <span class="${status.class} text-[10px] font-black uppercase">
+            ${status.label}
+          </span>
+        </td>
+      </tr>
+    `;
+  }).join('');
+
+  const last = document.getElementById('last-update');
+  if (last) {
+    last.innerText = new Date().toLocaleTimeString(JS_LOCALE, { hour: '2-digit', minute: '2-digit' });
+  }
 }
 
 /* =============================
    TAB SWITCH
 ============================= */
 function switchTab(type) {
-    activeTab = type;
+  activeTab = type;
 
-    const btnDep = document.getElementById('btn-dep');
-    const btnArr = document.getElementById('btn-arr');
+  const btnDep = document.getElementById('btn-dep');
+  const btnArr = document.getElementById('btn-arr');
+  const col    = document.getElementById('column-city');
 
-    if (type === 'departure') {
-        // aktifkan keberangkatan
-        btnDep.classList.add('tab-active');
-        btnArr.classList.remove('tab-active');
+  if (type === 'departure') {
+    btnDep?.classList.add('tab-active');
+    btnArr?.classList.remove('tab-active');
+    col && (col.innerText = T.destination);
+  } else {
+    btnArr?.classList.add('tab-active');
+    btnDep?.classList.remove('tab-active');
+    col && (col.innerText = T.origin);
+  }
 
-        btnArr.classList.add(
-            'bg-white', 'border', 'border-slate-200', 'text-slate-500'
-        );
-        btnDep.classList.remove(
-            'bg-white', 'border', 'border-slate-200', 'text-slate-500'
-        );
-
-        document.getElementById('column-city').innerText = 'Tujuan';
-    } else {
-        // aktifkan kedatangan
-        btnArr.classList.add('tab-active');
-        btnDep.classList.remove('tab-active');
-
-        btnDep.classList.add(
-            'bg-white', 'border', 'border-slate-200', 'text-slate-500'
-        );
-        btnArr.classList.remove(
-            'bg-white', 'border', 'border-slate-200', 'text-slate-500'
-        );
-
-        document.getElementById('column-city').innerText = 'Asal';
-    }
-
-    // paksa load API saat ganti tab
-    loadFlights(true);
+  loadFlights(true);
 }
 
 /* =============================
    INIT
 ============================= */
-document.getElementById('flightSearch').addEventListener('input', renderData);
+document.addEventListener('DOMContentLoaded', () => {
+  try { if (window.AOS) AOS.init({ duration: 800, once: true }); } catch(e) {}
 
-AOS.init({ duration: 800, once: true });
+  const input = document.getElementById('flightSearch');
+  input?.addEventListener('input', renderData);
 
-updateHeaderClock();
-loadFlights(true);
+  updateHeaderClock();
+  loadFlights(true);
 
-/* =============================
-   INTERVALS
-============================= */
-setInterval(updateHeaderClock, 1000);
-
-// update status tiap menit (TANPA API)
-setInterval(() => renderData(), 60000);
-
-// cek API tiap menit, tapi hit hanya kalau cache expired
-setInterval(() => loadFlights(false), 60000);
+  setInterval(updateHeaderClock, 1000);
+  setInterval(() => renderData(), 60000);
+  setInterval(() => loadFlights(false), 60000);
+});
 </script>
 
 </body>
 </html>
-

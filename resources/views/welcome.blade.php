@@ -181,17 +181,6 @@
 
 <body class="main-bg-pattern font-sans text-slate-900 antialiased relative overflow-x-hidden">
 
-    {{-- <!-- DEBUG LOCALE (HAPUS NANTI) -->
-    <div style="position:fixed;top:10px;right:10px;z-index:9999;
-                background:black;color:white;padding:6px 10px;font-size:12px">
-        {{ app()->getLocale() }}
-    </div> --}}
-
-    {{-- <div style="position:fixed;bottom:10px;right:10px;z-index:9999;background:black;color:white;padding:6px 10px;font-size:12px">
-  locale: {{ app()->getLocale() }} | cookie: {{ request()->cookie('locale') }}<br>
-  test: {{ __('messages.nav.schedule') }}
-</div> --}}
-
     <div class="blob-bg top-[10%] -left-[10%]"></div>
     <div class="blob-bg top-[40%] -right-[10%]" style="background: radial-gradient(circle, rgba(15, 23, 42, 0.03) 0%, transparent 70%);"></div>
 
@@ -388,6 +377,33 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('/api/dashboard/stats');
+                if (!res.ok) throw new Error('API error');
+
+                const data = await res.json();
+
+                // Flights hari ini
+                const flightsEl = document.getElementById('stat-flights');
+                if (flightsEl) {
+                    flightsEl.textContent = data.flights_today ?? 0;
+                }
+
+                // Estimasi penumpang
+                const passengersEl = document.getElementById('stat-passengers');
+                if (passengersEl) {
+                    passengersEl.textContent = data.estimated_passengers ?? 0;
+                }
+
+            } catch (err) {
+                console.warn('Dashboard stats gagal dimuat:', err);
+            }
+        });
+    </script>
+
 
     <main class="container mx-auto px-6 py-32 relative">
         <div class="bg-white overflow-x-hidden">

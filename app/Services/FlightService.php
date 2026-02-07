@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Cache;
 
 class FlightService
 {
+    // Mendapatkan data penerbangan dari API dengan caching
     public function getFlights(string $airport = 'MLG', string $type = 'departure')
     {
         $cacheKey = "flights_{$airport}_{$type}";
@@ -48,5 +49,46 @@ class FlightService
                 ];
             })->values();
         });
+    }
+    // Menghitung jumlah penerbangan hari ini dari bandara tertentu
+    public function getTodayFlightsCount(string $iata = 'MLG'): int
+    {
+        $flights = $this->getFlights($iata, 'departure');
+
+        if (!$flights instanceof \Illuminate\Support\Collection) {
+            return 0;
+        }
+
+        return $flights->count();
+    }
+    // Mengestimasi jumlah penumpang hari ini berdasarkan jumlah penerbangan
+    public function estimatePassengers(string $iata = 'MLG'): int
+    {
+        // $flights = $this->getTodayFlightsCount($iata);
+
+        // asumsi rata-rata 80 pax / flight
+        return $this->getTodayFlightsRaw($iata) * 80;
+    }
+    // Mendapatkan jumlah penerbangan hari ini secara langsung dari API
+    public function getTodayFlightsRaw(string $iata = 'MLG'): int
+    {
+        $today = now()->toDateString();
+
+        $response = Http::get(config('services.aviationstack.url') . '/flights', [
+            'access_key' => config('services.aviationstack.key'),
+            'dep_iata' => $iata,
+            'limit' => 100,
+        ]);
+
+        if (!$response->successful()) {
+            return 0;
+        }
+
+        $flights = collect($response->json('data'));
+
+        return $flights->filter(function ($flight) use ($today) {
+            $scheduled = data_get($flight, 'departure.scheduled');
+            return $scheduled && str_starts_with($scheduled, $today);
+        })->count();
     }
 }

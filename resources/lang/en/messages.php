@@ -861,5 +861,34 @@ return [
         ],
     ],
 
+// Chatbot
+     'chatbot' => [
+
+        'title' => 'MLG Assistant',
+        'status' => 'Online',
+
+        'register' => [
+            'title' => 'Hello 👋',
+            'desc'  => 'Please fill in your details to start chatting',
+            'first_name' => 'First Name',
+            'last_name'  => 'Last Name',
+            'email'      => 'Email',
+            'mobile'     => 'Phone Number',
+            'category_none' => 'None',
+            'category_information' => 'Flight Information',
+            'category_complaint' => 'Complaint',
+            'category_suggestion' => 'Suggestion',
+            'category_appreciation' => 'Appreciation',
+            'start' => 'Start Chat',
+        ],
+
+        'chat' => [
+            'placeholder' => 'Type a message...',
+            'greeting' => 'Hello <b>:name</b>! How can I help you today? ✈️',
+            'no_reply' => 'No response.',
+            'error' => 'Connection lost. Please try again later.',
+        ],
+
+    ],
 
 ];

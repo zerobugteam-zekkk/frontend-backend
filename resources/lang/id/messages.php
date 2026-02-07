@@ -862,5 +862,34 @@ return [
         ],
     ],
 
+// Chatbot
+    'chatbot' => [
+
+        'title' => 'MLG Assistant',
+        'status' => 'Online',
+
+        'register' => [
+            'title' => 'Halo 👋',
+            'desc'  => 'Silakan isi data untuk memulai chat',
+            'first_name' => 'Nama Depan',
+            'last_name'  => 'Nama Belakang',
+            'email'      => 'Email',
+            'mobile'     => 'No. HP',
+            'category_none' => 'Tidak Ada',
+            'category_information' => 'Informasi Penerbangan',
+            'category_complaint' => 'Keluhan',
+            'category_suggestion' => 'Saran',
+            'category_appreciation' => 'Apresiasi',
+            'start' => 'Mulai Chat',
+        ],
+
+        'chat' => [
+            'placeholder' => 'Ketik pesan...',
+            'greeting' => 'Halo <b>:name</b>! Silakan tanyakan jadwal penerbangan ✈️',
+            'no_reply' => 'Tidak ada respon.',
+            'error' => 'Maaf, koneksi terputus. Coba lagi nanti.',
+        ],
+
+    ],
 
 ];

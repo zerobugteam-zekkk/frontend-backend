@@ -1,207 +1,190 @@
-<!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
-    #chat-toggle {
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: #2563eb;
-        color: white;
-        border: none;
-        font-size: 22px;
-        cursor: pointer;
-        z-index: 9999;
-    }
+#chat-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 15px 35px rgba(0,0,0,.2);
+    transition: all .3s;
+}
+#chat-toggle:hover {
+    transform: scale(1.1) rotate(5deg);
+}
 
-    #chat-window {
-        position: fixed;
-        bottom: 100px;
-        right: 24px;
-        width: 320px;
-        height: 420px;
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0,0,0,.15);
-        display: none;
-        flex-direction: column;
-        z-index: 9999;
-        overflow: hidden;
-        font-family: sans-serif;
-    }
+#chat-window {
+    position: fixed;
+    bottom: 110px;
+    right: 24px;
+    width: 380px;
+    height: 550px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.18);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 9999;
 
-    #chat-window.show {
-        display: flex;
-    }
+    opacity: 0;
+    transform: translateY(20px) scale(.95);
+    pointer-events: none;
+    transition: all .3s cubic-bezier(.175,.885,.32,1.275);
+}
+#chat-window.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
 
-    .chat-header {
-        background: #2563eb;
-        color: white;
-        padding: 14px;
-        display: flex;
-        justify-content: space-between;
-        font-weight: bold;
-    }
-
-    .chat-messages {
-        flex: 1;
-        padding: 14px;
-        overflow-y: auto;
-        font-size: 14px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background: #f8fafc;
-    }
-
-    .chat-bot {
-        background: #e2e8f0;
-        padding: 10px 14px;
-        border-radius: 14px;
-        max-width: 80%;
-        align-self: flex-start;
-    }
-
-    .chat-user {
-        background: #2563eb;
-        color: white;
-        padding: 10px 14px;
-        border-radius: 14px;
-        max-width: 80%;
-        align-self: flex-end;
-    }
-
-    .chat-input {
-        display: flex;
-        padding: 12px;
-        border-top: 1px solid #e5e7eb;
-        background: white;
-    }
-
-    .chat-input input {
-        flex: 1;
-        padding: 10px;
-        border-radius: 999px;
-        border: 1px solid #e5e7eb;
-        outline: none;
-        font-size: 14px;
-    }
-
-    .chat-input button {
-        margin-left: 8px;
-        background: #2563eb;
-        color: white;
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
+#chat-messages {
+    flex: 1;
+    padding: 16px;
+    background: #f8fafc;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 </style>
 
-{{-- HTML --}}
-<!-- CHAT TOGGLE -->
-<button id="chat-toggle"
-    class="fixed bottom-6 right-6 w-16 h-16 bg-blue-600 text-white rounded-full shadow-xl z-[100]">
-    <i class="fas fa-comment-dots text-2xl"></i>
+<!-- TOGGLE -->
+<button id="chat-toggle">
+    <i class="fas fa-comments"></i>
 </button>
 
-<!-- CHAT WINDOW -->
-<div id="chat-window"
-    class="fixed bottom-24 right-6 w-[360px] h-[520px] bg-white rounded-2xl shadow-2xl z-[100] hidden flex-col">
+<!-- WINDOW -->
+<div id="chat-window">
 
     <!-- HEADER -->
-    <div class="bg-blue-600 text-white p-4 flex justify-between">
-        <span class="text-xs font-bold">MLG Assistant</span>
-        <button id="close-chat">✕</button>
+    <div style="background:#2563eb;color:white;padding:16px;display:flex;justify-content:space-between;align-items:center">
+        <div style="display:flex;gap:10px;align-items:center">
+            <i class="fas fa-robot"></i>
+            <div>
+                <strong style="font-size:13px">
+                    {{ __('messages.chatbot.title') }}
+                </strong><br>
+                <small style="font-size:10px;opacity:.9">
+                    {{ __('messages.chatbot.status') }}
+                </small>
+            </div>
+        </div>
+        <button id="chat-close" style="background:none;border:none;color:white;font-size:18px;cursor:pointer">✕</button>
     </div>
 
     <!-- REGISTER -->
-    <div id="chat-register" class="p-4 space-y-3">
-        <input id="first_name" placeholder="First Name" class="w-full border p-2 rounded">
-        <input id="last_name" placeholder="Last Name" class="w-full border p-2 rounded">
-        <input id="email" placeholder="Email" class="w-full border p-2 rounded">
-        <input id="mobile" placeholder="Mobile" class="w-full border p-2 rounded">
-        <select id="category" class="w-full border p-2 rounded">
-            <option>--None--</option>
-            <option>INFORMASI</option>
-            <option>KELUHAN</option>
-            <option>SARAN</option>
-            <option>PERMINTAAN / PERMOHONAN</option>
-            <option>APRESIASI</option>
+    <div id="chat-register" style="padding:20px;flex:1">
+        <h3 style="margin-bottom:10px">
+            {{ __('messages.chatbot.register.title') }}
+        </h3>
+        <p style="font-size:13px;color:#555;margin-bottom:14px">
+            {{ __('messages.chatbot.register.desc') }}
+        </p>
+
+        <input id="first_name" placeholder=
+        "{{ __('messages.chatbot.register.first_name') }}"
+        style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-bottom:8px">
+        <input id="last_name" placeholder=
+        "{{ __('messages.chatbot.register.last_name') }}"
+         style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-bottom:8px">
+        <input id="email" placeholder=
+        "{{ __('messages.chatbot.register.email') }}"
+         style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-bottom:8px">
+        <input id="mobile" placeholder=
+        "{{ __('messages.chatbot.register.mobile') }}"
+         style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-bottom:8px">
+
+        <select id="category" style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-bottom:14px">
+                    <option>{{ __('messages.chatbot.register.category_none') }}</option>
+                    <option>{{ __('messages.chatbot.register.category_information') }}</option>
+                    <option>{{ __('messages.chatbot.register.category_complaint') }}</option>
+                    <option>{{ __('messages.chatbot.register.category_suggestion') }}</option>
+                    <option>{{ __('messages.chatbot.register.category_appreciation') }}</option>
         </select>
-        <button id="register-btn"
-            class="w-full bg-blue-600 text-white p-2 rounded">
-            Mulai Chat
+
+        <button id="register-btn" style="width:100%;padding:14px;background:#2563eb;color:white;border:none;border-radius:14px;font-weight:bold">
+            {{ __('messages.chatbot.register.start') }}
         </button>
     </div>
 
     <!-- CHAT -->
-    <div id="chat-box" class="hidden flex-col h-full">
-        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50"></div>
-        <div class="p-3 flex gap-2 border-t">
-            <input id="chat-input" class="flex-1 border rounded-full px-4 py-2"
-                placeholder="Tanya jadwal penerbangan...">
-            <button id="send-btn"
-                class="bg-blue-600 text-white px-4 rounded-full">
-                Kirim
+    <div id="chat-box" style="display:none;flex-direction:column;height:100%">
+        <div id="chat-messages"></div>
+
+        <div style="padding:12px;border-top:1px solid #eee;background:white;display:flex;gap:8px">
+            <input id="chat-input" placeholder="{{ __('messages.chatbot.chat.placeholder') }}" style="flex:1;padding:10px;border-radius:999px;border:1px solid #ddd">
+            <button id="send-btn" style="background:#2563eb;color:white;border:none;width:42px;height:42px;border-radius:50%">
+                <i class="fas fa-paper-plane"></i>
             </button>
         </div>
     </div>
 </div>
 
-{{-- CHATBOT SCRIPT --}}
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     let userId = null;
 
-    const toggle   = document.getElementById('chat-toggle');
+    const toggle = document.getElementById('chat-toggle');
     const windowChat = document.getElementById('chat-window');
-    const close    = document.getElementById('close-chat');
+    const close = document.getElementById('chat-close');
 
     const registerBox = document.getElementById('chat-register');
-    const chatBox  = document.getElementById('chat-box');
+    const chatBox = document.getElementById('chat-box');
 
-    const input    = document.getElementById('chat-input');
-    const send     = document.getElementById('send-btn');
+    const input = document.getElementById('chat-input');
+    const send = document.getElementById('send-btn');
     const messages = document.getElementById('chat-messages');
 
-    // SAFETY CHECK
-    if (!toggle || !windowChat) return;
+    toggle.onclick = () => windowChat.classList.toggle('active');
+    close.onclick = () => windowChat.classList.remove('active');
 
-    // TOGGLE
-    toggle.onclick = () => windowChat.classList.toggle('show');
-    close.onclick  = () => windowChat.classList.remove('show');
-
-    // ADD MESSAGE
     function addMessage(text, type) {
         const div = document.createElement('div');
-        div.className = type === 'user'
-            ? 'flex justify-end'
-            : 'flex justify-start';
+        div.style.display = 'flex';
+        div.style.justifyContent = type === 'user' ? 'flex-end' : 'flex-start';
 
-        div.innerHTML = `
-            <span class="max-w-[80%] px-4 py-2 rounded-xl text-sm
-            ${type === 'user'
-                ? 'bg-blue-600 text-white'
-                : 'bg-white border'}">
-                ${text}
-            </span>
-        `;
+        const bubble = document.createElement('div');
+        bubble.innerHTML = text;
+        bubble.style.maxWidth = '80%';
+        bubble.style.padding = '10px 14px';
+        bubble.style.borderRadius = '18px';
+        bubble.style.fontSize = '14px';
+
+        if (type === 'user') {
+            bubble.style.background = '#2563eb';
+            bubble.style.color = 'white';
+        } else {
+            bubble.style.background = 'white';
+            bubble.style.border = '1px solid #e5e7eb';
+        }
+
+        div.appendChild(bubble);
         messages.appendChild(div);
         messages.scrollTop = messages.scrollHeight;
     }
 
-    // REGISTER
     document.getElementById('register-btn').onclick = async () => {
         const payload = {
-            first_name: document.getElementById('first_name').value,
-            last_name : document.getElementById('last_name').value,
-            email     : document.getElementById('email').value,
-            mobile    : document.getElementById('mobile').value,
-            category  : document.getElementById('category').value,
+            first_name: first_name.value,
+            last_name: last_name.value,
+            email: email.value,
+            mobile: mobile.value,
+            category: category.value
         };
+
+        if (!payload.first_name || !payload.email) {
+            alert('Nama dan email wajib diisi');
+            return;
+        }
 
         try {
             const res = await fetch('/api/chat/register', {
@@ -209,28 +192,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
-
             const data = await res.json();
-
-            if (!data.user_id) {
-                alert('Registrasi gagal');
-                return;
-            }
-
             userId = data.user_id;
-            registerBox.classList.add('hidden');
-            chatBox.classList.remove('hidden');
 
-            addMessage('Halo! Silakan tanyakan jadwal penerbangan ✈️', 'bot');
+            registerBox.style.display = 'none';
+            chatBox.style.display = 'flex';
+
+            addMessage(
+                `{!! __('messages.chatbot.chat.greeting', ['name' => '${payload.first_name}']) !!}`,'bot');
         } catch {
-            alert('Server error saat registrasi');
+            alert(`{!! __('messages.chatbot.chat.error') !!}`,'bot');
         }
     };
 
-    // SEND MESSAGE
     async function sendMessage() {
         const text = input.value.trim();
-        if (!text || !userId) return;
+        if (!text) return;
 
         addMessage(text, 'user');
         input.value = '';
@@ -244,11 +221,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     message: text
                 })
             });
-
             const data = await res.json();
-            addMessage(data.reply || 'Tidak ada respon.', 'bot');
+            addMessage(data.reply ?? `{!! __('messages.chatbot.chat.error') !!}`, 'bot');
         } catch {
-            addMessage('Sistem sedang bermasalah.', 'bot');
+            addMessage(`{!! __('messages.chatbot.chat.no_reply') !!}`, 'bot');
         }
     }
 
@@ -258,5 +234,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
-
-<!-- END CHATBOT -->

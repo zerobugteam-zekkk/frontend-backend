@@ -376,11 +376,26 @@ function renderData() {
   if (!container || !input) return;
 
   const search = input.value.toLowerCase();
-
-  const data = (flightsData || []).filter(f =>
+//   Hapus entri duplikat berdasarkan waktu, penerbangan, dan maskapai penerbangan.
+  const uniqueMap = new Map();
+// eslint-disable-baris berikutnya tanpa vars yang tidak digunakan
+(flightsData || []).forEach(f => {
+  const key = `${f.time}|${f.flight}|${f.airline}`;
+  if (!uniqueMap.has(key)) {
+    uniqueMap.set(key, f);
+  }
+});
+//
+const data = Array.from(uniqueMap.values())
+  .filter(f =>
     (f.airline || '').toLowerCase().includes(search) ||
     (f.flight  || '').toLowerCase().includes(search)
-  );
+  )
+  .sort((a, b) => {
+    if (!a.time) return 1;
+    if (!b.time) return -1;
+    return a.time.localeCompare(b.time);
+  });
 
   container.innerHTML = data.map(f => {
     const status = getFlightStatus(f.time, activeTab);

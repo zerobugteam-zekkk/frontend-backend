@@ -38,7 +38,7 @@ class FlightService
                     : $flight['arrival'];
 
                 return [
-                    'time'    => substr($seg['scheduled'] ?? '--:--', 11, 5),
+                    'time'    => substr($seg['scheduled'] ?? '00:00', 11, 5),
                     'city'    => $type === 'departure'
                         ? ($flight['arrival']['airport'] ?? '-')
                         : ($flight['departure']['airport'] ?? '-'),
@@ -47,7 +47,9 @@ class FlightService
                     'gate'    => $seg['gate'] ?? '-',
                     'status'  => strtoupper($flight['flight_status'] ?? 'SCHEDULED'),
                 ];
-            })->values();
+            })
+            ->sortBy('time')
+            ->values();
         });
     }
     // Menghitung jumlah penerbangan hari ini dari bandara tertentu

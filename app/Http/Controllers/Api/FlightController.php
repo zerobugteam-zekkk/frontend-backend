@@ -56,7 +56,7 @@ class FlightController extends Controller
                         : $flight['arrival'];
 
                     return [
-                        'time'    => substr($segment['scheduled'] ?? '--:--', 11, 5),
+                        'time'    => substr($segment['scheduled'] ?? '99:99', 11, 5),
                         'city'    => $type === 'departure'
                             ? ($flight['arrival']['airport'] ?? '-')
                             : ($flight['departure']['airport'] ?? '-'),
@@ -66,6 +66,7 @@ class FlightController extends Controller
                         'status'  => strtoupper($flight['flight_status'] ?? 'SCHEDULED'),
                     ];
                 })
+                ->sortBy('time')
                 ->values();
 
             return [

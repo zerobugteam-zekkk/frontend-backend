@@ -881,6 +881,7 @@ return [
             'category_suggestion' => 'Saran',
             'category_appreciation' => 'Apresiasi',
             'start' => 'Mulai Chat',
+            'fill_required' => 'Mohon lengkapi semua data wajib.',
         ],
 
         'chat' => [

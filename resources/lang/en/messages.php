@@ -880,6 +880,7 @@ return [
             'category_suggestion' => 'Suggestion',
             'category_appreciation' => 'Appreciation',
             'start' => 'Start Chat',
+            'fill_required' => 'Please fill in all required fields.',
         ],
 
         'chat' => [

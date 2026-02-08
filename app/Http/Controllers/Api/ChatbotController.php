@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Services\GroqService;
 use App\Services\FlightService;
 use App\Models\ChatUser;
+use Illuminate\Support\Str;
 
 class ChatbotController extends Controller
 {
@@ -20,11 +21,17 @@ class ChatbotController extends Controller
             'category'   => 'required|string',
         ]);
 
-        $user = ChatUser::create($data);
+        // Cek dulu apakah user sudah ada email sama
+        $user = ChatUser::firstOrCreate(
+            ['email' => $data['email']],
+            array_merge($data, ['user_token' => (string) Str::uuid()])
+        );
 
         return response()->json([
             'status' => 'success',
             'user_id' => $user->id,
+            'user_token' => $user->user_token,
+            'first_name' => $user->first_name,
             'message' => 'Registrasi berhasil, silakan mulai chat'
         ]);
     }
@@ -35,7 +42,7 @@ class ChatbotController extends Controller
     FlightService $flightService
     ) {
         $data = $request->validate([
-            'user_id' => 'required|exists:chat_users,id',
+            'user_token' => 'required|exists:chat_users,user_token',
             'message' => 'required|string'
         ]);
 
@@ -49,7 +56,11 @@ class ChatbotController extends Controller
             ->getFlights('MLG', $type)
             ->toArray();
 
-        $reply = $groq->chat($message, $flights);
+         try {
+            $reply = $groq->chat($message, $flights);
+        } catch (\Exception $e) {
+            $reply = "Maaf, saya tidak bisa mengambil data sekarang. Silakan coba lagi sebentar lagi.";
+        }
 
         return response()->json([
             'status' => 'success',

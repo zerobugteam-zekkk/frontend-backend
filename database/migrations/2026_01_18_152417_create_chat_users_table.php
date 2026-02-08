@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('mobile');
             $table->string('category'); // INFORMASI / KELUHAN / dll
+            $table->uuid('user_token')->unique(); // langsung bikin uuid token
             $table->timestamps();
         });
     }

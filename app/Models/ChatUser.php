@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class ChatUser extends Model
 {
@@ -12,6 +13,14 @@ class ChatUser extends Model
         'email',
         'mobile',
         'category',
+        'user_token',
     ];
+
+    protected static function booted()
+    {
+        static::creating(function ($user) {
+            $user->user_token = (string) Str::uuid();
+        });
+    }
 }
 

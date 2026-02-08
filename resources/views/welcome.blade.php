@@ -230,7 +230,7 @@
             <div class="relative hidden sm:block group">
                 <form action="{{ url('/jadwal') }}" method="GET" class="relative">
                     <input type="text" name="search" placeholder="{{ __('messages.nav.search') }}" class="bg-slate-100 text-[11px] font-bold uppercase py-2.5 pl-5 pr-12 rounded-full border border-transparent focus:border-blue-600 outline-none w-48 transition-all">
-                    <button type="submit" class="absolute right-1 top-1 bg-slate-900 text-white p-2 rounded-full hover:bg-blue-600 transition-all">
+                    <button type="submit" class="absolute right-1 top-1 bg-slate-900 text-white p-1 rounded-full hover:bg-blue-600 transition-all">
                         <i class="fas fa-search text-[10px]"></i>
                     </button>
                 </form>

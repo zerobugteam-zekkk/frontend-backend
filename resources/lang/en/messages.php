@@ -468,6 +468,18 @@ return [
         'row_car' => 'Private Car',
         'row_bus' => 'Bus & Heavy Vehicles',
 
+        'price_motor' => 'Rp 2.000',
+        'price_mobil' => 'Rp 10.000',
+        'price_bus' => 'Rp 30.000',
+
+        'price_motor_next' => 'Rp 5.000',
+        'price_mobil_next' => 'Rp 15.000',
+        'price_bus_next' => 'Rp 50.000',
+
+        'price_motor_overnight' => 'Rp 10.000',
+        'price_mobil_overnight' => 'Rp 30.000',
+        'price_bus_overnight' => 'Rp 100.000',
+
         'note' => '*Tariffs are based on the Airport Authority Decree (Region III). Please ensure your e-money balance is sufficient.',
     ],
 
@@ -829,7 +841,7 @@ return [
             ],
             'emergency' => [
                 'title' => 'Emergency Call',
-                'cta'   => 'Call Emergency',
+                'cta'   => 'Call Now',
             ],
         ],
 

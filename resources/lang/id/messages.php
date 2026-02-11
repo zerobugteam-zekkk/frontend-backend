@@ -431,14 +431,14 @@ return [
     ],
 
     'nav' => [
-        'brand' => 'Airport Hub',
-        'brand_highlight' => 'Hub',
+        'brand' => 'Pusat',
+        'brand_highlight' => 'Bandara',
         'menu_facilities' => 'Fasilitas',
         'menu_help' => 'Bantuan',
     ],
 
     'hero' => [
-        'badge' => 'World Class Service',
+        'badge' => 'Layanan Kelas Dunia',
         'title_1' => 'AirPort',
         'title_2' => 'Infrastruktur',
         'desc' => 'Menyediakan ekosistem transportasi udara yang modern, inklusif, dan aman. Kami berkomitmen untuk menghadirkan kenyamanan bagi setiap penumpang melalui fasilitas yang terintegrasi dan standar operasional yang ketat.',
@@ -446,7 +446,7 @@ return [
 
     'parking' => [
         'title' => 'Manajemen Perparkiran',
-        'subtitle' => 'Ground Transportation Hub',
+        'subtitle' => 'Pusat Transportasi Darat',
         'badge' => 'Tersedia 24 Jam',
 
         'sec1_title' => 'Keamanan & Kontrol',
@@ -467,6 +467,18 @@ return [
         'row_motor' => 'Sepeda Motor',
         'row_car' => 'Mobil Pribadi',
         'row_bus' => 'Bus & Kendaraan Berat',
+
+        'price_motor' => 'Rp 2.000',
+        'price_mobil' => 'Rp 10.000',
+        'price_bus' => 'Rp 30.000',
+
+        'price_motor_next' => 'Rp 5.000',
+        'price_mobil_next' => 'Rp 15.000',
+        'price_bus_next' => 'Rp 50.000',
+
+        'price_motor_overnight' => 'Rp 10.000',
+        'price_mobil_overnight' => 'Rp 30.000',
+        'price_bus_overnight' => 'Rp 100.000',
 
         'note' => '*Tarif berdasarkan SK Otoritas Bandara Wilayah III. Pastikan saldo E-Money Anda mencukupi.',
     ],
@@ -794,12 +806,12 @@ return [
         ],
 
         'nav' => [
-            'brand_1' => 'Help',
-            'brand_2' => 'Center',
+            'brand_1' => 'Pusat',
+            'brand_2' => 'Bantuan',
         ],
 
         'hero' => [
-            'kicker' => 'Customer Service',
+            'kicker' => 'Layanan Pelanggan',
             'title_html' => 'Ada yang bisa kami <span class="text-blue-600">Bantu?</span>',
             'subtitle_html' => 'Pusat informasi terpadu untuk bantuan penerbangan, laporan kehilangan barang, dan layanan darurat medis 24 jam di lingkungan Bandara.',
         ],
@@ -819,17 +831,17 @@ return [
 
         'cards' => [
             'info' => [
-                'title' => 'Information Center',
+                'title' => 'Pusat Informasi',
                 'cta'   => 'Hubungi Sekarang',
             ],
             'lost' => [
-                'title' => 'Lost & Found',
+                'title' => 'Hilang & Temukan',
                 'desc'  => 'Kehilangan barang di area terminal?',
                 'cta'   => 'Buat Laporan',
             ],
             'emergency' => [
-                'title' => 'Emergency Call',
-                'cta'   => 'Panggil Darurat',
+                'title' => 'Panggilan Darurat',
+                'cta'   => 'Panggil Sekarang',
             ],
         ],
 

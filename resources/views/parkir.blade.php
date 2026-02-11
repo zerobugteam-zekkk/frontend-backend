@@ -174,27 +174,27 @@
                             <td class="py-6 font-black text-slate-900 uppercase">
                                 {{ __('messages.facilities.parking.row_motor') }}
                             </td>
-                            <td>{{ __('messages.facilities.parking.prices.motor.first_hour') }}</td>
-                            <td>{{ __('messages.facilities.parking.prices.motor.next_hour') }}</td>
-                            <td class="font-bold text-blue-600">{{ __('messages.facilities.parking.prices.motor.overnight') }}</td>
+                            <td>{{ __('messages.facilities.parking.price_motor') }}</td>
+                            <td>{{ __('messages.facilities.parking.price_motor_next') }}</td>
+                            <td class="font-bold text-blue-600">{{ __('messages.facilities.parking.price_motor_overnight') }}</td>
                         </tr>
 
                         <tr class="hover:bg-white transition-all">
                             <td class="py-6 font-black text-slate-900 uppercase">
                                 {{ __('messages.facilities.parking.row_car') }}
                             </td>
-                            <td>{{ __('messages.facilities.parking.prices.car.first_hour') }}</td>
-                            <td>{{ __('messages.facilities.parking.prices.car.next_hour') }}</td>
-                            <td class="font-bold text-blue-600">{{ __('messages.facilities.parking.prices.car.overnight') }}</td>
+                            <td>{{ __('messages.facilities.parking.price_mobil') }}</td>
+                            <td>{{ __('messages.facilities.parking.price_mobil_next') }}</td>
+                            <td class="font-bold text-blue-600">{{ __('messages.facilities.parking.price_mobil_overnight') }}</td>
                         </tr>
 
                         <tr class="hover:bg-white transition-all">
                             <td class="py-6 font-black text-slate-900 uppercase">
                                 {{ __('messages.facilities.parking.row_bus') }}
                             </td>
-                            <td>{{ __('messages.facilities.parking.prices.bus.first_hour') }}</td>
-                            <td>{{ __('messages.facilities.parking.prices.bus.next_hour') }}</td>
-                            <td class="font-bold text-blue-600">{{ __('messages.facilities.parking.prices.bus.overnight') }}</td>
+                            <td>{{ __('messages.facilities.parking.price_bus') }}</td>
+                            <td>{{ __('messages.facilities.parking.price_bus_next') }}</td>
+                            <td class="font-bold text-blue-600">{{ __('messages.facilities.parking.price_bus_overnight') }}</td>
                         </tr>
                         </tbody>
                     </table>

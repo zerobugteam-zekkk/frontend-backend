@@ -338,15 +338,15 @@
                                 {{ __('messages.facilities.commitment.stat1_label') }}
                             </h5>
                             <p class="text-xl font-black">
-                                {{ __('messages.facilities.commitment.stat1_value') }}
+                                {{ __('messages.facilities.commitment.stat2_label') }}
                             </p>
                         </div>
                         <div class="bg-white/10 p-4 rounded-2xl border border-white/20">
                             <h5 class="text-[10px] font-black uppercase mb-1">
-                                {{ __('messages.facilities.commitment.stat2_label') }}
+                                {{ __('messages.facilities.commitment.stat3_label') }}
                             </h5>
                             <p class="text-xl font-black">
-                                {{ __('messages.facilities.commitment.stat2_value') }}
+                                {{ __('messages.facilities.commitment.stat4_label') }}
                             </p>
                         </div>
                     </div>

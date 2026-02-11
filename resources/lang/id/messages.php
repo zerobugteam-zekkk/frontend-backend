@@ -503,6 +503,8 @@ return [
 
         'stat1_label' => 'Capaian Service',
         'stat2_label' => 'Tingkat Aman',
+        'stat3_label' => 'Kepuasan Pelanggan',
+        'stat4_label' => 'Fasilitas Terawat',
 
         'cta' => 'Butuh Bantuan Khusus?',
     ],

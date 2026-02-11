@@ -503,6 +503,8 @@ return [
 
         'stat1_label' => 'Service Achievement',
         'stat2_label' => 'Safety Level',
+        'stat3_label' => 'Passenger Satisfaction',
+        'stat4_label' => 'Facility Upgrades',
 
         'cta' => 'Need Special Assistance?',
     ],

@@ -156,7 +156,7 @@ return [
         'cargo' => 'Layanan Kargo',
         'operational' => 'Jam Operasional',
         'contact' => 'Hubungi Kami',
-        'copyright' => '© 2024 Bandara Abdurachman Saleh – Malang Station Hub',
+        'copyright' => '© 2026 Bandara Abdurachman Saleh – Malang Station Hub',
     ],
 
 // TRANSPORTASI PAGE TRANSLATION FILE - INDONESIAN

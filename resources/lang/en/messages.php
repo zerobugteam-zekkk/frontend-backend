@@ -155,7 +155,7 @@ return [
         'cargo' => 'Cargo Services',
         'operational' => 'Operating Hours',
         'contact' => 'Contact Us',
-        'copyright' => '© 2024 Abdurachman Saleh Airport – Malang Station Hub',
+        'copyright' => '© 2026 Abdurachman Saleh Airport – Malang Station Hub',
     ],
 
 

@@ -621,12 +621,12 @@ return [
         'title_2' => 'Operasional',
         'hours' => [
             'label' => 'Jam Penerimaan Kargo',
-            'value' => '05.00 - 17.00 WIB',
+            'value' => '08.00 - 15.00 WIB',
             'note'  => 'Beroperasi setiap hari (Senin - Minggu)',
         ],
         'location' => [
             'label' => 'Lokasi Fasilitas',
-            'value' => 'Sisi Barat Apron',
+            'value' => 'Terminal Kargo Bandara Abdurachman Saleh',
             'note'  => 'Akses masuk terpisah dari Terminal Penumpang (via Jl. Komodor Udara)',
         ],
     ],

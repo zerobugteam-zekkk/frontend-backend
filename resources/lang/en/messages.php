@@ -621,12 +621,12 @@ return [
         'title_2' => 'Information',
         'hours' => [
             'label' => 'Cargo Acceptance Hours',
-            'value' => '05:00 - 17:00 (WIB)',
+            'value' => '08:00 - 15:00 (WIB)',
             'note'  => 'Operating daily (Monday - Sunday)',
         ],
         'location' => [
             'label' => 'Facility Location',
-            'value' => 'West Side of the Apron',
+            'value' => 'Cargo Terminal, Abdurachman Saleh Airport Malang',
             'note'  => 'Separate entrance from the passenger terminal (via Komodor Udara Street)',
         ],
     ],

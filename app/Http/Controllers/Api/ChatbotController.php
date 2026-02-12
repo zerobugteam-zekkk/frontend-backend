@@ -97,7 +97,8 @@ class ChatbotController extends Controller
 
         return response()->json([
             'reply' => $reply,
-            'type'  => $type
+            'type'  => $type,
+            'first_name' => $user->first_name
         ]);
     }
 

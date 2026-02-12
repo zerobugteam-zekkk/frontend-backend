@@ -273,28 +273,37 @@
 
         // 🔥 AUTO CEK SESSION
         fetch('/api/chat', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                message: "ping"
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: "ping"
+                })
             })
-        }).then(res => {
+            .then(res => {
+                if (res.status === 401) {
+                    registerBox.style.display = 'block';
+                    chatBox.style.display = 'none';
+                    return null;
+                }
 
-            if (res.status === 401) {
+                registerBox.style.display = 'none';
+                chatBox.style.display = 'flex';
+                logoutBtn.classList.remove('hidden');
+
+                return res.json();
+            })
+            .then(data => {
+                if (data) {
+                    addMessage(`Halo ${data.first_name} 👋 Silakan tanyakan jadwal penerbangan ✈️`,
+                        'bot');
+                }
+            })
+            .catch(() => {
                 registerBox.style.display = 'block';
-                chatBox.style.display = 'none';
-                return;
-            }
-
-            registerBox.style.display = 'none';
-            chatBox.style.display = 'flex';
-            logoutBtn.classList.remove('hidden');
-            addMessage('Halo! Silakan tanyakan jadwal penerbangan ✈️', 'bot');
-
-        });
+            });
 
         // REGISTER
         document.getElementById('register-btn').onclick = async function() {
@@ -412,10 +421,11 @@
                     return;
                 }
 
-                // ✅ SUKSES
                 registerBox.style.display = 'none';
                 chatBox.style.display = 'flex';
-                addMessage('Halo! Silakan mulai chat ✈️', 'bot');
+                logoutBtn.classList.remove('hidden');
+
+                addMessage(`Halo ${data.first_name} 👋 Silakan mulai chat ✈️`, 'bot');
 
             } catch (e) {
 
@@ -475,6 +485,12 @@
 
             chatBox.style.display = 'none';
             registerBox.style.display = 'block';
+            logoutBtn.classList.add('hidden');
+
+            ['first_name', 'last_name', 'email', 'mobile', 'category'].forEach(id => {
+                document.getElementById(id).value = '';
+            });
+
             messages.innerHTML = '';
             windowChat.classList.remove('active');
         };

@@ -21,28 +21,53 @@ class ChatbotController extends Controller
             'category'   => 'required|string',
         ]);
 
-        // Cek dulu apakah user sudah ada email sama
         $user = ChatUser::firstOrCreate(
             ['email' => $data['email']],
-            array_merge($data, ['user_token' => (string) Str::uuid()])
+            array_merge($data, [
+                'user_token' => (string) Str::uuid()
+            ])
         );
 
         return response()->json([
             'status' => 'success',
-            'user_id' => $user->id,
-            'user_token' => $user->user_token,
             'first_name' => $user->first_name,
             'message' => 'Registrasi berhasil, silakan mulai chat'
-        ]);
+        ])->cookie(
+            'chat_user_token',
+            $user->user_token,
+            60 * 24 * 30,   // 30 hari
+            '/',            // path WAJIB sama saat logout
+            null,
+            false,          // localhost = false, production = true
+            true,           // httpOnly (penting)
+            false,
+            'Lax'
+        );
     }
 
     public function chat(
-    Request $request,
-    GroqService $groq,
-    FlightService $flightService
+        Request $request,
+        GroqService $groq,
+        FlightService $flightService
     ) {
+
+        $token = $request->cookie('chat_user_token');
+
+        if (!$token) {
+            return response()->json([
+                'message' => 'Unauthorized'
+            ], 401);
+        }
+
+        $user = ChatUser::where('user_token', $token)->first();
+
+        if (!$user) {
+            return response()->json([
+                'message' => 'Invalid session'
+            ], 401);
+        }
+
         $data = $request->validate([
-            'user_token' => 'required|exists:chat_users,user_token',
             'message' => 'required|string'
         ]);
 
@@ -56,16 +81,33 @@ class ChatbotController extends Controller
             ->getFlights('MLG', $type)
             ->toArray();
 
-         try {
+        try {
             $reply = $groq->chat($message, $flights);
         } catch (\Exception $e) {
-            $reply = "Maaf, saya tidak bisa mengambil data sekarang. Silakan coba lagi sebentar lagi.";
+            $reply = "Maaf, saya tidak bisa mengambil data sekarang.";
         }
 
         return response()->json([
-            'status' => 'success',
-            'reply'  => $reply,
-            'type'   => $type
+            'reply' => $reply,
+            'type'  => $type
         ]);
+    }
+
+    public function logout()
+    {
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Logout berhasil'
+        ])->cookie(
+            'chat_user_token',
+            '',
+            -1,
+            '/',     // HARUS sama dengan saat set cookie
+            null,
+            false,
+            true,
+            false,
+            'Lax'
+        );
     }
 }

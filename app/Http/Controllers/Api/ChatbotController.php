@@ -16,9 +16,17 @@ class ChatbotController extends Controller
         $data = $request->validate([
             'first_name' => 'required|string',
             'last_name'  => 'required|string',
-            'email'      => 'required|email',
-            'mobile'     => 'required|string',
-            'category'   => 'required|string',
+
+            'email' => [
+                'required',
+                'email',
+                'ends_with:@gmail.com'
+            ],
+
+            'mobile'   => 'required|string',
+            'category' => 'required|string',
+        ], [
+            'email.ends_with' => 'Email harus menggunakan @gmail.com'
         ]);
 
         $user = ChatUser::firstOrCreate(

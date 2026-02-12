@@ -61,7 +61,8 @@
         display: flex;
         flex-direction: column;
         height: 100%;
-        min-height: 0;   /* INI PENTING */
+        min-height: 0;
+        /* INI PENTING */
     }
 
     #chat-messages {
@@ -69,61 +70,89 @@
         overflow-y: auto;
         padding: 16px;
         background: #f8fafc;
-        min-height: 0;   /* INI PENTING */
+        min-height: 0;
+        /* INI PENTING */
     }
 
     #chat-input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 999px;
-    border: 1px solid #ddd;
-}
+        flex: 1;
+        padding: 10px;
+        border-radius: 999px;
+        border: 1px solid #ddd;
+    }
 
     #chat-input-area {
         display: flex;
-    gap: 8px;
-    padding: 12px;
-    border-top: 1px solid #eee;
-    background: white;
-    flex-shrink: 0;
+        gap: 8px;
+        padding: 12px;
+        border-top: 1px solid #eee;
+        background: white;
+        flex-shrink: 0;
     }
 
     .typing {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    padding: 10px 14px;
-    background: white;
-    border-radius: 18px;
-    border: 1px solid #e5e7eb;
-    width: fit-content;
-}
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        padding: 10px 14px;
+        background: white;
+        border-radius: 18px;
+        border: 1px solid #e5e7eb;
+        width: fit-content;
+    }
 
-.typing span {
-    width: 6px;
-    height: 6px;
-    background: #999;
-    border-radius: 50%;
-    animation: bounce 1.4s infinite ease-in-out both;
-}
+    .typing span {
+        width: 6px;
+        height: 6px;
+        background: #999;
+        border-radius: 50%;
+        animation: bounce 1.4s infinite ease-in-out both;
+    }
 
-#send-btn {
-    background: #2563eb;
-    color: white;
-    border: none;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-}
+    #send-btn {
+        background: #2563eb;
+        color: white;
+        border: none;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+    }
 
-.typing span:nth-child(1) { animation-delay: -0.32s; }
-.typing span:nth-child(2) { animation-delay: -0.16s; }
+    .typing span:nth-child(1) {
+        animation-delay: -0.32s;
+    }
 
-@keyframes bounce {
-    0%, 80%, 100% { transform: scale(0); }
-    40% { transform: scale(1); }
-}
+    .typing span:nth-child(2) {
+        animation-delay: -0.16s;
+    }
 
+    @keyframes bounce {
+
+        0%,
+        80%,
+        100% {
+            transform: scale(0);
+        }
+
+        40% {
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 640px) {
+        #chat-window {
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            border-radius: 0;
+        }
+
+        #chat-toggle {
+            bottom: 16px;
+            right: 16px;
+        }
+    }
 </style>
 
 <button id="chat-toggle"><i class="fas fa-comments"></i></button>
@@ -138,35 +167,56 @@
                 <small style="font-size:10px;opacity:.9">{{ __('messages.chatbot.status') }}</small>
             </div>
         </div>
-        <button id="chat-logout" style="background:none;border:none;color:white;font-size:14px;cursor:pointer">
-            Logout
-        </button>
+        <button id="chat-logout" class="hidden">Logout</button>
     </div>
 
     <!-- REGISTER -->
-    <div id="chat-register" style="padding:20px;flex:1">
-        <h3>{{ __('messages.chatbot.register.title') }}</h3>
+    <div id="chat-register" class="p-5 flex-1 space-y-2">
 
-        <input id="first_name" placeholder="First Name"
-            style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-bottom:8px">
-        <input id="last_name" placeholder="Last Name"
-            style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-bottom:8px">
-        <input id="email" placeholder="Email"
-            style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-bottom:8px">
-        <input id="mobile" placeholder="Mobile"
-            style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-bottom:8px">
+        <h3 class="font-bold text-lg mb-2">{{ __('messages.chatbot.register.title') }}</h3>
 
-        <select id="category"
-            style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-bottom:14px">
-            <option value="">Pilih Kategori</option>
-            <option value="information">Informasi</option>
-            <option value="complaint">Komplain</option>
-            <option value="suggestion">Saran</option>
-            <option value="appreciation">Apresiasi</option>
-        </select>
+        <!-- First Name -->
+        <div>
+            <input id="first_name" placeholder="First Name"
+                class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring">
+            <small id="err_first_name" class="text-red-500 text-xs hidden"></small>
+        </div>
+
+        <!-- Last Name -->
+        <div>
+            <input id="last_name" placeholder="Last Name"
+                class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring">
+            <small id="err_last_name" class="text-red-500 text-xs hidden"></small>
+        </div>
+
+        <!-- Email -->
+        <div>
+            <input id="email" placeholder="Email"
+                class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring">
+            <small id="err_email" class="text-red-500 text-xs hidden"></small>
+        </div>
+
+        <!-- Mobile -->
+        <div>
+            <input id="mobile" placeholder="Mobile"
+                class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring">
+            <small id="err_mobile" class="text-red-500 text-xs hidden"></small>
+        </div>
+
+        <!-- Category -->
+        <div>
+            <select id="category" class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring">
+                <option value="">Pilih Kategori</option>
+                <option value="information">Informasi</option>
+                <option value="complaint">Komplain</option>
+                <option value="suggestion">Saran</option>
+                <option value="appreciation">Apresiasi</option>
+            </select>
+            <small id="err_category" class="text-red-500 text-xs hidden"></small>
+        </div>
 
         <button id="register-btn"
-            style="width:100%;padding:14px;background:#2563eb;color:white;border:none;border-radius:14px;font-weight:bold">
+            class="w-full py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition">
             Mulai Chat
         </button>
     </div>
@@ -241,12 +291,86 @@
 
             registerBox.style.display = 'none';
             chatBox.style.display = 'flex';
+            logoutBtn.classList.remove('hidden');
             addMessage('Halo! Silakan tanyakan jadwal penerbangan ✈️', 'bot');
 
         });
 
         // REGISTER
-        document.getElementById('register-btn').onclick = async () => {
+        document.getElementById('register-btn').onclick = async function() {
+
+            const btn = this;
+
+            const fields = [{
+                    id: 'first_name',
+                    label: 'First name'
+                },
+                {
+                    id: 'last_name',
+                    label: 'Last name'
+                },
+                {
+                    id: 'email',
+                    label: 'Email'
+                },
+                {
+                    id: 'mobile',
+                    label: 'Mobile'
+                },
+                {
+                    id: 'category',
+                    label: 'Kategori'
+                },
+            ];
+
+            // reset semua error
+            fields.forEach(f => {
+                document.getElementById(f.id).classList.remove('border-red-500');
+                document.getElementById('err_' + f.id).classList.add('hidden');
+            });
+
+            // ======================
+            // VALIDASI BERURUTAN
+            // ======================
+
+            for (const field of fields) {
+
+                const input = document.getElementById(field.id);
+                const err = document.getElementById('err_' + field.id);
+
+                if (!input.value.trim()) {
+                    input.classList.add('border-red-500');
+                    err.innerText = field.label + ' wajib diisi';
+                    err.classList.remove('hidden');
+                    input.focus();
+                    return;
+                }
+
+                // 🔥 VALIDASI KHUSUS EMAIL
+                if (field.id === 'email') {
+
+                    if (!input.value.endsWith('@gmail.com')) {
+                        input.classList.add('border-red-500');
+                        err.innerText = 'Email harus menggunakan @gmail.com';
+                        err.classList.remove('hidden');
+                        input.focus();
+                        return;
+                    }
+                }
+            }
+
+            // ======================
+            // LOADING BUTTON
+            // ======================
+
+            btn.disabled = true;
+            btn.innerHTML = `
+        <svg class="animate-spin h-5 w-5 mx-auto text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+        </svg>
+    `;
+            btn.classList.add('opacity-60');
 
             const payload = {
                 first_name: first_name.value,
@@ -256,25 +380,50 @@
                 category: category.value
             };
 
-            if (!payload.first_name || !payload.email) {
-                alert('Nama dan email wajib diisi');
-                return;
-            }
+            try {
 
-            const res = await fetch('/api/chat/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
+                const res = await fetch('/api/chat/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
 
-            if (res.ok) {
+                const data = await res.json();
+
+                if (!res.ok) {
+
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-60');
+                    btn.innerText = 'Mulai Chat';
+
+                    const firstKey = Object.keys(data.errors)[0];
+
+                    const input = document.getElementById(firstKey);
+                    const err = document.getElementById('err_' + firstKey);
+
+                    input.classList.add('border-red-500');
+                    err.innerText = data.errors[firstKey][0];
+                    err.classList.remove('hidden');
+                    input.focus();
+
+                    return;
+                }
+
+                // ✅ SUKSES
                 registerBox.style.display = 'none';
                 chatBox.style.display = 'flex';
-                addMessage(`Halo <b>${payload.first_name}</b>! Silakan tanyakan jadwal penerbangan ✈️`,
-                    'bot');
+                addMessage('Halo! Silakan mulai chat ✈️', 'bot');
+
+            } catch (e) {
+
+                btn.disabled = false;
+                btn.classList.remove('opacity-60');
+                btn.innerText = 'Mulai Chat';
+                alert('Server error');
+
             }
         };
 
@@ -332,24 +481,24 @@
 
         // animation
         function showTyping() {
-    const div = document.createElement('div');
-    div.id = 'typing-indicator';
-    div.style.display = 'flex';
-    div.style.justifyContent = 'flex-start';
+            const div = document.createElement('div');
+            div.id = 'typing-indicator';
+            div.style.display = 'flex';
+            div.style.justifyContent = 'flex-start';
 
-    const bubble = document.createElement('div');
-    bubble.className = 'typing';
-    bubble.innerHTML = '<span></span><span></span><span></span>';
+            const bubble = document.createElement('div');
+            bubble.className = 'typing';
+            bubble.innerHTML = '<span></span><span></span><span></span>';
 
-    div.appendChild(bubble);
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
-}
+            div.appendChild(bubble);
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
 
-function removeTyping() {
-    const typing = document.getElementById('typing-indicator');
-    if (typing) typing.remove();
-}
+        function removeTyping() {
+            const typing = document.getElementById('typing-indicator');
+            if (typing) typing.remove();
+        }
 
     });
 </script>

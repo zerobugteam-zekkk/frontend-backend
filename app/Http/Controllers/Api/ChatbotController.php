@@ -8,6 +8,7 @@ use App\Services\GroqService;
 use App\Services\FlightService;
 use App\Models\ChatUser;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cookie;
 
 class ChatbotController extends Controller
 {
@@ -29,7 +30,7 @@ class ChatbotController extends Controller
             'email.ends_with' => 'Email harus menggunakan @gmail.com'
         ]);
 
-        $user = ChatUser::firstOrCreate(
+        $user = ChatUser::updateOrCreate(
             ['email' => $data['email']],
             array_merge($data, [
                 'user_token' => (string) Str::uuid()
@@ -58,7 +59,6 @@ class ChatbotController extends Controller
         GroqService $groq,
         FlightService $flightService
     ) {
-
         $token = $request->cookie('chat_user_token');
 
         if (!$token) {
@@ -69,7 +69,7 @@ class ChatbotController extends Controller
 
         $user = ChatUser::where('user_token', $token)->first();
 
-        if (!$user) {
+        if (!$user || !$user->user_token) {
             return response()->json([
                 'message' => 'Invalid session'
             ], 401);
@@ -102,21 +102,20 @@ class ChatbotController extends Controller
         ]);
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
+        $token = $request->cookie('chat_user_token');
+
+        if ($token) {
+            ChatUser::where('user_token', $token)
+                ->update(['user_token' => null]);
+        }
+
         return response()->json([
             'status' => 'success',
             'message' => 'Logout berhasil'
-        ])->cookie(
-            'chat_user_token',
-            '',
-            -1,
-            '/',     // HARUS sama dengan saat set cookie
-            null,
-            false,
-            true,
-            false,
-            'Lax'
+        ])->withCookie(
+            Cookie::forget('chat_user_token')
         );
     }
 }

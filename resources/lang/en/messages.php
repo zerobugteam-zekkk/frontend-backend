@@ -506,6 +506,10 @@ return [
 
         'connect_title' => 'Connectivity & Power Station',
         'connect_desc' => 'Enjoy free high-speed Wi-Fi throughout the airport. We also provide hundreds of charging points (Charging Stations) across terminal seating areas for your devices.',
+
+        'disability_title' => 'Disability Assistance & Wheelchair Service',
+        'disability_desc' => 'The airport provides wheelchair services, priority lanes, and dedicated assistance for passengers with disabilities to ensure accessibility and comfort throughout the airport area.',
+
     ],
 
     'commitment' => [

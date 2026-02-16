@@ -504,9 +504,12 @@ return [
         'health_title' => 'Layanan Kesehatan & P3K',
         'health_desc' => 'Tersedia Posko Kesehatan di area terminal yang diawasi oleh petugas medis bersertifikat (KKP). Fasilitas ini mencakup layanan darurat pertama, kursi roda medis, dan ambulans siaga 24 jam untuk keadaan darurat.',
 
-        'connect_title' => 'Connectivity & Power Station',
+        'connect_title' => 'Konektivitas & Tempat Pengisian Daya',
         'connect_desc' => 'Nikmati layanan Wi-Fi gratis berkecepatan tinggi di seluruh area bandara. Kami juga menyediakan ratusan titik pengisian daya (Charging Station) yang tersebar di kursi tunggu terminal untuk perangkat elektronik Anda.',
-    ],
+
+        'disability_title' => 'Layanan Disabilitas & Kursi Roda',
+        'disability_desc' => 'Bandara menyediakan fasilitas kursi roda, jalur prioritas, serta bantuan petugas bagi penumpang penyandang disabilitas untuk memastikan kenyamanan dan aksesibilitas selama berada di area bandara.',
+        ],
 
     'commitment' => [
         'title_1' => 'Komitmen',

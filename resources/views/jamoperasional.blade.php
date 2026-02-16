@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
 
         .main-bg-pattern {
             background-color: #f8fafc;
@@ -23,8 +27,13 @@
             background-position: 0 0, 20px 20px;
         }
 
-        .font-formal { font-family: 'Inter', sans-serif; }
-        .no-italic { font-style: normal !important; }
+        .font-formal {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .no-italic {
+            font-style: normal !important;
+        }
 
         .text-gradient-blue {
             background: linear-gradient(to right, #1e40af, #3b82f6);
@@ -36,8 +45,14 @@
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         }
 
-        .custom-scrollbar::-webkit-scrollbar { width: 8px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2563eb;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -49,7 +64,8 @@
                 <div class="bg-blue-600 p-2 rounded-lg group-hover:bg-slate-900 transition-all duration-300">
                     <i class="fas fa-clock text-white text-sm"></i>
                 </div>
-                <span class="text-sm font-black uppercase tracking-tighter text-slate-900 group-hover:text-blue-600 transition-colors">
+                <span
+                    class="text-sm font-black uppercase tracking-tighter text-slate-900 group-hover:text-blue-600 transition-colors">
                     {{ __('messages.hours.nav.back') }}
                 </span>
             </a>
@@ -60,11 +76,13 @@
     <main class="container mx-auto px-6 py-12 md:py-20 relative">
 
         <div class="max-w-4xl mb-24 font-formal no-italic" data-aos="fade-right">
-            <h6 class="text-blue-700 font-extrabold uppercase tracking-[0.4em] text-[11px] mb-6 border-b-2 border-blue-600 w-fit pb-2 no-italic">
+            <h6
+                class="text-blue-700 font-extrabold uppercase tracking-[0.4em] text-[11px] mb-6 border-b-2 border-blue-600 w-fit pb-2 no-italic">
                 {{ __('messages.hours.hero.kicker') }}
             </h6>
 
-            <h1 class="text-6xl md:text-8xl font-black text-slate-900 leading-[0.85] uppercase tracking-tighter mb-10 no-italic">
+            <h1
+                class="text-6xl md:text-8xl font-black text-slate-900 leading-[0.85] uppercase tracking-tighter mb-10 no-italic">
                 {{ __('messages.hours.hero.title_1') }} <br>
                 <span class="text-gradient-blue no-italic">{{ __('messages.hours.hero.title_2') }}</span>
             </h1>
@@ -80,7 +98,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32">
 
             <div class="blue-gradient-card p-8 md:p-12 rounded-[3rem] text-white relative overflow-hidden shadow-2xl shadow-blue-900/20"
-                 data-aos="fade-up" data-aos-delay="100">
+                data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-door-open absolute -bottom-10 -right-10 text-[15rem] opacity-10"></i>
                 <div class="relative z-10">
                     <h3 class="text-2xl md:text-3xl font-black uppercase mb-6 no-italic">
@@ -102,7 +120,7 @@
             </div>
 
             <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100 relative overflow-hidden"
-                 data-aos="fade-up" data-aos-delay="300">
+                data-aos="fade-up" data-aos-delay="300">
                 <div class="relative z-10">
                     <h3 class="text-2xl md:text-3xl font-black uppercase mb-6 no-italic text-slate-900">
                         {{ __('messages.hours.closing.title') }}
@@ -135,8 +153,9 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-lg shadow-slate-200/50 transition-all hover:border-blue-200 group"
-                     data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
                         <i class="fas fa-check-double text-2xl text-blue-600 group-hover:text-white"></i>
                     </div>
                     <h5 class="text-xs font-black uppercase text-slate-900 mb-3">
@@ -148,9 +167,10 @@
                 </div>
 
                 <div class="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-lg shadow-slate-200/50 transition-all hover:border-blue-200 group"
-                     data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fas fa-shield-check text-2xl text-blue-600 group-hover:text-white"></i>
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-shield-alt text-2xl text-blue-600 group-hover:text-white"></i>
                     </div>
                     <h5 class="text-xs font-black uppercase text-slate-900 mb-3">
                         {{ __('messages.hours.cards.security.title') }}
@@ -161,8 +181,9 @@
                 </div>
 
                 <div class="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-lg shadow-slate-200/50 transition-all hover:border-blue-200 group"
-                     data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
                         <i class="fas fa-headset text-2xl text-blue-600 group-hover:text-white"></i>
                     </div>
                     <h5 class="text-xs font-black uppercase text-slate-900 mb-3">
@@ -175,7 +196,9 @@
             </div>
         </div>
 
-        <section class="bg-blue-700 rounded-[3rem] p-10 md:p-16 text-white shadow-2xl shadow-blue-200 relative overflow-hidden" data-aos="zoom-in">
+        <section
+            class="bg-blue-700 rounded-[3rem] p-10 md:p-16 text-white shadow-2xl shadow-blue-200 relative overflow-hidden"
+            data-aos="zoom-in">
             <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"></div>
             <div class="flex flex-col lg:flex-row items-center gap-12 relative z-10">
                 <div class="text-6xl font-black italic border-b-4 border-blue-400 pb-2">
@@ -212,4 +235,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
 
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
 
         .main-bg-pattern {
             background-color: #f8fafc;
@@ -23,17 +27,36 @@
             background-position: 0 0, 20px 20px;
         }
 
-        .security-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
+        .security-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
 
         @keyframes float-subtle {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-hover-float:hover { animation: float-subtle 2s ease-in-out infinite; }
+            0% {
+                transform: translateY(0px);
+            }
 
-        .custom-scrollbar::-webkit-scrollbar { width: 8px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 10px; }
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-hover-float:hover {
+            animation: float-subtle 2s ease-in-out infinite;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2563eb;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -45,7 +68,8 @@
                 <div class="bg-blue-600 p-2 rounded-lg group-hover:bg-slate-900 transition-all duration-300">
                     <i class="fas fa-shield-halved text-white text-sm"></i>
                 </div>
-                <span class="text-sm font-black uppercase tracking-tighter text-slate-900 group-hover:text-blue-600 transition-colors">
+                <span
+                    class="text-sm font-black uppercase tracking-tighter text-slate-900 group-hover:text-blue-600 transition-colors">
                     {{ __('messages.security_page.nav.back_home') }}
                 </span>
             </a>
@@ -55,11 +79,18 @@
 
     <main class="container mx-auto px-6 py-12 md:py-20 relative">
 
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
 
         <style>
-            .font-formal { font-family: 'Inter', sans-serif; }
-            .no-italic { font-style: normal !important; }
+            .font-formal {
+                font-family: 'Inter', sans-serif;
+            }
+
+            .no-italic {
+                font-style: normal !important;
+            }
+
             .text-gradient-blue {
                 background: linear-gradient(to right, #1e40af, #3b82f6);
                 -webkit-background-clip: text;
@@ -68,11 +99,13 @@
         </style>
 
         <div class="max-w-4xl mb-24 font-formal no-italic" data-aos="fade-right">
-            <h6 class="text-blue-700 font-extrabold uppercase tracking-[0.4em] text-[11px] mb-6 border-b-2 border-blue-600 w-fit pb-2 no-italic">
+            <h6
+                class="text-blue-700 font-extrabold uppercase tracking-[0.4em] text-[11px] mb-6 border-b-2 border-blue-600 w-fit pb-2 no-italic">
                 {{ __('messages.security_page.hero.badge') }}
             </h6>
 
-            <h1 class="text-6xl md:text-8xl font-black text-slate-900 leading-[0.85] uppercase tracking-tighter mb-10 no-italic">
+            <h1
+                class="text-6xl md:text-8xl font-black text-slate-900 leading-[0.85] uppercase tracking-tighter mb-10 no-italic">
                 {{ __('messages.security_page.hero.title_1') }} <br>
                 <span class="text-gradient-blue no-italic">{{ __('messages.security_page.hero.title_2') }}</span>
             </h1>
@@ -90,7 +123,7 @@
 
             {{-- SCP 1 --}}
             <div class="security-gradient p-8 md:p-12 rounded-[3rem] text-white relative overflow-hidden shadow-2xl shadow-blue-900/20"
-                 data-aos="fade-up" data-aos-delay="100">
+                data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-person-rays absolute -bottom-10 -right-10 text-[15rem] opacity-10"></i>
 
                 <div class="relative z-10">
@@ -121,7 +154,7 @@
 
             {{-- SCP 2 --}}
             <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100 relative overflow-hidden"
-                 data-aos="fade-up" data-aos-delay="300">
+                data-aos="fade-up" data-aos-delay="300">
                 <div class="relative z-10">
                     <h3 class="text-2xl md:text-3xl font-black uppercase mb-6 italic text-slate-900">
                         {{ __('messages.security_page.scp2.title') }}
@@ -159,40 +192,54 @@
                     {{ __('messages.security_page.prohibited.desc') }}
                 </p>
             </div>
-
+            {{--  --}}
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="text-center p-8 bg-white rounded-[2rem] border border-slate-100 shadow-lg shadow-slate-200/50 animate-hover-float transition-all hover:border-blue-200 group" data-aos="flip-left">
-                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
+                <div class="text-center p-8 bg-white rounded-[2rem] border border-slate-100 shadow-lg shadow-slate-200/50 animate-hover-float transition-all hover:border-blue-200 group"
+                    data-aos="flip-left">
+                    <div
+                        class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
                         <i class="fas fa-fire-extinguisher text-3xl text-blue-600 group-hover:text-white"></i>
                     </div>
-                    <p class="text-[10px] font-black uppercase text-slate-900">{{ __('messages.security_page.prohibited.items.1') }}</p>
+                    <p class="text-[10px] font-black uppercase text-slate-900">
+                        {{ __('messages.security_page.prohibited.items.1') }}</p>
                 </div>
 
-                <div class="text-center p-8 bg-white rounded-[2rem] border border-slate-100 shadow-lg shadow-slate-200/50 animate-hover-float transition-all hover:border-blue-200 group" data-aos="flip-left" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fas fa-knife text-3xl text-blue-600 group-hover:text-white"></i>
+                <div class="text-center p-8 bg-white rounded-[2rem] border border-slate-100 shadow-lg shadow-slate-200/50 animate-hover-float transition-all hover:border-blue-200 group"
+                    data-aos="flip-left" data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-ban text-3xl text-blue-600 group-hover:text-white"></i>
                     </div>
-                    <p class="text-[10px] font-black uppercase text-slate-900">{{ __('messages.security_page.prohibited.items.2') }}</p>
+                    <p class="text-[10px] font-black uppercase text-slate-900">
+                        {{ __('messages.security_page.prohibited.items.2') }}</p>
                 </div>
 
-                <div class="text-center p-8 bg-white rounded-[2rem] border border-slate-100 shadow-lg shadow-slate-200/50 animate-hover-float transition-all hover:border-blue-200 group" data-aos="flip-left" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
+                <div class="text-center p-8 bg-white rounded-[2rem] border border-slate-100 shadow-lg shadow-slate-200/50 animate-hover-float transition-all hover:border-blue-200 group"
+                    data-aos="flip-left" data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
                         <i class="fas fa-battery-full text-3xl text-blue-600 group-hover:text-white"></i>
                     </div>
-                    <p class="text-[10px] font-black uppercase text-slate-900">{{ __('messages.security_page.prohibited.items.3') }}</p>
+                    <p class="text-[10px] font-black uppercase text-slate-900">
+                        {{ __('messages.security_page.prohibited.items.3') }}</p>
                 </div>
 
-                <div class="text-center p-8 bg-white rounded-[2rem] border border-slate-100 shadow-lg shadow-slate-200/50 animate-hover-float transition-all hover:border-blue-200 group" data-aos="flip-left" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
+                <div class="text-center p-8 bg-white rounded-[2rem] border border-slate-100 shadow-lg shadow-slate-200/50 animate-hover-float transition-all hover:border-blue-200 group"
+                    data-aos="flip-left" data-aos-delay="300">
+                    <div
+                        class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
                         <i class="fas fa-biohazard text-3xl text-blue-600 group-hover:text-white"></i>
                     </div>
-                    <p class="text-[10px] font-black uppercase text-slate-900">{{ __('messages.security_page.prohibited.items.4') }}</p>
+                    <p class="text-[10px] font-black uppercase text-slate-900">
+                        {{ __('messages.security_page.prohibited.items.4') }}</p>
                 </div>
             </div>
         </div>
 
         {{-- LAGs --}}
-        <section class="bg-blue-700 rounded-[3rem] p-10 md:p-16 text-white shadow-2xl shadow-blue-200 relative overflow-hidden" data-aos="zoom-in">
+        <section
+            class="bg-blue-700 rounded-[3rem] p-10 md:p-16 text-white shadow-2xl shadow-blue-200 relative overflow-hidden"
+            data-aos="zoom-in">
             <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"></div>
             <div class="flex flex-col lg:flex-row items-center gap-12 relative z-10">
                 <div class="text-7xl font-black italic border-b-4 border-blue-400 pb-2">100ml</div>
@@ -228,4 +275,5 @@
         });
     </script>
 </body>
+
 </html>

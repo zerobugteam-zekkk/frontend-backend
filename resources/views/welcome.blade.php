@@ -8,6 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ __('messages.meta.title') }}</title>
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            50: '#EEF2FF',
+                            100: '#E0E7FF',
+                            200: '#C7D2FE',
+                            300: '#A5B4FC',
+                            400: '#818CF8',
+                            500: '#6366F1',
+                            600: '#3F3D8F', // PRIMARY UTAMA (Royal Gov)
+                            700: '#2E2A78', // Hover / Dark
+                            800: '#1F1B5E',
+                            900: '#14113F'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -16,11 +38,11 @@
     <style>
         /* Aksentuasi Biru Kustom */
         .blue-custom {
-            color: #1c54ed;
+            color: #3F3D8F;
         }
 
         .bg-blue-custom {
-            background-color: #1c54ed;
+            background-color: #3F3D8F;
         }
 
         .navy-custom {
@@ -36,12 +58,12 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #f1f1f1#;
         }
 
         /* Scrollbar menjadi Biru */
         ::-webkit-scrollbar-thumb {
-            background: #1c54ed;
+            background: #3F3D8F;
             border-radius: 10px;
         }
 
@@ -259,7 +281,7 @@
         </div>
     </div>
 
-    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
+    <nav class="bg-white border-b border-blue-100 sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <a href="{{ url('/') }}" class="flex items-center space-x-3">
                 <div class="bg-blue-600 p-2 rounded-lg">
@@ -404,11 +426,11 @@
                 <div class="flex flex-wrap gap-5 animate-fade-up" data-aos="fade-up" data-aos-delay="200"
                     data-aos-duration="800">
                     <a href="{{ url('/jadwal') }}"
-                        class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest transition-all transform hover:scale-105 shadow-2xl shadow-blue-600/30">
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-lg font-bold uppercase text-[11px] tracking-widest transition-all shadow-md">
                         {{ __('messages.hero.cta_departure') }}
                     </a>
                     <a href="{{ url('/sejarah') }}"
-                        class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest transition-all hover:border-blue-400">
+                        class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border   border-white/20 px-10 py-5 rounded-lg font-bold uppercase text-[11px] tracking-widest transition-all shadow-md">
                         {{ __('messages.hero.cta_history') }}
                     </a>
                 </div>
@@ -510,7 +532,7 @@
                             </div>
 
                             <div
-                                class="relative z-10 rounded-2xl md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
+                                class="relative z-10 rounded-2xl md:rounded-xl overflow-hidden shadow-2xl border-4 border-white">
                                 <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1000"
                                     alt="Historical Archive"
                                     class="w-full h-[300px] md:h-[400px] lg:h-[500px] grayscale hover:grayscale-0 transition-all duration-1000 object-cover scale-105 hover:scale-100">
@@ -521,7 +543,7 @@
                                 <p class="text-3xl md:text-5xl font-black italic text-blue-500 leading-none">1994</p>
                                 <p
                                     class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] opacity-60 mt-2">
-                                    Tahun Berdiri</p>
+                                    {{ __('messages.history.founded') }}</p>
                             </div>
                         </div>
 

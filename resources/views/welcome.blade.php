@@ -58,7 +58,7 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #f1f1f1#;
+            background: #f1f1f1;
         }
 
         /* Scrollbar menjadi Biru */
@@ -396,7 +396,8 @@
         }
     </style>
 
-    <header class="relative h-[90vh] flex flex-col justify-center overflow-hidden bg-slate-900 font-formal">
+    <header class="relative min-h-[90vh] flex flex-col justify-center bg-slate-900 font-formal">
+
         <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
             class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Gerbang Udara Malang">
 
@@ -406,10 +407,10 @@
             <div class="max-w-4xl pt-20">
                 <!-- Gerbang Udara Malang Raya -->
                 <div class="mb-8 animate-fade-up" data-aos="fade-up" data-aos-duration="800">
-                    <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.85] uppercase tracking-tighter">
+                    <h1 class="text-6xl md:text-8xl font-black text-white leading-[1.1] uppercase tracking-tighter">
                         {{ __('messages.hero.title_1') }} <br>
                         <span
-                            class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white to-blue-400 py-3 inline-block">
+                            class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white to-blue-600 pt-4 pb-6 inline-block">
                             {{ __('messages.hero.title_2') }}
                         </span>
                     </h1>

@@ -249,61 +249,120 @@ return [
         ],
     ],
 
-// SEJARAH PAGE
+// HISTORY PAGE TRANSLATION FILE - ENGLISH
 'history_page' => [
     'meta' => [
-        'title' => 'History - Abdurachman Saleh Hub',
+        'title' => 'In-Depth Biography - Prof. dr. Abdulrachman Saleh',
     ],
     'nav' => [
-        'back' => 'Back',
-        'back_highlight' => 'To Main Portal',
+        'back' => 'BACK TO',
+        'back_highlight' => 'National Archive',
+        'suffix' => 'WIB',
     ],
     'hero' => [
-        'badge' => 'Karbol Legacy',
-        'title_1' => 'Aerospace',
-        'title_2' => 'Footprints',
-        'desc' => 'Honoring the Pioneer: The story of Prof. Dr. Abdurachman Saleh and the transformation of Malang Air Base.',
+        'badge' => 'Aerospace Historical Monument',
+        'title_1' => 'HISTORICAL',
+        'title_2' => 'MANUSCRIPT',
+        'subtitle' => 'Prof. dr. Abdulrachman Saleh',
+        'desc' => '"A Manifestation of Medical Intellectualism, Pioneer of Radio Waves, and Supreme Devotion in the Aerospace Horizon."',
+        'tags' => [
+            'lanud' => 'ABD Saleh Air Force Base',
+            'fisiologi' => 'Father of Physiology',
+            'rri' => 'Founder of RRI',
+        ],
     ],
     'profile' => [
-        'photo_alt' => 'Abdurachman Saleh',
-        'photo_label' => 'Official Portrait',
-        'photo_caption' => 'Air Commodore Abdurachman Saleh',
-        'badge' => 'National Hero',
-        'name' => 'Prof. Dr. Abdurachman Saleh',
-        'tagline_html' => '"The Karbol" — A multi-talented intellectual behind Indonesia’s wings.',
-        'bio_p1_html' => '<strong>Prof. Dr. Abdurachman Saleh</strong> was a rare figure in Indonesia’s independence history. He was not merely a military aviator, but an intellectual bridging science and air sovereignty. A medical doctor trained at STOVIA/GHS, he is recognized as a <strong>pioneer of aerospace medicine</strong> in Indonesia—laying foundational flight physiology knowledge for the nation’s earliest cadets.',
-        'bio_p2_html' => 'Beyond his contributions in the sky and laboratory, he also played a key role in the founding of Radio Republik Indonesia (RRI), spreading the spirit of independence through radio waves. Within the Indonesian Air Force, his intelligence and agility earned him the nickname <strong>"Karbol"</strong>, a term that later became an iconic label for Air Force Academy cadets.',
-        'bio_p3_html' => 'His service ended heroically on July 29, 1947, when the Dakota VT-CLA aircraft he was aboard on a humanitarian mission was shot down by Dutch forces in Yogyakarta. To honor his extraordinary dedication and legacy, his name was officially enshrined—replacing <strong>Lanud Bugis in 1952</strong> through an Indonesian Air Force decree.',
-        'status_label' => 'Status',
-        'status_value' => 'Fallen (VT-CLA Mission)',
-        'rank_label' => 'Rank',
-        'rank_value' => 'Air Commodore',
+        'motto_label' => 'Life Motto',
+        'motto_value' => '"The Right Man in the Right Place"',
+        'rank_label' => 'Final Rank',
+        'rank_value' => 'Air Vice Marshal (Posthumous)',
+        'award_label' => 'Award',
+        'award_value' => 'National Hero (1974)',
+        'badge' => 'Official Biography Archive',
+        'name' => 'Abdulrachman Saleh',
+        'tagline' => 'Laboratory, Sky, and Radio Waves: A Boundless Struggle.',
+    ],
+    'biography' => [
+        's1' => [
+            'h' => 'I. Intellectualism in the Colonial Era',
+            'p1' => 'Born in Jakarta on July 1, 1909, Abdulrachman Saleh came from an educated family. His father, Mohammad Saleh, was a prominent native physician known for his discipline in colonial medical practice. From his studies at STOVIA (School of Native Physicians) to Geneeskundige Hoogeschool (GHS), he earned the nickname <strong>"Karbol"</strong> for his exceptional intelligence. The name is now immortalized as the designation for cadets of the Air Force Academy (AAU).',
+            'p2' => 'Within academic circles, he was recognized not only for his excellence in scholarship but also for his active engagement in intellectual discussions about the nation’s future. He believed that true independence could only be achieved through mastery of science and technology, not merely physical struggle.',
+        ],
+        's2' => [
+            'h' => 'II. Father of Physiology & Aviation Medicine',
+            'p1' => 'After graduating as a physician, he became a pioneer in the field of Physiology. He was the first Indonesian to hold the position of Professor of Physiology. Through his research, he laid the foundation of Aviation Medicine (Aeromedicine) in Indonesia, studying how the human body reacts to extreme altitudes—knowledge crucial for military aviation.',
+            'p2' => 'His research focused on air pressure effects, oxygen deprivation, and pilot fatigue. His findings became early references for the selection and training systems of Indonesian aviators during the formative years of the national air force.',
+        ],
+        's3' => [
+            'h' => 'III. Pioneer of RRI & Information Warfare',
+            'p1' => 'His contributions extended beyond the laboratory. According to broadcasting history records, he was one of the key figures in the establishment of <strong>Radio Republik Indonesia (RRI)</strong> on September 11, 1945. He led meetings of radio leaders in Jakarta and ensured that the voice of independence continued to echo amid colonial information blockades.',
+            'p2' => 'At that time, radio was the only communication tool capable of penetrating territorial boundaries and colonial propaganda. Through radio broadcasts, he helped spread the legitimacy of the Republic of Indonesia to the international community.',
+        ],
+        's4' => [
+            'h' => 'IV. Air Base & Connection with Malang',
+            'p1' => 'According to historical data referenced by the Malang Transportation Office and Regional Government, his name was immortalized as <strong>Abdulrachman Saleh Air Force Base</strong> in Malang. The base holds a long history as one of the most important air defense bases in East Java, reflecting his dedication to building national aerospace strength.',
+            'p2' => 'Malang was chosen for its strategic location, ideal geographical conditions for pilot training, and relative safety from direct attacks during the physical revolution era.',
+        ],
+        's5' => [
+            'h' => 'V. Dakota VT-CLA Tragedy & Air Force Devotion Day',
+            'p1' => 'On July 29, 1947, during a humanitarian mission transporting medical supplies donated by the Malayan Red Cross, the Dakota VT-CLA aircraft he boarded alongside Adisutjipto was shot down by two Dutch Kittyhawk aircraft over Yogyakarta. The tragedy became a profound wound for the nation.',
+            'p2' => 'The aircraft had clearly displayed international Red Cross markings, yet it was attacked without warning. This incident highlighted the severity of diplomatic conflict between Indonesia and the Netherlands in the early days of independence.',
+            'p3' => 'That date was later designated as <strong>Indonesian Air Force Devotion Day</strong> to commemorate the sincere service of this physician-aviator.',
+        ],
+        's6' => [
+            'h' => 'VI. Eternal Legacy',
+            'p1' => 'Abdulrachman Saleh stands as a true example of a nationalist technocrat. He proved that the weapons of independence were not only bamboo spears, but also advanced medical science, sophisticated radio technology, and courage in the skies.',
+            'p2' => 'He is remembered as a symbol of the intellectual warrior: scientist, communicator, and soldier. His legacy endures in academia, the military, and national broadcasting to this day.',
+        ],
+        'source' => 'Source: Wikipedia & Malang Regional Archives',
     ],
     'timeline' => [
+        'y1909' => [
+            'title' => 'The Dawn of Karbol',
+            'desc' => 'Born in Jakarta on July 1, 1909. As the son of Dr. Mohammad Saleh, he grew up in a science-oriented environment. His phenomenal intelligence at STOVIA earned him the nickname "Karbol," a symbol of intellectual sharpness that would later become a proud standard for Air Force Academy cadets.',
+        ],
         'y1937' => [
-            'year' => '1937',
-            'title' => 'A Strategic Base in the Bromo Valley',
-            'desc_html' => 'Built between 1937–1940 by the Dutch as Bugis Airfield. The site was carefully chosen in Pakis, surrounded by natural fortifications—Mount <strong>Semeru, Arjuno, Kawi, and Panderman</strong>. Its geography and heavy fog made it a “stealth” base, difficult for enemy air fleets to detect at the time.',
+            'title' => 'Professor & Aviation Medicine',
+            'desc' => 'Deepened his study of Physiology and became the first Indonesian Professor of Physiology at GHS. He began researching the effects of altitude on the human body, laying the first foundation of Aeromedicine in Asia at the time.',
         ],
-        'y1994' => [
-            'year' => '1994',
-            'title' => 'Transition Toward Civil Aviation',
-            'desc' => 'The base evolved into a dual-function airport. On April 1, 1994, Merpati Nusantara Airlines opened the first commercial service—bridging military operations with the mobility needs of Greater Malang’s civilians.',
+        'y1945' => [
+            'title' => 'Establishment of RRI',
+            'desc' => 'Led the consolidation of radio technicians after the proclamation of independence. Using improvised equipment, he ensured that the voice of independence penetrated Dutch information blockades through "Voice of Free Indonesia," the embryo of Radio Republik Indonesia (RRI).',
         ],
-        'y2011' => [
-            'year' => '2011',
-            'title' => 'Modernization & Provincial Management',
-            'desc_html' => 'The construction of a new terminal in 2011 reinforced its status as a <strong>Civil Enclave</strong> airport. To this day, Abdulrachman Saleh holds a unique distinction as the only regional airport managed under the authority of the <strong>East Java Provincial Government</strong>.',
+        'y1946' => [
+            'title' => 'The Wings of the Republic',
+            'desc' => 'Joined TRI-Air Force (AURI). Together with Adisutjipto, he transformed abandoned Japanese aircraft such as Cureng and Nishikoreng into Indonesia’s first combat fleet, while training the first generation of native aviators amid limitations.',
+        ],
+        'y1947' => [
+            'title' => 'Dakota VT-CLA Tragedy',
+            'desc' => 'A humanitarian mission carrying medical supplies from Malaya ended tragically on July 29. The Dakota VT-CLA aircraft he piloted was shot down by Dutch P-40 Kittyhawk fighters in Ngoto. The event is commemorated as Indonesian Air Force Devotion Day, symbolizing the ultimate sacrifice for national sovereignty.',
+        ],
+        'y1952' => [
+            'title' => 'Immortalized in Malang',
+            'desc' => 'Bugis Air Base in Malang was officially renamed Abdulrachman Saleh Air Force Base. According to transportation history records, the base was prepared to become one of the most strategic military air bases in East Java.',
+        ],
+        'y1974' => [
+            'title' => 'National Hero Recognition',
+            'desc' => 'Through Presidential Decree No. 071/TK/1974, Abdulrachman Saleh was officially declared a National Hero. This recognition affirmed his multidisciplinary dedication as a physician, radio technocrat, and fighter pilot.',
+        ],
+        'y1994_2011' => [
+            'title' => 'Civil Aviation Transformation',
+            'desc' => 'Abdulrachman Saleh Air Base gradually opened for limited civil aviation. According to Malang Transportation Office data, by 2011 the airport had significantly developed into the main gateway for tourism and economic mobility in Greater Malang, connecting the city with Jakarta and Bali.',
+        ],
+        'y2026' => [
+            'title' => 'A Boundless Legacy',
+            'desc' => 'Today, the name Abdulrachman Saleh is more than just an airport. His spirit lives on in every AAU cadet (Karbol) and in Indonesia’s medical-military technological innovation. The airport continues transforming into a modern mobility hub in East Java, upholding the eternal message: "Knowledge is the wing of independence."',
         ],
     ],
     'closing' => [
-        'quote_html' => '"Swa Bhuwana Paksa" — Wings of the Homeland',
-        'sub' => 'Remembering History, Building the Future',
+        'quote' => '"Knowledge is the wing to fly toward true independence."',
+        'author' => '— Prof. dr. Abdulrachman Saleh —',
     ],
     'footer' => [
-        'copyright' => '© 2026 Abdurachman Saleh Hub Archive',
+        'copyright' => '© 2026 Abdulrachman Saleh Airport Authority - Digital Historical Archive',
     ],
 ],
+
 
 // routes page
 'routes_page' => [

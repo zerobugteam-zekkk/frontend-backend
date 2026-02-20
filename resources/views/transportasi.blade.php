@@ -269,7 +269,7 @@
                 </div>
                 <div class="bg-blue-600/10 lg:w-1/3 flex flex-col justify-center items-center p-16 text-center border-l border-white/5">
                     <div class="w-24 h-24 bg-blue-600 rounded-[2.5rem] flex items-center justify-center mb-8 rotate-12 animate-float">
-                        <i class="fas fa-shield-check text-white text-4xl"></i>
+                        <i class="fas fa-shield text-white text-4xl"></i>
                     </div>
                     <h4 class="text-white font-black uppercase tracking-tighter text-2xl mb-4">
                         {{ __('messages.transport.parking.side_title') }}

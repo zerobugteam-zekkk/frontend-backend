@@ -65,7 +65,7 @@
                 {{ __('messages.routes_page.hero.title_3') }}
             </h1>
 
-            <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base font-medium leading-relaxed">
+            <p class="text-slate-400 max-w-[900px] mx-auto text-sm md:text-base font-medium leading-7 md:leading-8 text-center">
                 {{ __('messages.routes_page.hero.desc') }}
             </p>
         </div>

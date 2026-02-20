@@ -264,9 +264,15 @@
                             </p>
                         </li>
                         <li class="flex items-start gap-4 p-4 bg-blue-50/50 rounded-2xl border border-blue-100/50">
-                            <i class="fas fa-couch text-blue-600 mt-1"></i>
+                            <i class="fas fa-shield-check text-blue-600 mt-1"></i>
                             <p class="text-[12px] font-medium text-slate-700">
                                 {!! __('messages.facilities.terminal.dep_li2') !!}
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-4 p-4 bg-blue-50/50 rounded-2xl border border-blue-100/50">
+                            <i class="fas fa-shield-check text-blue-600 mt-1"></i>
+                            <p class="text-[12px] font-medium text-slate-700">
+                                {!! __('messages.facilities.terminal.dep_li3') !!}
                             </p>
                         </li>
                     </ul>

@@ -114,8 +114,8 @@ return [
     'mission' => [
         '1' => 'Meningkatkan pemerataan pelayanan dengan prioritas wilayah kepulauan dan masyarakat berpenghasilan rendah.',
         '2' => 'Meningkatkan layanan transportasi yang murah, mudah, aman, nyaman, dan cepat.',
-        '3' => 'Meningkatkan peran sektor transportasi dalam mempercepat pembangunan daerah.',
-        '4' => 'Mendorong partisipasi masyarakat dan pelaku usaha dalam peningkatan kualitas layanan.',
+        '3' => 'Meningkatkan peran sektor transportasi dalam mempercepat serta memeratakan proses pembangunan daerah.',
+        '4' => 'Mendorong partisipasi masyarakat dan pelaku usaha dalam upaya meningkatkan kualitas layanan transportasi.',
     ],
 
     /*
@@ -128,10 +128,10 @@ return [
         'subtitle' => 'Standardisasi Pelayanan Bandar Udara Internasional',
 
         'lounge' => 'Singhasari Premium Lounge',
-        'lounge_desc' => 'Fasilitas ruang tunggu eksklusif yang terletak strategis di lantai 2 terminal keberangkatan. Lounge ini dirancang khusus untuk memberikan kenyamanan paripurna bagi penumpang kelas bisnis dan mitra perbankan. Tersedia hidangan prasmanan khas nusantara, area kerja dengan koneksi internet berkecepatan tinggi, serta ruang ibadah pribadi.',
+        'lounge_desc' => 'Fasilitas ruang tunggu eksklusif yang terletak strategis di lantai 2 terminal keberangkatan. Lounge ini dirancang khusus untuk memberikan kenyamanan paripurna bagi penumpang kelas bisnis dan mitra perbankan. Tersedia makanan khas nusantara, area kerja dengan koneksi internet berkecepatan tinggi, serta ruang ibadah pribadi.',
 
         'commercial' => 'Area Komersial & UMKM',
-        'commercial_desc' => 'Pusat perbelanjaan terminal yang menghadirkan sinergi antara gerai modern dan UMKM lokal unggulan Malang Raya. Para penumpang dapat menemukan berbagai pilihan buah tangan otentik seperti Keripik Tempe Sanan, Apel Manalagi segar, hingga olahan bakso kemasan vakum.',
+        'commercial_desc' => 'Pusat perbelanjaan terminal yang menghadirkan sinergi antara gerai modern dan UMKM lokal unggulan Malang Raya. Para penumpang dapat menemukan berbagai pilihan buah tangan otentik seperti Keripik Tempe Sanan, Malang strudel, Hokiku Gift Shop, pusat oleh-oleh, dan lain-lain.',
 
         'priority' => 'Manajemen Layanan Prioritas',
         'priority_desc' => 'Komitmen kami terhadap inklusivitas diwujudkan melalui penyediaan fasilitas bantuan mobilitas penuh. Tersedia armada kursi roda modern dan petugas pendamping terlatih (Special Assistant) yang siap membantu penumpang lansia, ibu hamil, serta penyandang disabilitas.',
@@ -215,31 +215,34 @@ return [
             'title_1' => 'Prosedur Keamanan &',
             'title_2' => 'Etika Bertransportasi',
             'sec1_title' => 'Langkah Keamanan Penumpang',
-            'sec1_desc' => 'Setiap operasional transportasi di area Lanud Abdurachman Saleh wajib mengikuti regulasi ketat Aviation Security (Avsec). Kami sangat menyarankan pengguna jasa untuk selalu memesan layanan melalui loket resmi atau aplikasi terdaftar. Selalu pastikan Anda mencatat identitas pengemudi dan pelat nomor kendaraan sebelum meninggalkan area terminal.',
+            'sec1_desc' => 'Demi keselamatan Anda, seluruh kegiatan transportasi di Bandara Abdulrachman Saleh wajib mematuhi aturan ketat dari petugas Keamanan Penerbangan (Aviation Security/Avsec). Kami sangat menyarankan Anda untuk hanya menggunakan layanan transportasi resmi. Pesanlah taksi atau kendaraan melalui loket resmi yang tersedia atau gunakan aplikasi yang sudah terdaftar secara sah. Hindari tawaran dari orang tak dikenal yang menawarkan jasa angkutan secara langsung tanpa melalui prosedur yang jelas. Sebelum Anda meninggalkan area bandara, biasakan untuk selalu mencatat atau memfoto identitas pengemudi dan pelat nomor kendaraan yang Anda tumpangi. Ini adalah langkah sederhana namun penting untuk berjaga-jaga jika ada barang yang tertinggal atau hal yang tidak diinginkan terjadi.',
             'sec2_title' => 'Regulasi Bagasi & Barang Bawaan',
-            'sec2_desc' => 'Demi kenyamanan bersama, pengguna bus Damri diwajibkan memberikan label identitas pada setiap barang yang diletakkan di bagasi bawah. Bagi pengguna taksi, pastikan volume barang tidak menghalangi pandangan pengemudi. Barang-barang kategori mudah terbakar atau berbahaya (Dangerous Goods) dilarang keras diangkut menggunakan moda transportasi publik bandara.',
+            'sec2_desc' => 'Agar perjalanan bersama menjadi nyaman, ada beberapa aturan sederhana mengenai barang bawaan. Jika Anda menggunakan bus Damri, mohon berikan label nama atau tanda pengenal pada koper yang ditaruh di bagasi bawah bus agar tidak tertukar dengan milik penumpang lain. Jika Anda naik taksi, pastikan barang bawaan Anda tidak menumpuk hingga menutupi kaca spion atau menghalangi pandangan pengemudi ke arah belakang. Selain itu, perlu diingat bahwa barang-barang berbahaya (Dangerous Goods) seperti bahan mudah meledak, gas bertekanan, atau cairan kimia berbahaya, dilarang keras dibawa menggunakan transportasi umum bandara demi keselamatan kita bersama.',
             'alert_title' => 'Pemberitahuan Penting',
-            'alert_desc' => 'Hindari transaksi dengan oknum yang menawarkan jasa transportasi tanpa seragam resmi atau tanda pengenal bandara. Pihak otoritas tidak bertanggung jawab atas kerugian atau masalah keamanan yang muncul dari penggunaan layanan transportasi tidak resmi (taksi gelap).',
+            'alert_desc' => 'Mohon berhati-hati dan hindari bertransaksi dengan oknum sopir "taksi gelap" atau kendaraan pribadi yang menawarkan jasa angkutan tanpa seragam resmi atau kartu identitas bandara. Pihak pengelola bandara tidak dapat bertanggung jawab jika terjadi kerugian materi (seperti penipuan harga) atau masalah keamanan lainnya yang timbul akibat penggunaan layanan transportasi tidak resmi tersebut. Pilihlah yang resmi agar perjalanan Anda tenang dan aman sampai tujuan.',
         ],
 
         'parking' => [
             'badge' => 'Fasilitas Parkir Aman',
             'title_1' => 'Fasilitas Parkir',
             'title_2' => 'Inap Premium',
-            'desc' => 'Bepergian jauh tanpa rasa khawatir. Layanan parkir inap kami dilengkapi dengan sistem pengawasan CCTV 24 jam, patroli rutin oleh petugas keamanan, serta area yang diterangi maksimal. Kami menyediakan perlindungan total bagi kendaraan Anda selama Anda berada di luar kota.',
+            'desc' => 'Jika Anda harus pergi ke luar kota selama beberapa hari dan bingung mau menitipkan kendaraan di mana, fasilitas Parkir Inap Premium di Bandara Abdulrachman Saleh adalah solusinya. Kami menyediakan tempat khusus agar mobil atau motor Anda tetap aman selama Anda pergi. Anda tidak perlu lagi repot merepotkan tetangga atau saudara untuk menjaga kendaraan, atau khawatir mobil Anda kepanasan dan kehujanan di pinggir jalan. Cukup parkirkan di sini, kunci, dan terbang dengan pikiran tenang.
+            Kami paham betul bahwa keamanan kendaraan adalah prioritas utama. Oleh karena itu, area parkir ini dijaga sangat ketat, layaknya brankas pribadi. Kami memasang kamera CCTV yang aktif merekam 24 jam nonstop, jadi setiap sudut terpantau tanpa henti. Selain itu, ada petugas keamanan yang rutin berpatroli mengelilingi area parkir, baik siang maupun malam. Jadi, bukan hanya mesin yang menjaga, tapi juga mata manusia yang waspada.',
             'motor' => 'Tarif Motor',
             'car' => 'Tarif Mobil',
             'per_day' => '/ Hari',
             'side_title' => 'Proteksi Penuh',
-            'side_desc' => 'Sistem manajemen parkir berbasis digital untuk menjamin akurasi waktu dan keamanan kendaraan Anda.',
+            'side_desc' => 'Sistem manajemen parkir kami kini menggunakan teknologi digital otomatis yang dirancang untuk memberikan rasa aman dan keadilan tarif bagi setiap pengunjung. Dengan pencatatan waktu yang dikelola langsung oleh komputer, Anda mendapatkan jaminan perhitungan biaya yang akurat dan transparan tanpa risiko kesalahan manual, sementara sistem pengawasan data yang terintegrasi memastikan kendaraan Anda terlindungi secara ketat dari risiko pencurian selama diparkir. Hal ini tidak hanya membuat proses keluar-masuk bandara menjadi lebih cepat dan bebas antrean, tetapi juga memberi Anda ketenangan pikiran penuh karena mengetahui kendaraan Anda dijaga oleh sistem proteksi yang andal dan terpercaya.',
         ],
 
         'faq' => [
             'title' => 'Pertanyaan yang Sering Diajukan',
             'q1' => 'Apakah armada transportasi tersedia untuk penerbangan malam?',
-            'a1' => 'Tentu. Layanan taksi bandara resmi diatur untuk selalu siaga hingga jadwal penerbangan terakhir mendarat. Sedangkan untuk bus Damri, jadwal disesuaikan dengan rata-rata jam sibuk kedatangan pesawat di sore hari.',
+            'a1' => 'Ya, Anda tidak perlu khawatir.
+Kami mengerti kekhawatiran Anda saat mendarat malam hari, takut tidak ada kendaraan untuk pulang. Tapi tenang saja, layanan taksi bandara resmi (Taksi Garuda) memiliki jadwal operasional yang disinkronkan dengan jadwal penerbangan. Artinya, selama masih ada pesawat yang mendarat—bahkan jika itu penerbangan paling akhir sekalipun—armada taksi akan tetap standby di lokasi menunggu penumpang.',
             'q2' => 'Bagaimana cara menuju kawasan wisata Kota Batu?',
-            'a2' => 'Dari bandara, Anda dapat menggunakan taksi bandara langsung ke Kota Batu dengan tarif zona yang sudah ditentukan. Alternatif lainnya adalah menggunakan bus Damri menuju pusat kota Malang dan melanjutkan perjalanan dengan layanan transportasi online.',
+            'a2' => 'Untuk menuju Kota Batu langsung dari bandara, opsi utama dan paling nyaman adalah menggunakan Taksi Bandara Resmi (Taksi Garuda). Taksi ini adalah satu-satunya angkutan umum yang memiliki izin resmi beroperasi standby di area kedatangan (curbside). Anda cukup menuju loket pemesanan, sebutkan tujuan spesifik Anda di Kota Batu (misalnya: Jatim Park, Museum Angkut, atau hotel tertentu). Anda juga tidak perlu khawatir soal argo yang membengkak karena macet. Tarif ke Kota Batu sudah dipatok tetap berdasarkan zona wilayahnya (misalnya sekitar Rp 100.000 - Rp 150.000, tergantung titik tujuannya). Anda bayar di awal, lalu duduk tenang diantar langsung sampai tujuan tanpa perlu transit atau berganti kendaraan.
+Jika Anda ingin menggunakan transportasi online (Grab, Gojek, & Maxim), Anda harus berjalan kaki keluar area bandara terlebih dahulu menuju titik jemput di luar gerbang, karena mereka tidak diizinkan mengambil penumpang di area lobi kedatangan.',
         ],
 
         'footer' => [
@@ -362,7 +365,7 @@ return [
             'copyright' => '© 2026 Otoritas Bandara Abdulrachman Saleh - Digital Historical Archive',
         ],
     ],
-    
+
 // ROUTES
     'routes_page' => [
     'meta' => [
@@ -378,7 +381,8 @@ return [
         'title_1' => 'Rute',
         'title_2' => 'Strategis',
         'title_3' => 'Penerbangan',
-        'desc' => 'Informasi rute udara resmi Bandara Abdurachman Saleh Malang. Menghubungkan potensi daerah dengan jaringan penerbangan nasional secara efisien.',
+        'desc' => 'Bandara Abdulrachman Saleh berperan sebagai pintu gerbang utama yang menghubungkan Malang Raya dengan kota-kota besar di Indonesia. Meskipun berstatus sebagai bandara domestik,
+        kami melayani rute-rute vital yang sangat sibuk, memfasilitasi kebutuhan bisnis, pendidikan, dan pariwisata yang tinggi di kawasan ini.',
     ],
     'main' => [
         'title' => 'Konektivitas Utama',
@@ -497,8 +501,8 @@ return [
 
     'hero' => [
         'badge' => 'Layanan Kelas Dunia',
-        'title_1' => 'AirPort',
-        'title_2' => 'Infrastruktur',
+        'title_1' => 'Infrastruktur',
+        'title_2' => 'Bandara',
         'desc' => 'Menyediakan ekosistem transportasi udara yang modern, inklusif, dan aman. Kami berkomitmen untuk menghadirkan kenyamanan bagi setiap penumpang melalui fasilitas yang terintegrasi dan standar operasional yang ketat.',
     ],
 
@@ -544,13 +548,16 @@ return [
     'terminal' => [
         'dep_title' => 'Terminal Keberangkatan',
         'dep_desc' => 'Pusat keberangkatan dirancang untuk meminimalkan waktu tunggu penumpang. Dilengkapi dengan <strong>Common Use Check-in System (CUTE)</strong> untuk mempercepat pelaporan tiket maskapai Garuda, Citilink, Batik, dan Wings Air. Area ini terbagi menjadi zona publik (Landside) yang ramah pengunjung dan zona steril (Airside) yang memprioritaskan keamanan penerbangan nasional.',
-        'dep_li1' => '<strong>Security Check Point (SCP):</strong> Pemeriksaan X-ray ganda untuk menjamin tidak adanya barang berbahaya yang masuk ke pesawat.',
-        'dep_li2' => '<strong>Executive Lounge:</strong> Ruang tunggu premium di Lantai 2 dengan fasilitas katering, Wi-Fi high-speed, dan area kerja privat.',
+        'dep_li1' => '<strong>Lt. 1 (bagian luar):</strong>Drop-off zone, Toilet, Pusat oleh-oleh, Garuda café, ATM, Troli, dan Fasilitas pelayanan penumpang Informasi, Customer Service Maskapai (e.g., Garuda Indonesia, Citilink Indonesia, Batik Air, dan Wings Air).',
+        'dep_li2' => '<strong>Lt. 1 (bagian dalam):</strong>Keamanan Bandar Udara (e.g., Security check point, X-ray, Metal detector, dan Ruang pemeriksaan), Karantina kesehatan, Karantina hewan, ikan & tumbuhan, Ruang disabilitas, Toilet, Cafetarria.',
+        'dep_li3' => '<strong>Lt. 2:</strong>Lounge (e.g., Amala Lounge, East Java Lounge, I-One Lounge), Oleh-oleh (Malang Strudel, Hokiku gift shop, Citra Jaya), Toilet, Mushola, Ruang Menyusui/nursery, Ruang merokok/vape, Ruang tunggu, Taman bermain anak, Stasiun pengisian daya.',
 
         'arr_title' => 'Terminal Kedatangan',
         'arr_desc' => 'Menyambut setiap kedatangan dengan efisiensi tinggi. Area kedatangan difokuskan pada kecepatan pengambilan bagasi dan kemudahan akses transportasi darat. Dilengkapi dengan petugas <strong>Ground Handling</strong> yang profesional dan sistem Lost and Found yang responsif untuk menangani setiap kendala barang bawaan penumpang secara langsung.',
-        'arr_li1' => '<strong>Baggage Claim Area:</strong> Area pengambilan bagasi yang luas dilengkapi dengan troli gratis untuk mempermudah mobilitas Anda.',
-        'arr_li2' => '<strong>Integrated Pick-up:</strong> Integrasi langsung dengan layanan Taksi Bandara resmi dan titik penjemputan transportasi online (Grab/Gojek).',
+        'arr_li1' => '<strong>Area Pengambilan Bagasi:</strong> Area pengambilan bagasi yang luas dilengkapi dengan troli gratis untuk mempermudah mobilitas Anda.',
+        'arr_li2' => '<strong>Pengambilan Terpadu:</strong> Setiap pintu kedatangan memiliki akses langsung ke area pengambilan bagasi yang terintegrasi, meminimalkan jarak tempuh penumpang dan mempercepat proses keluar dari bandara.',
+        'arr_li3' => '<strong>Toliet:</strong> Tersedia di setiap lantai dengan fasilitas lengkap, termasuk toilet untuk difabel dan ruang ganti bayi. Semua toilet dilengkapi dengan sistem sanitasi modern untuk menjaga kebersihan dan kenyamanan pengguna.',
+        'arr_li4' => '<strong>Pusat Informasi:</strong> Terdapat di area kedatangan dengan petugas yang siap memberikan informasi tentang penerbangan, fasilitas bandara, dan layanan transportasi. Pusat ini juga dilengkapi dengan layar informasi penerbangan real-time untuk membantu penumpang memantau jadwal kedatangan dan keberangkatan.',
     ],
 
     'inclusive' => [
@@ -831,9 +838,9 @@ return [
     'info' => [
         'title' => 'Pusat Informasi Operasional',
         'title_accent' => 'Abdurachman Saleh',
-        'p1' => 'Layanan <strong>Flight Information Display System (FIDS)</strong> ini menyajikan data pergerakan pesawat udara secara <em>real-time</em> di Terminal Kedatangan dan Keberangkatan Bandara Abdurachman Saleh Malang. Seluruh informasi jadwal diperbarui secara otomatis melalui integrasi sistem navigasi udara.',
-        'p2' => 'Sesuai prosedur operasional, status <strong>BOARDING</strong> diaktifkan 30 menit sebelum waktu keberangkatan (STD). Bagi seluruh calon penumpang diwajibkan telah menyelesaikan proses pelaporan diri (<em>check-in</em>) selambat-lambatnya 45 menit sebelum jadwal keberangkatan yang tertera pada tiket.',
-        'p3' => 'Mengingat karakteristik bandara sebagai kawasan <em>joint-user</em>, perubahan jadwal dapat terjadi sewaktu-waktu karena alasan operasional, teknis, maupun aktivitas kedaulatan negara. Penumpang diimbau untuk selalu menyimak pengumuman melalui <em>Public Address System</em> di ruang tunggu terminal.',
+        'p1' => 'Pusat Informasi Operasional Bandara Abdurachman Saleh berperan sebagai sumber utama penyedia informasi penerbangan bagi seluruh pengguna jasa bandara. Layanan ini didukung oleh Flight Information Display System (FIDS) yang menyajikan data pergerakan pesawat udara secara real-time di terminal kedatangan dan keberangkatan. Informasi yang ditampilkan mencakup jadwal penerbangan, nomor penerbangan, tujuan, status penerbangan, serta perubahan waktu keberangkatan dan kedatangan. Seluruh data tersebut diperbarui secara otomatis melalui integrasi dengan sistem navigasi udara, sehingga akurasi dan ketepatan informasi dapat terjaga.',
+        'p2' => 'pergerakan pesawat udara secara real-time di terminal kedatangan dan keberangkatan. Informasi yang ditampilkan mencakup jadwal penerbangan, nomor penerbangan, tujuan, status penerbangan, serta perubahan waktu keberangkatan dan kedatangan. Seluruh data tersebut diperbarui secara otomatis melalui integrasi dengan sistem navigasi udara, sehingga akurasi dan ketepatan informasi dapat terjaga. Sesuai dengan prosedur operasional yang berlaku, status boarding akan diaktifkan sekitar 30 menit sebelum waktu keberangkatan terjadwal (Scheduled Time of Departure/STD). Seluruh calon penumpang diwajibkan untuk telah menyelesaikan proses pelaporan diri (check-in) paling lambat 45 menit sebelum jadwal keberangkatan yang tertera pada tiket. Ketentuan ini ditetapkan guna memastikan kelancaran proses keberangkatan, termasuk pengaturan alur penumpang, penanganan bagasi, serta pemeriksaan keamanan.',
+        'p3' => 'Mengingat karakteristik Bandara Abdurachman Saleh sebagai kawasan joint-user, yaitu bandara yang digunakan untuk kepentingan sipil dan operasional negara, perubahan jadwal penerbangan dapat terjadi sewaktu-waktu. Perubahan tersebut dapat disebabkan oleh faktor operasional, teknis, maupun aktivitas kenegaraan. Oleh karena itu, penumpang diimbau untuk selalu memperhatikan dan menyimak pengumuman resmi yang disampaikan melalui Public Address System (PAS) di ruang tunggu terminal, serta memantau informasi yang ditampilkan pada layar FIDS.',
         'bullets' => [
             '1' => 'Pembaruan Data Terpusat (60 Detik)',
             '2' => 'Sinkronisasi Seluruh Maskapai Nasional',

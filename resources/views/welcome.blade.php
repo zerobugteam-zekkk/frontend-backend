@@ -900,7 +900,8 @@
                         class="text-slate-500 text-xs md:text-base leading-relaxed max-w-sm mb-8 md:mb-12 font-medium italic">
                         {{ __('messages.footer.about') }}
                     </p>
-                    <div class="flex space-x-4 md:space-x-5">
+{{-- icon sosmed --}}
+                    {{-- <div class="flex space-x-4 md:space-x-5">
                         <a href="https://www.instagram.com/abdulrachmansaleh_airport" target="_blank"
                             rel="noopener noreferrer"
                             class="w-12 md:w-14 h-12 md:h-14 rounded-xl md:rounded-2xl bg-white flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all shadow-sm border border-slate-100 hover:-translate-y-1">
@@ -912,7 +913,7 @@
                             class="w-12 md:w-14 h-12 md:h-14 rounded-xl md:rounded-2xl bg-white flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all shadow-sm border border-slate-100 hover:-translate-y-1">
                             <i class="fab fa-facebook-f text-lg md:text-xl"></i>
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <div class="max-w-xs" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800">
@@ -969,11 +970,20 @@
                         class="text-[10px] md:text-[12px] text-slate-500 space-y-4 md:space-y-7 font-bold uppercase tracking-[0.15em]">
                         <p class="flex items-start leading-relaxed">
                             <i class="fas fa-phone mr-2 md:mr-4 text-blue-600 mt-0.5"></i>
-                            <span class="text-slate-700">(0341) 791554</span>
+                            <span class="text-slate-700">(0341) 2992700</span>
                         </p>
                         <p class="flex items-start leading-relaxed lowercase">
+        <i class="fab fa-instagram mr-2 md:mr-4 text-blue-600 mt-0.5"></i>
+        <a href="https://www.instagram.com/abdulrachmansaleh_airport"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="text-slate-700 font-bold uppercase tracking-wider hover:text-blue-600 transition">
+            @abdulrachmansaleh_airport
+        </a>
+    </p>
+                        <p class="flex items-start leading-relaxed lowercase">
                             <i class="fas fa-envelope mr-2 md:mr-4 text-blue-600 mt-0.5"></i>
-                            <span class="text-slate-700 font-bold uppercase tracking-wider">info@mlg-airport.id</span>
+                            <span class="text-slate-700 font-bold uppercase tracking-wider">bandarabdsaleh@yahoo.co</span>
                         </p>
                     </div>
                 </div>

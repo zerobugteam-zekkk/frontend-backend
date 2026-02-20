@@ -113,8 +113,8 @@ return [
     'mission' => [
         '1' => 'Improve service equity with priority for island regions and low-income communities.',
         '2' => 'Enhance affordable, accessible, safe, comfortable, and fast transportation services.',
-        '3' => 'Strengthen the role of the transportation sector in accelerating regional development.',
-        '4' => 'Encourage community and business participation in improving service quality.',
+        '3' => 'Enhancing the role of the transportation sector in accelerating and equalizing the regional development process.',
+        '4' => 'Encouraging community and business participation in efforts to improve transportation service quality.',
     ],
 
     /*
@@ -127,10 +127,10 @@ return [
         'subtitle' => 'International Airport Service Standardization',
 
         'lounge' => 'Singhasari Premium Lounge',
-        'lounge_desc' => 'An exclusive waiting lounge strategically located on the 2nd floor of the departure terminal. Designed for business-class passengers and banking partners, it offers buffet-style Indonesian cuisine, a high-speed internet work area, and a private prayer room.',
+        'lounge_desc' => 'An exclusive waiting room facility strategically located on the 2nd floor of the departure terminal. This lounge is specially designed to provide complete comfort for business class passengers and banking partners. It offers Indonesian specialties, a work area with high-speed internet connection, and a private prayer room.',
 
         'commercial' => 'Commercial Area & SMEs',
-        'commercial_desc' => 'A terminal shopping area that brings together modern outlets and top local SMEs from the Malang Region. Passengers can find authentic souvenirs such as Sanan tempe chips, fresh Manalagi apples, and vacuum-packed meatball products.',
+        'commercial_desc' => 'A terminal shopping center that brings together modern outlets and leading local MSMEs in the Greater Malang area. Passengers can find a wide selection of authentic souvenirs such as Keripik Tempe Sanan, Malang strudel, Hokiku Gift Shop, souvenir centers, and more.',
 
         'priority' => 'Priority Service Management',
         'priority_desc' => 'Our commitment to inclusivity is reflected through full mobility assistance facilities. Modern wheelchairs and trained assistants (Special Assistants) are available to support elderly passengers, pregnant women, and people with disabilities.',
@@ -215,31 +215,34 @@ return [
             'title_1' => 'Security Procedures &',
             'title_2' => 'Transportation Etiquette',
             'sec1_title' => 'Passenger Safety Steps',
-            'sec1_desc' => 'All transport operations within the Abdurachman Saleh Air Base area must follow strict Aviation Security (Avsec) regulations. We strongly recommend booking only via official counters or registered apps. Always record the driver’s identity and the vehicle plate number before leaving the terminal area.',
+            'sec1_desc' => 'For your safety, all transportation activities at Abdulrachman Saleh Airport must comply with strict regulations from Aviation Security (Avsec) officers. We strongly advise you to only use official transportation services. Book a taxi or vehicle through the official counter or use a legally registered application. Avoid offers from strangers who offer transportation services directly without following clear procedures. Before leaving the airport area, make it a habit to always record or photograph the driver identity and the license plate number of the vehicle you are riding in. This is a simple but important step to take precautions in case you leave something behind or something undesirable happens.',
             'sec2_title' => 'Luggage & Carry-on Regulations',
-            'sec2_desc' => 'For shared comfort, DAMRI passengers should label any luggage placed in the lower compartment. For taxi users, ensure luggage does not obstruct the driver’s view. Flammable or hazardous items (Dangerous Goods) are strictly prohibited on airport public transport modes.',
+            'sec2_desc' => 'To ensure a comfortable journey, there are a few simple rules regarding luggage. If you are traveling by Damri bus, please label your suitcase with your name or an identifying mark so that it is not mixed up with other passengers luggage. If you are traveling by taxi, make sure your luggage does not pile up and block the rearview mirror or obstruct the drivers view of the road. Additionally, please note that dangerous goods such as explosive materials, pressurized gas, or hazardous chemicals are strictly prohibited from being carried on public airport transportation for our collective safety.',
             'alert_title' => 'Important Notice',
-            'alert_desc' => 'Avoid transactions with unauthorized individuals offering transportation without official uniforms or airport ID. The airport authority is not responsible for losses or security issues arising from the use of unofficial transportation services (illegal taxis).',
+            'alert_desc' => 'Please be careful and avoid transacting with “illegal taxi” drivers or private vehicles that offer transportation services without official uniforms or airport identification cards. The airport management cannot be held responsible for any material losses (such as price fraud) or other security issues arising from the use of such unofficial transportation services. Choose official services so that your trip will be peaceful and safe until you reach your destination.',
         ],
 
         'parking' => [
             'badge' => 'Secure Parking Facility',
             'title_1' => 'Premium Overnight',
             'title_2' => 'Parking',
-            'desc' => 'Travel far without worry. Our overnight parking service is equipped with 24-hour CCTV monitoring, routine security patrols, and well-lit areas. We provide full protection for your vehicle while you are away.',
+            'desc' => 'If you have to leave town for a few days and are wondering where to leave your vehicle, the Premium Overnight Parking facility at Abdulrachman Saleh Airport is the solution. We provide a special place to keep your car or motorcycle safe while you are away. You no longer need to bother your neighbors or relatives to look after your vehicle, or worry about your car overheating or getting rained on at the side of the road. Simply park here, lock up, and fly with peace of mind.
+We understand that vehicle security is a top priority. Therefore, this parking area is heavily guarded, like a personal safe. We have installed CCTV cameras that record 24 hours a day, so every corner is monitored non-stop. Additionally, security personnel regularly patrol the parking area, both day and night. So, its not just machines keeping watch, but also vigilant human eyes.',
             'motor' => 'Motorcycle Rate',
             'car' => 'Car Rate',
             'per_day' => '/ Day',
             'side_title' => 'Full Protection',
-            'side_desc' => 'A digital-based parking management system to ensure accurate timing and enhanced vehicle security.',
+            'side_desc' => 'Our parking management system now uses automated digital technology designed to provide a sense of security and fair pricing for every visitor. With time recording managed directly by a computer, you are guaranteed accurate and transparent cost calculations without the risk of manual error, while an integrated data monitoring system ensures your vehicle is strictly protected from the risk of theft while parked. This not only makes the airport entry and exit process faster and queue-free, but also gives you complete peace of mind knowing that your vehicle is guarded by a reliable and trusted protection system.',
         ],
 
         'faq' => [
             'title' => 'Frequently Asked Questions',
             'q1' => 'Is transportation available for late-night flights?',
-            'a1' => 'Yes. Official airport taxis are scheduled to remain on standby until the last flight lands. For DAMRI buses, schedules are adjusted to match peak arrival hours in the afternoon and evening.',
+            'a1' => 'Yes, you don\'t need to worry.
+We understand your concerns about landing at night and being afraid there won\'t be any transportation to get home. But don\'t worry, the official airport taxi service (Garuda Taxi) has an operational schedule that is synchronized with flight schedules. This means that as long as there are still planes landing—even if it\'s the last flight of the day—the taxi fleet will remain on standby at the location waiting for passengers.',
             'q2' => 'How do I get to Batu City tourist areas?',
-            'a2' => 'From the airport, you can use the official airport taxi directly to Batu City with pre-defined zone fares. Alternatively, take DAMRI to downtown Malang and continue using ride-hailing services.',
+            'a2' => 'To get to Batu City directly from the airport, the main and most convenient option is to use an Official Airport Taxi (Garuda Taxi). These taxis are the only public transportation that has official permission to operate on standby in the arrival area (curbside). Simply go to the booking counter and specify your destination in Batu City (for example: Jatim Park, Museum Angkut, or a specific hotel). You also don\'t need to worry about the meter running up due to traffic jams. The fare to Batu City is fixed based on the zone (for example, around IDR 100,000 - IDR 150,000, depending on the destination). You pay in advance, then sit back and relax as you are taken directly to your destination without having to transfer or change vehicles.
+If you wish to use online transportation services (Grab, Gojek, & Maxim), you must first walk out of the airport area to the pickup point outside the gate, as they are not permitted to pick up passengers in the arrival lobby..',
         ],
 
         'footer' => [
@@ -379,7 +382,8 @@ return [
         'title_1' => 'Strategic',
         'title_2' => 'Routes',
         'title_3' => 'Flights',
-        'desc' => 'Official air route information for Abdurachman Saleh Airport Malang—connecting regional potential to the national flight network efficiently.',
+        'desc' => 'Abdulrachman Saleh Airport serves as the main gateway connecting Greater Malang with major cities in Indonesia. Although it is a domestic airport,
+        we serve vital and very busy routes, facilitating the high demand for business, education, and tourism in this region.',
     ],
     'main' => [
         'title' => 'Primary Connectivity',
@@ -545,14 +549,17 @@ return [
     'terminal' => [
         'dep_title' => 'Departure Terminal',
         'dep_desc' => 'The departure area is designed to minimize passenger waiting time. It features a <strong>Common Use Check-in System (CUTE)</strong> to speed up airline check-in processes (Garuda, Citilink, Batik, and Wings Air). The terminal is divided into a public landside zone and a sterile airside zone that prioritizes aviation security.',
-        'dep_li1' => '<strong>Security Check Point (SCP):</strong> Dual X-ray screening to ensure no dangerous items enter the aircraft.',
-        'dep_li2' => '<strong>Executive Lounge:</strong> A premium waiting lounge on Level 2 with catering, high-speed Wi-Fi, and private workspaces.',
+        'dep_li1' => '<strong>1st floor (outside):</strong> Drop-off zone, Restrooms, Souvenir center, Garuda café, ATM, Trolleys, and Passenger service facilities Information, Airline Customer Service (e.g., Garuda Indonesia, Citilink Indonesia, Batik Air, and Wings Air).',
+        'dep_li2' => '<strong>1st floor (inside):</strong>Airport security (e.g., security checkpoint, X-ray, metal detector, and inspection room), health quarantine, animal, fish & plant quarantine, disability room, toilet, cafeteria.',
+        'dep_li3' => '<strong>2nd floor:</strong>Lounge (e.g., Amala Lounge, East Java Lounge, I-One Lounge), Souvenirs (Malang Strudel, Hokiku gift shop, Citra Jaya), Restrooms, Prayer room, Nursing room/nursery, Smoking/vaping room, Waiting room, Children\'s playground, Charging station. ',
 
         'arr_title' => 'Arrival Terminal',
         'arr_desc' => 'Welcoming every arrival with high efficiency. The arrival area focuses on fast baggage retrieval and seamless access to ground transportation. Supported by professional <strong>Ground Handling</strong> staff and a responsive Lost and Found system to handle baggage issues promptly.',
-        'arr_li1' => '<strong>Baggage Claim Area:</strong> Spacious claim area with free trolleys to ease your mobility.',
-        'arr_li2' => '<strong>Integrated Pick-up:</strong> Direct integration with official airport taxis and dedicated pickup points for ride-hailing services (Grab/Gojek).',
-    ],
+        'arr_li1' => '<strong>Baggage Claim Area:</strong> The spacious baggage claim area is equipped with free trolleys to facilitate your mobility.',
+        'arr_li2' => '<strong>Integrated Pickup:</ strong> Each arrival gate has direct access to the integrated baggage claim area, minimizing passenger travel distance and speeding up the process of exiting the airport.',
+        'arr_li3' => '<strong>Restrooms:</strong> Available on every floor with complete facilities, including toilets for the disabled and baby changing rooms. All toilets are equipped with modern sanitation systems to maintain cleanliness and user comfort.',
+        'arr_li4' => '<strong>Information Center:</strong> Located in the arrivals area with staff ready to provide information about flights, airport facilities, and transportation services. The center is also equipped with real-time flight information screens to help passengers monitor arrival and departure schedules.',
+        ],
 
     'inclusive' => [
         'title' => 'Inclusive & Social Services',
@@ -833,9 +840,9 @@ return [
     'info' => [
         'title' => 'Operational Information Center',
         'title_accent' => 'Abdurachman Saleh',
-        'p1' => 'This <strong>Flight Information Display System (FIDS)</strong> presents <em>real-time</em> aircraft movement data for both Arrival and Departure terminals at Abdurachman Saleh Airport, Malang. All schedule information is refreshed automatically through integrated air navigation systems.',
-        'p2' => 'In accordance with operational procedures, <strong>BOARDING</strong> status is activated 30 minutes before the scheduled time of departure (STD). Passengers must complete the (<em>check-in</em>) process no later than 45 minutes before the departure time printed on the ticket.',
-        'p3' => 'As the airport operates as a <em>joint-user</em> area, schedule changes may occur at any time due to operational, technical, or national sovereignty activities. Passengers are advised to follow announcements via the <em>Public Address System</em> in the terminal waiting area.',
+        'p1' => 'The Abdurachman Saleh Airport Operations Information Center serves as the main source of flight information for all airport users. This service is supported by the Flight Information Display System (FIDS), which displays real-time aircraft movement data in the arrival and departure terminals. The information displayed includes flight schedules, flight numbers, destinations, flight statuses, and changes in departure and arrival times. All data is automatically updated through integration with the air navigation system, ensuring the accuracy and precision of the information.',
+        'p2' =>  'real-time aircraft movements in the arrival and departure terminals. The information displayed includes flight schedules, flight numbers, destinations, flight status, and changes in departure and arrival times. All data is automatically updated through integration with the air navigation system, ensuring the accuracy and precision of the information. In accordance with applicable operational procedures, boarding status will be activated approximately 30 minutes before the scheduled departure time (Scheduled Time of Departure/STD). All prospective passengers are required to have completed the check-in process no later than 45 minutes before the departure time stated on the ticket. This provision is established to ensure a smooth departure process, including passenger flow management, baggage handling, and security checks.',
+        'p3' => 'Given the characteristics of Abdurachman Saleh Airport as a joint-user area, namely an airport used for civil and state operational purposes, flight schedule changes may occur at any time. These changes may be due to operational, technical, or state activities. Therefore, passengers are advised to always pay attention to and listen to official announcements made through the Public Address System (PAS) in the terminal waiting room, as well as monitor the information displayed on the FIDS screen.',
         'bullets' => [
             '1' => 'Centralized Data Refresh (60 Seconds)',
             '2' => 'Synchronized Across National Airlines',

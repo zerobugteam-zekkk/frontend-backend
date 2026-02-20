@@ -121,7 +121,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
 
-            <div class="bg-white rounded-[2.5rem] premium-card overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            {{-- <div class="bg-white rounded-[2.5rem] premium-card overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
                 <div class="p-8 bg-slate-50 border-b border-slate-100 flex justify-between items-center">
                     <div class="w-14 h-14 bg-blue-700 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-700/30 animate-float">
                         <i class="fas fa-bus text-white text-2xl"></i>
@@ -129,7 +129,7 @@
                     <span class="text-[9px] bg-blue-100 text-blue-700 px-4 py-2 rounded-lg font-black tracking-widest uppercase">
                         {{ __('messages.transport.cards.public_tag') }}</span>
                 </div>
-                <div class="p-10 flex-grow">
+                {{-- <div class="p-10 flex-grow">
                     <h3 class="text-2xl font-black text-slate-900 uppercase tracking-tighter mb-4">{{ __('messages.transport.cards.damri_title') }}</h3>
                     <p class="text-slate-500 text-sm mb-8 leading-relaxed font-medium">{{ __('messages.transport.cards.damri_desc') }}</p>
                     <ul class="space-y-5 text-[13px] text-slate-700 font-bold">
@@ -137,12 +137,12 @@
                         <li class="flex items-center space-x-4"><i class="fas fa-id-card-alt text-blue-600 text-lg"></i> <span>{{ __('messages.transport.cards.damri_li_2') }}</span></li>
                         <li class="flex items-center space-x-4"><i class="fas fa-map-marked-alt text-blue-600 text-lg"></i> <span>{{ __('messages.transport.cards.damri_li_3') }}</span></li>
                     </ul>
-                </div>
-                <div class="p-8 pt-0">
+                </div> --}}
+                {{-- <div class="p-8 pt-0">
                     <button class="w-full py-5 bg-slate-900 text-white rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] hover:bg-blue-700 transition-all">
                         {{ __('messages.transport.cards.damri_btn') }}</button>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="bg-white rounded-[2.5rem] premium-card overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="200">
                 <div class="p-8 bg-slate-50 border-b border-slate-100">
@@ -204,7 +204,7 @@
                         <h4 class="text-blue-600 font-black uppercase text-xs tracking-widest mb-4">
                             {{ __('messages.transport.procedure.sec1_title') }}
                         </h4>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 text-justify">
                             {{ __('messages.transport.procedure.sec1_desc') }}
                         </p>
                     </div>
@@ -212,7 +212,7 @@
                         <h4 class="text-blue-600 font-black uppercase text-xs tracking-widest mb-4">
                             {{ __('messages.transport.procedure.sec2_title') }}
                         </h4>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 text-justify">
                             {{ __('messages.transport.procedure.sec2_desc') }}
                         </p>
                     </div>
@@ -312,11 +312,11 @@
                {{ __('messages.transport.footer.title') }}</h4>
             <p class="text-[11px] font-bold uppercase tracking-[0.5em] text-slate-400 mb-12">
                 {{ __('messages.transport.footer.subtitle') }}</p>
-            <div class="flex justify-center space-x-8 mb-16">
+            {{-- <div class="flex justify-center space-x-8 mb-16">
                 <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
                 <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
                 <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors"><i class="fab fa-facebook text-xl"></i></a>
-            </div>
+            </div> --}}
             <div class="max-w-2xl mx-auto">
                 <p class="text-[10px] text-slate-400 leading-relaxed uppercase tracking-[0.2em]">
                     {{ __('messages.transport.footer.copyright') }}

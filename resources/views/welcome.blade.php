@@ -523,103 +523,103 @@
 
     <main class="container mx-auto px-6 py-32 relative">
         <div class="bg-white overflow-x-hidden">
-<section id="history" class="py-20 lg:py-32">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-24 items-center">
+            <section id="history" class="py-20 lg:py-32">
+                <div class="container mx-auto px-6">
+                    <div class="flex flex-col lg:flex-row gap-8 lg:gap-24 items-center">
 
-            <!-- IMAGE SIDE -->
-            <div class="w-full lg:w-1/2 relative" data-aos="fade-right" data-aos-duration="800">
-                <div
-                    class="absolute -bottom-12 -left-12 w-40 md:w-64 h-40 md:h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60">
-                </div>
+                        <!-- IMAGE SIDE -->
+                        <div class="w-full lg:w-1/2 relative" data-aos="fade-right" data-aos-duration="800">
+                            <div
+                                class="absolute -bottom-12 -left-12 w-40 md:w-64 h-40 md:h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60">
+                            </div>
 
-                <div
-                    class="relative z-10 rounded-2xl md:rounded-xl overflow-hidden shadow-2xl border-4 border-white">
-                    <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1000"
-                        alt="Historical Archive"
-                        class="w-full h-[300px] md:h-[400px] lg:h-[500px] grayscale hover:grayscale-0 transition-all duration-1000 object-cover scale-105 hover:scale-100">
-                </div>
+                            <div
+                                class="relative z-10 rounded-2xl md:rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+                                <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1000"
+                                    alt="Historical Archive"
+                                    class="w-full h-[300px] md:h-[400px] lg:h-[500px] grayscale hover:grayscale-0 transition-all duration-1000 object-cover scale-105 hover:scale-100">
+                            </div>
 
-                <div
-                    class="absolute -bottom-6 -right-6 bg-slate-900 text-white p-6 md:p-8 rounded-2xl md:rounded-[2rem] z-20 hidden md:block shadow-2xl border-4 border-slate-800">
-                    <p class="text-3xl md:text-5xl font-black italic text-blue-500 leading-none">1994</p>
-                    <p
-                        class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] opacity-60 mt-2">
-                        {{ __('messages.history.founded') }}
-                    </p>
-                </div>
-            </div>
+                            <div
+                                class="absolute -bottom-6 -right-6 bg-slate-900 text-white p-6 md:p-8 rounded-2xl md:rounded-[2rem] z-20 hidden md:block shadow-2xl border-4 border-slate-800">
+                                <p class="text-3xl md:text-5xl font-black italic text-blue-500 leading-none">1994</p>
+                                <p
+                                    class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] opacity-60 mt-2">
+                                    {{ __('messages.history.founded') }}
+                                </p>
+                            </div>
+                        </div>
 
-            <!-- TEXT SIDE -->
-            <div class="w-full lg:w-1/2 flex flex-col space-y-6 md:space-y-8"
-                data-aos="fade-left" data-aos-duration="800">
+                        <!-- TEXT SIDE -->
+                        <div class="w-full lg:w-1/2 flex flex-col space-y-6 md:space-y-8" data-aos="fade-left"
+                            data-aos-duration="800">
 
-                <div>
-                    <span
-                        class="inline-block text-blue-600 font-black uppercase tracking-[0.4em] text-xs mb-4 px-4 py-1 bg-blue-50 rounded-full">
-                        {{ __('messages.history.badge') }}
-                    </span>
+                            <div>
+                                <span
+                                    class="inline-block text-blue-600 font-black uppercase tracking-[0.4em] text-xs mb-4 px-4 py-1 bg-blue-50 rounded-full">
+                                    {{ __('messages.history.badge') }}
+                                </span>
 
-                    <h2
-                        class="text-3xl md:text-6xl font-black text-slate-900 tracking-tighter leading-tight uppercase">
-                        {{ __('messages.history.title_1') }} <br>
-                        <span class="text-blue-600">
-                            {{ __('messages.history.title_2') }}
-                        </span> Saleh
-                    </h2>
-                </div>
+                                <h2
+                                    class="text-3xl md:text-6xl font-black text-slate-900 tracking-tighter leading-tight uppercase">
+                                    {{ __('messages.history.title_1') }} <br>
+                                    <span class="text-blue-600">
+                                        {{ __('messages.history.title_2') }}
+                                    </span> Saleh
+                                </h2>
+                            </div>
 
-                <!-- SCROLLABLE TEXT AREA -->
-                <div
-                    class="space-y-4 md:space-y-6 text-slate-600 leading-relaxed font-normal text-sm md:text-lg 
+                            <!-- SCROLLABLE TEXT AREA -->
+                            <div
+                                class="space-y-4 md:space-y-6 text-slate-600 leading-relaxed font-normal text-sm md:text-lg
                            max-h-[300px] md:max-h-[420px] overflow-y-auto pr-4 scroll-smooth custom-scrollbar">
 
-                    <p class="text-justify">
-                        {!! __('messages.history.paragraph_1') !!}
-                    </p>
+                                <p class="text-justify">
+                                    {!! __('messages.history.paragraph_1') !!}
+                                </p>
 
-                    <p
-                        class="text-justify border-l-4 border-blue-600 pl-4 md:pl-6 py-2 bg-slate-50 rounded-r-xl">
-                        {!! __('messages.history.paragraph_2') !!}
-                    </p>
+                                <p
+                                    class="text-justify border-l-4 border-blue-600 pl-4 md:pl-6 py-2 bg-slate-50 rounded-r-xl">
+                                    {!! __('messages.history.paragraph_2') !!}
+                                </p>
 
-                    <!-- Tambahan Paragraf Jika Panjang -->
-                    <p class="text-justify">
-                        {!! __('messages.history.paragraph_3') !!}
-                    </p>
+                                <!-- Tambahan Paragraf Jika Panjang -->
+                                <p class="text-justify">
+                                    {!! __('messages.history.paragraph_3') !!}
+                                </p>
 
-                    <p class="text-justify">
-                        {!! __('messages.history.paragraph_4') !!}
-                    </p>
+                                <p class="text-justify">
+                                    {!! __('messages.history.paragraph_4') !!}
+                                </p>
 
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
+            </section>
 
-            </div>
+            <!-- CUSTOM SCROLLBAR STYLE -->
+            <style>
+                .custom-scrollbar::-webkit-scrollbar {
+                    width: 6px;
+                }
 
-        </div>
-    </div>
-</section>
+                .custom-scrollbar::-webkit-scrollbar-track {
+                    background: #f1f5f9;
+                    border-radius: 10px;
+                }
 
-<!-- CUSTOM SCROLLBAR STYLE -->
-<style>
-    .custom-scrollbar::-webkit-scrollbar {
-        width: 6px;
-    }
+                .custom-scrollbar::-webkit-scrollbar-thumb {
+                    background: #2563eb;
+                    border-radius: 10px;
+                }
 
-    .custom-scrollbar::-webkit-scrollbar-track {
-        background: #f1f5f9;
-        border-radius: 10px;
-    }
-
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #2563eb;
-        border-radius: 10px;
-    }
-
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: #1d4ed8;
-    }
-</style>
+                .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                    background: #1d4ed8;
+                }
+            </style>
 
             <section class="py-24 bg-slate-50 relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
@@ -746,39 +746,42 @@
                     <div class="max-w-6xl mx-auto">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start">
 
-                           <div class="lg:col-span-5" data-aos="fade-right" data-aos-duration="800">
-    <div class="sticky top-24">
+                            <div class="lg:col-span-5" data-aos="fade-right" data-aos-duration="800">
+                                <div class="sticky top-24">
 
-        <div class="bg-slate-900 p-8 md:p-12 rounded-2xl md:rounded-[3rem] 
-                    shadow-2xl text-white relative overflow-hidden 
-                    max-h-[350px] md:max-h-[450px] 
+                                    <div
+                                        class="bg-slate-900 p-8 md:p-12 rounded-2xl md:rounded-[3rem]
+                    shadow-2xl text-white relative overflow-hidden
+                    max-h-[350px] md:max-h-[450px]
                     overflow-y-auto pr-4 custom-scrollbar">
 
-            <i class="fas fa-quote-right absolute -right-4 -bottom-4 text-white/5 text-6xl md:text-9xl"></i>
+                                        <i
+                                            class="fas fa-quote-right absolute -right-4 -bottom-4 text-white/5 text-6xl md:text-9xl"></i>
 
-            <h4 class="text-blue-400 font-black uppercase tracking-widest text-xs mb-4 md:mb-6 flex items-center gap-3">
-                <span class="w-8 h-[1px] bg-blue-400"></span>
-                {{ __('messages.vision.philosophy') }}
-            </h4>
+                                        <h4
+                                            class="text-blue-400 font-black uppercase tracking-widest text-xs mb-4 md:mb-6 flex items-center gap-3">
+                                            <span class="w-8 h-[1px] bg-blue-400"></span>
+                                            {{ __('messages.vision.philosophy') }}
+                                        </h4>
 
-            <p class="text-xl md:text-3xl font-bold leading-snug italic relative z-10">
-                "{{ __('messages.vision.quote') }}"
-            </p>
+                                        <p class="text-xl md:text-3xl font-bold leading-snug italic relative z-10">
+                                            "{{ __('messages.vision.quote') }}"
+                                        </p>
 
-            <!-- Jika mau tambah teks panjang -->
-            <p class="mt-6 text-sm md:text-base text-slate-300 leading-relaxed">
-                Visi dan Misi merupakan komponen strategis yang menjadi dasar dalam perencanaan, pelaksanaan, dan evaluasi penyelenggaraan pelayanan di Bandar Udara Abdulrachman Saleh Malang. Perumusan visi dan misi ini berfungsi sebagai arah kebijakan dan pedoman bagi seluruh unsur pengelola bandara dalam menjalankan tugas dan tanggung jawabnya secara terintegrasi. Keberadaan visi dan misi yang jelas diharapkan mampu mendorong terciptanya pelayanan transportasi udara yang berkualitas, berorientasi pada kepuasan pengguna jasa, serta selaras dengan prinsip keselamatan, keamanan, dan keberlanjutan.
-Dengan berlandaskan pada visi dan misi tersebut, Bandara Abdulrachman Saleh Malang berkomitmen untuk meningkatkan kinerja operasional dan mutu pelayanan secara berkelanjutan, sekaligus memperkuat perannya sebagai infrastruktur trasnportasi udara yang mendukung konektivitas wilayah dan Pembangunan daerah. 
-            </p>
+                                        <!-- Jika mau tambah teks panjang -->
+                                        <p class="mt-6 text-sm md:text-base text-slate-300 leading-relaxed">
+                                            {{ __('messages.vision.explanation') }}
+                                        </p>
 
-        </div>
+                                    </div>
 
-        <p class="mt-6 md:mt-8 text-slate-500 text-xs md:text-sm leading-relaxed font-medium px-4 border-l-2 border-slate-100">
-            {{ __('messages.vision.note') }}
-        </p>
+                                    <p
+                                        class="mt-6 md:mt-8 text-slate-500 text-xs md:text-sm leading-relaxed font-medium px-4 border-l-2 border-slate-100">
+                                        {{ __('messages.vision.note') }}
+                                    </p>
 
-    </div>
-</div>
+                                </div>
+                            </div>
 
                             <div class="lg:col-span-7 space-y-3 md:space-y-4" data-aos="fade-left"
                                 data-aos-duration="800">
@@ -837,176 +840,190 @@ Dengan berlandaskan pada visi dan misi tersebut, Bandara Abdulrachman Saleh Mala
             </section>
 
         </div>
-       <section id="facilities"
-    class="bg-slate-900 rounded-2xl md:rounded-[3rem] lg:rounded-[5rem] 
-           p-8 md:p-16 lg:p-24 text-white overflow-hidden relative shadow-3xl 
+        <section id="facilities"
+            class="bg-slate-900 rounded-2xl md:rounded-[3rem] lg:rounded-[5rem]
+           p-8 md:p-16 lg:p-24 text-white overflow-hidden relative shadow-3xl
            font-formal mx-6 lg:mx-auto"
-    data-aos="zoom-in" data-aos-duration="800">
+            data-aos="zoom-in" data-aos-duration="800">
 
-    <!-- Background Decoration -->
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 skew-x-12 translate-x-32"></div>
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 skew-x-12 translate-x-32"></div>
 
-    <div class="relative z-10">
+            <div class="relative z-10">
 
-        <!-- HEADER -->
-        <div class="text-center mb-12 md:mb-20">
-            <h2 class="text-2xl md:text-5xl font-black uppercase tracking-tighter italic">
-                {{ __('messages.services.title') }}
-            </h2>
-            <div class="w-16 md:w-20 h-1.5 bg-blue-600 mx-auto mt-4 md:mt-6 rounded-full"></div>
-            <p class="text-slate-400 mt-6 md:mt-8 uppercase text-[9px] md:text-xs tracking-[0.3em] font-bold">
-                {{ __('messages.services.subtitle') }}
-            </p>
-        </div>
+                <!-- HEADER -->
+                <div class="text-center mb-12 md:mb-20">
+                    <h2 class="text-2xl md:text-5xl font-black uppercase tracking-tighter italic">
+                        {{ __('messages.services.title') }}
+                    </h2>
+                    <div class="w-16 md:w-20 h-1.5 bg-blue-600 mx-auto mt-4 md:mt-6 rounded-full"></div>
+                    <p class="text-slate-400 mt-6 md:mt-8 uppercase text-[9px] md:text-xs tracking-[0.3em] font-bold">
+                        {{ __('messages.services.subtitle') }}
+                    </p>
+                </div>
 
-        <!-- KOTAK DESKRIPSI SCROLL -->
-        <div class="max-w-5xl mx-auto mb-16">
-            <div class="bg-white/5 border border-white/10 
-                        rounded-2xl md:rounded-[2.5rem] 
+                <!-- KOTAK DESKRIPSI SCROLL -->
+                <div class="max-w-5xl mx-auto mb-16">
+                    <div
+                        class="bg-white/5 border border-white/10
+                        rounded-2xl md:rounded-[2.5rem]
                         p-6 md:p-10 backdrop-blur-sm">
 
-                <h3 class="text-sm md:text-lg font-bold text-blue-400 mb-6 uppercase tracking-wider text-center">
-                    
-                </h3>
+                        <h3
+                            class="text-sm md:text-lg font-bold text-blue-400 mb-6 uppercase tracking-wider text-center">
 
-                <div class="max-h-[350px] overflow-y-auto pr-4 custom-scrollbar
-                            text-justify text-slate-300 text-xs md:text-sm 
+                        </h3>
+
+                        <div
+                            class="max-h-[350px] overflow-y-auto pr-4 custom-scrollbar
+                            text-justify text-slate-300 text-xs md:text-sm
                             leading-relaxed space-y-6">
 
-                    <p>
-                Bandar udara Abdulrachman Saleh menyediakan berbagai fasilitas pendukung yang dirancang untuk meningkatkan kenyamanan, kemudahan, dan kualitas pengalaman penumpang selama berada di area terminal. Salah satu fasilitas unggulan yang tersedia adalah <strong class="text-blue-400">Singhasari Premium Lounge</strong>, yaitu ruang tunggu eksklusif yang berlokasi strategis di lantai dua terminal keberangkatan. Lounge ini diperuntukkan bagi penumpang kelas bisnis serta mitra perbankan, dengan tujuan memberikan suasana yang lebih tenang dan privat dibandingkan ruang tunggu umum. Keberadaan fasilitas ini mencerminkan komitmen bandara dalam menyediakan layanan berstandar tinggi, melalui penyediaan hidangan prasmanan khas Nusantara, area kerja yang nyaman dengan koneksi internet berkecepatan tinggi, serta fasilitas pendukung lainnya seperti ruang ibadah pribadi. Dengan demikian, Singhasari Premium Lounge berfungsi tidak hanya sebagai ruang tunggu, tetapi juga sebagai sarana untuk menunjang produktivitas dan kenyamanan penumpang sebelum keberangkatan.
-                    </p>
+                            <p>
+                                {!! __('messages.block.title') !!}
+                            </p>
 
-                    <p>
-                Selain fasilitas eksklusif, Bandar udara Abdulrachman Saleh juga mengembangkan <strong class="text-blue-400">Area Komersial dan UMKM</strong> sebagai bagian dari upaya peningkatan pelayanan sekaligus pemberdayaan ekonomi lokal. Area ini menjadi pusat perbelanjaan di dalam terminal yang menghadirkan sinergi antara gerai modern dan pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) khas Malang Raya. Penumpang dapat menemukan berbagai produk lokal unggulan, seperti makanan ringan tradisional, buah khas daerah, hingga produk olahan kemasan yang praktis dibawa sebagai oleh-oleh. Keberadaan area komersial ini tidak hanya memberikan nilai tambah bagi penumpang, tetapi juga berperan sebagai sarana promosi produk lokal dan penguatan peran bandara sebagai etalase ekonomi daerah.
-                    </p>
+                            <p>
+                                {!! __('messages.block.title_1') !!}
+                            </p>
 
-                    <p>
-                Dalam aspek pelayanan inklusif, Bandar udara Abdulrachman Saleh menunjukkan komitmennya melalui penerapan manajemen layanan prioritas bagi penumpang dengan kebutuhan khusus. Layanan ini diwujudkan melalui penyediaan fasilitas bantuan mobilitas, seperti kursi roda, serta dukungan petugas pendamping terlatih yang siap membantu penumpang lanjut usia, ibu hamil, dan penyandang disabilitas selama berada di area bandara. Pendekatan ini mencerminkan prinsip pelayanan publik yang berkeadilan dan berorientasi pada keselamatan serta kenyamanan seluruh pengguna jasa. Dengan adanya layanan prioritas ini, bandara berupaya memastikan bahwa setiap penumpang memperoleh akses dan perlakuan yang setara tanpa hambatan fisik maupun operasional.
-                    </p>
+                            <p>
+                                {!! __('messages.block.title_2') !!}
+                            </p>
 
-                    <p>
-                        Seiring perkembangan era digital, tersedia fasilitas Wi-Fi gratis dan charging station di area terminal untuk mendukung aktivitas penumpang. Fasilitas ini menjadi bagian dari transformasi layanan berbasis teknologi.
-                    </p>
+                            <p>
+                                {{ __('messages.block.title_3') }}
+                            </p>
 
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- SLIDER CARD -->
-        <div class="flex overflow-x-auto gap-6 md:gap-8 pb-8 md:pb-12 snap-x no-scrollbar"
-            style="scrollbar-width: none; -ms-overflow-style: none;">
+                <!-- SLIDER CARD -->
+                <div class="flex overflow-x-auto gap-6 md:gap-8 pb-8 md:pb-12 snap-x no-scrollbar"
+                    style="scrollbar-width: none; -ms-overflow-style: none;">
 
-            <!-- CARD 1 -->
-            <div class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px] 
-                        bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem] 
-                        border border-white/10 hover:bg-white/10 
+                    <!-- CARD 1 -->
+                    <div
+                        class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px]
+                        bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem]
+                        border border-white/10 hover:bg-white/10
                         transition-all group snap-center">
 
-                <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 
-                            rounded-xl md:rounded-2xl 
-                            flex items-center justify-center 
+                        <div
+                            class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20
+                            rounded-xl md:rounded-2xl
+                            flex items-center justify-center
                             mb-6 md:mb-8 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-couch text-blue-500 text-xl md:text-2xl"></i>
-                </div>
+                            <i class="fas fa-couch text-blue-500 text-xl md:text-2xl"></i>
+                        </div>
 
-                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
-                    {{ __('messages.services.lounge') }}
-                </h4>
+                        <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
+                            {{ __('messages.services.lounge') }}
+                        </h4>
 
-                <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
-                    {{ __('messages.services.lounge_desc') }}
-                </p>
-            </div>
+                        <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
+                            {{ __('messages.services.lounge_desc') }}
+                        </p>
+                    </div>
 
-            <!-- CARD 2 -->
-            <div class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px] 
-                        bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem] 
-                        border border-white/10 hover:bg-white/10 
+                    <!-- CARD 2 -->
+                    <div
+                        class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px]
+                        bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem]
+                        border border-white/10 hover:bg-white/10
                         transition-all group snap-center">
 
-                <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 
-                            rounded-xl md:rounded-2xl 
-                            flex items-center justify-center 
+                        <div
+                            class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20
+                            rounded-xl md:rounded-2xl
+                            flex items-center justify-center
                             mb-6 md:mb-8 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-store text-blue-500 text-xl md:text-2xl"></i>
-                </div>
+                            <i class="fas fa-store text-blue-500 text-xl md:text-2xl"></i>
+                        </div>
 
-                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
-                    {{ __('messages.services.commercial') }}
-                </h4>
+                        <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
+                            {{ __('messages.services.commercial') }}
+                        </h4>
 
-                <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
-                    {{ __('messages.services.commercial_desc') }}
-                </p>
-            </div>
+                        <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
+                            {{ __('messages.services.commercial_desc') }}
+                        </p>
+                    </div>
 
-            <!-- CARD 3 -->
-            <div class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px] 
-                        bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem] 
-                        border border-white/10 hover:bg-white/10 
+                    <!-- CARD 3 -->
+                    <div
+                        class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px]
+                        bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem]
+                        border border-white/10 hover:bg-white/10
                         transition-all group snap-center">
 
-                <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 
-                            rounded-xl md:rounded-2xl 
-                            flex items-center justify-center 
+                        <div
+                            class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20
+                            rounded-xl md:rounded-2xl
+                            flex items-center justify-center
                             mb-6 md:mb-8 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-wheelchair text-blue-500 text-xl md:text-2xl"></i>
-                </div>
+                            <i class="fas fa-wheelchair text-blue-500 text-xl md:text-2xl"></i>
+                        </div>
 
-                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
-                    {{ __('messages.services.priority') }}
-                </h4>
+                        <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
+                            {{ __('messages.services.priority') }}
+                        </h4>
 
-                <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
-                    {{ __('messages.services.priority_desc') }}
-                </p>
-            </div>
+                        <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
+                            {{ __('messages.services.priority_desc') }}
+                        </p>
+                    </div>
 
-            <!-- CARD 4 -->
-            <div class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px] 
-                        bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem] 
-                        border border-white/10 hover:bg-white/10 
+                    <!-- CARD 4 -->
+                    <div
+                        class="min-w-[280px] md:min-w-[320px] lg:min-w-[400px]
+                        bg-white/5 p-6 md:p-10 rounded-2xl md:rounded-[3rem]
+                        border border-white/10 hover:bg-white/10
                         transition-all group snap-center">
 
-                <div class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20 
-                            rounded-xl md:rounded-2xl 
-                            flex items-center justify-center 
+                        <div
+                            class="w-12 md:w-14 h-12 md:h-14 bg-blue-600/20
+                            rounded-xl md:rounded-2xl
+                            flex items-center justify-center
                             mb-6 md:mb-8 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-wifi text-blue-500 text-xl md:text-2xl"></i>
+                            <i class="fas fa-wifi text-blue-500 text-xl md:text-2xl"></i>
+                        </div>
+
+                        <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
+                            {{ __('messages.services.digital') }}
+                        </h4>
+
+                        <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
+                            {{ __('messages.services.digital_desc') }}
+                        </p>
+                    </div>
+
                 </div>
 
-                <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 uppercase tracking-tight text-blue-400">
-                    {{ __('messages.services.digital') }}
-                </h4>
-
-                <p class="text-xs md:text-sm text-slate-400 leading-relaxed text-justify">
-                    {{ __('messages.services.digital_desc') }}
-                </p>
             </div>
+        </section>
 
-        </div>
+        <!-- SCROLLBAR STYLE (LETakkan DI LUAR SECTION) -->
+        <style>
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 6px;
+            }
 
-    </div>
-</section>
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+            }
 
-<!-- SCROLLBAR STYLE (LETakkan DI LUAR SECTION) -->
-<style>
-.custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.05);
-    border-radius: 10px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #2563eb;
-    border-radius: 10px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #1d4ed8;
-}
-</style>
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #2563eb;
+                border-radius: 10px;
+            }
+
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #1d4ed8;
+            }
+        </style>
         <style>
             /* Menyembunyikan scrollbar di Chrome, Safari, dan Opera */
             .no-scrollbar::-webkit-scrollbar {

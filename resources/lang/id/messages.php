@@ -68,8 +68,10 @@ return [
         'title_1' => 'Warisan Sang',
         'title_2' => 'Abdurachman Saleh',
         'founded' => 'Tahun Berdiri',
-       'paragraph_1' => 'Dinamakan berdasarkan pahlawan nasional <strong class="text-slate-900 font-bold">Prof. Dr. Abdurachman Saleh</strong>, bandara ini memiliki akar militer yang kuat sebagai pangkalan udara (Lanud) utama di Jawa Timur. Lokasinya yang dikelilingi oleh <span class="text-slate-800 font-semibold">Gunung Arjuno, Gunung Semeru, dan Gunung Bromo</span> menjadikannya salah satu bandara dengan pemandangan terindah namun menantang di Indonesia.',
+        'paragraph_1' => 'Dinamakan berdasarkan pahlawan nasional <strong class="text-slate-900 font-bold">Prof. Dr. Abdurachman Saleh</strong>, bandara ini memiliki akar militer yang kuat sebagai pangkalan udara (Lanud) utama di Jawa Timur. Lokasinya yang dikelilingi oleh <span class="text-slate-800 font-semibold">Gunung Arjuno, Gunung Semeru, dan Gunung Bromo</span> menjadikannya salah satu bandara dengan pemandangan terindah namun menantang di Indonesia.',
         'paragraph_2' => 'Transformasi besar terjadi pada <strong class="text-blue-600">2005</strong>, ketika gerbang militer ini dibuka untuk melayani masyarakat sipil. Sejak saat itu, Abdurachman Saleh telah menjadi nadi utama bagi wisatawan mancanegara yang ingin mengeksplorasi keajaiban alam Bromo.',
+        'paragraph_3' => 'Dengan landasan pacu sepanjang 2.500 meter yang mampu menampung pesawat berbadan lebar, bandara ini terus berkembang untuk memenuhi kebutuhan mobilitas masyarakat Malang Raya dan sekitarnya, sambil tetap menjaga warisan sejarah yang melekat pada setiap sudutnya.',
+        'paragraph_4' => 'Hari ini, Abdurachman Saleh Hub tidak hanya menjadi pintu gerbang udara yang vital, tetapi juga simbol kebanggaan dan identitas bagi masyarakat Malang Raya, menghubungkan masa lalu yang heroik dengan masa depan yang penuh harapan.',
     ],
 
     /*
@@ -107,6 +109,8 @@ return [
         'philosophy' => 'Filosofi Utama',
         'quote' => 'Menjadi fondasi strategis dalam pelayanan transportasi udara yang berkualitas, aman, dan selaras dengan pembangunan daerah.',
 
+        'explanation' => ' Visi dan Misi merupakan komponen strategis yang menjadi dasar dalam perencanaan, pelaksanaan, dan evaluasi penyelenggaraan pelayanan di Bandar Udara Abdulrachman Saleh Malang. Perumusan visi dan misi ini berfungsi sebagai arah kebijakan dan pedoman bagi seluruh unsur pengelola bandara dalam menjalankan tugas dan tanggung jawabnya secara terintegrasi. Keberadaan visi dan misi yang jelas diharapkan mampu mendorong terciptanya pelayanan transportasi udara yang berkualitas, berorientasi pada kepuasan pengguna jasa, serta selaras dengan prinsip keselamatan, keamanan, dan keberlanjutan.
+                            Dengan berlandaskan pada visi dan misi tersebut, Bandara Abdulrachman Saleh Malang berkomitmen untuk meningkatkan kinerja operasional dan mutu pelayanan secara berkelanjutan, sekaligus memperkuat perannya sebagai infrastruktur trasnportasi udara yang mendukung konektivitas wilayah dan Pembangunan daerah. ',
         // teks kecil bawah quote (yang kamu hardcode tadi)
         'note' => 'Perumusan visi dan misi ini berfungsi sebagai arah kebijakan bagi seluruh pengelola bandara dalam menjalankan tanggung jawab secara terintegrasi.',
     ],
@@ -159,6 +163,14 @@ return [
         'copyright' => '© 2026 Bandara Abdurachman Saleh – Malang Station Hub',
     ],
 
+    /* KOTAK DESKRIPSI SCROLL */
+    'block' => [
+        'title' => 'Bandar udara Abdulrachman Saleh menyediakan berbagai fasilitas pendukung yang dirancang untuk meningkatkan kenyamanan, kemudahan, dan kualitas pengalaman penumpang selama berada di area terminal. Salah satu fasilitas unggulan yang tersedia adalah <strong class="text-blue-400">Singhasari Premium Lounge</strong>, yaitu ruang tunggu eksklusif yang berlokasi strategis di lantai dua terminal keberangkatan. Lounge ini diperuntukkan bagi penumpang kelas bisnis serta mitra perbankan, dengan tujuan memberikan suasana yang lebih tenang dan privat dibandingkan ruang tunggu umum. Keberadaan fasilitas ini mencerminkan komitmen bandara dalam menyediakan layanan berstandar tinggi, melalui penyediaan hidangan prasmanan khas Nusantara, area kerja yang nyaman dengan koneksi internet berkecepatan tinggi, serta fasilitas pendukung lainnya seperti ruang ibadah pribadi. Dengan demikian, Singhasari Premium Lounge berfungsi tidak hanya sebagai ruang tunggu, tetapi juga sebagai sarana untuk menunjang produktivitas dan kenyamanan penumpang sebelum keberangkatan.',
+        'title_1' => 'Selain fasilitas eksklusif, Bandar udara Abdulrachman Saleh juga mengembangkan <strong class="text-blue-400">Area Komersial dan UMKM</strong> sebagai bagian dari upaya peningkatan pelayanan sekaligus pemberdayaan ekonomi lokal. Area ini menjadi pusat perbelanjaan di dalam terminal yang menghadirkan sinergi antara gerai modern dan pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) khas Malang Raya. Penumpang dapat menemukan berbagai produk lokal unggulan, seperti makanan ringan tradisional, buah khas daerah, hingga produk olahan kemasan yang praktis dibawa sebagai oleh-oleh. Keberadaan area komersial ini tidak hanya memberikan nilai tambah bagi penumpang, tetapi juga berperan sebagai sarana promosi produk lokal dan penguatan peran bandara sebagai etalase ekonomi daerah.',
+        'title_2' => 'Dalam aspek pelayanan inklusif, Bandar udara Abdulrachman Saleh menunjukkan komitmennya melalui penerapan manajemen layanan prioritas bagi penumpang dengan kebutuhan khusus. Layanan ini diwujudkan melalui penyediaan fasilitas bantuan mobilitas, seperti kursi roda, serta dukungan petugas pendamping terlatih yang siap membantu penumpang lanjut usia, ibu hamil, dan penyandang disabilitas selama berada di area bandara. Pendekatan ini mencerminkan prinsip pelayanan publik yang berkeadilan dan berorientasi pada keselamatan serta kenyamanan seluruh pengguna jasa. Dengan adanya layanan prioritas ini, bandara berupaya memastikan bahwa setiap penumpang memperoleh akses dan perlakuan yang setara tanpa hambatan fisik maupun operasional.',
+        'title_3' => 'Untuk mendukung kebutuhan digital para pelancong, Bandar udara Abdulrachman Saleh menyediakan fasilitas konektivitas digital yang meliputi akses Wi-Fi gratis di seluruh area terminal penumpang. Fasilitas ini memungkinkan penumpang untuk tetap terhubung dengan dunia digital, baik untuk keperluan komunikasi, hiburan, maupun pekerjaan selama berada di bandara. Selain itu, tersedia stasiun pengisian daya (charging station) yang tersebar di area ruang tunggu, sehingga penumpang dapat memastikan perangkat elektronik mereka tetap aktif dan siap digunakan saat dibutuhkan. Penyediaan fasilitas konektivitas digital ini merupakan bagian dari upaya bandara untuk meningkatkan kualitas pengalaman penumpang dengan memenuhi kebutuhan teknologi modern yang semakin menjadi bagian penting dalam kehidupan sehari-hari.',
+    ],
+    
 // TRANSPORTASI PAGE TRANSLATION FILE - INDONESIAN
         'brand' => [
         'abdurachman' => 'Abdurachman',

@@ -49,27 +49,96 @@
             </div>
         </div>
     </nav>
-
-    <header class="relative bg-slate-900 py-32 overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 -skew-x-12 translate-x-20"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-aviation-blue/20 rounded-full blur-[100px]"></div>
-
-        <div class="relative z-10 container mx-auto px-6 text-center" data-aos="fade-down">
-            <h6 class="text-blue-400 font-black uppercase tracking-[0.6em] text-[10px] mb-6">
-                {{ __('messages.routes_page.hero.badge') }}
-            </h6>
-
-            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase mb-8 leading-[0.8]">
-                {{ __('messages.routes_page.hero.title_1') }}
-                <span class="text-blue-400 italic">{{ __('messages.routes_page.hero.title_2') }}</span><br>
-                {{ __('messages.routes_page.hero.title_3') }}
-            </h1>
-
-            <p class="text-slate-400 max-w-[900px] mx-auto text-sm md:text-base font-medium leading-7 md:leading-8 text-center">
-                {{ __('messages.routes_page.hero.desc') }}
-            </p>
+<header class="relative min-h-[90vh] flex flex-col justify-center bg-slate-950 font-formal overflow-hidden">
+    
+    <div class="absolute inset-0 z-0">
+    <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
+             class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Transportasi Malang">
+        
+        <div class="absolute inset-0 opacity-10 mix-blend-overlay">
+            <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png" class="w-full h-full object-cover">
         </div>
-    </header>
+
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+    </div>
+
+    <div class="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-4 md:gap-6 px-5 py-3 md:px-6 md:py-4 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl animate-float"
+         data-aos="fade-down" 
+         data-aos-duration="1000">
+        
+        <div class="flex items-center gap-3 group">
+            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub" 
+                 class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+            <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
+                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Dinas</span>
+                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Perhubungan</span>
+                <span class="text-blue-400 text-[7px] font-medium tracking-widest uppercase mt-0.5">Kab. Malang</span>
+            </div>
+        </div>
+
+        <div class="h-8 w-[1px] bg-white/20 mx-1"></div>
+
+        <div class="flex items-center gap-3 group">
+            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang" 
+                 class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+            <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
+                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Pemerintah</span>
+                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Kota Malang</span>
+                <span class="text-yellow-500 text-[7px] font-medium tracking-widest uppercase mt-0.5">Jawa Timur</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl pt-20">
+            <div class="mb-6" data-aos="fade-right" data-aos-duration="1000">
+                <h6 class="text-blue-500 font-black uppercase tracking-[0.5em] text-[11px] flex items-center">
+                    <span class="w-8 h-[1px] bg-blue-500 mr-4"></span>
+                    {{ __('messages.routes_page.hero.badge') }}
+                </h6>
+            </div>
+
+            <div class="mb-8" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                <h1 class="text-5xl md:text-8xl font-black text-white leading-[1.1] uppercase tracking-tighter">
+                    {{ __('messages.routes_page.hero.title_1') }} <br>
+                    <span class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-600 pt-4 pb-6 inline-block">
+                        {{ __('messages.routes_page.hero.title_2') }}
+                    </span> <br>
+                    {{ __('messages.routes_page.hero.title_3') }}
+                </h1>
+            </div>
+
+            <div class="max-w-xl mb-12" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                <p class="text-slate-300 text-base md:text-xl font-normal leading-relaxed opacity-90 border-l-4 border-blue-600 pl-6 text-justify">
+                    {{ __('messages.routes_page.hero.desc') }}
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                <div class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-bold tracking-widest uppercase">
+                    <i class="fas fa-map-marked-alt text-blue-500"></i> {{ __('messages.routes_page.hero.tags.lanud') }}
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-bold tracking-widest uppercase">
+                    <i class="fas fa-route text-blue-500"></i> Jalur Integrasi
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0px); }
+    }
+    .animate-float {
+        animation: float 5s ease-in-out infinite;
+    }
+    .font-formal {
+        font-family: 'Inter', sans-serif;
+    }
+</style>
 
     <main class="container mx-auto px-6 -mt-16 relative z-20 pb-24">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">

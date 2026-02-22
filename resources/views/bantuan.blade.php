@@ -49,25 +49,72 @@
             </a>
         </div>
     </nav>
-
-    <header class="bg-slate-900 py-24 text-center text-white relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-600/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3"></div>
-
-        <div class="relative z-10 px-6" data-aos="zoom-out" data-aos-duration="1000">
-            <h6 class="text-blue-500 font-black uppercase tracking-[0.5em] text-[10px] mb-4">
-                {{ __('messages.help.hero.kicker') }}
-            </h6>
-
-            <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6 leading-none">
-                {!! __('messages.help.hero.title_html') !!}
-            </h1>
-
-            <p class="text-slate-400 text-sm md:text-base max-w-2xl mx-auto font-medium leading-relaxed">
-                {!! __('messages.help.hero.subtitle_html') !!}
-            </p>
+<header class="relative min-h-[80vh] md:min-h-[90vh] flex flex-col justify-center bg-slate-950 overflow-hidden">
+    {{-- Background Area --}}
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
+             class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105" 
+             alt="Latar Belakang Bantuan">
+        
+        <div class="absolute inset-0 opacity-10 mix-blend-overlay">
+            <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png" class="w-full h-full object-cover">
         </div>
-    </header>
+
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+    </div>
+
+    {{-- LOGO BRANDING POJOK KANAN ATAS --}}
+    <div class="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-4 bg-white/5 backdrop-blur-xl p-3 md:p-4 rounded-2xl border border-white/10 shadow-2xl" 
+         data-aos="fade-down" 
+         data-aos-duration="1000">
+        
+        <div class="flex items-center gap-3 group">
+            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub" 
+                 class="h-8 md:h-10 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+            <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
+                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Dinas</span>
+                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Perhubungan</span>
+                <span class="text-blue-400 text-[7px] font-medium tracking-widest uppercase mt-0.5">Kab. Malang</span>
+            </div>
+        </div>
+
+        <div class="h-6 w-[1px] bg-white/20 mx-1"></div>
+
+        <div class="flex items-center gap-3 group">
+            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang" 
+                 class="h-8 md:h-10 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+            <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
+                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Pemerintah</span>
+                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Kota Malang</span>
+                <span class="text-yellow-500 text-[7px] font-medium tracking-widest uppercase mt-0.5">Jawa Timur</span>
+            </div>
+        </div>
+    </div>
+
+    {{-- Content Area dengan Space Bawah yang Lega --}}
+    <div class="container mx-auto px-6 relative z-10 pt-32 pb-40 md:pb-52">
+        <div class="max-w-4xl">
+            {{-- Title --}}
+            <div class="mb-10" data-aos="fade-right" data-aos-delay="100">
+                <h1 class="text-6xl md:text-8xl font-black text-white leading-[1.05] uppercase tracking-tighter">
+                    {!! str_replace('</span>', '</span>', str_replace('<span class="text-blue-600">', '<span class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-500 pt-4 pb-4 inline-block">', __('messages.help.hero.title_html'))) !!}
+                </h1>
+            </div>
+
+            {{-- Description --}}
+            <div class="max-w-xl" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-slate-400 text-base md:text-xl leading-relaxed border-l-4 border-blue-600 pl-6 text-justify italic opacity-90">
+                    {!! __('messages.help.hero.subtitle_html') !!}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {{-- Gradient Spacer (Membuat ruang kosong di bawah hero agar tidak menempel) --}}
+    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-20"></div>
+    <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+</header>
 
     <main class="container mx-auto px-6 -mt-16 relative z-20 pb-24">
         <div class="max-w-6xl mx-auto">

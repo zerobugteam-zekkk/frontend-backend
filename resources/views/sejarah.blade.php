@@ -118,20 +118,54 @@
         updateClock();
         setInterval(updateClock, 1000);
     </script>
-    <header class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-[#0a192f]">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1627932688000-0e1d0e1b0d2d?q=80&w=2070&auto=format&fit=crop"
-                class="w-full h-full object-cover opacity-40 scale-105"
-                alt="Bandara Abdulrachman Saleh Background - Jet Fighters on Runway">
-            <div class="absolute inset-0 bg-gradient-to-b from-[#0a192f]/80 via-[#0a192f]/60 to-[#0a192f]"></div>
+   <header class="relative min-h-[100vh] flex flex-col justify-center bg-slate-950 font-formal overflow-hidden pb-24 md:pb-32">
+    
+    <div class="absolute inset-0 z-0">
+    <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
+             class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105" 
+             alt="Sejarah Bandara Abdulrachman Saleh">
+        
+        <div class="absolute inset-0 opacity-10 mix-blend-overlay">
+            <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png" class="w-full h-full object-cover">
         </div>
 
-        <div class="relative z-10 container mx-auto px-6 text-center" data-aos="fade-up">
-            <div
-                class="inline-flex items-center gap-3 mb-6 px-4 py-1.5 border border-blue-400/20 rounded-full bg-blue-500/5 backdrop-blur-md">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+    </div>
+
+    <div class="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-4 md:gap-6 px-5 py-3 md:px-6 md:py-4 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl animate-float"
+         data-aos="fade-down" 
+         data-aos-duration="1000">
+        
+        <div class="flex items-center gap-3 group">
+            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub" 
+                 class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+            <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
+                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Dinas</span>
+                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Perhubungan</span>
+                <span class="text-blue-400 text-[7px] font-medium tracking-widest uppercase mt-0.5">Kab. Malang</span>
+            </div>
+        </div>
+
+        <div class="h-8 w-[1px] bg-white/20 mx-1"></div>
+
+        <div class="flex items-center gap-3 group">
+            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang" 
+                 class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+            <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
+                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Pemerintah</span>
+                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Kota Malang</span>
+                <span class="text-yellow-500 text-[7px] font-medium tracking-widest uppercase mt-0.5">Jawa Timur</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl pt-32 md:pt-20">
+            <div class="inline-flex items-center gap-3 mb-8 px-4 py-1.5 border border-blue-400/20 rounded-full bg-blue-500/5 backdrop-blur-md" 
+                 data-aos="fade-right" data-aos-duration="1000">
                 <span class="relative flex h-1.5 w-1.5">
-                    <span
-                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-500"></span>
                 </span>
                 <h6 class="text-blue-400 font-bold uppercase tracking-[0.4em] text-[10px]">
@@ -139,36 +173,54 @@
                 </h6>
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight leading-tight mb-2">
-                {{ __('messages.history_page.hero.title_1') }} <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600">{{ __('messages.history_page.hero.title_2') }}</span>
-            </h1>
+            <div class="mb-8" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                <h1 class="text-5xl md:text-8xl font-black text-white leading-[1.1] uppercase tracking-tighter">
+                    {{ __('messages.history_page.hero.title_1') }} <br>
+                    <span class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-600 pt-4 pb-6 inline-block">
+                        {{ __('messages.history_page.hero.title_2') }}
+                    </span>
+                </h1>
+            </div>
 
-            <div class="w-16 h-1 bg-blue-600 mx-auto my-6 rounded-full"></div>
+            <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+                <h2 class="text-xl md:text-3xl font-light text-blue-400 tracking-wide mb-8">
+                    Prof. dr. Abdulrachman Saleh
+                </h2>
+            </div>
 
-            <h2 class="text-xl md:text-3xl font-light text-slate-200 tracking-wide mb-4">
-                Prof. dr. Abdulrachman Saleh
-            </h2>
+            <div class="max-w-xl mb-12" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                <p class="text-slate-300 text-base md:text-lg font-normal leading-relaxed opacity-90 border-l-4 border-blue-600 pl-6 text-justify italic">
+                    "{{ __('messages.history_page.hero.desc') }}"
+                </p>
+            </div>
 
-            <p
-                class="max-w-3xl mx-auto text-slate-400 text-sm md:text-base font-medium leading-relaxed italic opacity-90 px-4">
-                {{ __('messages.history_page.hero.desc') }}
-            </p>
-
-            <div
-                class="flex flex-wrap justify-center gap-4 md:gap-8 mt-10 text-blue-400/60 font-bold text-[9px] uppercase tracking-[0.15em]">
-                <span class="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-md"><i
-                        class="fas fa-landmark text-[10px]"></i>
-                    {{ __('messages.history_page.hero.tags.lanud') }}</span>
-                <span class="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-md"><i
-                        class="fas fa-microscope text-[10px]"></i>
-                    {{ __('messages.history_page.hero.tags.fisiologi') }}</span>
-                <span class="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-md"><i
-                        class="fas fa-broadcast-tower text-[10px]"></i>
-                    {{ __('messages.history_page.hero.tags.rri') }}</span>
+            <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                <span class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-blue-400 text-[10px] font-bold tracking-widest uppercase">
+                    <i class="fas fa-landmark text-blue-500"></i> {{ __('messages.history_page.hero.tags.lanud') }}
+                </span>
+                <span class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-blue-400 text-[10px] font-bold tracking-widest uppercase">
+                    <i class="fas fa-microscope text-blue-500"></i> {{ __('messages.history_page.hero.tags.fisiologi') }}
+                </span>
             </div>
         </div>
-    </header>
+    </div>
+
+    
+
+</header>
+
+<style>
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+    }
+    @keyframes bounce-slow {
+        0%, 100% { transform: translateY(0); opacity: 0.3; }
+        50% { transform: translateY(-10px); opacity: 1; }
+    }
+    .animate-float { animation: float 5s ease-in-out infinite; }
+    .animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
+</style>
     <main class="container mx-auto px-6 -mt-12 relative z-20 pb-24">
         <div class="max-w-6xl mx-auto">
 

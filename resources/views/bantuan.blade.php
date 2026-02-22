@@ -111,7 +111,6 @@
         </div>
     </div>
 
-    {{-- Gradient Spacer (Membuat ruang kosong di bawah hero agar tidak menempel) --}}
     <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-20"></div>
     <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 </header>

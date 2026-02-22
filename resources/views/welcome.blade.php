@@ -283,7 +283,7 @@
 
     <nav class="bg-white border-b border-blue-100 sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="{{ url('/') }}" class="flex items-center space-x-3">
+            <a href="/" class="flex items-center space-x-3">
                 <div class="bg-blue-600 p-2 rounded-lg">
                     <i class="fas fa-plane-departure text-white text-sm"></i>
                 </div>

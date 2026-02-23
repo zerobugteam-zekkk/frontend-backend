@@ -57,6 +57,107 @@ return [
         'security'      => 'Security Status',
         'active'        => 'Active',
     ],
+        'history' => [
+        'badge' => 'Historical Archive',
+        'title_1' => 'The Legacy of',
+        'title_2' => 'Abdurachman Saleh',
+        'founded' => 'Year Established',
+        'paragraph_1' => 'Named after national hero <strong class="text-slate-900 font-bold">Prof. Dr. Abdurachman Saleh</strong>, this airport has strong military roots as a major air force base in East Java. Surrounded by <span class="text-slate-800 font-semibold">Mount Arjuno, Mount Semeru, and Mount Bromo</span>, it is recognized as one of the most scenic yet technically challenging airports in Indonesia.',
+        'paragraph_2' => 'A major transformation occurred in <strong class="text-blue-600">2005</strong>, when this former military gateway was opened to serve civil aviation. Since then, Abdurachman Saleh has become a vital hub for both domestic and international travelers exploring the natural wonders of Bromo and the Greater Malang region.',
+        'paragraph_3' => 'With a 2,500-meter runway capable of accommodating wide-body aircraft, the airport continues to expand in order to meet the growing mobility demands of the Malang Raya community and surrounding areas, while preserving the historical legacy embedded within its grounds.',
+        'paragraph_4' => 'Today, Abdurachman Saleh Hub stands not only as a crucial air gateway but also as a symbol of pride and identity for the people of Greater Malang—connecting a heroic past with a promising future.',
+    ],
+
+        'organization' => [
+        'badge' => 'Management',
+        'title_1' => 'Organizational',
+        'title_2' => 'Structure',
+        'subtitle' => 'UPT Airport Service Management Abdurachman Saleh Malang',
+
+        'head' => 'Head of Airport Service Management Unit Abdurachman Saleh',
+
+        'sub_head_label' => 'Head of Sub Division',
+        'sub_head_value' => 'Administration',
+
+        'security_label' => 'Head of Section',
+        'security_value' => 'Aviation Security & Emergency Services',
+
+        'technical_label' => 'Head of Section',
+        'technical_value'=> 'Technical & Airport Services',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+     | VISION & MISSION
+    |--------------------------------------------------------------------------
+    */
+    'vision' => [
+        'badge' => 'Strategic Goals',
+        'title_1' => 'Vision &',
+        'title_2' => 'Mission',
+
+        'philosophy' => 'Core Philosophy',
+        'quote' => 'To become a strategic foundation in providing high-quality, safe, and regionally aligned air transportation services.',
+        'explanation' => 'The Vision and Mission are strategic components that serve as the basis for planning, implementing, and evaluating the provision of services at Abdurachman Saleh Airport Malang. The formulation of this vision and mission functions as a policy direction and guideline for all airport management elements in carrying out their duties and responsibilities in an integrated manner. The existence of a clear vision and mission is expected to encourage the creation of high-quality air transportation services, oriented towards user satisfaction, and aligned with the principles of safety, security, and sustainability.
+                            Based on this vision and mission, Abdurachman Saleh Malang Airport is committed to continuously improving operational performance and service quality, while strengthening its role as an air transportation infrastructure that supports regional connectivity and development.',
+        'note' => 'This vision and mission serve as the policy direction for the airport management to carry out responsibilities in an integrated manner.',
+    ],
+
+    'mission' => [
+        '1' => 'Improve service equity with priority for island regions and low-income communities.',
+        '2' => 'Enhance affordable, accessible, safe, comfortable, and fast transportation services.',
+        '3' => 'Enhancing the role of the transportation sector in accelerating and equalizing the regional development process.',
+        '4' => 'Encouraging community and business participation in efforts to improve transportation service quality.',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | TERMINAL SERVICES
+    |--------------------------------------------------------------------------
+    */
+    'services' => [
+        'title' => 'Terminal Services',
+        'subtitle' => 'International Airport Service Standardization',
+
+        'lounge' => 'Singhasari Premium Lounge',
+        'lounge_desc' => 'An exclusive waiting room facility strategically located on the 2nd floor of the departure terminal. This lounge is specially designed to provide complete comfort for business class passengers and banking partners. It offers Indonesian specialties, a work area with high-speed internet connection, and a private prayer room.',
+
+        'commercial' => 'Commercial Area & SMEs',
+        'commercial_desc' => 'A terminal shopping center that brings together modern outlets and leading local MSMEs in the Greater Malang area. Passengers can find a wide selection of authentic souvenirs such as Keripik Tempe Sanan, Malang strudel, Hokiku Gift Shop, souvenir centers, and more.',
+
+        'priority' => 'Priority Service Management',
+        'priority_desc' => 'Our commitment to inclusivity is reflected through full mobility assistance facilities. Modern wheelchairs and trained assistants (Special Assistants) are available to support elderly passengers, pregnant women, and people with disabilities.',
+
+        'digital' => 'Digital Connectivity',
+        'digital_desc' => 'Abdurachman Saleh Airport supports travelers’ digital needs with free Wi-Fi throughout the terminal. Charging stations are also available across waiting areas to keep your devices powered.',
+
+        'operational' => 'Operating Hours',
+        'operational_hours' => '07:30 - 17:00 WIB',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | FOOTER
+    |--------------------------------------------------------------------------
+    */
+    'footer' => [
+        'about' => 'Class II Airport Authority – Providing safe, comfortable, and reliable air connectivity for the people of Indonesia.',
+        'info' => 'Information Services',
+        'checkin' => 'Check-in Guide',
+        'security' => 'Security Procedures',
+        'cargo' => 'Cargo Services',
+        'operational' => 'Operating Hours',
+        'contact' => 'Contact Us',
+        'copyright' => '© 2026 Abdurachman Saleh Airport – Malang Station Hub',
+    ],
+
+    /* KOTAK DESKRIPSI SCROLL */
+    'block' => [
+        'title' => 'Abdulrachman Saleh Airport provides a range of supporting facilities designed to enhance passenger comfort, convenience, and quality of experience while in the terminal area. One of the outstanding facilities available is the Singhasari Premium Lounge, an exclusive waiting room strategically located on the second floor of the departure terminal. This lounge is intended for business class passengers and banking partners, with the aim of providing a more peaceful and private atmosphere than the general waiting room. This facility reflects the airport\'s commitment to providing high-standard services, through the provision of Indonesian buffet meals, a comfortable work area with high-speed internet connection, and other supporting facilities such as a private prayer room. Thus, the Singhasari Premium Lounge serves not only as a waiting room, but also as a means to support passenger productivity and comfort before departure.',
+        'title_1' => 'In addition to exclusive facilities, Abdulrachman Saleh Airport has also developed a <strong class="text-blue-400">Commercial and MSME Area</strong> as part of its efforts to improve services and empower the local economy. This area is a shopping center within the terminal that brings together modern outlets and Micro, Small and Medium Enterprises (MSMEs) typical of the Greater Malang area. Passengers can find a variety of excellent local products, such as traditional snacks, local fruits, and packaged products that are easy to carry as souvenirs. The existence of this commercial area not only provides added value for passengers but also serves as a means of promoting local products and strengthening the airport\'s role as a showcase for the regional economy.',
+        'title_2' => 'In terms of inclusive services, Abdulrachman Saleh Airport demonstrates its commitment through the implementation of priority service management for passengers with special needs. This service is realized through the provision of mobility assistance facilities, such as wheelchairs, as well as the support of trained assistants who are ready to help elderly passengers, pregnant women, and people with disabilities while they are in the airport area. This approach reflects the principles of equitable public service that is oriented towards the safety and comfort of all service users. With this priority service, the airport strives to ensure that every passenger has equal access and treatment without physical or operational barriers.',
+        'title_3' => 'To support the digital needs of travelers, Abdulrachman Saleh Airport provides digital connectivity facilities, including free Wi-Fi access throughout the passenger terminal area. This facility allows passengers to stay connected to the digital world, whether for communication, entertainment, or work while at the airport. In addition, charging stations are available throughout the waiting area, so passengers can ensure their electronic devices remain active and ready for use when needed. The provision of these digital connectivity facilities is part of the airport\'s efforts to enhance the passenger experience by meeting the growing demand for modern technology, which has become an increasingly important part of daily life.',
+    ],
 
     /*
 |--------------------------------------------------------------------------
@@ -175,103 +276,6 @@ return [
         'copyright' => '© 2026 Abdulrachman Saleh Airport Authority - Digital Historical Archive',
     ],
 ],
-
-    /*
-    |--------------------------------------------------------------------------
-| ORGANIZATION STRUCTURE
-    |--------------------------------------------------------------------------
-    */
-    'organization' => [
-        'badge' => 'Management',
-        'title_1' => 'Organizational',
-        'title_2' => 'Structure',
-        'subtitle' => 'UPT Airport Service Management Abdurachman Saleh Malang',
-
-        'head' => 'Head of Airport Service Management Unit Abdurachman Saleh',
-
-        'sub_head_label' => 'Head of Sub Division',
-        'sub_head_value' => 'Administration',
-
-        'security_label' => 'Head of Section',
-        'security_value' => 'Aviation Security & Emergency Services',
-
-        'technical_label' => 'Head of Section',
-        'technical_value'=> 'Technical & Airport Services',
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
- | VISION & MISSION
-    |--------------------------------------------------------------------------
-    */
-    'vision' => [
-        'badge' => 'Strategic Goals',
-        'title_1' => 'Vision &',
-        'title_2' => 'Mission',
-
-        'philosophy' => 'Core Philosophy',
-        'quote' => 'To become a strategic foundation in providing high-quality, safe, and regionally aligned air transportation services.',
-        'explanation' => 'The Vision and Mission are strategic components that serve as the basis for planning, implementing, and evaluating the provision of services at Abdurachman Saleh Airport Malang. The formulation of this vision and mission functions as a policy direction and guideline for all airport management elements in carrying out their duties and responsibilities in an integrated manner. The existence of a clear vision and mission is expected to encourage the creation of high-quality air transportation services, oriented towards user satisfaction, and aligned with the principles of safety, security, and sustainability.
-                            Based on this vision and mission, Abdurachman Saleh Malang Airport is committed to continuously improving operational performance and service quality, while strengthening its role as an air transportation infrastructure that supports regional connectivity and development.',
-        'note' => 'This vision and mission serve as the policy direction for the airport management to carry out responsibilities in an integrated manner.',
-    ],
-
-    'mission' => [
-        '1' => 'Improve service equity with priority for island regions and low-income communities.',
-        '2' => 'Enhance affordable, accessible, safe, comfortable, and fast transportation services.',
-        '3' => 'Enhancing the role of the transportation sector in accelerating and equalizing the regional development process.',
-        '4' => 'Encouraging community and business participation in efforts to improve transportation service quality.',
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-| TERMINAL SERVICES
-    |--------------------------------------------------------------------------
-    */
-    'services' => [
-        'title' => 'Terminal Services',
-        'subtitle' => 'International Airport Service Standardization',
-
-        'lounge' => 'Singhasari Premium Lounge',
-        'lounge_desc' => 'An exclusive waiting room facility strategically located on the 2nd floor of the departure terminal. This lounge is specially designed to provide complete comfort for business class passengers and banking partners. It offers Indonesian specialties, a work area with high-speed internet connection, and a private prayer room.',
-
-        'commercial' => 'Commercial Area & SMEs',
-        'commercial_desc' => 'A terminal shopping center that brings together modern outlets and leading local MSMEs in the Greater Malang area. Passengers can find a wide selection of authentic souvenirs such as Keripik Tempe Sanan, Malang strudel, Hokiku Gift Shop, souvenir centers, and more.',
-
-        'priority' => 'Priority Service Management',
-        'priority_desc' => 'Our commitment to inclusivity is reflected through full mobility assistance facilities. Modern wheelchairs and trained assistants (Special Assistants) are available to support elderly passengers, pregnant women, and people with disabilities.',
-
-        'digital' => 'Digital Connectivity',
-        'digital_desc' => 'Abdurachman Saleh Airport supports travelers’ digital needs with free Wi-Fi throughout the terminal. Charging stations are also available across waiting areas to keep your devices powered.',
-
-        'operational' => 'Operating Hours',
-        'operational_hours' => '07:30 - 17:00 WIB',
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | FOOTER
-    |--------------------------------------------------------------------------
-    */
-    'footer' => [
-        'about' => 'Class II Airport Authority – Providing safe, comfortable, and reliable air connectivity for the people of Indonesia.',
-        'info' => 'Information Services',
-        'checkin' => 'Check-in Guide',
-        'security' => 'Security Procedures',
-        'cargo' => 'Cargo Services',
-        'operational' => 'Operating Hours',
-        'contact' => 'Contact Us',
-        'copyright' => '© 2026 Abdurachman Saleh Airport – Malang Station Hub',
-    ],
-
-/* KOTAK DESKRIPSI SCROLL */
-    'block' => [
-        'title' => 'Abdulrachman Saleh Airport provides a range of supporting facilities designed to enhance passenger comfort, convenience, and quality of experience while in the terminal area. One of the outstanding facilities available is the Singhasari Premium Lounge, an exclusive waiting room strategically located on the second floor of the departure terminal. This lounge is intended for business class passengers and banking partners, with the aim of providing a more peaceful and private atmosphere than the general waiting room. This facility reflects the airport\'s commitment to providing high-standard services, through the provision of Indonesian buffet meals, a comfortable work area with high-speed internet connection, and other supporting facilities such as a private prayer room. Thus, the Singhasari Premium Lounge serves not only as a waiting room, but also as a means to support passenger productivity and comfort before departure.',
-        'title_1' => 'In addition to exclusive facilities, Abdulrachman Saleh Airport has also developed a <strong class="text-blue-400">Commercial and MSME Area</strong> as part of its efforts to improve services and empower the local economy. This area is a shopping center within the terminal that brings together modern outlets and Micro, Small and Medium Enterprises (MSMEs) typical of the Greater Malang area. Passengers can find a variety of excellent local products, such as traditional snacks, local fruits, and packaged products that are easy to carry as souvenirs. The existence of this commercial area not only provides added value for passengers but also serves as a means of promoting local products and strengthening the airport\'s role as a showcase for the regional economy.',
-        'title_2' => 'In terms of inclusive services, Abdulrachman Saleh Airport demonstrates its commitment through the implementation of priority service management for passengers with special needs. This service is realized through the provision of mobility assistance facilities, such as wheelchairs, as well as the support of trained assistants who are ready to help elderly passengers, pregnant women, and people with disabilities while they are in the airport area. This approach reflects the principles of equitable public service that is oriented towards the safety and comfort of all service users. With this priority service, the airport strives to ensure that every passenger has equal access and treatment without physical or operational barriers.',
-        'title_3' => 'To support the digital needs of travelers, Abdulrachman Saleh Airport provides digital connectivity facilities, including free Wi-Fi access throughout the passenger terminal area. This facility allows passengers to stay connected to the digital world, whether for communication, entertainment, or work while at the airport. In addition, charging stations are available throughout the waiting area, so passengers can ensure their electronic devices remain active and ready for use when needed. The provision of these digital connectivity facilities is part of the airport\'s efforts to enhance the passenger experience by meeting the growing demand for modern technology, which has become an increasingly important part of daily life.',
-    ],
-
 
 // TRANSPORTATION PAGE
     'brand' => [

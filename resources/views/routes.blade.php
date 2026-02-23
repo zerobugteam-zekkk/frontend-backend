@@ -50,11 +50,11 @@
         </div>
     </nav>
 <header class="relative min-h-[90vh] flex flex-col justify-center bg-slate-950 font-formal overflow-hidden">
-    
+
     <div class="absolute inset-0 z-0">
     <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
              class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Transportasi Malang">
-        
+
         <div class="absolute inset-0 opacity-10 mix-blend-overlay">
             <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png" class="w-full h-full object-cover">
         </div>
@@ -63,11 +63,11 @@
     </div>
 
     <div class="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-4 md:gap-6 px-5 py-3 md:px-6 md:py-4 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl animate-float"
-         data-aos="fade-down" 
+         data-aos="fade-down"
          data-aos-duration="1000">
-        
+
         <div class="flex items-center gap-3 group">
-            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub" 
+            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub"
                  class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
             <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
                 <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Dinas</span>
@@ -79,7 +79,7 @@
         <div class="h-8 w-[1px] bg-white/20 mx-1"></div>
 
         <div class="flex items-center gap-3 group">
-            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang" 
+            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang"
                  class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
             <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
                 <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Pemerintah</span>
@@ -116,10 +116,12 @@
 
             <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
                 <div class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-bold tracking-widest uppercase">
-                    <i class="fas fa-map-marked-alt text-blue-500"></i> {{ __('messages.routes_page.hero.tags.lanud') }}
+                    <i class="fas fa-map-marked-alt text-blue-500"></i>
+                    {{-- {{ __('messages.routes_page.hero.tags.lanud') }} --}}
                 </div>
                 <div class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-bold tracking-widest uppercase">
-                    <i class="fas fa-route text-blue-500"></i> Jalur Integrasi
+                    <i class="fas fa-route text-blue-500"></i>
+                    {{-- Jalur Integrasi --}}
                 </div>
             </div>
         </div>

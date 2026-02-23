@@ -59,24 +59,126 @@ return [
     ],
 
     /*
-    |--------------------------------------------------------------------------
-    | HISTORY SECTION
-    |--------------------------------------------------------------------------
-    */
-    'history' => [
-        'badge' => 'Historical Archive',
-        'title_1' => 'The Legacy of',
-        'title_2' => 'Abdurachman Saleh',
-        'founded' => 'Year Established',
-        'paragraph_1' => 'Named after national hero <strong class="text-slate-900 font-bold">Prof. Dr. Abdurachman Saleh</strong>, this airport has strong military roots as a major air base in East Java. Surrounded by <span class="text-slate-800 font-semibold">Mount Arjuno, Mount Semeru, and Mount Bromo</span>, it is known for one of the most scenic yet challenging approaches in Indonesia.',
-        'paragraph_2' => 'A major transformation occurred in <strong class="text-blue-600">2005</strong>, when this military gateway opened to serve civil aviation. Since then, Abdurachman Saleh has become a key hub for travelers exploring the natural wonders of Bromo.',
-        'paragraph_3' => 'With a 2,500-meter runway capable of accommodating wide-body aircraft, the airport continues to evolve to meet the mobility needs of the Malang Raya community and beyond, while preserving the historical legacy embedded in every corner.',
-        'paragraph_4' => 'Today, Abdurachman Saleh Hub is not only a vital air gateway but also a symbol of pride and identity for the Malang Raya community, connecting a heroic past with a hopeful future.',
+|--------------------------------------------------------------------------
+| HISTORY PAGE TRANSLATION FILE - ENGLISH
+|--------------------------------------------------------------------------
+*/
+'history_page' => [
+    'meta' => [
+        'title' => 'In-Depth Biography - Prof. dr. Abdulrachman Saleh',
+    ],
+    'nav' => [
+        'back' => 'BACK TO',
+        'back_highlight' => 'National Archive',
+        'suffix' => 'WIB',
+    ],
+    'hero' => [
+        'badge' => 'Aerospace Historical Monument',
+        'title_1' => 'HISTORICAL',
+        'title_2' => 'MANUSCRIPT',
+        'subtitle' => 'Prof. dr. Abdulrachman Saleh',
+        'desc' => '"A Manifestation of Medical Intellectualism, Pioneer of Radio Waves, and Supreme Devotion in the Aerospace Horizon."',
+        'tags' => [
+            'lanud' => 'ABD Saleh Air Force Base',
+            'fisiologi' => 'Father of Physiology',
+            'rri' => 'Founder of RRI',
         ],
+    ],
+    'profile' => [
+        'motto_label' => 'Life Motto',
+        'motto_value' => '"The Right Man in the Right Place"',
+        'rank_label' => 'Final Rank',
+        'rank_value' => 'Air Vice Marshal (Posthumous)',
+        'award_label' => 'Award',
+        'award_value' => 'National Hero (1974)',
+        'badge' => 'Official Biography Archive',
+        'name' => 'Abdulrachman Saleh',
+        'tagline' => 'Laboratory, Sky, and Radio Waves: A Boundless Struggle.',
+    ],
+    'biography' => [
+        's1' => [
+            'h' => 'I. Intellectualism in the Colonial Era',
+            'p1' => 'Born in Jakarta on July 1, 1909, Abdulrachman Saleh came from an educated family. His father, Mohammad Saleh, was a prominent native physician known for his discipline in colonial medical practice. From STOVIA (School of Native Physicians) to Geneeskundige Hoogeschool (GHS), he earned the nickname <strong>"Karbol"</strong> due to his exceptional intelligence. This name is now immortalized as the title for cadets of the Air Force Academy (AAU).',
+            'p2' => 'Within academic circles, he was recognized not only for his scholarly excellence but also for his active engagement in intellectual discussions about the nation’s future. He believed that true independence could only be achieved through mastery of science and technology—not merely physical struggle.',
+        ],
+        's2' => [
+            'h' => 'II. Father of Physiology & Aviation Medicine',
+            'p1' => 'After graduating as a physician, he became a pioneer in the field of Physiology. He was the first Indonesian to hold the position of Professor of Physiology. Through his research, he laid the foundation of Aviation Medicine (Aeromedicine) in Indonesia, studying how the human body reacts to extreme altitudes—knowledge crucial for military aviation.',
+            'p2' => 'His research focused on air pressure effects, oxygen deprivation, and pilot fatigue. His findings became early references for the selection and training systems of Indonesian aviators during the formative years of the national air force.',
+        ],
+        's3' => [
+            'h' => 'III. Pioneer of RRI & Information Warfare',
+            'p1' => 'His contributions extended beyond the laboratory. According to broadcasting history records, he was one of the key figures in the establishment of <strong>Radio Republik Indonesia (RRI)</strong> on September 11, 1945. He led meetings of radio leaders in Jakarta and ensured that the voice of independence continued to resonate amid colonial information blockades.',
+            'p2' => 'At that time, radio was the only communication tool capable of penetrating territorial boundaries and colonial propaganda. Through radio broadcasts, he helped spread the legitimacy of the Republic of Indonesia to the international community.',
+        ],
+        's4' => [
+            'h' => 'IV. Air Base & Connection with Malang',
+            'p1' => 'Based on historical records referenced by the Malang Transportation Office and Regional Government, his name was immortalized as <strong>Abdulrachman Saleh Air Force Base</strong> in Malang. The base holds a long history as one of the most important air defense bases in East Java, reflecting his dedication to building national aerospace strength.',
+            'p2' => 'Malang was chosen for its strategic location, ideal geographical conditions for pilot training, and relative safety from direct attacks during the physical revolution era.',
+        ],
+        's5' => [
+            'h' => 'V. Dakota VT-CLA Tragedy & Air Force Devotion Day',
+            'p1' => 'On July 29, 1947, during a humanitarian mission transporting medical supplies donated by the Malayan Red Cross, the Dakota VT-CLA aircraft he boarded alongside Adisutjipto was shot down by two Dutch Kittyhawk aircraft over Yogyakarta. The tragedy became a profound wound for the nation.',
+            'p2' => 'The aircraft had clearly displayed international Red Cross markings, yet it was attacked without warning. This incident highlighted the severity of diplomatic conflict between Indonesia and the Netherlands in the early days of independence.',
+            'p3' => 'That date was later designated as <strong>Indonesian Air Force Devotion Day</strong> to commemorate the sincere service of this physician-aviator.',
+        ],
+        's6' => [
+            'h' => 'VI. Eternal Legacy',
+            'p1' => 'Abdulrachman Saleh stands as a true example of a nationalist technocrat. He proved that the weapons of independence were not only bamboo spears, but also advanced medical science, sophisticated radio technology, and courage in the skies.',
+            'p2' => 'He is remembered as a symbol of the intellectual warrior: scientist, communicator, and soldier. His legacy endures in academia, the military, and national broadcasting to this day.',
+        ],
+        'source' => 'Source: Wikipedia & Malang Regional Archives',
+    ],
+    'timeline' => [
+        'y1909' => [
+            'title' => 'The Dawn of Karbol',
+            'desc' => 'Born in Jakarta on July 1, 1909. His remarkable intelligence at STOVIA earned him the nickname "Karbol," symbolizing intellectual sharpness that later became a proud designation for Air Force Academy cadets.',
+        ],
+        'y1937' => [
+            'title' => 'Professor & Aviation Medicine',
+            'desc' => 'Became the first Indonesian Professor of Physiology and began pioneering research in Aeromedicine, studying altitude effects on the human body.',
+        ],
+        'y1945' => [
+            'title' => 'Establishment of RRI',
+            'desc' => 'Led radio consolidation after independence and ensured the voice of freedom penetrated Dutch information blockades through early national broadcasts.',
+        ],
+        'y1946' => [
+            'title' => 'The Wings of the Republic',
+            'desc' => 'Joined the Indonesian Air Force and helped restore former Japanese aircraft into Indonesia’s first combat fleet while training native aviators.',
+        ],
+        'y1947' => [
+            'title' => 'Dakota VT-CLA Tragedy',
+            'desc' => 'The humanitarian Dakota VT-CLA mission ended tragically when it was shot down by Dutch fighters. The event is commemorated as Indonesian Air Force Devotion Day.',
+        ],
+        'y1952' => [
+            'title' => 'Immortalized in Malang',
+            'desc' => 'Bugis Air Base was officially renamed Abdulrachman Saleh Air Force Base in honor of his service and dedication.',
+        ],
+        'y1974' => [
+            'title' => 'National Hero Recognition',
+            'desc' => 'Through Presidential Decree No. 071/TK/1974, he was officially declared a National Hero of Indonesia.',
+        ],
+        'y1994_2011' => [
+            'title' => 'Civil Aviation Transformation',
+            'desc' => 'The air base gradually opened for limited civil aviation and evolved into a major gateway for tourism and economic mobility in Greater Malang.',
+        ],
+        'y2026' => [
+            'title' => 'A Boundless Legacy',
+            'desc' => 'Today, his name lives not only in an airport but in the spirit of every AAU cadet and Indonesia’s aerospace innovation, symbolizing that knowledge is the true wing of independence.',
+        ],
+    ],
+    'closing' => [
+        'quote' => '"Knowledge is the wing to fly toward true independence."',
+        'author' => '— Prof. dr. Abdulrachman Saleh —',
+    ],
+    'footer' => [
+        'copyright' => '© 2026 Abdulrachman Saleh Airport Authority - Digital Historical Archive',
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------
-    | ORGANIZATION STRUCTURE
+| ORGANIZATION STRUCTURE
     |--------------------------------------------------------------------------
     */
     'organization' => [
@@ -99,7 +201,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | VISION & MISSION
+ | VISION & MISSION
     |--------------------------------------------------------------------------
     */
     'vision' => [
@@ -123,7 +225,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | TERMINAL SERVICES
+| TERMINAL SERVICES
     |--------------------------------------------------------------------------
     */
     'services' => [
@@ -162,7 +264,7 @@ return [
         'copyright' => '© 2026 Abdurachman Saleh Airport – Malang Station Hub',
     ],
 
-    /* KOTAK DESKRIPSI SCROLL */
+/* KOTAK DESKRIPSI SCROLL */
     'block' => [
         'title' => 'Abdulrachman Saleh Airport provides a range of supporting facilities designed to enhance passenger comfort, convenience, and quality of experience while in the terminal area. One of the outstanding facilities available is the Singhasari Premium Lounge, an exclusive waiting room strategically located on the second floor of the departure terminal. This lounge is intended for business class passengers and banking partners, with the aim of providing a more peaceful and private atmosphere than the general waiting room. This facility reflects the airport\'s commitment to providing high-standard services, through the provision of Indonesian buffet meals, a comfortable work area with high-speed internet connection, and other supporting facilities such as a private prayer room. Thus, the Singhasari Premium Lounge serves not only as a waiting room, but also as a means to support passenger productivity and comfort before departure.',
         'title_1' => 'In addition to exclusive facilities, Abdulrachman Saleh Airport has also developed a <strong class="text-blue-400">Commercial and MSME Area</strong> as part of its efforts to improve services and empower the local economy. This area is a shopping center within the terminal that brings together modern outlets and Micro, Small and Medium Enterprises (MSMEs) typical of the Greater Malang area. Passengers can find a variety of excellent local products, such as traditional snacks, local fruits, and packaged products that are easy to carry as souvenirs. The existence of this commercial area not only provides added value for passengers but also serves as a means of promoting local products and strengthening the airport\'s role as a showcase for the regional economy.',

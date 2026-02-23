@@ -167,7 +167,7 @@
                 <small style="font-size:10px;opacity:.9">{{ __('messages.chatbot.status') }}</small>
             </div>
         </div>
-        <button id="chat-logout" class="hidden">Logout</button>
+        <button id="chat-logout" class="hidden"></button>
     </div>
 
     <!-- REGISTER -->

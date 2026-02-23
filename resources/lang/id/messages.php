@@ -170,7 +170,7 @@ return [
         'title_2' => 'Dalam aspek pelayanan inklusif, Bandar udara Abdulrachman Saleh menunjukkan komitmennya melalui penerapan manajemen layanan prioritas bagi penumpang dengan kebutuhan khusus. Layanan ini diwujudkan melalui penyediaan fasilitas bantuan mobilitas, seperti kursi roda, serta dukungan petugas pendamping terlatih yang siap membantu penumpang lanjut usia, ibu hamil, dan penyandang disabilitas selama berada di area bandara. Pendekatan ini mencerminkan prinsip pelayanan publik yang berkeadilan dan berorientasi pada keselamatan serta kenyamanan seluruh pengguna jasa. Dengan adanya layanan prioritas ini, bandara berupaya memastikan bahwa setiap penumpang memperoleh akses dan perlakuan yang setara tanpa hambatan fisik maupun operasional.',
         'title_3' => 'Untuk mendukung kebutuhan digital para pelancong, Bandar udara Abdulrachman Saleh menyediakan fasilitas konektivitas digital yang meliputi akses Wi-Fi gratis di seluruh area terminal penumpang. Fasilitas ini memungkinkan penumpang untuk tetap terhubung dengan dunia digital, baik untuk keperluan komunikasi, hiburan, maupun pekerjaan selama berada di bandara. Selain itu, tersedia stasiun pengisian daya (charging station) yang tersebar di area ruang tunggu, sehingga penumpang dapat memastikan perangkat elektronik mereka tetap aktif dan siap digunakan saat dibutuhkan. Penyediaan fasilitas konektivitas digital ini merupakan bagian dari upaya bandara untuk meningkatkan kualitas pengalaman penumpang dengan memenuhi kebutuhan teknologi modern yang semakin menjadi bagian penting dalam kehidupan sehari-hari.',
     ],
-    
+
 // TRANSPORTASI PAGE TRANSLATION FILE - INDONESIAN
         'brand' => [
         'abdurachman' => 'Abdurachman',
@@ -263,61 +263,119 @@ return [
 
 // SEJARAH PAGE TRANSLATION FILE - INDONESIAN
     'history_page' => [
-    'meta' => [
-        'title' => 'Sejarah - Abdurachman Saleh Hub',
-    ],
-    'nav' => [
-        'back' => 'Kembali',
-        'back_highlight' => 'Ke Portal Utama',
-    ],
-    'hero' => [
-        'badge' => 'Warisan Karbol',
-        'title_1' => 'Jejak',
-        'title_2' => 'Dirgantara',
-        'desc' => 'Menghormati Sang Pionir: Kisah Prof. Dr. Abdurachman Saleh dan Transformasi Pangkalan Udara Malang.',
-    ],
-    'profile' => [
-        'photo_alt' => 'Abdurachman Saleh',
-        'photo_label' => 'Portrait Resmi',
-        'photo_caption' => 'Komodor Udara Abdurachman Saleh',
-        'badge' => 'Pahlawan Nasional',
-        'name' => 'Prof. Dr. Abdurachman Saleh',
-        'tagline_html' => '"The Karbol" — Intelektual Multitalenta di Balik Sayap Indonesia.',
-        'bio_p1_html' => '<strong>Prof. Dr. Abdurachman Saleh</strong> adalah sosok langka dalam sejarah perjuangan Indonesia. Beliau bukan sekadar penerbang militer, melainkan seorang intelektual yang menjembatani dunia sains dan kedaulatan dirgantara. Sebagai seorang dokter lulusan STOVIA/GHS, beliau diakui sebagai <strong>pionir kedokteran kedirgantaraan</strong> di Indonesia, yang meletakkan dasar-dasar fisiologi penerbangan bagi para kadet awal RI.',
-        'bio_p2_html' => 'Selain kontribusinya di udara dan laboratorium, beliau juga dikenal sebagai tokoh kunci dalam pendirian Radio Republik Indonesia (RRI), menyebarkan semangat kemerdekaan melalui gelombang radio. Di lingkungan TNI AU, kecerdasan dan ketangkasannya membuatnya dijuluki <strong>"Karbol"</strong> (istilah untuk kuncung yang cerdas), sebuah nama yang kini diabadikan sebagai sebutan bagi para Kadet Akademi Angkatan Udara.',
-        'bio_p3_html' => 'Pengabdiannya berakhir secara heroik pada 29 Juli 1947, ketika pesawat Dakota VT-CLA yang ia tumpangi dalam misi kemanusiaan ditembak jatuh oleh pesawat Belanda di Yogyakarta. Untuk menghormati dedikasi luar biasa dan jasa-jasanya, nama beliau resmi diabadikan sebagai pengganti nama <strong>Lanud Bugis pada tahun 1952</strong> melalui ketetapan Kepala Staf Angkatan Udara.',
-        'status_label' => 'Status',
-        'status_value' => 'Gugur (Misi VT-CLA)',
-        'rank_label' => 'Kepangkatan',
-        'rank_value' => 'Komodor Udara',
-    ],
-    'timeline' => [
-        'y1937' => [
-            'year' => '1937',
-            'title' => 'Pangkalan Strategis Lembah Bromo',
-            'desc_html' => 'Dibangun antara 1937-1940 oleh Belanda sebagai Bugis Airfield. Lokasi ini dipilih secara saksama di wilayah Pakis karena dikelilingi benteng alam berupa Gunung <strong>Semeru, Arjuno, Kawi, dan Panderman</strong>. Faktor geografis dan fenomena kabut tebal menjadikannya pangkalan "siluman" yang sulit dideteksi oleh armada udara musuh pada zamannya.',
+        'meta' => [
+            'title' => 'Biografi Mendalam - Prof. dr. Abdulrachman Saleh',
         ],
-        'y1994' => [
-            'year' => '1994',
-            'title' => 'Transisi Menuju Penerbangan Sipil',
-            'desc' => 'Pangkalan ini berevolusi menjadi bandara dual-function. Pada 1 April 1994, Merpati Nusantara Airlines membuka layanan komersial pertama, menghubungkan kekuatan militer dengan kebutuhan mobilitas masyarakat sipil di Malang Raya.',
+        'nav' => [
+            'back' => 'KEMBALI KE',
+            'back_highlight' => 'Arsip Nasional',
+            'suffix' => 'WIB',
         ],
-        'y2011' => [
-            'year' => '2011',
-            'title' => 'Modernisasi & Pengelolaan Pemprov',
-            'desc_html' => 'Pembangunan terminal baru di tahun 2011 mempertegas statusnya sebagai bandara <strong>Civil Enclave</strong>. Hingga hari ini, Abdulrachman Saleh memegang predikat unik sebagai satu-satunya bandara regional yang pengelolaannya berada di bawah wewenang <strong>Pemerintah Provinsi Jawa Timur</strong>.',
+        'hero' => [
+            'badge' => 'Monumen Sejarah Dirgantara',
+            'title_1' => 'MANUSKRIP',
+            'title_2' => 'HISTORIS',
+            'subtitle' => 'Prof. dr. Abdulrachman Saleh',
+            'desc' => '"Manifestasi Intelektualisme Kedokteran, Pionir Gelombang Radio, dan Pengabdian Tertinggi di Cakrawala Dirgantara."',
+            'tags' => [
+                'lanud' => 'Lanud ABD Saleh',
+                'fisiologi' => 'Bapak Fisiologi',
+                'rri' => 'Pendiri RRI',
+            ],
         ],
-    ],
-    'closing' => [
-        'quote_html' => '"Swa Bhuwana Paksa" — Sayap Tanah Air',
-        'sub' => 'Mengenang Sejarah, Membangun Masa Depan',
-    ],
-    'footer' => [
-        'copyright' => '© 2026 Abdurachman Saleh Hub Archive',
-    ],
+        'profile' => [
+            'motto_label' => 'Motto Hidup',
+            'motto_value' => '"The Right Man in the Right Place"',
+            'rank_label' => 'Pangkat Terakhir',
+            'rank_value' => 'Marsekal Muda TNI (Anumerta)',
+            'award_label' => 'Penghargaan',
+            'award_value' => 'Pahlawan Nasional (1974)',
+            'badge' => 'Arsip Biografi Resmi',
+            'name' => 'Abdulrachman Saleh',
+            'tagline' => 'Laboratorium, Udara, dan Gelombang Radio: Perjuangan Tanpa Batas.',
+        ],
+        'biography' => [
+            's1' => [
+                'h' => 'I. Intelektualitas di Masa Kolonial',
+                'p1' => 'Lahir di Jakarta pada 1 Juli 1909, Abdulrachman Saleh berasal dari keluarga terpelajar. Ayahnya, Mohammad Saleh, adalah dokter pribumi terkemuka yang dikenal memiliki disiplin tinggi dalam dunia medis kolonial. Sejak menempuh pendidikan di STOVIA (Sekolah Dokter Bumiputera) hingga Geneeskundige Hoogeschool (GHS), ia dikenal dengan julukan <strong>"Karbol"</strong> karena kecerdasannya yang melampaui rata-rata. Nama ini kini diabadikan sebagai sebutan bagi Taruna Akademi Angkatan Udara (AAU).',
+                'p2' => 'Di lingkungan kampus, ia dikenal tidak hanya unggul secara akademis, tetapi juga aktif dalam diskusi intelektual mengenai masa depan bangsa. Ia percaya bahwa kemerdekaan sejati hanya dapat dicapai melalui penguasaan ilmu pengetahuan dan teknologi, bukan sekadar perjuangan fisik semata.',
+            ],
+            's2' => [
+                'h' => 'II. Bapak Fisiologi & Kedokteran Penerbangan',
+                'p1' => 'Setelah lulus sebagai dokter, ia menjadi pionir dalam ilmu Fisiologi. Beliau adalah orang Indonesia pertama yang menjabat sebagai Guru Besar Fisiologi. Melalui risetnya, ia meletakkan dasar Kedokteran Penerbangan (Aeromedicine) di tanah air, mempelajari bagaimana kondisi fisik manusia bereaksi saat berada di ketinggian ekstrem—sebuah ilmu yang krusial bagi dunia militer udara.',
+                'p2' => 'Penelitiannya banyak difokuskan pada pengaruh tekanan udara, kekurangan oksigen, dan kelelahan pilot. Temuan-temuannya menjadi rujukan awal bagi sistem seleksi dan pelatihan penerbang Indonesia pada masa awal pembentukan angkatan udara nasional.',
+            ],
+            's3' => [
+                'h' => 'III. Perintis RRI & Perang Informasi',
+                'p1' => 'Kontribusinya tidak hanya di laboratorium. Berdasarkan catatan sejarah penyiaran, beliau adalah salah satu tokoh kunci berdirinya <strong>Radio Republik Indonesia (RRI)</strong> pada 11 September 1945. Beliau memimpin pertemuan para tokoh radio di Jakarta dan memastikan suara kemerdekaan tetap menggema di tengah blokade informasi penjajah.',
+                'p2' => 'Pada masa itu, radio menjadi satu-satunya alat komunikasi yang mampu menembus batas wilayah dan propaganda kolonial. Melalui siaran radio, ia membantu menyebarkan legitimasi Republik Indonesia ke dunia internasional.',
+            ],
+            's4' => [
+                'h' => 'IV. Pangkalan Udara & Hubungan dengan Malang',
+                'p1' => 'Berdasarkan data sejarah yang dirujuk oleh Dishub Malang dan Pemerintah Daerah, nama beliau diabadikan menjadi nama <strong>Pangkalan Udara Abdulrachman Saleh</strong> di Malang. Pangkalan ini memiliki sejarah panjang sebagai salah satu basis pertahanan udara terpenting di Jawa Timur, mencerminkan dedikasi beliau dalam membangun kekuatan dirgantara di wilayah tersebut.',
+                'p2' => 'Malang dipilih karena letaknya yang strategis, memiliki kondisi geografis ideal untuk pelatihan penerbang, serta relatif aman dari serangan langsung pada masa revolusi fisik.',
+            ],
+            's5' => [
+                'h' => 'V. Tragedi Dakota VT-CLA & Hari Bakti',
+                'p1' => 'Pada 29 Juli 1947, dalam misi kemanusiaan membawa obat-obatan sumbangan Palang Merah Malaya, pesawat Dakota VT-CLA yang ditumpanginya bersama Adisutjipto ditembak jatuh oleh dua pesawat Kittyhawk Belanda di langit Yogyakarta. Tragedi ini menjadi luka besar bagi bangsa.',
+                'p2' => 'Pesawat tersebut sebenarnya telah memiliki tanda palang merah internasional, namun tetap diserang tanpa peringatan. Insiden ini memperlihatkan kerasnya konflik diplomatik antara Indonesia dan Belanda pada masa awal kemerdekaan.',
+                'p3' => 'Tanggal tersebut kemudian ditetapkan sebagai <strong>Hari Bakti TNI AU</strong> untuk mengenang pengabdian tulus sang dokter-penerbang ini.',
+            ],
+            's6' => [
+                'h' => 'VI. Warisan Abadi',
+                'p1' => 'Abdulrachman Saleh adalah bukti nyata seorang teknokrat yang nasionalis. Beliau membuktikan bahwa senjata untuk merdeka tidak hanya bambu runcing, melainkan juga ilmu kedokteran yang mumpuni, teknologi radio yang canggih, dan keberanian di udara.',
+                'p2' => 'Ia dikenang sebagai simbol intelektual pejuang: ilmuwan, komunikator, sekaligus prajurit. Warisannya hidup dalam dunia akademik, militer, dan penyiaran nasional hingga hari ini.',
+            ],
+            'source' => 'Sumber: Wikipedia & Arsip Daerah Malang',
+        ],
+        'timeline' => [
+            'y1909' => [
+                'title' => 'Fajar Sang Karbol',
+                'desc' => 'Lahir di Jakarta, 1 Juli 1909. Sebagai putra dari dr. Mohammad Saleh, ia tumbuh di lingkungan yang mengutamakan sains. Kecerdasannya yang fenomenal di STOVIA membuatnya dijuluki "Karbol", simbol ketajaman intelektual yang kelak menjadi standar kebanggaan bagi seluruh Taruna Akademi Angkatan Udara.',
+            ],
+            'y1937' => [
+                'title' => 'Guru Besar & Kedokteran Udara',
+                'desc' => 'Mendalami ilmu Fisiologi dan menjadi orang Indonesia pertama yang menjabat sebagai Guru Besar Fisiologi di GHS. Ia mulai meneliti dampak ketinggian terhadap tubuh manusia, meletakkan fondasi pertama "Aeromedicine" (Kedokteran Penerbangan) yang sangat langka di Asia pada masa itu.',
+            ],
+            'y1945' => [
+                'title' => 'Pendirian RRI',
+                'desc' => 'Memimpin konsolidasi teknisi radio pasca-proklamasi. Dengan peralatan rakitan, ia memastikan suara kemerdekaan menembus blokade informasi Belanda melalui "Voice of Free Indonesia", yang menjadi embrio lahirnya Radio Republik Indonesia (RRI).',
+            ],
+            'y1946' => [
+                'title' => 'Sayap Dirgantara RI',
+                'desc' => 'Bergabung dengan TRI-Udara (AURI). Bersama Adisutjipto, ia mengubah pesawat rongsokan peninggalan Jepang seperti Cureng dan Nishikoreng menjadi armada tempur pertama Indonesia, sekaligus melatih generasi pertama penerbang pribumi di tengah keterbatasan.',
+            ],
+            'y1947' => [
+                'title' => 'Tragedi Dakota VT-CLA',
+                'desc' => 'Misi kemanusiaan membawa obat-obatan dari Malaya berakhir tragis pada 29 Juli. Pesawat Dakota VT-CLA yang dikemudikannya ditembak jatuh oleh P-40 Kittyhawk Belanda di Ngoto. Peristiwa ini diperingati sebagai Hari Bakti TNI AU, simbol pengorbanan tertinggi bagi kedaulatan negara.',
+            ],
+            'y1952' => [
+                'title' => 'Abadi di Bumi Malang',
+                'desc' => 'Pangkalan Udara Bugis di Malang secara resmi berganti nama menjadi Pangkalan Udara Abdulrachman Saleh. Berdasarkan catatan sejarah perhubungan, pangkalan ini dipersiapkan menjadi salah satu pangkalan udara militer paling strategis di Jawa Timur.',
+            ],
+            'y1974' => [
+                'title' => 'Penganugerahan Pahlawan Nasional',
+                'desc' => 'Melalui SK Presiden No. 071/TK/1974, Abdulrachman Saleh secara resmi diangkat sebagai Pahlawan Nasional. Pengakuan ini menegaskan dedikasi multidisiplin beliau sebagai dokter, teknokrat radio, sekaligus penerbang pejuang.',
+            ],
+            'y1994_2011' => [
+                'title' => 'Transformasi Enklave Sipil',
+                'desc' => 'Lanud Abdulrachman Saleh mulai membuka diri untuk penerbangan sipil secara terbatas. Sesuai data Dishub Malang, pada tahun 2011, operasional bandara ini semakin berkembang pesat sebagai gerbang utama wisata dan ekonomi Malang Raya, menghubungkan kota ini dengan Jakarta dan Bali.',
+            ],
+            'y2026' => [
+                'title' => 'Warisan Tanpa Batas',
+                'desc' => 'Kini, nama Abdulrachman Saleh bukan sekadar nama bandara. Semangatnya hidup dalam setiap Taruna AAU (Karbol) dan inovasi teknologi medis-militer Indonesia. Bandara ini terus bertransformasi menjadi pusat mobilitas modern di Jawa Timur, menjaga pesan abadi: "Ilmu pengetahuan adalah sayap kemerdekaan."',
+            ],
+        ],
+        'closing' => [
+            'quote' => '"Ilmu pengetahuan adalah sayap untuk terbang menuju kemerdekaan yang hakiki."',
+            'author' => '— Prof. dr. Abdulrachman Saleh —',
+        ],
+        'footer' => [
+            'copyright' => '© 2026 Otoritas Bandara Abdulrachman Saleh - Digital Historical Archive',
+        ],
 ],
 
-   // ROUTES
+// ROUTES
     'routes_page' => [
     'meta' => [
         'title' => 'Rute Penerbangan - Abdurachman Saleh Hub',

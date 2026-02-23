@@ -119,12 +119,12 @@
         setInterval(updateClock, 1000);
     </script>
    <header class="relative min-h-[100vh] flex flex-col justify-center bg-slate-950 font-formal overflow-hidden pb-24 md:pb-32">
-    
+
     <div class="absolute inset-0 z-0">
     <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
-             class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105" 
+             class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105"
              alt="Sejarah Bandara Abdulrachman Saleh">
-        
+
         <div class="absolute inset-0 opacity-10 mix-blend-overlay">
             <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png" class="w-full h-full object-cover">
         </div>
@@ -134,11 +134,11 @@
     </div>
 
     <div class="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-4 md:gap-6 px-5 py-3 md:px-6 md:py-4 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl animate-float"
-         data-aos="fade-down" 
+         data-aos="fade-down"
          data-aos-duration="1000">
-        
+
         <div class="flex items-center gap-3 group">
-            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub" 
+            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub"
                  class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
             <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
                 <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Dinas</span>
@@ -150,7 +150,7 @@
         <div class="h-8 w-[1px] bg-white/20 mx-1"></div>
 
         <div class="flex items-center gap-3 group">
-            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang" 
+            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang"
                  class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
             <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
                 <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Pemerintah</span>
@@ -162,7 +162,7 @@
 
     <div class="container mx-auto px-6 relative z-10">
         <div class="max-w-4xl pt-32 md:pt-20">
-            <div class="inline-flex items-center gap-3 mb-8 px-4 py-1.5 border border-blue-400/20 rounded-full bg-blue-500/5 backdrop-blur-md" 
+            <div class="inline-flex items-center gap-3 mb-8 px-4 py-1.5 border border-blue-400/20 rounded-full bg-blue-500/5 backdrop-blur-md"
                  data-aos="fade-right" data-aos-duration="1000">
                 <span class="relative flex h-1.5 w-1.5">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -190,7 +190,7 @@
 
             <div class="max-w-xl mb-12" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
                 <p class="text-slate-300 text-base md:text-lg font-normal leading-relaxed opacity-90 border-l-4 border-blue-600 pl-6 text-justify italic">
-                    "{{ __('messages.history_page.hero.desc') }}"
+                    {{ __('messages.history_page.hero.desc') }}
                 </p>
             </div>
 
@@ -205,7 +205,7 @@
         </div>
     </div>
 
-    
+
 
 </header>
 

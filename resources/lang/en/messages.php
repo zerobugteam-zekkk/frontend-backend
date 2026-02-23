@@ -178,7 +178,7 @@ return [
         'title_1' => 'HISTORICAL',
         'title_2' => 'MANUSCRIPT',
         'subtitle' => 'Prof. dr. Abdulrachman Saleh',
-        'desc' => '"A Manifestation of Medical Intellectualism, Pioneer of Radio Waves, and Supreme Devotion in the Aerospace Horizon."',
+        'desc' => 'A Manifestation of Medical Intellectualism, Pioneer of Radio Waves, and Supreme Devotion in the Aerospace Horizon.',
         'tags' => [
             'lanud' => 'ABD Saleh Air Force Base',
             'fisiologi' => 'Father of Physiology',

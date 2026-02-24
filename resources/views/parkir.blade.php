@@ -77,79 +77,83 @@
                     <span class="text-blue-600">{{ __('messages.facilities.nav.brand_highlight') }}</span>
                 </span>
             </a>
-
-           
         </div>
     </nav>
-<header class="relative min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center bg-slate-950 overflow-hidden">
-    {{-- Background Area --}}
-    <div class="absolute inset-0 z-0">
-        <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
-             class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105" 
-             alt="Latar Belakang Fasilitas">
-        
-        <div class="absolute inset-0 opacity-10 mix-blend-overlay">
-            <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png" class="w-full h-full object-cover">
+    <header class="relative min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center bg-slate-950 overflow-hidden">
+        {{-- Background Area --}}
+        <div class="absolute inset-0 z-0">
+            <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
+                class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105" alt="Latar Belakang Fasilitas">
+
+            <div class="absolute inset-0 opacity-10 mix-blend-overlay">
+                <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
         </div>
 
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-    </div>
+        {{-- LOGO BRANDING (Dinaikkan ke top-6 / Pojok Kanan Atas) --}}
+        <div class="absolute top-6 right-6 md:top-8 md:right-8 z-30 flex items-center gap-3 md:gap-5 px-4 py-2.5 md:px-5 md:py-3 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl"
+            data-aos="fade-left" data-aos-duration="1000">
 
-    {{-- LOGO BRANDING (Dinaikkan ke top-6 / Pojok Kanan Atas) --}}
-    <div class="absolute top-6 right-6 md:top-8 md:right-8 z-30 flex items-center gap-3 md:gap-5 px-4 py-2.5 md:px-5 md:py-3 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl"
-         data-aos="fade-left" 
-         data-aos-duration="1000">
-        
-        <div class="flex items-center gap-2.5 group">
-            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub" 
-                 class="h-8 md:h-11 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
-            <div class="hidden sm:flex flex-col border-l border-white/20 pl-2.5 py-0.5">
-                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Dinas</span>
-                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Perhubungan</span>
-                <span class="text-blue-400 text-[7px] font-medium tracking-widest uppercase mt-0.5">Kab. Malang</span>
+            <div class="flex items-center gap-2.5 group">
+                <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub"
+                    class="h-8 md:h-11 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+                <div class="hidden sm:flex flex-col border-l border-white/20 pl-2.5 py-0.5">
+                    <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Dinas</span>
+                    <span
+                        class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Perhubungan</span>
+                    <span class="text-blue-400 text-[7px] font-medium tracking-widest uppercase mt-0.5">Kab.
+                        Malang</span>
+                </div>
+            </div>
+
+            <div class="h-6 w-[1px] bg-white/20 mx-0.5"></div>
+
+            <div class="flex items-center gap-2.5 group">
+                <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang"
+                    class="h-8 md:h-11 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+                <div class="hidden sm:flex flex-col border-l border-white/20 pl-2.5 py-0.5">
+                    <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Pemerintah</span>
+                    <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Kota
+                        Malang</span>
+                    <span class="text-yellow-500 text-[7px] font-medium tracking-widest uppercase mt-0.5">Jawa
+                        Timur</span>
+                </div>
             </div>
         </div>
 
-        <div class="h-6 w-[1px] bg-white/20 mx-0.5"></div>
+        {{-- Content Area --}}
+        <div class="container mx-auto px-6 relative z-10 pt-24 pb-32">
+            <div class="max-w-4xl">
+                {{-- Title --}}
+                <div class="mb-10" data-aos="fade-right" data-aos-delay="100">
+                    <h1 class="text-6xl md:text-8xl font-black text-white leading-[1.05] uppercase tracking-tighter">
+                        {{ __('messages.facilities.hero.title_1') }} <br>
+                        <span
+                            class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-500 pt-4 pb-4 inline-block">
+                            {{ __('messages.facilities.hero.title_2') }}
+                        </span>
+                    </h1>
+                </div>
 
-        <div class="flex items-center gap-2.5 group">
-            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang" 
-                 class="h-8 md:h-11 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
-            <div class="hidden sm:flex flex-col border-l border-white/20 pl-2.5 py-0.5">
-                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Pemerintah</span>
-                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Kota Malang</span>
-                <span class="text-yellow-500 text-[7px] font-medium tracking-widest uppercase mt-0.5">Jawa Timur</span>
+                {{-- Description --}}
+                <div class="max-w-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <p
+                        class="text-slate-400 text-base md:text-xl leading-relaxed border-l-4 border-blue-600 pl-6 text-justify italic opacity-90">
+                        {{ __('messages.facilities.hero.desc') }}
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
-    {{-- Content Area --}}
-    <div class="container mx-auto px-6 relative z-10 pt-24 pb-32">
-        <div class="max-w-4xl">
-            {{-- Title --}}
-            <div class="mb-10" data-aos="fade-right" data-aos-delay="100">
-                <h1 class="text-6xl md:text-8xl font-black text-white leading-[1.05] uppercase tracking-tighter">
-                    {{ __('messages.facilities.hero.title_1') }} <br>
-                    <span class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-500 pt-4 pb-4 inline-block">
-                        {{ __('messages.facilities.hero.title_2') }}
-                    </span>
-                </h1>
-            </div>
-
-            {{-- Description --}}
-            <div class="max-w-2xl" data-aos="fade-up" data-aos-delay="200">
-                <p class="text-slate-400 text-base md:text-xl leading-relaxed border-l-4 border-blue-600 pl-6 text-justify italic opacity-90">
-                    {{ __('messages.facilities.hero.desc') }}
-                </p>
-            </div>
+        {{-- Bottom Decorative Spacer --}}
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-20"></div>
+        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
         </div>
-    </div>
-
-    {{-- Bottom Decorative Spacer --}}
-    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-20"></div>
-    <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-</header>
+    </header>
 
     <main class="container mx-auto px-6 -mt-16 relative z-20 pb-24">
         <div class="max-w-6xl mx-auto">
@@ -330,15 +334,21 @@
 
                     <ul class="space-y-4">
                         <li class="flex items-start gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <i class="fas fa-suitcase-rolling text-blue-600 mt-1"></i>
+                            {{-- <i class="fas fa-suitcase-rolling text-blue-600 mt-1"></i> --}}
                             <p class="text-[12px] font-medium text-slate-700">
                                 {!! __('messages.facilities.terminal.arr_li1') !!}
                             </p>
                         </li>
                         <li class="flex items-start gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <i class="fas fa-taxi text-blue-600 mt-1"></i>
+                            {{-- <i class="fas fa-taxi text-blue-600 mt-1"></i> --}}
                             <p class="text-[12px] font-medium text-slate-700">
                                 {!! __('messages.facilities.terminal.arr_li2') !!}
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            {{-- <i class="fas fa-taxi text-blue-600 mt-1"></i> --}}
+                            <p class="text-[12px] font-medium text-slate-700">
+                                {!! __('messages.facilities.terminal.arr_li3') !!}
                             </p>
                         </li>
                     </ul>

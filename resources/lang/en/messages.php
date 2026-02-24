@@ -668,15 +668,14 @@ If you wish to use online transportation services (Grab, Gojek, & Maxim), you mu
         'dep_title' => 'Departure Terminal',
         'dep_desc' => 'The departure area is designed to minimize passenger waiting time. It features a <strong>Common Use Check-in System (CUTE)</strong> to speed up airline check-in processes (Garuda, Citilink, Batik, and Wings Air). The terminal is divided into a public landside zone and a sterile airside zone that prioritizes aviation security.',
         'dep_li1' => '<strong>1st floor (outside):</strong> Drop-off zone, Restrooms, Souvenir center, Garuda café, ATM, Trolleys, and Passenger service facilities Information, Airline Customer Service (e.g., Garuda Indonesia, Citilink Indonesia, Batik Air, and Wings Air).',
-        'dep_li2' => '<strong>1st floor (inside):</strong>Airport security (e.g., security checkpoint, X-ray, metal detector, and inspection room), health quarantine, animal, fish & plant quarantine, disability room, toilet, cafeteria.',
+        'dep_li2' => '<strong>1st floor (inside):</strong> Airport security (e.g., security checkpoint, X-ray, metal detector, and inspection room), health quarantine, animal, fish & plant quarantine, disability room, toilet, cafeteria.',
         'dep_li3' => '<strong>2nd floor:</strong>Lounge (e.g., Amala Lounge, East Java Lounge, I-One Lounge), Souvenirs (Malang Strudel, Hokiku gift shop, Citra Jaya), Restrooms, Prayer room, Nursing room/nursery, Smoking/vaping room, Waiting room, Children\'s playground, Charging station. ',
 
         'arr_title' => 'Arrival Terminal',
         'arr_desc' => 'Welcoming every arrival with high efficiency. The arrival area focuses on fast baggage retrieval and seamless access to ground transportation. Supported by professional <strong>Ground Handling</strong> staff and a responsive Lost and Found system to handle baggage issues promptly.',
-        'arr_li1' => '<strong>Baggage Claim Area:</strong> The spacious baggage claim area is equipped with free trolleys to facilitate your mobility.',
-        'arr_li2' => '<strong>Integrated Pickup:</ strong> Each arrival gate has direct access to the integrated baggage claim area, minimizing passenger travel distance and speeding up the process of exiting the airport.',
-        'arr_li3' => '<strong>Restrooms:</strong> Available on every floor with complete facilities, including toilets for the disabled and baby changing rooms. All toilets are equipped with modern sanitation systems to maintain cleanliness and user comfort.',
-        'arr_li4' => '<strong>Information Center:</strong> Located in the arrivals area with staff ready to provide information about flights, airport facilities, and transportation services. The center is also equipped with real-time flight information screens to help passengers monitor arrival and departure schedules.',
+        'arr_li1' => '<strong>Main Arrival Area:</strong> Baggage Claim area, Restrooms, Information Center, Cultural Corner, Lost and Found service, complimentary trolleys, and wheelchair assistance to ensure passenger comfort and mobility after landing.',
+        'arr_li2' => '<strong>Passenger Support Facilities:</strong> Nursery Room, designated waiting area for pick-up, modern sanitation facilities, and special assistance services for elderly passengers, pregnant women, and passengers with disabilities.',
+        'arr_li3' => '<strong>Ground Transportation Access:</strong> Official airport taxi counter with fixed zone-based fares, private vehicle pick-up zone, and organized ride-hailing collection points (Grab/Gojek) to maintain smooth and efficient arrival traffic flow.',
         ],
 
     'inclusive' => [

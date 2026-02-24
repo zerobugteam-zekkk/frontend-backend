@@ -556,13 +556,15 @@ return [
     'terminal' => [
         'dep_title' => 'Terminal Keberangkatan',
         'dep_desc' => 'Pusat keberangkatan dirancang untuk meminimalkan waktu tunggu penumpang. Dilengkapi dengan <strong>Common Use Check-in System (CUTE)</strong> untuk mempercepat pelaporan tiket maskapai Garuda, Citilink, Batik, dan Wings Air. Area ini terbagi menjadi zona publik (Landside) yang ramah pengunjung dan zona steril (Airside) yang memprioritaskan keamanan penerbangan nasional.',
-        'dep_li1' => '<strong>Security Check Point (SCP):</strong> Pemeriksaan X-ray ganda untuk menjamin tidak adanya barang berbahaya yang masuk ke pesawat.',
-        'dep_li2' => '<strong>Executive Lounge:</strong> Ruang tunggu premium di Lantai 2 dengan fasilitas katering, Wi-Fi high-speed, dan area kerja privat.',
+        'dep_li1' =>  '<strong>Lantai 1 (luar):</strong> Zona penurunan penumpang, Toilet, Pusat suvenir, Garuda Café, ATM, Troli, dan Fasilitas layanan penumpang, Layanan pelanggan maskapai penerbangan (misalnya Garuda Indonesia, Citilink Indonesia, Batik Air, dan Wings Air).',
+        'dep_li2' => '<strong>Lantai 1 (dalam):</strong> Keamanan bandara (misalnya, pos pemeriksaan keamanan, sinar-X, detektor logam, dan ruang pemeriksaan), karantina kesehatan, karantina hewan, ikan, dan tumbuhan, ruang disabilitas, toilet, kantin.',
+        'dep_li3' => '<strong>Lantai 2:</strong>Lounge (misalnya, Amala Lounge, East Java Lounge, I-One Lounge), Souvenir (Malang Strudel, Toko Hadiah Hokiku, Citra Jaya), Toilet, Ruang Shalat, Ruang Menyusui/Tempat Penitipan Anak, Ruang Merokok/Vaping, Ruang Tunggu, Taman Bermain Anak, Stasiun Pengisian Daya. ',
 
         'arr_title' => 'Terminal Kedatangan',
         'arr_desc' => 'Menyambut setiap kedatangan dengan efisiensi tinggi. Area kedatangan difokuskan pada kecepatan pengambilan bagasi dan kemudahan akses transportasi darat. Dilengkapi dengan petugas <strong>Ground Handling</strong> yang profesional dan sistem Lost and Found yang responsif untuk menangani setiap kendala barang bawaan penumpang secara langsung.',
-        'arr_li1' => '<strong>Baggage Claim Area:</strong> Area pengambilan bagasi yang luas dilengkapi dengan troli gratis untuk mempermudah mobilitas Anda.',
-        'arr_li2' => '<strong>Integrated Pick-up:</strong> Integrasi langsung dengan layanan Taksi Bandara resmi dan titik penjemputan transportasi online (Grab/Gojek).',
+        'arr_li1' => '<strong>Area Kedatangan Utama:</strong> Area pengambilan bagasi (Baggage Claim), Toilet, Pusat Informasi, Pojok Budaya, layanan Lost and Found, troli gratis, serta kursi roda untuk mendukung kenyamanan dan mobilitas penumpang setelah penerbangan.',
+        'arr_li2' => '<strong>Fasilitas Penunjang Penumpang:</strong> Ruang menyusui (Nursery Room), ruang tunggu penjemputan, fasilitas sanitasi modern, serta layanan bantuan khusus bagi penumpang lanjut usia, ibu hamil, dan penyandang disabilitas.',
+        'arr_li3' => '<strong>Akses Transportasi Darat:</strong> Konter taksi resmi bandara dengan sistem tarif zona tetap, pick-up zone kendaraan pribadi, serta titik penjemputan transportasi daring (Grab/Gojek) yang terorganisir untuk menjaga kelancaran arus kedatangan.',
     ],
 
     'inclusive' => [

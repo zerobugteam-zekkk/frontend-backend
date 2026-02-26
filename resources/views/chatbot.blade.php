@@ -296,11 +296,17 @@
                 return res.json();
             })
             .then(data => {
-                if (data) {
-                    addMessage(`Halo ${data.first_name} 👋 Silakan tanyakan jadwal penerbangan ✈️`,
-                        'bot');
-                }
-            })
+    if (data) {
+
+        addMessage(`Halo ${data.first_name} 👋 Silakan lanjutkan chat ✈️`, 'bot');
+
+        if (data.history && data.history.length > 0) {
+            data.history.forEach(msg => {
+                addMessage(msg.message, msg.sender);
+            });
+        }
+    }
+})
             .catch(() => {
                 registerBox.style.display = 'block';
             });

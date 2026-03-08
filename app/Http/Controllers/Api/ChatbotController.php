@@ -10,6 +10,7 @@ use App\Models\ChatUser;
 use App\Models\ChatMessage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Cookie;
+use App\Models\Faq;
 
 class ChatbotController extends Controller
 {
@@ -21,7 +22,7 @@ class ChatbotController extends Controller
         $data = $request->validate([
             'first_name' => 'required|string',
             'last_name'  => 'required|string',
-            'email'      => ['required','email','ends_with:@gmail.com'],
+            'email'      => ['required', 'email', 'ends_with:@gmail.com'],
             'mobile'     => 'required|string',
             'category'   => 'required|string',
         ], [
@@ -75,7 +76,8 @@ class ChatbotController extends Controller
             'message' => 'required|string'
         ]);
 
-        $message = $data['message'];
+        // $message = $data['message'];
+        $message = strtolower($data['message']);
 
         // =========================
         // AUTO PING (load history)
@@ -85,7 +87,7 @@ class ChatbotController extends Controller
             $history = ChatMessage::where('chat_user_id', $user->id)
                 ->where('created_at', '>=', now()->subHours(24))
                 ->orderBy('created_at')
-                ->get(['message','sender']);
+                ->get(['message', 'sender']);
 
             return response()->json([
                 'first_name' => $user->first_name,
@@ -103,9 +105,59 @@ class ChatbotController extends Controller
         ]);
 
         // =========================
+        // GREETING
+        // =========================
+        if (in_array($message, ['halo', 'hi', 'hai', 'pagi', 'siang', 'malam'])) {
+
+            $reply = "Halo {$user->first_name} 👋
+Silakan tanyakan informasi bandara atau jadwal penerbangan.";
+
+            ChatMessage::create([
+                'chat_user_id' => $user->id,
+                'message' => $reply,
+                'sender' => 'bot'
+            ]);
+
+            return response()->json([
+                'reply' => $reply,
+                'first_name' => $user->first_name
+            ]);
+        }
+
+        /*
+|--------------------------------------------------------------------------
+| Cek FAQ
+|--------------------------------------------------------------------------
+*/
+
+        $faqs = Faq::select('keyword', 'answer')->get();
+
+        foreach ($faqs as $faq) {
+            if ($faq->keyword && str_contains($message, strtolower($faq->keyword))) {
+
+                $reply = $faq->answer;
+
+                ChatMessage::create([
+                    'chat_user_id' => $user->id,
+                    'message' => $reply,
+                    'sender'  => 'bot'
+                ]);
+
+                return response()->json([
+                    'reply' => $reply,
+                    'first_name' => $user->first_name
+                ]);
+            }
+        }
+
+        // =========================
         // DETEKSI TYPE
         // =========================
-        $type = str_contains(strtolower($message), 'kedatangan')
+        $type = (
+            str_contains($message, 'kedatangan') ||
+            str_contains($message, 'arrival') ||
+            str_contains($message, 'datang')
+        )
             ? 'arrival'
             : 'departure';
 

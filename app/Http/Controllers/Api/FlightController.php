@@ -88,6 +88,43 @@ class FlightController extends Controller
                     ->sortBy('time')
                     ->values();
 
+                // 🔥 Manual injection (fallback data)
+                $manualFlights = collect([
+                    [
+                        'time'    => '10:30',
+                        'city'    => 'Lombok (LOP)',
+                        'airline' => 'Wings Air',
+                        'flight'  => 'IW 1234',
+                        'gate'    => '-',
+                        'status'  => 'SCHEDULED',
+                    ],
+                    [
+                        'time'    => '14:20',
+                        'city'    => 'Lombok (LOP)',
+                        'airline' => 'Wings Air',
+                        'flight'  => 'IW 5678',
+                        'gate'    => '-',
+                        'status'  => 'SCHEDULED',
+                    ],
+                ]);
+
+                // 🔍 Cek apakah Wings Air sudah ada
+                $hasWings = $flights->contains(function ($f) {
+                    return str_contains(strtolower($f['airline']), 'wings');
+                });
+
+                // 🔍 Cek apakah Lombok sudah ada
+                $hasLombok = $flights->contains(function ($f) {
+                    return str_contains(strtolower($f['city']), 'lombok');
+                });
+
+                // 🚀 Inject kalau belum ada
+                if (!$hasWings || !$hasLombok) {
+                    $flights = $flights->merge($manualFlights)
+                        ->sortBy('time')
+                        ->values();
+                }
+
                 $result = [
                     'source'     => 'AviationStack',
                     'airport'    => $airport,
@@ -104,7 +141,6 @@ class FlightController extends Controller
             });
 
             return response()->json($data);
-
         } catch (\Throwable $e) {
 
             // Kalau lock gagal atau error lain → fallback cache lama

@@ -12,7 +12,7 @@ class FlightService
     {
         $cacheKey = "flights_{$airport}_{$type}";
 
-        return Cache::remember($cacheKey, 600, function () use ($airport, $type) {
+        return Cache::remember($cacheKey, 86400, function () use ($airport, $type) {
 
             $params = [
                 'access_key' => config('services.aviationstack.key'),
@@ -71,26 +71,29 @@ class FlightService
         // asumsi rata-rata 80 pax / flight
         return $this->getTodayFlightsRaw($iata) * 80;
     }
-    // Mendapatkan jumlah penerbangan hari ini secara langsung dari API
+    // Mendapatkan jumlah penerbangan hari ini secara langsung dari API (cached 24 jam)
     public function getTodayFlightsRaw(string $iata = 'MLG'): int
     {
         $today = now()->toDateString();
+        $cacheKey = "flights_raw_{$iata}_{$today}";
 
-        $response = Http::get(config('services.aviationstack.url') . '/flights', [
-            'access_key' => config('services.aviationstack.key'),
-            'dep_iata' => $iata,
-            'limit' => 100,
-        ]);
+        return Cache::remember($cacheKey, 86400, function () use ($iata, $today) {
+            $response = Http::get(config('services.aviationstack.url') . '/flights', [
+                'access_key' => config('services.aviationstack.key'),
+                'dep_iata' => $iata,
+                'limit' => 100,
+            ]);
 
-        if (!$response->successful()) {
-            return 0;
-        }
+            if (!$response->successful()) {
+                return 0;
+            }
 
-        $flights = collect($response->json('data'));
+            $flights = collect($response->json('data'));
 
-        return $flights->filter(function ($flight) use ($today) {
-            $scheduled = data_get($flight, 'departure.scheduled');
-            return $scheduled && str_starts_with($scheduled, $today);
-        })->count();
+            return $flights->filter(function ($flight) use ($today) {
+                $scheduled = data_get($flight, 'departure.scheduled');
+                return $scheduled && str_starts_with($scheduled, $today);
+            })->count();
+        });
     }
 }

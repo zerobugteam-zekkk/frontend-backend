@@ -17,9 +17,10 @@ class FlightController extends Controller
         $cacheKey = "flights_{$airport}_{$type}";
         $lockKey  = "lock_{$cacheKey}";
 
-        // 🔥 Kalau cache masih ada → langsung return
-        if (Cache::has($cacheKey)) {
-            return response()->json(Cache::get($cacheKey));
+        // Kalau cache masih ada → langsung return
+        $cached = Cache::get($cacheKey);
+        if ($cached !== null) {
+            return response()->json($cached);
         }
 
         try {
@@ -27,8 +28,9 @@ class FlightController extends Controller
             $data = Cache::lock($lockKey, 10)->block(5, function () use ($airport, $type, $cacheKey) {
 
                 // Double check cache setelah lock (penting!)
-                if (Cache::has($cacheKey)) {
-                    return Cache::get($cacheKey);
+                $cached = Cache::get($cacheKey);
+                if ($cached !== null) {
+                    return $cached;
                 }
 
                 $params = [
@@ -123,7 +125,7 @@ if (!$hasLombok) {
     'expires_at' => now()->addDay()->format('Y-m-d H:i:s'), // ← tambahan
                 ];
 
-                // 🔥 Simpan cache 1 jam
+                // Simpan cache 24 jam
                 Cache::put($cacheKey, $result, 86400);
 
                 return $result;

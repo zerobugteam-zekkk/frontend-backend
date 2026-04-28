@@ -88,42 +88,30 @@ class FlightController extends Controller
                     ->sortBy('time')
                     ->values();
 
-                // 🔥 Manual injection (fallback data)
-                $manualFlights = collect([
-                    [
-                        'time'    => '10:30',
-                        'city'    => 'Lombok (LOP)',
-                        'airline' => 'Wings Air',
-                        'flight'  => 'IW 1234',
-                        'gate'    => '-',
-                        'status'  => 'SCHEDULED',
-                    ],
-                    [
-                        'time'    => '14:20',
-                        'city'    => 'Lombok (LOP)',
-                        'airline' => 'Wings Air',
-                        'flight'  => 'IW 5678',
-                        'gate'    => '-',
-                        'status'  => 'SCHEDULED',
-                    ],
-                ]);
+                // 🔥 Manual injection (VALID: transit route via Surabaya)
+$manualFlights = collect([
+    [
+        'time'    => '08:00',
+        'city'    => 'Surabaya (SUB) → Lombok (LOP)',
+        'airline' => 'Batik Air + Wings Air',
+        'flight'  => 'ID xxxx / IW xxxx',
+        'gate'    => '-',
+        'status'  => 'TRANSIT',
+        'note'    => 'Transit via SUB (no direct flight available)',
+    ],
+]);
 
-                // 🔍 Cek apakah Wings Air sudah ada
-                $hasWings = $flights->contains(function ($f) {
-                    return str_contains(strtolower($f['airline']), 'wings');
-                });
+// 🔍 Cek apakah sudah ada rute ke Lombok
+$hasLombok = $flights->contains(function ($f) {
+    return str_contains(strtolower($f['city']), 'lombok');
+});
 
-                // 🔍 Cek apakah Lombok sudah ada
-                $hasLombok = $flights->contains(function ($f) {
-                    return str_contains(strtolower($f['city']), 'lombok');
-                });
-
-                // 🚀 Inject kalau belum ada
-                if (!$hasWings || !$hasLombok) {
-                    $flights = $flights->merge($manualFlights)
-                        ->sortBy('time')
-                        ->values();
-                }
+// 🚀 Inject hanya kalau memang tidak ada
+if (!$hasLombok) {
+    $flights = $flights->merge($manualFlights)
+        ->sortBy('time')
+        ->values();
+}
 
                 $result = [
                     'source'     => 'AviationStack',
@@ -131,11 +119,12 @@ class FlightController extends Controller
                     'type'       => $type,
                     'count'      => $flights->count(),
                     'data'       => $flights,
-                    'cached_at'  => now()->format('H:i:s'),
+                    'cached_at'  => now()->format('Y-m-d H:i:s'),
+    'expires_at' => now()->addDay()->format('Y-m-d H:i:s'), // ← tambahan
                 ];
 
                 // 🔥 Simpan cache 1 jam
-                Cache::put($cacheKey, $result, 3600);
+                Cache::put($cacheKey, $result, 86400);
 
                 return $result;
             });

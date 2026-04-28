@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
+use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', function () {
     return view('welcome');
@@ -50,3 +51,11 @@ Route::get('/lang/{locale}', function (string $locale) {
 
     return redirect()->to(url()->previous() ?: route('home'));
 })->name('lang.switch');
+
+// Route for generating sitemap
+Route::get('/generate-sitemap', function () {
+    SitemapGenerator::create('https://abdurachmansaleh-airport.my.id')
+        ->writeToFile(public_path('sitemap.xml'));
+
+    return 'Sitemap generated!';
+});

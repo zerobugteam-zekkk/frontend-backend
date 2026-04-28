@@ -40,6 +40,10 @@ return [
     'url' => env('AVIATIONSTACK_BASE_URL'),
     ],
 
+//     dd([
+//     'url' => config('services.aviationstack.url'),
+//     'key' => config('services.aviationstack.key')
+// ]),
     //     'aerodatabox' => [
     //     'key' => env('AERODATABOX_API_KEY'),
     //     'base_url' => env('AERODATABOX_BASE_URL'),

@@ -12,45 +12,55 @@ class FlightService
     {
         $cacheKey = "flights_{$airport}_{$type}";
 
-        return Cache::remember($cacheKey, 86400, function () use ($airport, $type) {
+        $cached = Cache::get($cacheKey);
+        if ($cached !== null) {
+            return $cached;
+        }
 
-            $params = [
-                'access_key' => config('services.aviationstack.key'),
-                'limit' => 20,
+        $params = [
+            'access_key' => config('services.aviationstack.key'),
+            'limit' => 20,
+        ];
+
+        if ($type === 'departure') {
+            $params['dep_iata'] = $airport;
+            $params['arr_country'] = 'ID';
+        } else {
+            $params['arr_iata'] = $airport;
+            $params['dep_country'] = 'ID';
+        }
+
+        $response = Http::get(
+            config('services.aviationstack.url') . '/flights',
+            $params
+        );
+
+        if (!$response->successful()) {
+            return collect();
+        }
+
+        $result = collect($response->json('data'))->map(function ($flight) use ($type) {
+            $seg = $type === 'departure'
+                ? $flight['departure']
+                : $flight['arrival'];
+
+            return [
+                'time'    => substr($seg['scheduled'] ?? '00:00', 11, 5),
+                'city'    => $type === 'departure'
+                    ? ($flight['arrival']['airport'] ?? '-')
+                    : ($flight['departure']['airport'] ?? '-'),
+                'airline' => $flight['airline']['name'] ?? '-',
+                'flight'  => $flight['flight']['iata'] ?? '-',
+                'gate'    => $seg['gate'] ?? '-',
+                'status'  => strtoupper($flight['flight_status'] ?? 'SCHEDULED'),
             ];
+        })
+        ->sortBy('time')
+        ->values();
 
-            if ($type === 'departure') {
-                $params['dep_iata'] = $airport;
-                $params['arr_country'] = 'ID';
-            } else {
-                $params['arr_iata'] = $airport;
-                $params['dep_country'] = 'ID';
-            }
+        Cache::put($cacheKey, $result, 86400);
 
-            $response = Http::get(
-                config('services.aviationstack.url') . '/flights',
-                $params
-            );
-
-            return collect($response->json('data'))->map(function ($flight) use ($type) {
-                $seg = $type === 'departure'
-                    ? $flight['departure']
-                    : $flight['arrival'];
-
-                return [
-                    'time'    => substr($seg['scheduled'] ?? '00:00', 11, 5),
-                    'city'    => $type === 'departure'
-                        ? ($flight['arrival']['airport'] ?? '-')
-                        : ($flight['departure']['airport'] ?? '-'),
-                    'airline' => $flight['airline']['name'] ?? '-',
-                    'flight'  => $flight['flight']['iata'] ?? '-',
-                    'gate'    => $seg['gate'] ?? '-',
-                    'status'  => strtoupper($flight['flight_status'] ?? 'SCHEDULED'),
-                ];
-            })
-            ->sortBy('time')
-            ->values();
-        });
+        return $result;
     }
     // Menghitung jumlah penerbangan hari ini dari bandara tertentu
     public function getTodayFlightsCount(string $iata = 'MLG'): int
@@ -77,23 +87,30 @@ class FlightService
         $today = now()->toDateString();
         $cacheKey = "flights_raw_{$iata}_{$today}";
 
-        return Cache::remember($cacheKey, 86400, function () use ($iata, $today) {
-            $response = Http::get(config('services.aviationstack.url') . '/flights', [
-                'access_key' => config('services.aviationstack.key'),
-                'dep_iata' => $iata,
-                'limit' => 100,
-            ]);
+        $cached = Cache::get($cacheKey);
+        if ($cached !== null) {
+            return $cached;
+        }
 
-            if (!$response->successful()) {
-                return 0;
-            }
+        $response = Http::get(config('services.aviationstack.url') . '/flights', [
+            'access_key' => config('services.aviationstack.key'),
+            'dep_iata' => $iata,
+            'limit' => 100,
+        ]);
 
-            $flights = collect($response->json('data'));
+        if (!$response->successful()) {
+            return 0;
+        }
 
-            return $flights->filter(function ($flight) use ($today) {
-                $scheduled = data_get($flight, 'departure.scheduled');
-                return $scheduled && str_starts_with($scheduled, $today);
-            })->count();
-        });
+        $flights = collect($response->json('data'));
+
+        $count = $flights->filter(function ($flight) use ($today) {
+            $scheduled = data_get($flight, 'departure.scheduled');
+            return $scheduled && str_starts_with($scheduled, $today);
+        })->count();
+
+        Cache::put($cacheKey, $count, 86400);
+
+        return $count;
     }
 }

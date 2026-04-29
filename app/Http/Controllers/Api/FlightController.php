@@ -94,7 +94,7 @@ class FlightController extends Controller
                 $manualFlights = collect([
                     [
                         'time'    => '09:20',
-                        'city'    => 'Lombok (LOP)',
+                        'city'    => 'Lombok International Airport',
                         'airline' => 'Wings Air',
                         'flight'  => 'IW 1843',
                         'gate'    => '-',

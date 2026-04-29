@@ -90,30 +90,27 @@ class FlightController extends Controller
                     ->sortBy('time')
                     ->values();
 
-                // 🔥 Manual injection (VALID: transit route via Surabaya)
-$manualFlights = collect([
-    [
-        'time'    => '08:00',
-        'city'    => 'Surabaya (SUB) → Lombok (LOP)',
-        'airline' => 'Batik Air + Wings Air',
-        'flight'  => 'ID xxxx / IW xxxx',
-        'gate'    => '-',
-        'status'  => 'TRANSIT',
-        'note'    => 'Transit via SUB (no direct flight available)',
-    ],
-]);
+                // Fallback: Wings Air MLG-LOP (Senin, Rabu, Jumat, Minggu)
+                $manualFlights = collect([
+                    [
+                        'time'    => '09:20',
+                        'city'    => 'Lombok (LOP)',
+                        'airline' => 'Wings Air',
+                        'flight'  => 'IW 1843',
+                        'gate'    => '-',
+                        'status'  => 'SCHEDULED',
+                    ],
+                ]);
 
-// 🔍 Cek apakah sudah ada rute ke Lombok
-$hasLombok = $flights->contains(function ($f) {
-    return str_contains(strtolower($f['city']), 'lombok');
-});
+                $hasLombok = $flights->contains(function ($f) {
+                    return str_contains(strtolower($f['city']), 'lombok');
+                });
 
-// 🚀 Inject hanya kalau memang tidak ada
-if (!$hasLombok) {
-    $flights = $flights->merge($manualFlights)
-        ->sortBy('time')
-        ->values();
-}
+                if (!$hasLombok) {
+                    $flights = $flights->merge($manualFlights)
+                        ->sortBy('time')
+                        ->values();
+                }
 
                 $result = [
                     'source'     => 'AviationStack',

@@ -9,3 +9,7 @@ Schedule::command('clean:old-chats')->hourly();
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+// Fetch flight data setiap hari jam 00:05 WIB (UTC+7 = 17:05 UTC)
+Schedule::command('app:fetch-flights')->dailyAt('17:05');
+

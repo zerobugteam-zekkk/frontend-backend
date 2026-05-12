@@ -3,31 +3,45 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Cache;
+// use Illuminate\Support\Facades\Cache;
+use App\Models\Flight;
 
 class FlightService
 {
-    // Mendapatkan data penerbangan dari API dengan caching
+    // =========================
+    // AMBIL DARI DATABASE (dipakai chatbot)
+    // =========================
     public function getFlights(string $airport = 'MLG', string $type = 'departure')
     {
-        $cacheKey = "flights_{$airport}_{$type}";
+        $flights = Flight::where('type', $type)
+            ->whereDate('flight_date', today())
+            ->orderBy('time')
+            ->get(['time', 'city', 'airline', 'flight_number as flight', 'gate', 'status', 'flight_number']);
 
-        $cached = Cache::get($cacheKey);
-        if ($cached !== null) {
-            return $cached;
+        // Kalau DB kosong (belum ada data hari ini), fallback ke API langsung
+        if ($flights->isEmpty()) {
+            return $this->getFlightsFromAPI($airport, $type);
         }
 
+        return $flights;
+    }
+
+    // =========================
+    // AMBIL DARI API (dipakai cron job FetchFlights)
+    // =========================
+    public function getFlightsFromAPI(string $airport = 'MLG', string $type = 'departure')
+    {
         $params = [
             'access_key' => config('services.aviationstack.key'),
-            'limit' => 20,
+            'limit'      => 20,
         ];
 
         if ($type === 'departure') {
-            $params['dep_iata'] = $airport;
-            $params['arr_country'] = 'ID';
+            $params['dep_iata']     = $airport;
+            $params['arr_country']  = 'ID';
         } else {
-            $params['arr_iata'] = $airport;
-            $params['dep_country'] = 'ID';
+            $params['arr_iata']     = $airport;
+            $params['dep_country']  = 'ID';
         }
 
         $response = Http::get(
@@ -39,7 +53,7 @@ class FlightService
             return collect();
         }
 
-        $result = collect($response->json('data'))->map(function ($flight) use ($type) {
+        return collect($response->json('data'))->map(function ($flight) use ($type) {
             $seg = $type === 'departure'
                 ? $flight['departure']
                 : $flight['arrival'];
@@ -57,60 +71,53 @@ class FlightService
         })
         ->sortBy('time')
         ->values();
-
-        Cache::put($cacheKey, $result, 86400);
-
-        return $result;
     }
-    // Menghitung jumlah penerbangan hari ini dari bandara tertentu
+
+    // =========================
+    // HITUNG PENERBANGAN HARI INI (dari DB)
+    // =========================
     public function getTodayFlightsCount(string $iata = 'MLG'): int
     {
-        $flights = $this->getFlights($iata, 'departure');
-
-        if (!$flights instanceof \Illuminate\Support\Collection) {
-            return 0;
-        }
-
-        return $flights->count();
+        return Flight::where('type', 'departure')
+            ->whereDate('flight_date', today())
+            ->count();
     }
-    // Mengestimasi jumlah penumpang hari ini berdasarkan jumlah penerbangan
+
+    // =========================
+    // ESTIMASI PENUMPANG
+    // =========================
     public function estimatePassengers(string $iata = 'MLG'): int
     {
-        // $flights = $this->getTodayFlightsCount($iata);
-
-        // asumsi rata-rata 80 pax / flight
-        return $this->getTodayFlightsRaw($iata) * 80;
+        return $this->getTodayFlightsCount($iata) * 80;
     }
-    // Mendapatkan jumlah penerbangan hari ini secara langsung dari API (cached 24 jam)
+
+    // =========================
+    // RAW COUNT (fallback ke API kalau DB kosong)
+    // =========================
     public function getTodayFlightsRaw(string $iata = 'MLG'): int
     {
-        $today = now()->toDateString();
-        $cacheKey = "flights_raw_{$iata}_{$today}";
+        $count = $this->getTodayFlightsCount($iata);
 
-        $cached = Cache::get($cacheKey);
-        if ($cached !== null) {
-            return $cached;
+        if ($count > 0) {
+            return $count;
         }
 
+        // Fallback ke API
         $response = Http::get(config('services.aviationstack.url') . '/flights', [
             'access_key' => config('services.aviationstack.key'),
-            'dep_iata' => $iata,
-            'limit' => 100,
+            'dep_iata'   => $iata,
+            'limit'      => 100,
         ]);
 
         if (!$response->successful()) {
             return 0;
         }
 
-        $flights = collect($response->json('data'));
+        $today = now()->toDateString();
 
-        $count = $flights->filter(function ($flight) use ($today) {
+        return collect($response->json('data'))->filter(function ($flight) use ($today) {
             $scheduled = data_get($flight, 'departure.scheduled');
             return $scheduled && str_starts_with($scheduled, $today);
         })->count();
-
-        Cache::put($cacheKey, $count, 86400);
-
-        return $count;
     }
 }

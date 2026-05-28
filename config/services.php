@@ -40,6 +40,10 @@ return [
     'url' => env('AVIATIONSTACK_BASE_URL'),
     ],
 
+    'groq' => [
+        'key' => env('GROQ_API_KEY'),
+    ],
+
 //     dd([
 //     'url' => config('services.aviationstack.url'),
 //     'key' => config('services.aviationstack.key')

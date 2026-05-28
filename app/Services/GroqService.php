@@ -20,6 +20,21 @@ DATA PENERBANGAN:
 Jawab dengan bahasa Indonesia yang jelas dan singkat.
 PROMPT;
 
+        // PAKAI API OPENROUTER (model NVIDIA Nemotron-3 Super 120B A12B)
+        // $response = Http::withHeaders([
+        //     'Authorization' => 'Bearer ' . env('OPENROUTER_API_KEY'),
+        //     'Content-Type'  => 'application/json',
+        //     'HTTP-Referer'  => env('APP_URL'),
+        // ])->timeout(60)->post('https://openrouter.ai/api/v1/chat/completions', [
+        //     'model' => 'nvidia/nemotron-3-super-120b-a12b:free',
+        //     'messages' => [
+        //         ['role' => 'system', 'content' => $systemPrompt],
+        //         ['role' => 'user',   'content' => $message],
+        //     ],
+        //     'temperature' => 0.3,
+        // ]);
+
+        // PAKE API GROQ
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . env('GROQ_API_KEY'),
             'Content-Type'  => 'application/json',
@@ -29,7 +44,7 @@ PROMPT;
                 ['role' => 'system', 'content' => $systemPrompt],
                 ['role' => 'user', 'content' => $message],
             ],
-            'temperature' => 0.3, // 🔥 diturunkan agar tidak ngarang
+            'temperature' => 0.3, // ðŸ”¥ diturunkan agar tidak ngarang
         ]);
 
         if (!$response->successful()) {
@@ -38,6 +53,7 @@ PROMPT;
 
         return $response->json('choices.0.message.content');
     }
+
 
     protected function formatContext(array $flights): string
     {

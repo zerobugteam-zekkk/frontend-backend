@@ -323,22 +323,25 @@
 
                 {{-- INDONESIA --}}
                 <a href="{{ route('lang.switch', 'id') }}"
-                    class="w-8 h-8 rounded-full overflow-hidden border-2 transition
-       {{ app()->getLocale() === 'id' ? 'border-blue-600 ring-2 ring-blue-300' : 'border-slate-300 hover:scale-105' }}">
+                    class="px-3 py-1 rounded-md text-sm font-semibold transition
+        {{ app()->getLocale() === 'id'
+            ? 'bg-blue-600 text-white shadow'
+            : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-100' }}">
 
-                    <img src="https://flagcdn.com/w40/id.png" alt="Indonesia" class="w-full h-full object-cover">
+                    ID
                 </a>
 
                 {{-- ENGLISH --}}
                 <a href="{{ route('lang.switch', 'en') }}"
-                    class="w-8 h-8 rounded-full overflow-hidden border-2 transition
-       {{ app()->getLocale() === 'en' ? 'border-blue-600 ring-2 ring-blue-300' : 'border-slate-300 hover:scale-105' }}">
+                    class="px-3 py-1 rounded-md text-sm font-semibold transition
+        {{ app()->getLocale() === 'en'
+            ? 'bg-blue-600 text-white shadow'
+            : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-100' }}">
 
-                    <img src="https://flagcdn.com/w40/gb.png" alt="English" class="w-full h-full object-cover">
+                    EN
                 </a>
 
             </div>
-
         </div>
     </nav>
 
@@ -395,96 +398,112 @@
             animation: fadeInUp 0.8s ease-out forwards;
         }
     </style>
-{{-- HERO SECTION --}}
-<header class="relative min-h-[90vh] flex flex-col justify-center bg-slate-950 font-formal overflow-hidden">
-    {{-- Background Image --}}
-    <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
-         class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105"
-         alt="Background Check-in">
+    {{-- HERO SECTION --}}
+    <header class="relative min-h-[90vh] flex flex-col justify-center bg-slate-950 font-formal overflow-hidden">
+        {{-- Background Image --}}
+        <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
+            class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105" alt="Background Check-in">
 
-    {{-- Overlay Gradients --}}
-    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/70 to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+        {{-- Overlay Gradients --}}
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
 
-    {{-- LOGO BRANDING POJOK KANAN (Ukuran Dikecilkan) --}}
-    <div class="absolute top-6 right-6 md:top-8 md:right-8 z-30 flex items-center gap-3 md:gap-5 px-4 py-2.5 md:px-5 md:py-3 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl animate-float"
-         data-aos="fade-down"
-         data-aos-duration="1000">
+        {{-- LOGO BRANDING POJOK KANAN (Ukuran Dikecilkan) --}}
+        <div class="absolute top-6 right-6 md:top-8 md:right-8 z-30 flex items-center gap-3 md:gap-5 px-4 py-2.5 md:px-5 md:py-3 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl animate-float"
+            data-aos="fade-down" data-aos-duration="1000">
 
-        {{-- Logo Dishub --}}
-        <div class="flex items-center gap-2.5 group">
-            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub"
-                 class="h-8 md:h-11 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
-            <div class="hidden sm:flex flex-col border-l border-white/20 pl-2.5 py-0.5">
-                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50 text-left">Dinas</span>
-                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Perhubungan</span>
-                <span class="text-blue-400 text-[7px] font-medium tracking-widest uppercase mt-0.5">Kab. Malang</span>
+            {{-- Logo Dishub --}}
+            <div class="flex items-center gap-2.5 group">
+                <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub"
+                    class="h-8 md:h-11 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+                <div class="hidden sm:flex flex-col border-l border-white/20 pl-2.5 py-0.5">
+                    <span
+                        class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50 text-left">Dinas</span>
+                    <span
+                        class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Perhubungan</span>
+                    <span class="text-blue-400 text-[7px] font-medium tracking-widest uppercase mt-0.5">Kab.
+                        Malang</span>
+                </div>
+            </div>
+
+            <div class="h-6 w-[1px] bg-white/20 mx-0.5"></div>
+
+            {{-- Logo Kota Malang --}}
+            <div class="flex items-center gap-2.5 group">
+                <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang"
+                    class="h-8 md:h-11 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+                <div class="hidden sm:flex flex-col border-l border-white/20 pl-2.5 py-0.5">
+                    <span
+                        class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50 text-left">Pemerintah</span>
+                    <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Kota
+                        Malang</span>
+                    <span
+                        class="text-yellow-500 text-[7px] font-medium tracking-widest uppercase mt-0.5 text-left">Jawa
+                        Timur</span>
+                </div>
             </div>
         </div>
 
-        <div class="h-6 w-[1px] bg-white/20 mx-0.5"></div>
+        {{-- Content Area --}}
+        <div class="container mx-auto px-6 relative z-10">
+            {{-- pb-32 untuk mengangkat konten sedikit ke atas dan memberi space bawah --}}
+            <div class="max-w-4xl pt-20 pb-32">
+                {{-- Title --}}
+                <div class="mb-10" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="text-5xl md:text-8xl font-black text-white leading-[1.1] uppercase tracking-tighter">
+                        {!! nl2br(e(__('messages.hero.title_1'))) !!} <br>
+                        <span
+                            class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-600 pt-4 pb-6 inline-block">
+                            {{ __('messages.hero.title_2') }}
+                        </span>
+                    </h1>
+                </div>
 
-        {{-- Logo Kota Malang --}}
-        <div class="flex items-center gap-2.5 group">
-            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang"
-                 class="h-8 md:h-11 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
-            <div class="hidden sm:flex flex-col border-l border-white/20 pl-2.5 py-0.5">
-                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50 text-left">Pemerintah</span>
-                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Kota Malang</span>
-                <span class="text-yellow-500 text-[7px] font-medium tracking-widest uppercase mt-0.5 text-left">Jawa Timur</span>
+                {{-- Description --}}
+                <div class="max-w-2xl mb-16" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <p
+                        class="text-slate-300 text-base md:text-xl font-normal leading-relaxed opacity-90 border-l-4 border-blue-600 pl-6 text-justify italic">
+                        {{ __('messages.hero.description') }}
+                    </p>
+                </div>
+
+                {{-- CTA Buttons --}}
+                <div class="flex flex-wrap gap-6" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+                    <a href="{{ url('/jadwal') }}"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 md:px-12 md:py-5 rounded-xl font-bold uppercase text-[10px] md:text-[11px] tracking-widest transition-all shadow-lg hover:-translate-y-2 active:scale-95">
+                        {{ __('messages.hero.cta_departure') }}
+                    </a>
+                    <a href="{{ url('/sejarah') }}"
+                        class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 md:px-12 md:py-5 rounded-xl font-bold uppercase text-[10px] md:text-[11px] tracking-widest transition-all shadow-md hover:-translate-y-2 active:scale-95">
+                        {{ __('messages.hero.cta_history') }}
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    {{-- Content Area --}}
-    <div class="container mx-auto px-6 relative z-10">
-        {{-- pb-32 untuk mengangkat konten sedikit ke atas dan memberi space bawah --}}
-        <div class="max-w-4xl pt-20 pb-32">
-            {{-- Title --}}
-            <div class="mb-10" data-aos="fade-right" data-aos-duration="1000">
-                <h1 class="text-5xl md:text-8xl font-black text-white leading-[1.1] uppercase tracking-tighter">
-                    {!! nl2br(e(__('messages.hero.title_1'))) !!} <br>
-                    <span class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-600 pt-4 pb-6 inline-block">
-                        {{ __('messages.hero.title_2') }}
-                    </span>
-                </h1>
-            </div>
+        {{-- Decorative Bottom Line --}}
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-slate-950 to-transparent z-10"></div>
+    </header>
 
-            {{-- Description --}}
-            <div class="max-w-2xl mb-16" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                <p class="text-slate-300 text-base md:text-xl font-normal leading-relaxed opacity-90 border-l-4 border-blue-600 pl-6 text-justify italic">
-                    {{ __('messages.hero.description') }}
-                </p>
-            </div>
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
 
-            {{-- CTA Buttons --}}
-            <div class="flex flex-wrap gap-6" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
-                <a href="{{ url('/jadwal') }}"
-                    class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 md:px-12 md:py-5 rounded-xl font-bold uppercase text-[10px] md:text-[11px] tracking-widest transition-all shadow-lg hover:-translate-y-2 active:scale-95">
-                    {{ __('messages.hero.cta_departure') }}
-                </a>
-                <a href="{{ url('/sejarah') }}"
-                    class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 md:px-12 md:py-5 rounded-xl font-bold uppercase text-[10px] md:text-[11px] tracking-widest transition-all shadow-md hover:-translate-y-2 active:scale-95">
-                    {{ __('messages.hero.cta_history') }}
-                </a>
-            </div>
-        </div>
-    </div>
+            50% {
+                transform: translateY(-8px);
+            }
 
-    {{-- Decorative Bottom Line --}}
-    <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-slate-950 to-transparent z-10"></div>
-</header>
+            100% {
+                transform: translateY(0px);
+            }
+        }
 
-<style>
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
-        100% { transform: translateY(0px); }
-    }
-    .animate-float {
-        animation: float 5s ease-in-out infinite;
-    }
-</style>
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+    </style>
     <section class="container mx-auto px-6 mt-16 relative z-20">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300"
@@ -1168,17 +1187,17 @@
                             <span class="text-slate-700">(0341) 2992700</span>
                         </p>
                         <p class="flex items-start leading-relaxed lowercase">
-                        <i class="fab fa-instagram mr-2 md:mr-4 text-blue-600 mt-0.5"></i>
-                        <a href="https://www.instagram.com/abdulrachmansaleh_airport"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-slate-700 font-bold uppercase tracking-wider hover:text-blue-600 transition">
-                            @abdulrachmansaleh_airport
-                        </a>
+                            <i class="fab fa-instagram mr-2 md:mr-4 text-blue-600 mt-0.5"></i>
+                            <a href="https://www.instagram.com/abdulrachmansaleh_airport" target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-slate-700 font-bold uppercase tracking-wider hover:text-blue-600 transition">
+                                @abdulrachmansaleh_airport
+                            </a>
                         </p>
-                         <p class="flex items-start leading-relaxed lowercase">
+                        <p class="flex items-start leading-relaxed lowercase">
                             <i class="fas fa-envelope mr-2 md:mr-4 text-blue-600 mt-0.5"></i>
-                            <span class="text-slate-700 font-bold uppercase tracking-wider">bandarabdsaleh@yahoo.com</span>
+                            <span
+                                class="text-slate-700 font-bold uppercase tracking-wider">bandarabdsaleh@yahoo.com</span>
                         </p>
                     </div>
                 </div>

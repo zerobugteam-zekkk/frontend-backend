@@ -73,16 +73,16 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        #mobile-menu {
+        /* #mobile-menu {
             transition: all 0.3s ease-in-out;
             max-height: 0;
             overflow: hidden;
-        }
+        } */
 
-        #mobile-menu.show {
+        /* #mobile-menu.show {
             max-height: 500px;
             padding-bottom: 2rem;
-        }
+        } */
 
         .main-bg-pattern {
             background-color: #f8fafc;
@@ -109,6 +109,14 @@
             overflow-y: auto;
             padding: 15px;
             font-size: 13px;
+        }
+
+        /* ✅ SATU-SATUNYA CSS untuk mobile-menu */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
         }
     </style>
 </head>
@@ -140,20 +148,20 @@
     }
 
     /* Animasi Menu Mobile */
-    #mobile-menu {
+    /* #mobile-menu {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         opacity: 0;
         transform: translateY(-10px);
         pointer-events: none;
         display: none;
-    }
+    } */
 
-    #mobile-menu.active {
+    /* #mobile-menu.active {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
         display: block;
-    }
+    } */
 
     .main-bg-pattern {
         background-color: #f8fafc;
@@ -181,12 +189,12 @@
     }
 
     /* Animasi Menu Garis Tiga (Mobile Menu) */
-    #mobile-menu {
+    /* #mobile-menu {
         transition: all 0.3s ease-in-out;
         max-height: 0;
         opacity: 0;
         overflow: hidden;
-    }
+    } */
 
     #mobile-menu.show {
         max-height: 400px;
@@ -283,7 +291,9 @@
 
     <nav class="bg-white border-b border-blue-100 sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" class="flex items-center space-x-3">
+
+            <!-- LOGO -->
+            <a href="/" class="flex items-center space-x-3 shrink-0">
                 <div class="bg-blue-600 p-2 rounded-lg">
                     <i class="fas fa-plane-departure text-white text-sm"></i>
                 </div>
@@ -292,88 +302,111 @@
                 </span>
             </a>
 
+            <!-- MENU DESKTOP -->
             <div
                 class="hidden lg:flex items-center space-x-10 text-[11px] font-black uppercase tracking-widest text-slate-600">
                 <a href="{{ url('/jadwal') }}"
-                    class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">
-                    {{ __('messages.nav.schedule') }}</a>
+                    class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">{{ __('messages.nav.schedule') }}</a>
                 <a href="{{ url('/sejarah') }}"
-                    class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">
-                    {{ __('messages.nav.history') }}</a>
+                    class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">{{ __('messages.nav.history') }}</a>
                 <a href="{{ url('/transportasi') }}"
-                    class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">
-                    {{ __('messages.nav.transport') }}</a>
+                    class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">{{ __('messages.nav.transport') }}</a>
                 <a href="{{ url('/routes') }}"
-                    class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">
-                    {{ __('messages.nav.routes') }}</a>
+                    class="hover:text-blue-600 transition border-b-2 border-transparent hover:border-blue-600 pb-1">{{ __('messages.nav.routes') }}</a>
             </div>
-            <!-- SEARCH -->
-            <div class="relative hidden sm:block group">
-                <form action="{{ url('/jadwal') }}" method="GET" class="relative">
-                    <input type="text" name="search" placeholder="{{ __('messages.nav.search') }}"
-                        class="bg-slate-100 text-[11px] font-bold uppercase py-2.5 pl-5 pr-12 rounded-full border border-transparent focus:border-blue-600 outline-none w-48 transition-all">
-                    <button type="submit"
-                        class="absolute right-1 top-1 bg-slate-900 text-white p-1 rounded-full hover:bg-blue-600 transition-all">
-                        <i class="fas fa-search text-[10px]"></i>
-                    </button>
-                </form>
+
+            <!-- KANAN: Search + Lang + Hamburger -->
+            <div class="flex items-center gap-3">
+
+                <!-- Search (hidden di layar sangat kecil) -->
+                <div class="relative hidden sm:block">
+                    <form action="{{ url('/jadwal') }}" method="GET" class="relative">
+                        <input type="text" name="search" placeholder="{{ __('messages.nav.search') }}"
+                            class="bg-slate-100 text-[11px] font-bold uppercase py-2.5 pl-5 pr-10 rounded-full border border-transparent focus:border-blue-600 outline-none w-44 transition-all">
+                        <button type="submit"
+                            class="absolute right-1 top-1 bg-slate-900 text-white p-1 rounded-full hover:bg-blue-600 transition-all">
+                            <i class="fas fa-search text-[10px]"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Lang Toggle -->
+                <div class="flex items-center gap-1.5">
+                    <a href="{{ route('lang.switch', 'id') }}"
+                        class="px-3 py-1 rounded-md text-xs font-semibold transition
+                    {{ app()->getLocale() === 'id' ? 'bg-blue-600 text-white shadow' : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-100' }}">ID</a>
+                    <a href="{{ route('lang.switch', 'en') }}"
+                        class="px-3 py-1 rounded-md text-xs font-semibold transition
+                    {{ app()->getLocale() === 'en' ? 'bg-blue-600 text-white shadow' : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-100' }}">EN</a>
+                </div>
+
+                <!-- HAMBURGER — hanya muncul di mobile -->
+                <button id="hamburger-btn"
+                    class="lg:hidden flex flex-col justify-center items-center w-10 h-10
+                    rounded-xl bg-slate-100 hover:bg-blue-50 border border-slate-200
+                    transition-all gap-[6px] shrink-0"
+                    aria-label="Buka menu">
+                    <span id="hbar1"
+                        class="block w-5 h-0.5 bg-slate-700 transition-all duration-300 origin-center"></span>
+                    <span id="hbar2" class="block w-5 h-0.5 bg-slate-700 transition-all duration-300"></span>
+                    <span id="hbar3"
+                        class="block w-5 h-0.5 bg-slate-700 transition-all duration-300 origin-center"></span>
+                </button>
             </div>
-            {{-- TOMBOL SWITCH FLAG ID / EN --}}
-            <div class="flex items-center space-x-2 ml-4">
+        </div>
 
-                {{-- INDONESIA --}}
-                <a href="{{ route('lang.switch', 'id') }}"
-                    class="px-3 py-1 rounded-md text-sm font-semibold transition
-        {{ app()->getLocale() === 'id'
-            ? 'bg-blue-600 text-white shadow'
-            : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-100' }}">
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-slate-100 px-6">
+            <div class="flex flex-col space-y-1 py-4 font-bold uppercase text-xs tracking-widest text-slate-600">
 
-                    ID
+                <!-- Search khusus mobile (muncul hanya di bawah sm) -->
+                <div class="relative mb-3 sm:hidden">
+                    <form action="{{ url('/jadwal') }}" method="GET" class="relative">
+                        <input type="text" name="search" placeholder="{{ __('messages.nav.search') }}"
+                            class="bg-slate-100 text-[11px] font-bold uppercase py-2.5 pl-5 pr-10 rounded-full border border-transparent focus:border-blue-600 outline-none w-full">
+                        <button type="submit"
+                            class="absolute right-1 top-1 bg-slate-900 text-white p-1 rounded-full hover:bg-blue-600">
+                            <i class="fas fa-search text-[10px]"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <a href="{{ url('/jadwal') }}"
+                    class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all">
+                    <span class="flex items-center gap-3"><i class="fas fa-calendar-alt w-4 text-blue-500"></i>
+                        {{ __('messages.nav.schedule') }}</span>
+                    <i class="fas fa-chevron-right text-[10px] opacity-40"></i>
                 </a>
-
-                {{-- ENGLISH --}}
-                <a href="{{ route('lang.switch', 'en') }}"
-                    class="px-3 py-1 rounded-md text-sm font-semibold transition
-        {{ app()->getLocale() === 'en'
-            ? 'bg-blue-600 text-white shadow'
-            : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-100' }}">
-
-                    EN
+                <a href="{{ url('/sejarah') }}"
+                    class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all">
+                    <span class="flex items-center gap-3"><i class="fas fa-landmark w-4 text-blue-500"></i>
+                        {{ __('messages.nav.history') }}</span>
+                    <i class="fas fa-chevron-right text-[10px] opacity-40"></i>
                 </a>
-
+                <a href="{{ url('/transportasi') }}"
+                    class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all">
+                    <span class="flex items-center gap-3"><i class="fas fa-bus w-4 text-blue-500"></i>
+                        {{ __('messages.nav.transport') }}</span>
+                    <i class="fas fa-chevron-right text-[10px] opacity-40"></i>
+                </a>
+                <a href="{{ url('/routes') }}"
+                    class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all">
+                    <span class="flex items-center gap-3"><i class="fas fa-route w-4 text-blue-500"></i>
+                        {{ __('messages.nav.routes') }}</span>
+                    <i class="fas fa-chevron-right text-[10px] opacity-40"></i>
+                </a>
             </div>
         </div>
     </nav>
 
-    {{-- TOP BAR --}}
-    <div id="mobile-menu"
-        class="hidden lg:hidden bg-white border-t border-slate-100 px-6 overflow-hidden transition-all duration-300">
-        <div class="flex flex-col space-y-5 py-6 font-bold uppercase text-xs tracking-widest text-slate-600">
-            <a href="{{ url('/jadwal') }}" class="hover:text-red-600 flex items-center justify-between">
-                Jadwal Penerbangan <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
-            </a>
-            <a href="{{ url('/sejarah') }}" class="hover:text-red-600 flex items-center justify-between">
-                Sejarah <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
-            </a>
-            <a href="{{ url('/transportasi') }}" class="hover:text-red-600 flex items-center justify-between">
-                Transportasi <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
-            </a>
-            <a href="{{ url('/routes') }}" class="hover:text-red-600 flex items-center justify-between">
-                Rute Penerbangan <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
-            </a>
-        </div>
-    </div>
-
-    </nav>
-
-    <script>
+    {{-- <script>
         const btn = document.getElementById('hamburger');
         const menu = document.getElementById('mobile-menu');
 
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', () =>
             menu.classList.toggle('hidden');
         });
-    </script>
+    </script> --}}
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700;900&display=swap');
@@ -1262,7 +1295,6 @@
         }
     </style>
 
-    @include('chatbot')
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -1276,36 +1308,39 @@
     </script>
 
     <script>
-        // Burger Menu Logic
-        const burgerBtn = document.getElementById('burger-btn');
+        // Hamburger Menu
+        const hamburgerBtn = document.getElementById('hamburger-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const hbar1 = document.getElementById('hbar1');
+        const hbar2 = document.getElementById('hbar2');
+        const hbar3 = document.getElementById('hbar3');
+        let menuOpen = false;
 
-        burgerBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            const icon = burgerBtn.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
+        // CSS untuk animasi
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.overflow = 'hidden';
+        mobileMenu.style.opacity = '0';
+        mobileMenu.style.transition = 'max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease';
 
-        // Jam Realtime
-        function updateTime() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('id-ID', {
-                hour12: false
-            });
-            document.getElementById('realtime-clock').textContent = timeString;
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
-
-        // AOS
-        document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({
-                duration: 800,
-                once: true
-            });
+        hamburgerBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.style.maxHeight = '500px';
+                mobileMenu.style.opacity = '1';
+                hbar1.style.transform = 'translateY(8.5px) rotate(45deg)';
+                hbar2.style.opacity = '0';
+                hbar3.style.transform = 'translateY(-7.5px) rotate(-45deg)';
+            } else {
+                mobileMenu.style.maxHeight = '0';
+                mobileMenu.style.opacity = '0';
+                hbar1.style.transform = '';
+                hbar2.style.opacity = '1';
+                hbar3.style.transform = '';
+            }
         });
     </script>
+
+    @include('chatbot')
 
 </body>
 

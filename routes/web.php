@@ -59,3 +59,4 @@ Route::get('/generate-sitemap', function () {
 
     return 'Sitemap generated!';
 });
+

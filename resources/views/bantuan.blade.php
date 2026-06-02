@@ -33,19 +33,33 @@
         }
     </style>
 </head>
-
+@include('chatbot')
 <body class="antialiased text-slate-900 overflow-x-hidden">
 
     <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <a href="{{ url('/') }}" class="flex items-center space-x-3">
-                <div class="bg-blue-600 p-2 rounded-lg text-white">
-                    <i class="fas fa-headset text-sm"></i>
+                <div class="bg-blue-600 p-2 rounded-lg">
+                    <i class="fas fa-arrow-left text-white text-sm"></i>
                 </div>
                 <span class="text-sm font-black uppercase tracking-tighter">
                     {{ __('messages.help.nav.brand_1') }}
                     <span class="text-blue-600">{{ __('messages.help.nav.brand_2') }}</span>
                 </span>
+                {{-- RIGHT SIDE --}}
+                <div class="flex items-center gap-3">
+                    {{-- LANGUAGE SWITCH --}}
+                    <div class="flex items-center space-x-2">
+                        <a href="{{ route('lang.switch', 'id') }}"
+                            class="px-2 py-1 rounded-md text-xs font-semibold transition {{ app()->getLocale() === 'id' ? 'bg-blue-600 text-white' : 'bg-slate-100 border border-slate-300 text-slate-700 hover:bg-slate-200' }}">
+                            ID
+                        </a>
+                        <a href="{{ route('lang.switch', 'en') }}"
+                            class="px-2 py-1 rounded-md text-xs font-semibold transition {{ app()->getLocale() === 'en' ? 'bg-blue-600 text-white' : 'bg-slate-100 border border-slate-300 text-slate-700 hover:bg-slate-200' }}">
+                            EN
+                        </a>
+                    </div>
+                </div>
             </a>
         </div>
     </nav>
@@ -53,9 +67,9 @@
     {{-- Background Area --}}
     <div class="absolute inset-0 z-0">
         <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
-             class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105" 
+             class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105"
              alt="Latar Belakang Bantuan">
-        
+
         <div class="absolute inset-0 opacity-10 mix-blend-overlay">
             <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png" class="w-full h-full object-cover">
         </div>
@@ -65,12 +79,12 @@
     </div>
 
     {{-- LOGO BRANDING POJOK KANAN ATAS --}}
-    <div class="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-4 bg-white/5 backdrop-blur-xl p-3 md:p-4 rounded-2xl border border-white/10 shadow-2xl" 
-         data-aos="fade-down" 
+    <div class="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-4 bg-white/5 backdrop-blur-xl p-3 md:p-4 rounded-2xl border border-white/10 shadow-2xl"
+         data-aos="fade-down"
          data-aos-duration="1000">
-        
+
         <div class="flex items-center gap-3 group">
-            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub" 
+            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub"
                  class="h-8 md:h-10 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
             <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
                 <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Dinas</span>
@@ -82,7 +96,7 @@
         <div class="h-6 w-[1px] bg-white/20 mx-1"></div>
 
         <div class="flex items-center gap-3 group">
-            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang" 
+            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang"
                  class="h-8 md:h-10 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
             <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
                 <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Pemerintah</span>

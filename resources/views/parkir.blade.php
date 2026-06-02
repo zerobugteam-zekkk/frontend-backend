@@ -62,6 +62,7 @@
             border-radius: 10px;
         }
     </style>
+    @include('chatbot')
 </head>
 
 <body class="antialiased text-slate-900 overflow-x-hidden">
@@ -69,13 +70,28 @@
     <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <a href="{{ url('/') }}" class="flex items-center space-x-3">
-                <div class="bg-blue-600 p-2 rounded-lg text-white">
-                    <i class="fas fa-plane-up text-sm"></i>
+                {{-- Back Button --}}
+                <div class="bg-blue-600 p-2 rounded-lg">
+                    <i class="fas fa-arrow-left text-white text-sm"></i>
                 </div>
                 <span class="text-sm font-black uppercase tracking-tighter">
                     {{ __('messages.facilities.nav.brand') }}
                     <span class="text-blue-600">{{ __('messages.facilities.nav.brand_highlight') }}</span>
                 </span>
+                {{-- RIGHT SIDE --}}
+                <div class="flex items-center gap-3">
+                    {{-- LANGUAGE SWITCH --}}
+                    <div class="flex items-center space-x-2">
+                        <a href="{{ route('lang.switch', 'id') }}"
+                            class="px-2 py-1 rounded-md text-xs font-semibold transition {{ app()->getLocale() === 'id' ? 'bg-blue-600 text-white' : 'bg-slate-100 border border-slate-300 text-slate-700 hover:bg-slate-200' }}">
+                            ID
+                        </a>
+                        <a href="{{ route('lang.switch', 'en') }}"
+                            class="px-2 py-1 rounded-md text-xs font-semibold transition {{ app()->getLocale() === 'en' ? 'bg-blue-600 text-white' : 'bg-slate-100 border border-slate-300 text-slate-700 hover:bg-slate-200' }}">
+                            EN
+                        </a>
+                    </div>
+                </div>
             </a>
         </div>
     </nav>

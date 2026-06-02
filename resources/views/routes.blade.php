@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +12,84 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
 
-        body { font-family: 'Inter', sans-serif; background-color: #f4f7fa; overflow-x: hidden; }
-        .bg-aviation-blue { background-color: #0054a6; }
-        .text-aviation-blue { color: #0054a6; }
-        .border-aviation-blue { border-color: #0054a6; }
-        .premium-shadow { box-shadow: 0 50px 100px -20px rgba(0, 84, 166, 0.08), 0 30px 60px -30px rgba(0, 0, 0, 0.1); }
-        .route-dashed { background-image: linear-gradient(to right, #0054a6 50%, transparent 50%); background-size: 15px 2px; background-repeat: repeat-x; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fa;
+            overflow-x: hidden;
+        }
 
-        @keyframes planeFly { 0% { left: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
-        .animate-plane { animation: planeFly 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        .bg-aviation-blue {
+            background-color: #0054a6;
+        }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #0054a6; border-radius: 10px; }
+        .text-aviation-blue {
+            color: #0054a6;
+        }
 
-        .pulse-live { animation: pulse-green 2s infinite; }
-        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
+        .border-aviation-blue {
+            border-color: #0054a6;
+        }
+
+        .premium-shadow {
+            box-shadow: 0 50px 100px -20px rgba(0, 84, 166, 0.08), 0 30px 60px -30px rgba(0, 0, 0, 0.1);
+        }
+
+        .route-dashed {
+            background-image: linear-gradient(to right, #0054a6 50%, transparent 50%);
+            background-size: 15px 2px;
+            background-repeat: repeat-x;
+        }
+
+        @keyframes planeFly {
+            0% {
+                left: 0%;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+
+        .animate-plane {
+            animation: planeFly 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0054a6;
+            border-radius: 10px;
+        }
+
+        .pulse-live {
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
     </style>
 </head>
 
@@ -34,6 +98,7 @@
     <nav class="bg-white/95 backdrop-blur-xl sticky top-0 z-50 border-b border-slate-100">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <a href="{{ url('/') }}" class="flex items-center space-x-3 group">
+                {{-- Back Button --}}
                 <div class="bg-aviation-blue p-2 rounded-xl group-hover:rotate-12 transition-transform">
                     <i class="fas fa-arrow-left text-white text-xs"></i>
                 </div>
@@ -42,112 +107,148 @@
                     <span class="text-aviation-blue">{{ __('messages.routes_page.nav.back_highlight') }}</span>
                 </span>
             </a>
-
-            <div class="hidden md:flex items-center space-x-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                <i class="fas fa-clock text-aviation-blue"></i>
-                <span id="realtime-clock">{{ __('messages.routes_page.nav.loading_time') }}</span>
+            {{-- RIGHT SIDE --}}
+            <div class="flex items-center gap-3">
+                {{-- Real-time Clock --}}
+                <div
+                    class="hidden md:flex items-center space-x-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                    <i class="fas fa-clock text-aviation-blue"></i>
+                    <span id="realtime-clock">{{ __('messages.routes_page.nav.loading_time') }}</span>
+                </div>
+                {{-- LANGUAGE SWITCH --}}
+                <div class="flex items-center space-x-2">
+                    <a href="{{ route('lang.switch', 'id') }}"
+                        class="px-2 py-1 rounded-md text-xs font-semibold transition {{ app()->getLocale() === 'id' ? 'bg-blue-600 text-white' : 'bg-slate-100 border border-slate-300 text-slate-700 hover:bg-slate-200' }}">
+                        ID
+                    </a>
+                    <a href="{{ route('lang.switch', 'en') }}"
+                        class="px-2 py-1 rounded-md text-xs font-semibold transition {{ app()->getLocale() === 'en' ? 'bg-blue-600 text-white' : 'bg-slate-100 border border-slate-300 text-slate-700 hover:bg-slate-200' }}">
+                        EN
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
-<header class="relative min-h-[90vh] flex flex-col justify-center bg-slate-950 font-formal overflow-hidden">
+    <header class="relative min-h-[90vh] flex flex-col justify-center bg-slate-950 font-formal overflow-hidden">
 
-    <div class="absolute inset-0 z-0">
-    <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
-             class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Transportasi Malang">
+        <div class="absolute inset-0 z-0">
+            <img src="{{ asset('images/Bandara Malang Abdurachman Saleh.jpg') }}"
+                class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Transportasi Malang">
 
-        <div class="absolute inset-0 opacity-10 mix-blend-overlay">
-            <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png" class="w-full h-full object-cover">
+            <div class="absolute inset-0 opacity-10 mix-blend-overlay">
+                <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
         </div>
 
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
-    </div>
+        <div class="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-4 md:gap-6 px-5 py-3 md:px-6 md:py-4 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl animate-float"
+            data-aos="fade-down" data-aos-duration="1000">
 
-    <div class="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-4 md:gap-6 px-5 py-3 md:px-6 md:py-4 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl animate-float"
-         data-aos="fade-down"
-         data-aos-duration="1000">
-
-        <div class="flex items-center gap-3 group">
-            <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub"
-                 class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
-            <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
-                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Dinas</span>
-                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Perhubungan</span>
-                <span class="text-blue-400 text-[7px] font-medium tracking-widest uppercase mt-0.5">Kab. Malang</span>
-            </div>
-        </div>
-
-        <div class="h-8 w-[1px] bg-white/20 mx-1"></div>
-
-        <div class="flex items-center gap-3 group">
-            <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang"
-                 class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
-            <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
-                <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Pemerintah</span>
-                <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Kota Malang</span>
-                <span class="text-yellow-500 text-[7px] font-medium tracking-widest uppercase mt-0.5">Jawa Timur</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-4xl pt-20">
-            <div class="mb-6" data-aos="fade-right" data-aos-duration="1000">
-                <h6 class="text-blue-500 font-black uppercase tracking-[0.5em] text-[11px] flex items-center">
-                    <span class="w-8 h-[1px] bg-blue-500 mr-4"></span>
-                    {{ __('messages.routes_page.hero.badge') }}
-                </h6>
-            </div>
-
-            <div class="mb-8" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-                <h1 class="text-5xl md:text-8xl font-black text-white leading-[1.1] uppercase tracking-tighter">
-                    {{ __('messages.routes_page.hero.title_1') }} <br>
-                    <span class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-600 pt-4 pb-6 inline-block">
-                        {{ __('messages.routes_page.hero.title_2') }}
-                    </span> <br>
-                    {{ __('messages.routes_page.hero.title_3') }}
-                </h1>
-            </div>
-
-            <div class="max-w-xl mb-12" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
-                <p class="text-slate-300 text-base md:text-xl font-normal leading-relaxed opacity-90 border-l-4 border-blue-600 pl-6 text-justify">
-                    {{ __('messages.routes_page.hero.desc') }}
-                </p>
-            </div>
-
-            <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
-                <div class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-bold tracking-widest uppercase">
-                    <i class="fas fa-map-marked-alt text-blue-500"></i>
-                    {{-- {{ __('messages.routes_page.hero.tags.lanud') }} --}}
+            <div class="flex items-center gap-3 group">
+                <img src="{{ asset('images/dishupmalang.jpg') }}" alt="Logo Dishub"
+                    class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+                <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
+                    <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Dinas</span>
+                    <span
+                        class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Perhubungan</span>
+                    <span class="text-blue-400 text-[7px] font-medium tracking-widest uppercase mt-0.5">Kab.
+                        Malang</span>
                 </div>
-                <div class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-bold tracking-widest uppercase">
-                    <i class="fas fa-route text-blue-500"></i>
-                    {{-- Jalur Integrasi --}}
+            </div>
+
+            <div class="h-8 w-[1px] bg-white/20 mx-1"></div>
+
+            <div class="flex items-center gap-3 group">
+                <img src="{{ asset('images/kotamalang.png') }}" alt="Logo Malang"
+                    class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+                <div class="hidden sm:flex flex-col border-l border-white/20 pl-3 py-0.5">
+                    <span class="text-white text-[7px] font-bold tracking-widest uppercase opacity-50">Pemerintah</span>
+                    <span class="text-white text-[10px] font-black tracking-tight uppercase leading-none">Kota
+                        Malang</span>
+                    <span class="text-yellow-500 text-[7px] font-medium tracking-widest uppercase mt-0.5">Jawa
+                        Timur</span>
                 </div>
             </div>
         </div>
-    </div>
-</header>
 
-<style>
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
-        100% { transform: translateY(0px); }
-    }
-    .animate-float {
-        animation: float 5s ease-in-out infinite;
-    }
-    .font-formal {
-        font-family: 'Inter', sans-serif;
-    }
-</style>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl pt-20">
+                <div class="mb-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h6 class="text-blue-500 font-black uppercase tracking-[0.5em] text-[11px] flex items-center">
+                        <span class="w-8 h-[1px] bg-blue-500 mr-4"></span>
+                        {{ __('messages.routes_page.hero.badge') }}
+                    </h6>
+                </div>
+
+                <div class="mb-8" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                    <h1 class="text-5xl md:text-8xl font-black text-white leading-[1.1] uppercase tracking-tighter">
+                        {{ __('messages.routes_page.hero.title_1') }} <br>
+                        <span
+                            class="text-transparent border-y-2 border-blue-600 bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-600 pt-4 pb-6 inline-block">
+                            {{ __('messages.routes_page.hero.title_2') }}
+                        </span> <br>
+                        {{ __('messages.routes_page.hero.title_3') }}
+                    </h1>
+                </div>
+
+                <div class="max-w-xl mb-12" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                    <p
+                        class="text-slate-300 text-base md:text-xl font-normal leading-relaxed opacity-90 border-l-4 border-blue-600 pl-6 text-justify">
+                        {{ __('messages.routes_page.hero.desc') }}
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                    <div
+                        class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-bold tracking-widest uppercase">
+                        <i class="fas fa-map-marked-alt text-blue-500"></i>
+                        {{-- {{ __('messages.routes_page.hero.tags.lanud') }} --}}
+                    </div>
+                    <div
+                        class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-bold tracking-widest uppercase">
+                        <i class="fas fa-route text-blue-500"></i>
+                        {{-- Jalur Integrasi --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .font-formal {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+
+    @include('chatbot')
 
     <main class="container mx-auto px-6 -mt-16 relative z-20 pb-24">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
 
             <div class="lg:col-span-2 space-y-8">
 
-                <div class="bg-white p-8 md:p-16 rounded-[4rem] premium-shadow border border-slate-50" data-aos="fade-up">
+                <div class="bg-white p-8 md:p-16 rounded-[4rem] premium-shadow border border-slate-50"
+                    data-aos="fade-up">
                     <div class="flex items-center justify-between mb-12">
                         <h3 class="text-2xl font-black uppercase tracking-tighter flex items-center">
                             <i class="fas fa-route mr-4 text-aviation-blue"></i>
@@ -164,7 +265,8 @@
                     </div>
 
                     {{-- ROUTE 1 --}}
-                    <div class="group relative bg-slate-50 p-10 rounded-[3rem] border border-slate-100 hover:border-blue-200 transition-all mb-10" data-aos="fade-up">
+                    <div class="group relative bg-slate-50 p-10 rounded-[3rem] border border-slate-100 hover:border-blue-200 transition-all mb-10"
+                        data-aos="fade-up">
                         <div class="flex flex-col md:flex-row items-center justify-between gap-10">
                             <div class="text-center md:text-left">
                                 <span class="text-5xl font-black text-slate-900 tracking-tighter">MLG</span>
@@ -214,7 +316,8 @@
                     </div>
 
                     {{-- ROUTE 2 --}}
-                    <div class="group relative bg-slate-50 p-10 rounded-[3rem] border border-slate-100 hover:border-blue-200 transition-all mb-10" data-aos="fade-up">
+                    <div class="group relative bg-slate-50 p-10 rounded-[3rem] border border-slate-100 hover:border-blue-200 transition-all mb-10"
+                        data-aos="fade-up">
                         <div class="flex flex-col md:flex-row items-center justify-between gap-10">
                             <div class="text-center md:text-left">
                                 <span class="text-5xl font-black text-slate-900 tracking-tighter">MLG</span>
@@ -225,7 +328,8 @@
 
                             <div class="flex-grow flex flex-col items-center">
                                 <div class="w-full h-[2px] route-dashed relative overflow-hidden">
-                                    <i class="fas fa-plane text-aviation-blue absolute -top-2 animate-plane" style="animation-delay: -2s;"></i>
+                                    <i class="fas fa-plane text-aviation-blue absolute -top-2 animate-plane"
+                                        style="animation-delay: -2s;"></i>
                                 </div>
                                 <span class="text-[10px] font-black text-slate-400 uppercase mt-4">
                                     {{ __('messages.routes_page.routes.route2.hub') }}
@@ -243,8 +347,11 @@
                 </div>
 
                 {{-- WEATHER --}}
-                <div class="bg-aviation-blue p-12 rounded-[4rem] text-white overflow-hidden relative" data-aos="zoom-in">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-x-10 -translate-y-20"></div>
+                <div class="bg-aviation-blue p-12 rounded-[4rem] text-white overflow-hidden relative"
+                    data-aos="zoom-in">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-x-10 -translate-y-20">
+                    </div>
 
                     <div class="relative z-10 flex flex-col md:flex-row gap-10 items-start">
                         <div class="bg-white/20 p-6 rounded-[2rem]">
@@ -258,15 +365,24 @@
 
                             <p class="text-blue-100 text-sm leading-relaxed mb-6">
                                 {!! __('messages.routes_page.weather.desc_html', [
-                                    'desc' => '<span id="weather-desc" class="font-bold underline">'.__('messages.routes_page.weather.updating').'</span>',
-                                    'vis'  => '<span id="weather-vis" class="font-bold">--</span>',
+                                    'desc' =>
+                                        '<span id="weather-desc" class="font-bold underline">' .
+                                        __('messages.routes_page.weather.updating') .
+                                        '</span>',
+                                    'vis' => '<span id="weather-vis" class="font-bold">--</span>',
                                 ]) !!}
                             </p>
 
                             <div class="flex flex-wrap gap-4 text-[9px] font-black uppercase">
-                                <span class="bg-white/10 px-4 py-2 rounded-xl">{{ __('messages.routes_page.weather.wind') }} : <span id="weather-wind">--</span> m/s</span>
-                                <span class="bg-white/10 px-4 py-2 rounded-xl">{{ __('messages.routes_page.weather.temp') }} : <span id="weather-temp">--</span>°C</span>
-                                <span class="bg-white/10 px-4 py-2 rounded-xl">{{ __('messages.routes_page.weather.hum') }} : <span id="weather-hum">--</span>%</span>
+                                <span
+                                    class="bg-white/10 px-4 py-2 rounded-xl">{{ __('messages.routes_page.weather.wind') }}
+                                    : <span id="weather-wind">--</span> m/s</span>
+                                <span
+                                    class="bg-white/10 px-4 py-2 rounded-xl">{{ __('messages.routes_page.weather.temp') }}
+                                    : <span id="weather-temp">--</span>°C</span>
+                                <span
+                                    class="bg-white/10 px-4 py-2 rounded-xl">{{ __('messages.routes_page.weather.hum') }}
+                                    : <span id="weather-hum">--</span>%</span>
                             </div>
                         </div>
                     </div>
@@ -277,8 +393,10 @@
             {{-- RIGHT SIDEBAR --}}
             <div class="space-y-8">
 
-                <div class="bg-white p-10 rounded-[3.5rem] premium-shadow border border-slate-50" data-aos="fade-left">
-                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-aviation-blue mb-8 flex items-center">
+                <div class="bg-white p-10 rounded-[3.5rem] premium-shadow border border-slate-50"
+                    data-aos="fade-left">
+                    <h4
+                        class="text-xs font-black uppercase tracking-[0.3em] text-aviation-blue mb-8 flex items-center">
                         <span class="w-8 h-[2px] bg-aviation-blue mr-3"></span>
                         {{ __('messages.routes_page.sidebar.airlines_title') }}
                     </h4>
@@ -352,10 +470,15 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: false, offset: 50, easing: 'ease-out-cubic' });
+        AOS.init({
+            duration: 800,
+            once: false,
+            offset: 50,
+            easing: 'ease-out-cubic'
+        });
 
         // Locale JS
-        const LOCALE = @json(app()->getLocale());                 // "id" / "en"
+        const LOCALE = @json(app()->getLocale()); // "id" / "en"
         const DATE_LOCALE = (LOCALE === 'en') ? 'en-US' : 'id-ID';
         const TZ_LABEL = @json(__('messages.routes_page.clock.tz')); // "WIB" atau bisa "WIB (GMT+7)"
         const WEATHER_LANG = (LOCALE === 'en') ? 'en' : 'id';
@@ -364,22 +487,61 @@
         const apiKey = '8a8db4b35f665e7cb03b00081f767e4b';
         const city = @json(__('messages.routes_page.weather.city')); // "Malang"
 
-        const schedule = [
-            { id: 'ID 7580', airline: 'Batik Air', type: 'Departure', time: '07:30' },
-            { id: 'QG 751', airline: 'Citilink', type: 'Arrival', time: '08:15' },
-            { id: 'ID 7582', airline: 'Batik Air', type: 'Departure', time: '09:45' },
-            { id: 'GA 290', airline: 'Garuda Indonesia', type: 'Arrival', time: '10:45' },
-            { id: 'ID 7581', airline: 'Batik Air', type: 'Arrival', time: '12:30' },
-            { id: 'QG 752', airline: 'Citilink', type: 'Departure', time: '13:10' },
-            { id: 'GA 291', airline: 'Garuda Indonesia', type: 'Departure', time: '15:20' }
+        const schedule = [{
+                id: 'ID 7580',
+                airline: 'Batik Air',
+                type: 'Departure',
+                time: '07:30'
+            },
+            {
+                id: 'QG 751',
+                airline: 'Citilink',
+                type: 'Arrival',
+                time: '08:15'
+            },
+            {
+                id: 'ID 7582',
+                airline: 'Batik Air',
+                type: 'Departure',
+                time: '09:45'
+            },
+            {
+                id: 'GA 290',
+                airline: 'Garuda Indonesia',
+                type: 'Arrival',
+                time: '10:45'
+            },
+            {
+                id: 'ID 7581',
+                airline: 'Batik Air',
+                type: 'Arrival',
+                time: '12:30'
+            },
+            {
+                id: 'QG 752',
+                airline: 'Citilink',
+                type: 'Departure',
+                time: '13:10'
+            },
+            {
+                id: 'GA 291',
+                airline: 'Garuda Indonesia',
+                type: 'Departure',
+                time: '15:20'
+            }
         ];
 
         // 1) Clock
         function updateClock() {
             const now = new Date();
             const options = {
-                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-                hour: '2-digit', minute: '2-digit', second: '2-digit'
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
             };
             document.getElementById('realtime-clock').innerText =
                 now.toLocaleDateString(DATE_LOCALE, options) + ' ' + TZ_LABEL;
@@ -388,7 +550,9 @@
         // 2) Weather
         async function fetchWeather() {
             try {
-                const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric&lang=${WEATHER_LANG}`);
+                const res = await fetch(
+                    `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric&lang=${WEATHER_LANG}`
+                    );
                 const data = await res.json();
 
                 if (data.cod === 200) {
@@ -400,11 +564,17 @@
 
                     const iconCode = data.weather[0].icon;
                     const iconMap = {
-                        '01': 'fa-sun', '02': 'fa-cloud-sun', '03': 'fa-cloud',
-                        '04': 'fa-cloud-meatball', '09': 'fa-cloud-showers-heavy',
-                        '10': 'fa-cloud-sun-rain', '11': 'fa-bolt', '13': 'fa-snowflake', '50': 'fa-smog'
+                        '01': 'fa-sun',
+                        '02': 'fa-cloud-sun',
+                        '03': 'fa-cloud',
+                        '04': 'fa-cloud-meatball',
+                        '09': 'fa-cloud-showers-heavy',
+                        '10': 'fa-cloud-sun-rain',
+                        '11': 'fa-bolt',
+                        '13': 'fa-snowflake',
+                        '50': 'fa-smog'
                     };
-                    const iconClass = iconMap[iconCode.substring(0,2)] || 'fa-cloud';
+                    const iconClass = iconMap[iconCode.substring(0, 2)] || 'fa-cloud';
                     document.getElementById('weather-icon').className = `fas ${iconClass} text-4xl text-white`;
                 }
             } catch (e) {
@@ -459,7 +629,9 @@
 
             setInterval(() => {
                 status.innerText = syncing;
-                setTimeout(() => { status.innerText = live; }, 1000);
+                setTimeout(() => {
+                    status.innerText = live;
+                }, 1000);
             }, 10000);
         }
 
@@ -473,4 +645,5 @@
         simulateSync();
     </script>
 </body>
+
 </html>

@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
 class ChatUser extends Model
 {
@@ -14,12 +11,9 @@ class ChatUser extends Model
         'mobile',
         'category',
         'user_token',
+        'token_login_at', // ✅ tambahkan ini
+        'last_flight_number',
     ];
 
-    protected static function booted()
-    {
-        static::creating(function ($user) {
-            $user->user_token = (string) Str::uuid();
-        });
-    }
+    // ✅ Hapus booted() — token sekarang diset manual di controller
 }

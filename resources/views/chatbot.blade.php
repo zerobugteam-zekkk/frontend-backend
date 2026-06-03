@@ -27,7 +27,9 @@
         bottom: 110px;
         right: 24px;
         width: 380px;
+        max-width: calc(100vw - 48px); /* ← tambah ini */
         height: 550px;
+        max-height: calc(100vh - 130px); /* ← tambah ini */
         background: white;
         border-radius: 24px;
         box-shadow: 0 25px 60px rgba(0, 0, 0, .18);
@@ -138,6 +140,7 @@
             width: calc(100vw - 24px);
             max-width: 380px;
             height: 65vh;
+            max-height: calc(100vh - 110px); /* ← tambah ini */
             border-radius: 20px;
         }
 

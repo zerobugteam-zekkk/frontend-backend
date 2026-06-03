@@ -6,35 +6,35 @@ use Illuminate\Support\Facades\Http;
 
 class GroqService
 {
-    public function chat(string $message, array $context = []): string
+    public function chat(string $message, array $context = [], string $locale = 'id'): string
     {
-        $systemPrompt = <<<PROMPT
-Kamu adalah asisten chatbot jadwal penerbangan Bandara Abdurachman Saleh (MLG).
+        $languageInstruction = $locale === 'en'
+            ? "You MUST reply in English. The user is writing in English."
+            : "Kamu HARUS membalas dalam Bahasa Indonesia. Pengguna menulis dalam Bahasa Indonesia.";
 
+        $systemPrompt = $locale === 'en'
+            ? <<<PROMPT
+You are a flight schedule assistant chatbot for Abdurachman Saleh Airport (MLG), Malang, Indonesia.
+Use the DATA below as the ONLY source of truth. DO NOT make up flight data.
+
+FLIGHT DATA:
+{$this->formatContext($context)}
+
+{$languageInstruction}
+Reply clearly and concisely in English.
+PROMPT
+            : <<<PROMPT
+Kamu adalah asisten chatbot jadwal penerbangan Bandara Abdurachman Saleh (MLG).
 Gunakan DATA berikut sebagai SATU-SATUNYA sumber kebenaran.
 JANGAN mengarang data penerbangan.
 
 DATA PENERBANGAN:
 {$this->formatContext($context)}
 
+{$languageInstruction}
 Jawab dengan bahasa Indonesia yang jelas dan singkat.
 PROMPT;
 
-        // PAKAI API OPENROUTER (model NVIDIA Nemotron-3 Super 120B A12B)
-        // $response = Http::withHeaders([
-        //     'Authorization' => 'Bearer ' . env('OPENROUTER_API_KEY'),
-        //     'Content-Type'  => 'application/json',
-        //     'HTTP-Referer'  => env('APP_URL'),
-        // ])->timeout(60)->post('https://openrouter.ai/api/v1/chat/completions', [
-        //     'model' => 'nvidia/nemotron-3-super-120b-a12b:free',
-        //     'messages' => [
-        //         ['role' => 'system', 'content' => $systemPrompt],
-        //         ['role' => 'user',   'content' => $message],
-        //     ],
-        //     'temperature' => 0.3,
-        // ]);
-
-        // PAKE API GROQ
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . env('GROQ_API_KEY'),
             'Content-Type'  => 'application/json',
@@ -42,9 +42,9 @@ PROMPT;
             'model' => 'llama-3.1-8b-instant',
             'messages' => [
                 ['role' => 'system', 'content' => $systemPrompt],
-                ['role' => 'user', 'content' => $message],
+                ['role' => 'user',   'content' => $message],
             ],
-            'temperature' => 0.3, // ðŸ”¥ diturunkan agar tidak ngarang
+            'temperature' => 0.3,
         ]);
 
         if (!$response->successful()) {
@@ -54,11 +54,10 @@ PROMPT;
         return $response->json('choices.0.message.content');
     }
 
-
     protected function formatContext(array $flights): string
     {
         if (empty($flights)) {
-            return "Tidak ada data penerbangan.";
+            return "No flight data available.";
         }
 
         return collect($flights)->map(function ($f) {

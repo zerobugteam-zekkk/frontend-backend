@@ -7,6 +7,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ __('messages.meta.title') }}</title>
+    <meta name="google-site-verification" content="KAK_zo1lHC8-ziWPO76A_HNEddLqBTJGt79ZpZ7Tdrw" />
+
+    {{-- SEO Meta Tags --}}
+    <meta name="description"
+        content="Portal resmi Bandara Abdurachman Saleh Malang (MLG). Cek jadwal penerbangan, fasilitas terminal, transportasi, dan informasi layanan bandara di Malang Raya.">
+    <meta name="keywords"
+        content="bandara malang, abdurachman saleh, jadwal penerbangan malang, MLG airport, bandara MLG, penerbangan malang, terminal malang">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://abdurachmansaleh-airport.my.id/">
+
+    {{-- Open Graph (WhatsApp / Sosmed Preview) --}}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandara Abdurachman Saleh Malang (MLG)">
+    <meta property="og:description"
+        content="Portal resmi Bandara Abdurachman Saleh Malang. Jadwal penerbangan, fasilitas, transportasi, dan informasi lengkap bandara MLG.">
+    <meta property="og:url" content="https://abdurachmansaleh-airport.my.id/">
+    <meta property="og:image" content="https://abdurachmansaleh-airport.my.id/images/og-preview.jpg">
+    <meta property="og:locale" content="{{ app()->getLocale() === 'id' ? 'id_ID' : 'en_US' }}">
+    <meta property="og:site_name" content="Bandara Abdurachman Saleh Malang">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandara Abdurachman Saleh Malang (MLG)">
+    <meta name="twitter:description"
+        content="Jadwal penerbangan, fasilitas, dan informasi lengkap Bandara Abdurachman Saleh Malang.">
+    <meta name="twitter:image" content="https://abdurachmansaleh-airport.my.id/images/og-preview.jpg">
+
+    {{-- Schema.org Structured Data (GEO) --}}
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Airport",
+  "name": "Bandara Abdurachman Saleh Malang",
+  "alternateName": ["MLG Airport", "Abdurachman Saleh Airport", "Bandara MLG"],
+  "iataCode": "MLG",
+  "description": "Bandara Abdurachman Saleh (MLG) adalah bandara internasional di Malang, Jawa Timur yang melayani penerbangan sipil sejak 2005.",
+  "url": "https://abdurachmansaleh-airport.my.id",
+  "telephone": "+62341-2992700",
+  "email": "bandarabdsaleh@yahoo.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Angkatan Udara",
+    "addressLocality": "Malang",
+    "addressRegion": "Jawa Timur",
+    "postalCode": "65154",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -7.9266,
+    "longitude": 112.7136
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "sameAs": [
+    "https://www.instagram.com/abdulrachmansaleh_airport"
+  ]
+}
+</script>
+
+    {{-- FAQ Schema (GEO) --}}
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Berapa nomor telepon Bandara Abdurachman Saleh Malang?",
+      "acceptedAnswer": { "@type": "Answer", "text": "(0341) 2992700" }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa kode IATA Bandara Abdurachman Saleh?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Kode IATA Bandara Abdurachman Saleh Malang adalah MLG." }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara cek jadwal penerbangan Bandara Malang?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Jadwal penerbangan Bandara Abdurachman Saleh Malang dapat dicek di halaman jadwal pada website resmi https://abdurachmansaleh-airport.my.id/jadwal" }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah Bandara Abdurachman Saleh menyediakan Wi-Fi gratis?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ya, Bandara Abdurachman Saleh menyediakan akses Wi-Fi gratis di seluruh area terminal penumpang." }
+    },
+    {
+      "@type": "Question",
+      "name": "Di mana lokasi Bandara Abdurachman Saleh Malang?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Bandara Abdurachman Saleh berlokasi di Jl. Angkatan Udara, Kota Malang, Jawa Timur, Indonesia." }
+    }
+  ]
+}
+</script>
 
     <script>
         tailwind.config = {

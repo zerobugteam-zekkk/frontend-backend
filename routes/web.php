@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Session;
+// use Illuminate\Support\Facades\Session;
 use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', function () {
@@ -19,7 +19,9 @@ Route::get('/info-umum', function () {
 Route::get('/transportasi', function () {
     return view('transportasi');
 })->name('transportasi');
-Route::get('/sejarah', function () { return view('sejarah'); });
+Route::get('/sejarah', function () {
+    return view('sejarah');
+});
 Route::get('/routes', function () {
     return view('routes');
 });
@@ -43,6 +45,12 @@ Route::get('/jam-operasional', function () {
     return view('jamoperasional');
 })->name('jam.operasional');
 
+Route::get('/faq', function () {
+    $locale = app()->getLocale();
+    $faqs = \App\Models\Faq::all();
+    return view('faq', compact('faqs', 'locale'));
+})->name('faq');
+
 // Route untuk mengubah bahasa
 Route::get('/lang/{locale}', function (string $locale) {
     abort_unless(in_array($locale, ['id', 'en']), 400);
@@ -59,4 +67,3 @@ Route::get('/generate-sitemap', function () {
 
     return 'Sitemap generated!';
 });
-
